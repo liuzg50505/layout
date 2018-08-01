@@ -1,0 +1,2 @@
+import $ = require("jquery");
+
