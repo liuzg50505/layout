@@ -8,10 +8,13 @@
     "outDir": ".",
     "strictNullChecks": false
   },
-  "files": [
+  "files":[
     "src/layoutbase.ts",
-    "src/layout4.ts",
-    "node_modules/@types/jquery/index.d.ts"
+    "src/layoutcore.ts",
+    "src/controls/textview.ts",
+    "src/controls/rect.ts",
+    "src/containers/border.ts",
+    "src/containers/horizonallinearlayout.ts",
+    "src/containers/verticallinearlayout.ts"
   ]
-
 }

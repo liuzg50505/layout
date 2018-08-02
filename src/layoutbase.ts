@@ -1,4 +1,4 @@
-module LayoutLzg{
+namespace LayoutLzg{
     export enum HorizonAlignment {
         Strech,
         Left,

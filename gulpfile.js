@@ -7,7 +7,7 @@ var paths = {
 };
 
 gulp.task('build', function () {
-    return gulp.src('src/*.ts')
+    return gulp.src('src/**/*.ts')
         .pipe(sourcemaps.init())
         .pipe(ts({
             noImplicitAny: true,
