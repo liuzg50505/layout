@@ -11,10 +11,16 @@
   "files":[
     "src/layoutbase.ts",
     "src/layoutcore.ts",
+
     "src/controls/controlbase.ts",
     "src/controls/textview.ts",
     "src/controls/rect.ts",
     "src/controls/image.ts",
+
+    "src/brushes/solidcolorbrush.ts",
+    "src/brushes/imagecolorbrush.ts",
+    "src/brushes/gradientcolorbrush.ts",
+
     "src/containers/border.ts",
     "src/containers/horizonallinearlayout.ts",
     "src/containers/verticallinearlayout.ts"

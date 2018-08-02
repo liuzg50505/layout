@@ -4,6 +4,7 @@ namespace LayoutLzg{
         cellDefinations:Array<Distance>;
         cellIndexArray:Array<number>;
 
+        borderElem:HTMLElement;
 
         constructor(name:string) {
             super(name);
@@ -169,8 +170,13 @@ namespace LayoutLzg{
         }
 
         assembleDom(): void {
+
+            // init variables and htmlelements
             this.cellBorderArray = [];
             $(this.getRootElement()).empty();
+            if(this.borderElem==null) this.borderElem = $("<div></div>")[0];
+
+            // add cell wrapper divs to rootElem
             for (let i=0;i<this.cellDefinations.length;i++){
                 let border = new Border('');
                 border.initCalculableSlots();
@@ -178,6 +184,7 @@ namespace LayoutLzg{
                 $(this.getRootElement()).append(border.getRootElement());
             }
 
+            // add children rootElems to cell wrappers
             for (let j=0;j<this.children.length;j++){
                 let border = this.cellBorderArray[this.cellIndexArray[j]];
                 let child = this.children[j];
@@ -188,7 +195,7 @@ namespace LayoutLzg{
         }
 
         doLayout(): void {
-
+            // calculate weightSum and fixSum
             let weightSum = 0;
             let fixSum = 0;
             for (let i=0;i<this.cellDefinations.length;i++) {
@@ -197,9 +204,23 @@ namespace LayoutLzg{
                 if(cellDefination.type==DistanceType.fixed) fixSum += cellDefination.value;
             }
 
+            // set rootElem styles
             $(this.getRootElement()).css('position','absolute');
             $(this.getRootElement()).css('width',this.estimateWidth()+'px');
             $(this.getRootElement()).css('height',this.estimateHeight()+'px');
+
+            // set border and background styles
+            $(this.borderElem).css('position','absolute');
+            $(this.borderElem).css('left','0px');
+            $(this.borderElem).css('right','0px');
+            $(this.borderElem).css('top','0px');
+            $(this.borderElem).css('bottom','0px');
+            if(this.stroke){
+                this.stroke.applyToBorder(this.borderElem,this.strokeThickness);
+            }
+            if(this.fill){
+                this.fill.applyToBackground(this.borderElem);
+            }
 
             let pos = 0;
             for (let j=0;j<this.cellDefinations.length;j++){

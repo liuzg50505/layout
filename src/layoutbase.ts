@@ -25,17 +25,15 @@ namespace LayoutLzg{
     }
 
 
-    export class Brush{
-
+    export interface Brush{
+        applyToBackground(elem:HTMLElement):void;
+        applyToBorder(elem:HTMLElement,thickness:Thickness):void;
+        applyToBorderLeft(elem:HTMLElement,thickness:number):void;
+        applyToBorderRight(elem:HTMLElement,thickness:number):void;
+        applyToBorderTop(elem:HTMLElement,thickness:number):void;
+        applyToBorderBottom(elem:HTMLElement,thickness:number):void;
     }
 
-    export class SolidColorBrush extends Brush{
-        color:string;
-        constructor(color:string){
-            super();
-            this.color = color;
-        }
-    }
 
     export class Thickness{
         left:number;

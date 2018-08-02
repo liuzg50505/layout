@@ -1,27 +1,34 @@
 namespace LayoutLzg{
     export class VerticalLinearLayout extends ContainerControl {
+        // Borders to contain child controls, cellBorderArray.length is the cells count.
         cellBorderArray : Array<Border>;
+        // The distance defination for each cells.
         cellDefinations:Array<Distance>;
+        // The cell index of each child control of this container.
         cellIndexArray:Array<number>;
-
+        // The backgroud and border div element.
         borderElem:HTMLElement;
 
         constructor(name:string) {
             super(name);
+            // Init variables.
             this.cellIndexArray=[];
             this.cellDefinations = [];
             this.cellBorderArray = [];
         }
 
+        // Add cell defination. The distance type can be 'weight' or 'fix'.
         addCell(distance:Distance) {
             this.cellDefinations.push(distance);
         }
 
+        // Add child to this container, and the control is added to the first cell by default.
         addChild(control: LayoutLzg.Control): void {
             super.addChild(control);
             this.cellIndexArray.push(0);
         }
 
+        // Remove child from this container.
         removeChild(control: LayoutLzg.Control): void {
             super.removeChild(control);
             const idx = this.children.indexOf(control);
@@ -29,11 +36,13 @@ namespace LayoutLzg{
                 this.cellIndexArray.splice(idx,1);
         }
 
+        // Remove all children from this container.
         clearChild(): void {
             super.clearChild();
             this.cellIndexArray = [];
         }
 
+        // Specify 'control' to the 'cellIndex' cell.
         setCell(control:Control, cellIndex:number) {
             const idx = this.children.indexOf(control);
             if(idx>-1){
@@ -41,6 +50,7 @@ namespace LayoutLzg{
             }
         }
 
+        // Get the root div of this container.
         getRootElement(): HTMLElement {
             if(this.rootElem==null) {
                 this.rootElem = $("<div></div>")[0];
@@ -170,10 +180,14 @@ namespace LayoutLzg{
         }
 
         assembleDom(): void {
+
+            // init variables and htmlelements
             this.cellBorderArray = [];
             $(this.getRootElement()).empty();
             if(this.borderElem==null) this.borderElem = $("<div></div>")[0];
             $(this.getRootElement()).append(this.borderElem);
+
+            // add cell wrapper divs to rootElem
             for (let i=0;i<this.cellDefinations.length;i++){
                 let border = new Border('');
                 border.initCalculableSlots();
@@ -181,6 +195,7 @@ namespace LayoutLzg{
                 $(this.getRootElement()).append(border.getRootElement());
             }
 
+            // add children rootElems to cell wrappers
             for (let j=0;j<this.children.length;j++){
                 let border = this.cellBorderArray[this.cellIndexArray[j]];
                 let child = this.children[j];
@@ -191,7 +206,7 @@ namespace LayoutLzg{
         }
 
         doLayout(): void {
-
+            // calculate weightSum and fixSum
             let weightSum = 0;
             let fixSum = 0;
             for (let i=0;i<this.cellDefinations.length;i++) {
@@ -200,16 +215,25 @@ namespace LayoutLzg{
                 if(cellDefination.type==DistanceType.fixed) fixSum += cellDefination.value;
             }
 
+            // set rootElem styles
             $(this.getRootElement()).css('position','absolute');
             $(this.getRootElement()).css('width',this.estimateWidth()+'px');
             $(this.getRootElement()).css('height',this.estimateHeight()+'px');
 
+            // set border and background styles
             $(this.borderElem).css('position','absolute');
             $(this.borderElem).css('left','0px');
             $(this.borderElem).css('right','0px');
             $(this.borderElem).css('top','0px');
             $(this.borderElem).css('bottom','0px');
+            if(this.stroke){
+                this.stroke.applyToBorder(this.borderElem,this.strokeThickness);
+            }
+            if(this.fill){
+                this.fill.applyToBackground(this.borderElem);
+            }
 
+            // set cell wrapper styles
             let pos = 0;
             for (let j=0;j<this.cellDefinations.length;j++){
                 let cellDefination = this.cellDefinations[j];
