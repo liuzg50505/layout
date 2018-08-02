@@ -4,6 +4,7 @@ namespace LayoutLzg{
         cellDefinations:Array<Distance>;
         cellIndexArray:Array<number>;
 
+        borderElem:HTMLElement;
 
         constructor(name:string) {
             super(name);
@@ -171,6 +172,8 @@ namespace LayoutLzg{
         assembleDom(): void {
             this.cellBorderArray = [];
             $(this.getRootElement()).empty();
+            if(this.borderElem==null) this.borderElem = $("<div></div>")[0];
+            $(this.getRootElement()).append(this.borderElem);
             for (let i=0;i<this.cellDefinations.length;i++){
                 let border = new Border('');
                 border.initCalculableSlots();
@@ -200,6 +203,12 @@ namespace LayoutLzg{
             $(this.getRootElement()).css('position','absolute');
             $(this.getRootElement()).css('width',this.estimateWidth()+'px');
             $(this.getRootElement()).css('height',this.estimateHeight()+'px');
+
+            $(this.borderElem).css('position','absolute');
+            $(this.borderElem).css('left','0px');
+            $(this.borderElem).css('right','0px');
+            $(this.borderElem).css('top','0px');
+            $(this.borderElem).css('bottom','0px');
 
             let pos = 0;
             for (let j=0;j<this.cellDefinations.length;j++){

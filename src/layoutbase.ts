@@ -29,6 +29,14 @@ namespace LayoutLzg{
 
     }
 
+    export class SolidColorBrush extends Brush{
+        color:string;
+        constructor(color:string){
+            super();
+            this.color = color;
+        }
+    }
+
     export class Thickness{
         left:number;
         right:number;
