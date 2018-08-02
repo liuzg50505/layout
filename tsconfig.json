@@ -1,14 +1,17 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "target": "es5",
     "noImplicitAny": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "target": "es5",
+    "module": "commonjs",
+    "watch": true,
+    "outDir": ".",
+    "strictNullChecks": false
   },
-  "exclude": [
-    "node_modules"
-  ],
   "files": [
-    "src/layout3.ts"
+    "src/layoutbase.ts",
+    "src/layout4.ts",
+    "node_modules/@types/jquery/index.d.ts"
   ]
+
 }
