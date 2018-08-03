@@ -1,5 +1,5 @@
 namespace LayoutLzg{
-    export class Image extends ControlBase {
+    export class ImageView extends ControlBase {
 
         imgElem:HTMLElement;
         src:string;

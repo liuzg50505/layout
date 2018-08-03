@@ -1017,7 +1017,7 @@ var LayoutLzg;
         };
         return Image;
     }(LayoutLzg.ControlBase));
-    LayoutLzg.Image = Image;
+    LayoutLzg.ImageView = Image;
 })(LayoutLzg || (LayoutLzg = {}));
 var LayoutLzg;
 (function (LayoutLzg) {
