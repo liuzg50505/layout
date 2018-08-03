@@ -1,0 +1,63 @@
+## 3. 数据绑定
+
+双向绑定和单向绑定
+
+如何检测js对象的属性变化？
+    ObservableSlim  通过创建 proxy  浏览器兼容
+
+    Define Property
+
+        var model = {age:22};
+
+        model._age = model.age;
+        Object.defineProperty(model,'age',{
+            'get':function () {
+                return this._age;
+            },
+            'set':function (newValue) {
+                for(var i=0;i<this._valueChangedCallbacks.length;i++){
+                    var callback = this._valueChangedCallbacks[i];
+                    callback(this._age,newValue);
+                }
+                this._age = newValue;
+            }
+        });
+
+        model._valueChangedCallbacks = [];
+
+        model.addValueChangedListener = function (callback) {
+            if(callback!=null) this._valueChangedCallbacks.push(callback);
+        };
+
+        model.addValueChangedListener(function (oldvalue, newvalue) {
+            console.log("oldvalue:"+oldvalue+" newvalue:"+newvalue);
+        })
+
+架构 数据绑定
+
+class ValueConverter {
+    convert(value:any,args):any;
+    convertback(value:any,args):any;
+}
+
+class Binding{
+    sourceObject:any;
+    sourceProperty:string;
+    targetObject:any;
+    targetProperty:string;
+    mode:twoway/oneway;
+    converter:ValueConverter;
+    watch();
+    unwatch();
+}
+
+class BindingManage{
+
+}
+
+Button
+    Border
+        Rect Stretch Stretch
+        ContentPresenter
+
+

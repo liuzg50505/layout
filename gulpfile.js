@@ -24,7 +24,7 @@ gulp.task('copyHtml', function () {
 });
 
 gulp.task('default', function () {
-    gulp.watch('./src/*.ts',['build','copyHtml']);
+    gulp.watch('./src/**/*.ts',['build','copyHtml']);
 });
 
 

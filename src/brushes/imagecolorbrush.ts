@@ -7,6 +7,7 @@ namespace LayoutLzg{
         }
 
         applyToBackground(elem: HTMLElement): void {
+
         }
 
         applyToBorder(elem: HTMLElement, thickness: LayoutLzg.Thickness): void {

@@ -12,6 +12,8 @@
     "src/layoutbase.ts",
     "src/layoutcore.ts",
 
+    "src/collections/list.ts",
+
     "src/controls/controlbase.ts",
     "src/controls/textview.ts",
     "src/controls/rect.ts",
@@ -23,6 +25,12 @@
 
     "src/containers/border.ts",
     "src/containers/horizonallinearlayout.ts",
-    "src/containers/verticallinearlayout.ts"
+    "src/containers/verticallinearlayout.ts",
+
+
+    "src/observer/observableobjectinjector.ts"
+
+
+
   ]
 }
