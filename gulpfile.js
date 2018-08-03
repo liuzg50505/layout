@@ -23,7 +23,7 @@ gulp.task('copyHtml', function () {
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('default', function () {
+gulp.task('default', ['build'] ,function () {
     gulp.watch('./src/**/*.ts',['build','copyHtml']);
 });
 

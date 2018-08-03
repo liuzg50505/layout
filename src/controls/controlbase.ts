@@ -5,7 +5,7 @@ namespace LayoutLzg{
         }
 
         estimateWidth(): number {
-            if(this.isParentSlotWidthCalculatable){
+            if(this.parentSlot.isSlotWidthCalculatable){
                 if (this.horizonAlignment==HorizonAlignment.Center
                     ||this.horizonAlignment==HorizonAlignment.Left
                     ||this.horizonAlignment==HorizonAlignment.Right)
@@ -16,7 +16,7 @@ namespace LayoutLzg{
                         return 0;
                     }
                 }else if(this.horizonAlignment==HorizonAlignment.Strech){
-                    return this.parentSlotWidth - this.margin.left - this.margin.right;
+                    return this.parentSlot.calulatedSlotWidth - this.margin.left - this.margin.right;
                 }
             }else{
                 if(this.width.type == DistanceType.fixed) {
@@ -30,7 +30,7 @@ namespace LayoutLzg{
         }
 
         estimateHeight(): number {
-            if(this.isParentSlotHeightCalculatable){
+            if(this.parentSlot.isSlotHeightCalculatable){
                 if (this.verticalAlignment==VerticalAlignment.Center
                     ||this.verticalAlignment==VerticalAlignment.Top
                     ||this.verticalAlignment==VerticalAlignment.Bottom)
@@ -41,7 +41,7 @@ namespace LayoutLzg{
                         return 0;
                     }
                 }else if(this.verticalAlignment==VerticalAlignment.Strech){
-                    return this.parentSlotWidth - this.margin.top - this.margin.bottom;
+                    return this.parentSlot.calulatedSlotHeight - this.margin.top - this.margin.bottom;
                 }
             }else{
                 if(this.height.type == DistanceType.fixed) {

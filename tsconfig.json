@@ -13,6 +13,7 @@
     "src/layoutcore.ts",
 
     "src/collections/list.ts",
+    "src/collections/map.ts",
 
     "src/controls/controlbase.ts",
     "src/controls/textview.ts",

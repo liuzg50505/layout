@@ -1,12 +1,16 @@
 namespace LayoutLzg{
 
     export function testList():void{
-        let lst = new List<string>();
-        lst.add('sdf');
-        lst.add('sdf2');
-        lst.add('sdf3');
-        lst.clear();
-        lst.addAll(['23','24']);
+
+        let literal1 = new LayoutLzg.TextView('a','11111');
+        let literal2 = new LayoutLzg.TextView('a','22222222222222222222222222222');
+        let literal3 = new LayoutLzg.TextView('a','3333333333');
+
+
+        let lst = new List<TextView>();
+        lst.add(literal1);
+        lst.add(literal2);
+        lst.add(literal3);
         lst.clear();
     }
 
@@ -14,7 +18,7 @@ namespace LayoutLzg{
     export class List<T> extends Array<T>{
 
         add(item:T) : void {
-            this.push(item);
+            super.push(item);
         }
 
         addAll(items:Array<T>) : void {
@@ -27,15 +31,24 @@ namespace LayoutLzg{
             for(let i=0;i<this.length;i++) {
                 let curitem = this[i];
                 if(curitem==item) {
-                    this.splice(i,1);
+                    super.splice(i,1);
                     return;
                 }
             }
         }
 
-        clear() :void {
-            this.splice(0,this.length);
+        removeAll(items:Array<T>) :void {
+            for (let i=0;i<items.length;i++) {
+                let item = items[i];
+                this.remove(item);
+            }
         }
+
+        clear() :void {
+            super.splice(0,this.length);
+        }
+
+
 
 
 

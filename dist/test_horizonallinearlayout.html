@@ -33,10 +33,12 @@
     literal6.verticalAlignment = LayoutLzg.VerticalAlignment.Strech;
 
     hlinear = new LayoutLzg.HorizonalLinearLayout('');
-    hlinear.isParentSlotHeightCalculatable = true;
-    hlinear.isParentSlotWidthCalculatable = true;
-    hlinear.parentSlotWidth = 800;
-    hlinear.parentSlotHeight = 400;
+    hlinear.parentSlot = new LayoutLzg.Slot();
+
+    hlinear.parentSlot.isSlotWidthCalculatable = true;
+    hlinear.parentSlot.isSlotHeightCalculatable = true;
+    hlinear.parentSlot.calulatedSlotWidth = 800;
+    hlinear.parentSlot.calulatedSlotHeight = 400;
     hlinear.width = new LayoutLzg.Distance(LayoutLzg.DistanceType.fixed,800);
     hlinear.height = new LayoutLzg.Distance(LayoutLzg.DistanceType.fixed,400);
 
@@ -56,6 +58,7 @@
 
     hlinear.addChild(literal1);
     hlinear.setCell(literal1,0);
+
 
     hlinear.initCalculableSlots();
     hlinear.assembleDom();

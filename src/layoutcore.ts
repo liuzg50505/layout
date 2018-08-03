@@ -1,6 +1,36 @@
 
 namespace LayoutLzg{
 
+    export class Slot {
+        children:List<Control> = new List<Control>();
+        isSlotWidthCalculatable : boolean;
+        isSlotHeightCalculatable : boolean;
+        calulatedSlotWidth : number;
+        calulatedSlotHeight : number;
+        container : ContainerControl;
+
+        addChild(child : Control):void {
+            this.children.add(child);
+            child.parentSlot = this;
+            child.parent = null;
+        }
+
+        removeChild(child : Control):void {
+            this.children.remove(child);
+            child.parentSlot = null;
+        }
+
+        empty():void {
+            for (let i=0;i<this.children.length;i++) {
+                let child = this.children[i];
+                child.parentSlot = null;
+                child.parent = null;
+                this.container.removeChild(child);
+            }
+            this.children.clear();
+        }
+    }
+
 
     // Control class is the base class of all the visual components.
     export class Control{
@@ -24,16 +54,20 @@ namespace LayoutLzg{
         // Thickness of this control's border, the value in thickness must be a fix value.
         strokeThickness:Thickness;
 
-        // Internal vairable. Indicate the container's width of this control is calculatable.
-        isParentSlotWidthCalculatable : boolean;
-        // Internal vairable. Indicate the container's height of this control is calculatable.
-        isParentSlotHeightCalculatable : boolean;
-        // Internal vairable. Parent slot width.
-        // Slot means the space where the control is placed,
-        // it may be the whole of it's container or a part of it's container.
-        parentSlotWidth:number;
-        // Internal vairable. Parent slot height.
-        parentSlotHeight:number;
+        // // Internal vairable. Indicate the container's width of this control is calculatable.
+        // isParentSlotWidthCalculatable : boolean;
+        // // Internal vairable. Indicate the container's height of this control is calculatable.
+        // isParentSlotHeightCalculatable : boolean;
+        // // Internal vairable. Parent slot width.
+        // // Slot means the space where the control is placed,
+        // // it may be the whole of it's container or a part of it's container.
+        // parentSlotWidth:number;
+        // // Internal vairable. Parent slot height.
+        // parentSlotHeight:number;
+
+
+        parentSlot:Slot;
+        parent:ContainerControl;
         // root div of this control.
         rootElem:HTMLElement;
 
@@ -83,25 +117,38 @@ namespace LayoutLzg{
     // The purpose of the container is to put sub controls together,
     // and the system provides multiple layout containers due to actual requirements.
     export class ContainerControl extends Control{
-        children:Array<Control>;
+        protected children:List<Control>;
+        protected children2:Array<Control>;
+        protected slots : List<Slot>;
+
 
         constructor(name:string) {
             super(name);
-            this.children= [];
+            this.children = new List<Control>();
+            this.children2 = new Array<Control>();
+            this.slots = new List<Slot>();
         }
 
         addChild(control:Control) {
-            this.children.push(control);
+            this.children.add(control);
+            this.children2.push(control);
+            control.parent = this;
         }
 
         removeChild(control:Control) {
-            const idx = this.children.indexOf(control);
-            if(idx>-1)
-                this.children.splice(idx,1);
+            this.children.remove(control);
+            control.parent = null;
         }
 
         clearChild():void{
-            this.children = [];
+            for (let i=0;i<this.children.length;i++){
+                let child = this.children[i];
+                child.parent = null;
+                if (child.parentSlot) {
+                    child.parentSlot.removeChild(child);
+                }
+            }
+            this.children.clear();
         }
 
         initCalculableSlots():void {
@@ -114,7 +161,7 @@ namespace LayoutLzg{
     }
 
     export class ContentPresenter {
-        
+
     }
 
     export class ItemsPresenter {

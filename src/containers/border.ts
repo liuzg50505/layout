@@ -2,9 +2,12 @@ namespace LayoutLzg{
     export class Border extends ContainerControl {
 
         wrapperDoms : Array<HTMLElement>;
+        private mainSlot : Slot;
 
         constructor(name:string) {
             super(name);
+            this.mainSlot = new Slot();
+            this.mainSlot.container = this;
         }
 
         getRootElement(): HTMLElement {
@@ -16,24 +19,30 @@ namespace LayoutLzg{
             return this.rootElem;
         }
 
+
+        addChild(control: LayoutLzg.Control): void {
+            super.addChild(control);
+            this.mainSlot.addChild(control);
+        }
+
         initCalculableSlots():void {
 
             if(this.width.type == DistanceType.fixed){
                 for(let i=0;i<this.children.length;i++){
                     let child = this.children[i];
-                    child.isParentSlotWidthCalculatable = true;
-                    child.parentSlotWidth = this.width.value;
+                    this.parentSlot.isSlotWidthCalculatable = true;
+                    this.parentSlot.calulatedSlotWidth = this.width.value;
                     if(child instanceof ContainerControl) {
                         let container:ContainerControl = <ContainerControl>child;
                         container.initCalculableSlots();
                     }
                 }
             }else {
-                if(this.isParentSlotWidthCalculatable && this.horizonAlignment==HorizonAlignment.Strech) {
+                if(this.parentSlot.isSlotWidthCalculatable && this.horizonAlignment==HorizonAlignment.Strech) {
                     for(let i=0;i<this.children.length;i++){
                         let child = this.children[i];
-                        child.isParentSlotWidthCalculatable = true;
-                        child.parentSlotWidth = this.parentSlotWidth - this.margin.left - this.margin.right;
+                        child.parentSlot.isSlotWidthCalculatable = true;
+                        child.parentSlot.calulatedSlotWidth = this.parentSlot.calulatedSlotWidth - this.margin.left - this.margin.right;
                         if(child instanceof ContainerControl) {
                             let container:ContainerControl = <ContainerControl>child;
                             container.initCalculableSlots();
@@ -42,7 +51,7 @@ namespace LayoutLzg{
                 }else {
                     for(let i=0;i<this.children.length;i++){
                         let child = this.children[i];
-                        child.isParentSlotWidthCalculatable = false;
+                        child.parentSlot.isSlotWidthCalculatable = false;
                         if(child instanceof ContainerControl) {
                             let container:ContainerControl = <ContainerControl>child;
                             container.initCalculableSlots();
@@ -54,19 +63,19 @@ namespace LayoutLzg{
             if(this.height.type == DistanceType.fixed){
                 for(let i=0;i<this.children.length;i++){
                     let child = this.children[i];
-                    child.isParentSlotHeightCalculatable = true;
-                    child.parentSlotHeight = this.height.value;
+                    child.parentSlot.isSlotHeightCalculatable = true;
+                    child.parentSlot.calulatedSlotHeight = this.height.value;
                     if(child instanceof ContainerControl) {
                         let container:ContainerControl = <ContainerControl>child;
                         container.initCalculableSlots();
                     }
                 }
             }else {
-                if(this.isParentSlotHeightCalculatable && this.verticalAlignment==VerticalAlignment.Strech) {
+                if(this.parentSlot.isSlotHeightCalculatable && this.verticalAlignment==VerticalAlignment.Strech) {
                     for(let i=0;i<this.children.length;i++){
                         let child = this.children[i];
-                        child.isParentSlotHeightCalculatable = true;
-                        child.parentSlotHeight = this.parentSlotHeight - this.margin.top - this.margin.bottom;
+                        child.parentSlot.isSlotHeightCalculatable = true;
+                        child.parentSlot.calulatedSlotHeight = this.parentSlot.calulatedSlotHeight - this.margin.top - this.margin.bottom;
                         if(child instanceof ContainerControl) {
                             let container:ContainerControl = <ContainerControl>child;
                             container.initCalculableSlots();
@@ -75,7 +84,7 @@ namespace LayoutLzg{
                 }else {
                     for(let i=0;i<this.children.length;i++){
                         let child = this.children[i];
-                        child.isParentSlotHeightCalculatable = false;
+                        child.parentSlot.isSlotHeightCalculatable = false;
                         if(child instanceof ContainerControl) {
                             let container:ContainerControl = <ContainerControl>child;
                             container.initCalculableSlots();
@@ -152,7 +161,7 @@ namespace LayoutLzg{
         }
 
         estimateWidth(): number {
-            if(this.isParentSlotWidthCalculatable){
+            if(this.parentSlot.isSlotWidthCalculatable){
                 if (this.horizonAlignment==HorizonAlignment.Center
                     ||this.horizonAlignment==HorizonAlignment.Left
                     ||this.horizonAlignment==HorizonAlignment.Right)
@@ -168,7 +177,7 @@ namespace LayoutLzg{
                         return 0;
                     }
                 }else if(this.horizonAlignment==HorizonAlignment.Strech){
-                    return this.parentSlotWidth - this.margin.left - this.margin.right;
+                    return this.parentSlot.calulatedSlotWidth - this.margin.left - this.margin.right;
                 }
             }else{
                 if(this.width.type == DistanceType.fixed) {
@@ -185,7 +194,7 @@ namespace LayoutLzg{
         }
 
         estimateHeight(): number {
-            if(this.isParentSlotHeightCalculatable){
+            if(this.parentSlot.isSlotHeightCalculatable){
                 if (this.verticalAlignment==VerticalAlignment.Center
                     ||this.verticalAlignment==VerticalAlignment.Top
                     ||this.verticalAlignment==VerticalAlignment.Bottom)
@@ -201,7 +210,7 @@ namespace LayoutLzg{
                         return 0;
                     }
                 }else if(this.verticalAlignment==VerticalAlignment.Strech){
-                    return this.parentSlotHeight - this.margin.top - this.margin.bottom;
+                    return this.parentSlot.calulatedSlotHeight - this.margin.top - this.margin.bottom;
                 }
             }else{
                 if(this.height.type == DistanceType.fixed) {

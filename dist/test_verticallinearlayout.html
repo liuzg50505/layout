@@ -41,10 +41,13 @@
 
 
     hlinear = new LayoutLzg.VerticalLinearLayout('');
-    hlinear.isParentSlotHeightCalculatable = true;
-    hlinear.isParentSlotWidthCalculatable = true;
-    hlinear.parentSlotWidth = 400;
-    hlinear.parentSlotHeight = 800;
+    hlinear.parentSlot = new LayoutLzg.Slot();
+
+    hlinear.parentSlot.isSlotWidthCalculatable = true;
+    hlinear.parentSlot.isSlotHeightCalculatable = true;
+    hlinear.parentSlot.calulatedSlotWidth = 400;
+    hlinear.parentSlot.calulatedSlotHeight = 800;
+
     hlinear.width = new LayoutLzg.Distance(LayoutLzg.DistanceType.fixed,400);
     hlinear.height = new LayoutLzg.Distance(LayoutLzg.DistanceType.fixed,800);
 
