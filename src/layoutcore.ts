@@ -156,9 +156,6 @@ namespace LayoutLzg{
 
     }
 
-    export class VisualTree {
-        rootContainer : ContainerControl;
-    }
 
     export class ContentPresenter {
 

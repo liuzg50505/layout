@@ -12,6 +12,11 @@
     "src/layoutbase.ts",
     "src/layoutcore.ts",
 
+    "src/visualtree/visualtree.ts",
+    "src/visualtree/templatecontrol.ts",
+
+    "src/eventbus/eventbus.ts",
+
     "src/collections/list.ts",
     "src/collections/map.ts",
 
