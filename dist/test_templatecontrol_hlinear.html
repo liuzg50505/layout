@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="application/javascript" src="../js/jquery.min.js"></script>
+    <script type="application/javascript" src="output.js"></script>
+</head>
+<body>
+
+
+<script>
+    literal1 = new LayoutLzg.TextView('a','11111');
+    literal2 = new LayoutLzg.TextView('a','22222222222222222222222222222');
+    literal3 = new LayoutLzg.TextView('a','3333333333');
+    literal4 = new LayoutLzg.TextView('a','4444');
+    literal5 = new LayoutLzg.TextView('a','555555555');
+    literal6 = new LayoutLzg.TextView('a','6666666666666666');
+    literal6.margin = new LayoutLzg.Thickness(10,10,0,0);
+    literal5.margin = new LayoutLzg.Thickness(10,10,40,0);
+
+    literal1.verticalAlignment = LayoutLzg.VerticalAlignment.Top;
+    literal1.horizonAlignment = LayoutLzg.HorizonAlignment.Right;
+    literal1.margin = new LayoutLzg.Thickness(10,10,10,10);
+    literal2.wordWrap = true;
+    literal2.verticalAlignment = LayoutLzg.VerticalAlignment.Center;
+    literal2.horizonAlignment = LayoutLzg.HorizonAlignment.Center;
+    literal3.horizonAlignment = LayoutLzg.HorizonAlignment.Center;
+    literal3.verticalAlignment = LayoutLzg.VerticalAlignment.Bottom;
+    literal4.verticalAlignment = LayoutLzg.VerticalAlignment.Bottom;
+    literal4.margin = new LayoutLzg.Thickness(0,0,0,20);
+    literal5.verticalAlignment = LayoutLzg.VerticalAlignment.Center;
+    literal6.verticalAlignment = LayoutLzg.VerticalAlignment.Strech;
+
+    hlinear = new LayoutLzg.HorizonalLinearLayout('');
+    hlinear.width = new LayoutLzg.Distance(LayoutLzg.DistanceType.auto,0);
+    hlinear.height = new LayoutLzg.Distance(LayoutLzg.DistanceType.auto,0);
+
+    hlinear.addCell(new LayoutLzg.Distance(LayoutLzg.DistanceType.fixed,200));
+    hlinear.addCell(new LayoutLzg.Distance(LayoutLzg.DistanceType.weight,1));
+    hlinear.addCell(new LayoutLzg.Distance(LayoutLzg.DistanceType.weight,2));
+
+
+    hlinear.addChild(literal2);
+    hlinear.setCell(literal2,1);
+
+    hlinear.addChild(literal3);
+    hlinear.setCell(literal3,2);
+
+    hlinear.addChild(literal4);
+    hlinear.setCell(literal4,0);
+
+    hlinear.addChild(literal1);
+    hlinear.setCell(literal1,0);
+
+
+
+    control = new  LayoutLzg.TemplateControl('ttt');
+    control.parentSlot = new LayoutLzg.Slot();
+    control.parentSlot.isSlotWidthCalculatable = true;
+    control.parentSlot.isSlotHeightCalculatable = true;
+    control.parentSlot.calulatedSlotWidth = 800;
+    control.parentSlot.calulatedSlotHeight = 400;
+    control.visualTree = new LayoutLzg.VisualTree();
+    control.visualTree.rootContainer = hlinear;
+    control.width = new LayoutLzg.Distance(LayoutLzg.DistanceType.fixed,800);
+    control.height = new LayoutLzg.Distance(LayoutLzg.DistanceType.fixed,400);
+    control.assembleDom();
+    controlDiv = control.getRootElement();
+
+    $("body").append(controlDiv);
+    control.doLayout();
+
+</script>
+</body>
+</html>

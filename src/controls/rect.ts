@@ -4,7 +4,6 @@ namespace LayoutLzg{
         rx:number;
         ry:number;
 
-
         constructor(name: string) {
             super(name);
             this.rx = 0;
@@ -19,4 +18,6 @@ namespace LayoutLzg{
             super.doLayout();
         }
     }
+
+
 }
