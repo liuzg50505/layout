@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="application/javascript" src="../js/observable-slim.js" ></script>
+    <script type="application/javascript" src="../dist/output.js" ></script>
+    <script type="application/javascript" src="../js/watch.js" ></script>
+</head>
+<body>
+    <script type="application/ecmascript">
+
+        a = {width:22};
+        b = {height:33};
+        c = {q:{p:{age:33}}};
+
+        LayoutLzg.ObserverModel.injectProperties(a);
+        LayoutLzg.ObserverModel.injectProperties(b);
+        LayoutLzg.ObserverModel.injectProperties(c);
+
+        function calc_a(b,c){
+            return b.height+c.q.p.age;
+        }
+
+        LayoutLzg.ObserverModel.getObjectConfig(a).addPropertyChangedCallback(function (args) {
+            console.log(a.width);
+        });
+
+        LayoutLzg.ObserverModel.getObjectConfig(b).addPropertyChangedCallback(function (args) {
+            a.width = calc_a(b,c);
+            b.height = a.width;
+        });
+
+        LayoutLzg.ObserverModel.getObjectConfig(c).addPropertyChangedCallback(function (args) {
+            a.width = calc_a(b,c);
+            b.height = a.width;
+        });
+
+
+
+    </script>
+</body>
+</html>

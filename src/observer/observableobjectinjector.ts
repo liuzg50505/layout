@@ -5,11 +5,13 @@ namespace LayoutLzg.ObserverModel {
 
 
     export class PropertyChangedEventArgs {
+        obj:any;
         propertyName : string;
         oldValue : any;
         newValue : any;
 
-        constructor(propertyName: string, oldValue: any, newValue: any) {
+        constructor(obj:any,propertyName: string, oldValue: any, newValue: any) {
+            this.obj = obj;
             this.propertyName = propertyName;
             this.oldValue = oldValue;
             this.newValue = newValue;
@@ -19,12 +21,24 @@ namespace LayoutLzg.ObserverModel {
     export function getObjectConfig(obj:any) {
         if(!(configPropertyName in obj)) {
             obj[configPropertyName] = {
+                parent:null,
+                propertyName:null,
                 props:{},
                 propChangedCallbackList : [],
                 notifyPropertyChanged : function(args:PropertyChangedEventArgs) {
                     for(let i=0;i<this.propChangedCallbackList.length;i++){
                         let callback = this.propChangedCallbackList[i];
                         callback(args);
+                    }
+                    let cfg = getObjectConfig(args.obj);
+                    if(cfg.parent){
+                        let parentCfg = getObjectConfig(cfg.parent);
+                        parentCfg.notifyPropertyChanged(new PropertyChangedEventArgs(
+                            cfg.parent,
+                            cfg.propertyName+"."+args.propertyName,
+                            args.oldValue,
+                            args.newValue
+                        ));
                     }
                 },
                 addPropertyChangedCallback : function (callback:(args:PropertyChangedEventArgs)=>void) {
@@ -47,13 +61,16 @@ namespace LayoutLzg.ObserverModel {
             }else if(toString.call(propValue)=='[object Object]'){
                 injectProperties(propValue);
             }
-            let descriptor = Object.getOwnPropertyDescriptor(propertyName,'age');
+            let descriptor = Object.getOwnPropertyDescriptor(obj,propertyName);
             if('value' in descriptor){
                 let t = descriptor.value;
                 if(toString.call(t)=='[object Function]'){
                     continue;
                 }else if(toString.call(propValue)=='[object Object]'){
                     injectProperties(propValue);
+                    let childCfg = getObjectConfig(propValue);
+                    childCfg.parent = obj;
+                    childCfg.propertyName = propertyName;
                 }
             }else {
                 continue;
@@ -61,16 +78,17 @@ namespace LayoutLzg.ObserverModel {
 
             cfg.props[propertyName] = obj[propertyName];
 
-            (function (propertyName) {
+            (function (propertyName:string) {
                 Object.defineProperty(obj,propertyName,{
                     'get':function () {
                         return getObjectConfig(this).props[propertyName];
                     },
                     'set':function (value) {
                         let oldValue = getObjectConfig(this).props[propertyName];
-                        getObjectConfig(this).props[this.propertyName]=value;
+                        getObjectConfig(this).props[propertyName]=value;
                         getObjectConfig(this).notifyPropertyChanged(
                             new PropertyChangedEventArgs(
+                                this,
                                 propertyName,
                                 oldValue,
                                 value

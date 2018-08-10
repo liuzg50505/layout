@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6895967e-ff6e-45b9-baff-517886fa1890" name="Default" comment="">
+    <list default="true" id="6895967e-ff6e-45b9-baff-517886fa1890" name="Default" comment="slot">
+      <change afterPath="$PROJECT_DIR$/src/lifecycle/lifecyclebase.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/testwatch.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/output.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/output.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/horizonallinearlayout.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/horizonallinearlayout.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controls/controlbase.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controls/controlbase.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controls/image.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controls/image.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controls/rect.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controls/rect.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controls/textview.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controls/textview.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layoutcore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/layoutcore.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/visualtree/templatecontrol.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/visualtree/templatecontrol.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/observer/observableobjectinjector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/observer/observableobjectinjector.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,39 +18,43 @@
     <session id="-1397950332">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.12" value="1" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="TypeScriptServerServiceImpl" value="1" />
+          <entry key="TypeScriptServerServiceImpl" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="2" />
-          <entry key="json" value="1" />
-          <entry key="ts" value="6" />
+          <entry key="html" value="3" />
+          <entry key="json" value="2" />
+          <entry key="ts" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="2" />
-          <entry key="TypeScript" value="6" />
-          <entry key="tsconfig" value="1" />
+          <entry key="HTML" value="3" />
+          <entry key="TypeScript" value="11" />
+          <entry key="tsconfig" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="html" value="229" />
           <entry key="json" value="14" />
-          <entry key="ts" value="287" />
+          <entry key="ts" value="701" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="TypeScript" value="287" />
+          <entry key="HTML" value="229" />
+          <entry key="TypeScript" value="701" />
           <entry key="tsconfig" value="14" />
         </counts>
       </usages-collector>
@@ -62,34 +62,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/visualtree/templatecontrol.ts">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/layoutbase.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/containers/horizonallinearlayout.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-60">
-              <caret lean-forward="true" />
-              <folding>
-                <element signature="n#!!block;n#initCalculableSlots#0;n#HorizonalLinearLayout#0;n#LayoutLzg#0" />
-                <element signature="n#!!block;n#assembleDom#0;n#HorizonalLinearLayout#0;n#LayoutLzg#0" />
-                <element signature="n#!!block;n#doLayout#0;n#HorizonalLinearLayout#0;n#LayoutLzg#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/containers/verticallinearlayout.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="276" selection-start-line="276" selection-end-line="276" />
+              <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -97,8 +74,53 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dist/test_templatecontrol_hlinear.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="47">
-              <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
+            <state relative-caret-position="855">
+              <caret line="57" column="25" selection-start-line="57" selection-start-column="25" selection-end-line="57" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/observer/observableobjectinjector.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="555">
+              <caret line="37" column="66" selection-start-line="37" selection-start-column="66" selection-end-line="37" selection-end-column="66" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file:///usr/local/lib/node_modules/typescript/lib/lib.es5.d.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2370">
+              <caret line="171" column="34" selection-start-line="171" selection-start-column="34" selection-end-line="171" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/visualtree/visualtree.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/testwatch.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tsconfig.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="540">
+              <caret line="36" selection-start-line="36" selection-end-line="36" />
             </state>
           </provider>
         </entry>
@@ -113,25 +135,19 @@
                 <element signature="n#!!block;n#addChild#0;n#Slot#0;n#LayoutLzg#0" />
                 <element signature="n#!!block;n#removeChild#0;n#Slot#0;n#LayoutLzg#0" />
                 <element signature="n#!!block;n#empty#0;n#Slot#0;n#LayoutLzg#0" />
-                <element signature="e#671#861#0" />
                 <element signature="n#FrameworkElement#0;n#LayoutLzg#0" />
                 <element signature="n#!!block;n#constructor#0;n#FrameworkElement#0;n#LayoutLzg#0" />
-                <element signature="e#1819#1857#0" />
                 <element signature="n#!!block;n#estimateWidth#0;n#FrameworkElement#0;n#LayoutLzg#0" />
-                <element signature="e#2220#2258#0" />
                 <element signature="n#!!block;n#estimateHeight#0;n#FrameworkElement#0;n#LayoutLzg#0" />
                 <element signature="n#!!block;n#assembleDom#0;n#FrameworkElement#0;n#LayoutLzg#0" />
                 <element signature="n#!!block;n#doLayout#0;n#FrameworkElement#0;n#LayoutLzg#0" />
                 <element signature="n#Control#0;n#LayoutLzg#0" />
-                <element signature="e#1973#2061#0" />
                 <element signature="n#!!block;n#constructor#0;n#Control#0;n#LayoutLzg#0" />
                 <element signature="n#ContainerControl#0;n#LayoutLzg#0" />
                 <element signature="n#!!block;n#constructor#0;n#ContainerControl#0;n#LayoutLzg#0" />
                 <element signature="n#!!block;n#addChild#0;n#ContainerControl#0;n#LayoutLzg#0" />
                 <element signature="n#!!block;n#removeChild#0;n#ContainerControl#0;n#LayoutLzg#0" />
                 <element signature="n#!!block;n#clearChild#0;n#ContainerControl#0;n#LayoutLzg#0" />
-                <element signature="e#5212#5425#0" />
-                <element signature="e#5335#5411#0" />
                 <element signature="n#!!block;n#initCalculableSlots#0;n#ContainerControl#0;n#LayoutLzg#0" />
                 <element signature="n#ContentPresenter#0;n#LayoutLzg#0" />
                 <element signature="n#ItemsPresenter#0;n#LayoutLzg#0" />
@@ -141,46 +157,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/test_horizonallinearlayout.html">
+        <entry file="file://$PROJECT_DIR$/src/lifecycle/lifecyclebase.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="67" lean-forward="true" selection-start-line="6" selection-start-column="67" selection-end-line="6" selection-end-column="67" />
+            <state relative-caret-position="30">
+              <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controls/rect.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="20" lean-forward="true" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/controls/textview.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
+            <state relative-caret-position="690">
               <caret line="46" selection-start-line="46" selection-end-line="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/containers/containerbase.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="60" column="36" selection-start-line="60" selection-start-column="36" selection-end-line="60" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controls/controlbase.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="9" lean-forward="true" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -208,6 +197,7 @@
       <find>clear</find>
       <find>height</find>
       <find>$(border.getRootElement()).css('left','0px')</find>
+      <find>notifyPropertyChanged</find>
     </findStrings>
     <replaceStrings>
       <replace>parentSlot.isSlotHeightCalculatable</replace>
@@ -228,7 +218,6 @@
         <option value="$PROJECT_DIR$/src/brushes/gradientcolorbrush.ts" />
         <option value="$PROJECT_DIR$/readme_cn.md" />
         <option value="$PROJECT_DIR$/src/brushes/imagecolorbrush.ts" />
-        <option value="$PROJECT_DIR$/src/observer/observableobjectinjector.ts" />
         <option value="$PROJECT_DIR$/task.txt" />
         <option value="$PROJECT_DIR$/gulpfile.js" />
         <option value="$PROJECT_DIR$/src/collections/map.ts" />
@@ -239,11 +228,9 @@
         <option value="$PROJECT_DIR$/src/containers/verticallinearlayout.ts" />
         <option value="$PROJECT_DIR$/src/eventbus/EventBus.ts" />
         <option value="$PROJECT_DIR$/src/eventbus/eventbus.ts" />
-        <option value="$PROJECT_DIR$/src/visualtree/visualtree.ts" />
         <option value="$PROJECT_DIR$/src/containers/border.ts" />
         <option value="$PROJECT_DIR$/dist/test_templatecontrol.html" />
         <option value="$PROJECT_DIR$/dist/test_templatecontrol_vlinear.html" />
-        <option value="$PROJECT_DIR$/tsconfig.json" />
         <option value="$PROJECT_DIR$/src/layoutcore.ts" />
         <option value="$PROJECT_DIR$/src/controls/controlbase.ts" />
         <option value="$PROJECT_DIR$/src/controls/image.ts" />
@@ -252,6 +239,11 @@
         <option value="$PROJECT_DIR$/src/containers/horizonallinearlayout.ts" />
         <option value="$PROJECT_DIR$/src/visualtree/templatecontrol.ts" />
         <option value="$PROJECT_DIR$/src/controls/textview.ts" />
+        <option value="$PROJECT_DIR$/tsconfig.json" />
+        <option value="$PROJECT_DIR$/src/visualtree/visualtree.ts" />
+        <option value="$PROJECT_DIR$/src/observer/observableobjectinjector.ts" />
+        <option value="$PROJECT_DIR$/test/testwatch.html" />
+        <option value="$PROJECT_DIR$/src/lifecycle/lifecyclebase.ts" />
       </list>
     </option>
   </component>
@@ -309,39 +301,15 @@
             <path>
               <item name="layoutsystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="layoutsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="containers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="layoutsystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="layoutsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="controls" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="layoutsystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="layoutsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="eventbus" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="layoutsystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="layoutsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="visualtree" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="layoutsystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="layoutsystem" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -350,14 +318,16 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/android-sdk-macosx" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1533602555624" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1533897172513" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="settings.editor.selected.configurable" value="settings.typescriptcompiler" />
     <property name="ts.external.directory.path" value="/usr/local/lib/node_modules/typescript/lib" />
+    <property name="typescript-compiler-editor-notification" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/test" />
       <recent name="$PROJECT_DIR$/dist" />
       <recent name="$PROJECT_DIR$/js" />
       <recent name="$PROJECT_DIR$/src/brushes" />
@@ -427,6 +397,8 @@
       <workItem from="1533360026687" duration="10671000" />
       <workItem from="1533526741529" duration="1675000" />
       <workItem from="1533556439250" duration="2770000" />
+      <workItem from="1533865405016" duration="4827000" />
+      <workItem from="1533893121787" duration="1372000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1533205543454</created>
@@ -463,23 +435,30 @@
       <option name="project" value="LOCAL" />
       <updated>1533357335257</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="slot">
+      <created>1533865423774</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1533865423777</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53357000" />
+    <option name="totallyTimeSpent" value="59556000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="135" y="104" width="1635" height="839" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.262398" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26867545" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3293011" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -489,8 +468,9 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="TypeScript" order="8" weight="0.3293011" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32797858" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32797858" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -609,13 +589,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/observer/observableobjectinjector.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="50" column="36" selection-start-line="50" selection-start-column="36" selection-end-line="50" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
@@ -658,13 +631,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/visualtree/visualtree.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dist/test_templatecontrol_vlinear.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="825">
@@ -679,13 +645,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tsconfig.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="33" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controls/image.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -693,66 +652,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/layoutbase.ts">
+    <entry file="file://$PROJECT_DIR$/dist/test_horizonallinearlayout.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controls/controlbase.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="9" lean-forward="true" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/containerbase.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="60" column="36" selection-start-line="60" selection-start-column="36" selection-end-line="60" selection-end-column="36" />
+        <state relative-caret-position="90">
+          <caret line="6" column="67" selection-start-line="6" selection-start-column="67" selection-end-line="6" selection-end-column="67" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controls/rect.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
-          <caret line="1" column="20" lean-forward="true" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
+          <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/layoutcore.ts">
+    <entry file="file://$PROJECT_DIR$/src/containers/containerbase.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="167" selection-start-line="167" selection-end-line="167" />
-          <folding>
-            <element signature="n#Slot#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#addChild#0;n#Slot#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#removeChild#0;n#Slot#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#empty#0;n#Slot#0;n#LayoutLzg#0" />
-            <element signature="e#671#861#0" />
-            <element signature="n#FrameworkElement#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#constructor#0;n#FrameworkElement#0;n#LayoutLzg#0" />
-            <element signature="e#1819#1857#0" />
-            <element signature="n#!!block;n#estimateWidth#0;n#FrameworkElement#0;n#LayoutLzg#0" />
-            <element signature="e#2220#2258#0" />
-            <element signature="n#!!block;n#estimateHeight#0;n#FrameworkElement#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#assembleDom#0;n#FrameworkElement#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#doLayout#0;n#FrameworkElement#0;n#LayoutLzg#0" />
-            <element signature="n#Control#0;n#LayoutLzg#0" />
-            <element signature="e#1973#2061#0" />
-            <element signature="n#!!block;n#constructor#0;n#Control#0;n#LayoutLzg#0" />
-            <element signature="n#ContainerControl#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#constructor#0;n#ContainerControl#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#addChild#0;n#ContainerControl#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#removeChild#0;n#ContainerControl#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#clearChild#0;n#ContainerControl#0;n#LayoutLzg#0" />
-            <element signature="e#5212#5425#0" />
-            <element signature="e#5335#5411#0" />
-            <element signature="n#!!block;n#initCalculableSlots#0;n#ContainerControl#0;n#LayoutLzg#0" />
-            <element signature="n#ContentPresenter#0;n#LayoutLzg#0" />
-            <element signature="n#ItemsPresenter#0;n#LayoutLzg#0" />
-          </folding>
+        <state relative-caret-position="900">
+          <caret line="60" column="36" selection-start-line="60" selection-start-column="36" selection-end-line="60" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controls/controlbase.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -765,8 +689,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/horizonallinearlayout.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-60">
-          <caret lean-forward="true" />
+        <state>
           <folding>
             <element signature="n#!!block;n#initCalculableSlots#0;n#HorizonalLinearLayout#0;n#LayoutLzg#0" />
             <element signature="n#!!block;n#assembleDom#0;n#HorizonalLinearLayout#0;n#LayoutLzg#0" />
@@ -777,29 +700,100 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/visualtree/templatecontrol.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
+        <state relative-caret-position="225">
           <caret line="15" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dist/test_templatecontrol_hlinear.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
-          <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
+        <state relative-caret-position="855">
+          <caret line="57" column="25" selection-start-line="57" selection-start-column="25" selection-end-line="57" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/test_horizonallinearlayout.html">
+    <entry file="file://$PROJECT_DIR$/src/observer/observableobjectinjector.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="67" lean-forward="true" selection-start-line="6" selection-start-column="67" selection-end-line="6" selection-end-column="67" />
+        <state relative-caret-position="555">
+          <caret line="37" column="66" selection-start-line="37" selection-start-column="66" selection-end-line="37" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/node_modules/typescript/lib/lib.es5.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2370">
+          <caret line="171" column="34" selection-start-line="171" selection-start-column="34" selection-end-line="171" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/visualtree/visualtree.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tsconfig.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controls/textview.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
+        <state relative-caret-position="690">
           <caret line="46" selection-start-line="46" selection-end-line="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/testwatch.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/layoutcore.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="167" selection-start-line="167" selection-end-line="167" />
+          <folding>
+            <element signature="n#Slot#0;n#LayoutLzg#0" />
+            <element signature="n#!!block;n#addChild#0;n#Slot#0;n#LayoutLzg#0" />
+            <element signature="n#!!block;n#removeChild#0;n#Slot#0;n#LayoutLzg#0" />
+            <element signature="n#!!block;n#empty#0;n#Slot#0;n#LayoutLzg#0" />
+            <element signature="n#FrameworkElement#0;n#LayoutLzg#0" />
+            <element signature="n#!!block;n#constructor#0;n#FrameworkElement#0;n#LayoutLzg#0" />
+            <element signature="n#!!block;n#estimateWidth#0;n#FrameworkElement#0;n#LayoutLzg#0" />
+            <element signature="n#!!block;n#estimateHeight#0;n#FrameworkElement#0;n#LayoutLzg#0" />
+            <element signature="n#!!block;n#assembleDom#0;n#FrameworkElement#0;n#LayoutLzg#0" />
+            <element signature="n#!!block;n#doLayout#0;n#FrameworkElement#0;n#LayoutLzg#0" />
+            <element signature="n#Control#0;n#LayoutLzg#0" />
+            <element signature="n#!!block;n#constructor#0;n#Control#0;n#LayoutLzg#0" />
+            <element signature="n#ContainerControl#0;n#LayoutLzg#0" />
+            <element signature="n#!!block;n#constructor#0;n#ContainerControl#0;n#LayoutLzg#0" />
+            <element signature="n#!!block;n#addChild#0;n#ContainerControl#0;n#LayoutLzg#0" />
+            <element signature="n#!!block;n#removeChild#0;n#ContainerControl#0;n#LayoutLzg#0" />
+            <element signature="n#!!block;n#clearChild#0;n#ContainerControl#0;n#LayoutLzg#0" />
+            <element signature="n#!!block;n#initCalculableSlots#0;n#ContainerControl#0;n#LayoutLzg#0" />
+            <element signature="n#ContentPresenter#0;n#LayoutLzg#0" />
+            <element signature="n#ItemsPresenter#0;n#LayoutLzg#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lifecycle/lifecyclebase.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/layoutbase.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
         </state>
       </provider>
     </entry>
