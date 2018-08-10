@@ -10,7 +10,7 @@ namespace LayoutLzg{
         }
     }
 
-    export class HorizonalLinearLayout extends ContainerControl {
+    export class HorizonalLinearLayout extends ContainerBase {
 
         slotMap : Map<Slot,SlotItem>;
         borderElem:HTMLElement;
@@ -286,12 +286,7 @@ namespace LayoutLzg{
                     if(this.width.type == DistanceType.fixed) {
                         return this.width.value;
                     }else if(this.width.type == DistanceType.auto) {
-                        if(this.children.length>0) {
-                            let widthlist = this.children.map(t=>t.estimateWidth()+t.margin.left+t.margin.right);
-                            widthlist.sort((a,b)=>b-a);
-                            return widthlist[0];
-                        }
-                        return 0;
+                        return this.estimateWidth_auto();
                     }
                 }else if(this.horizonAlignment==HorizonAlignment.Strech){
                     return this.parentSlot.calulatedSlotWidth - this.margin.left - this.margin.right;
@@ -300,12 +295,7 @@ namespace LayoutLzg{
                 if(this.width.type == DistanceType.fixed) {
                     return this.width.value;
                 }else if(this.width.type == DistanceType.auto) {
-                    if (this.children.length > 0) {
-                        let widthlist = this.children.map(t => t.estimateWidth() + t.margin.left + t.margin.right);
-                        widthlist.sort((a,b)=>b-a);
-                        return widthlist[0];
-                    }
-                    return 0;
+                    return this.estimateWidth_auto();
                 }
             }
         }
@@ -319,12 +309,7 @@ namespace LayoutLzg{
                     if(this.height.type == DistanceType.fixed) {
                         return this.height.value;
                     }else if(this.height.type == DistanceType.auto) {
-                        if(this.children.length>0) {
-                            let heightlist = this.children.map(t=>t.estimateHeight()+t.margin.top+t.margin.bottom);
-                            heightlist.sort().reverse();
-                            return heightlist[0];
-                        }
-                        return 0;
+                        return this.estimateHeight_auto();
                     }
                 }else if(this.verticalAlignment==VerticalAlignment.Strech){
                     return this.parentSlot.calulatedSlotHeight - this.margin.top - this.margin.bottom;
@@ -333,14 +318,27 @@ namespace LayoutLzg{
                 if(this.height.type == DistanceType.fixed) {
                     return this.height.value;
                 }else if(this.height.type == DistanceType.auto) {
-                    if (this.children.length > 0) {
-                        let heightlist = this.children.map(t => t.estimateHeight() + t.margin.top + t.margin.bottom);
-                        heightlist.sort().reverse();
-                        return heightlist[0];
-                    }
-                    return 0;
+                    return this.estimateHeight_auto();
                 }
             }
+        }
+
+        estimateHeight_auto(): number {
+            if (this.children.length > 0) {
+                let heightlist = this.children.map(t => t.estimateHeight() + t.margin.top + t.margin.bottom);
+                heightlist.sort().reverse();
+                return heightlist[0];
+            }
+            return 0;
+        }
+
+        estimateWidth_auto(): number {
+            if (this.children.length > 0) {
+                let widthlist = this.children.map(t => t.estimateWidth() + t.margin.left + t.margin.right);
+                widthlist.sort((a,b)=>b-a);
+                return widthlist[0];
+            }
+            return 0;
         }
     }
 }

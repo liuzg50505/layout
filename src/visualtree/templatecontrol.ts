@@ -1,6 +1,6 @@
 namespace LayoutLzg {
 
-    export class TemplateControl extends Control {
+    export class TemplateControl extends ControlBase {
 
         constructor(name: string) {
             super(name);
@@ -9,53 +9,6 @@ namespace LayoutLzg {
         rootBorder : Border = new Border("rootBorder");
         visualTree : VisualTree;
 
-
-        estimateWidth(): number {
-            if(this.parentSlot.isSlotWidthCalculatable){
-                if (this.horizonAlignment==HorizonAlignment.Center
-                    ||this.horizonAlignment==HorizonAlignment.Left
-                    ||this.horizonAlignment==HorizonAlignment.Right)
-                {
-                    if(this.width.type == DistanceType.fixed) {
-                        return this.width.value;
-                    }else if(this.width.type == DistanceType.auto) {
-                        return this.rootBorder.estimateWidth();
-                    }
-                }else if(this.horizonAlignment==HorizonAlignment.Strech){
-                    return this.parentSlot.calulatedSlotWidth - this.margin.left - this.margin.right;
-                }
-            }else{
-                if(this.width.type == DistanceType.fixed) {
-                    return this.width.value;
-                }else if(this.width.type == DistanceType.auto) {
-                    return this.rootBorder.estimateWidth();
-                }
-            }
-        }
-
-        estimateHeight(): number {
-            if(this.parentSlot.isSlotHeightCalculatable){
-                if (this.verticalAlignment==VerticalAlignment.Center
-                    ||this.verticalAlignment==VerticalAlignment.Top
-                    ||this.verticalAlignment==VerticalAlignment.Bottom)
-                {
-                    if(this.height.type == DistanceType.fixed) {
-                        return this.height.value;
-                    }else if(this.height.type == DistanceType.auto) {
-                        return this.rootBorder.estimateHeight();
-                    }
-                }else if(this.horizonAlignment==HorizonAlignment.Strech){
-                    return this.parentSlot.calulatedSlotWidth - this.margin.left - this.margin.right;
-                }
-            }else{
-                if(this.width.type == DistanceType.fixed) {
-                    return this.width.value;
-                }else if(this.width.type == DistanceType.auto) {
-                    this.rootBorder.estimateWidth();
-                    return 0;
-                }
-            }
-        }
 
         getRootElement(): HTMLElement {
             return this.rootBorder.getRootElement();
@@ -80,6 +33,14 @@ namespace LayoutLzg {
 
         doLayout(): void {
             this.rootBorder.doLayout();
+        }
+
+        estimateHeight_auto(): number {
+            return this.rootBorder.estimateHeight();
+        }
+
+        estimateWidth_auto(): number {
+            return this.rootBorder.estimateWidth();
         }
     }
 

@@ -29,6 +29,7 @@
     "src/brushes/imagecolorbrush.ts",
     "src/brushes/gradientcolorbrush.ts",
 
+    "src/containers/containerbase.ts",
     "src/containers/border.ts",
     "src/containers/horizonallinearlayout.ts",
     "src/containers/verticallinearlayout.ts",

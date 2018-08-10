@@ -1,4 +1,3 @@
-
 namespace LayoutLzg{
 
     export class Slot {
@@ -31,9 +30,7 @@ namespace LayoutLzg{
         }
     }
 
-
-    // Control class is the base class of all the visual components.
-    export class Control{
+    export abstract class FrameworkElement {
         // Name of this control.
         name:string;
         // Width of this Control, it can be a fix value or auto.
@@ -46,6 +43,57 @@ namespace LayoutLzg{
         verticalAlignment : VerticalAlignment;
         // Margin of this control to it's parent, the value in thickness must be a fix value.
         margin:Thickness;
+
+        parentSlot:Slot;
+        parent:ContainerControl;
+        // root div of this control.
+        rootElem:HTMLElement;
+
+
+        constructor(name: string) {
+            this.name = name;
+            // Init vairables.
+            this.horizonAlignment = HorizonAlignment.Strech;
+            this.verticalAlignment = VerticalAlignment.Strech;
+            this.margin = new Thickness(0,0,0,0);
+            this.width = new Distance(DistanceType.fixed,50);
+            this.height = new Distance(DistanceType.fixed,50);
+
+        }
+
+        // Get the root element of this control.
+        abstract getRootElement():HTMLElement;
+
+        // Estimate the width of this control,
+        // the size of this control is determined by many factors,
+        // for example : auto/fix value of width/height, parent container, horizonal/vertical alignments, margins。
+        // For different types of parent containers, the method of size estimation are totally different.
+        estimateWidth():number {
+            return 0;
+        }
+
+        // Estimate the width of this control,
+        // the size of this control is determined by many factors,
+        // for example : auto/fix value of width/height, parent container, horizonal/vertical alignments, margins。
+        // For different types of parent containers, the method of size estimation are totally different.
+        estimateHeight():number{
+            return 0;
+        }
+
+        // Assemble html elements of this control.
+        assembleDom():void {
+        }
+
+        // Adjust styles html elements of this control.
+        doLayout():void{
+
+        }
+
+
+    }
+
+    // Control class is the base class of all the visual components.
+    export abstract class Control extends FrameworkElement{
 
         // Background of this control, it can be a solid color, or a gradient color , or a picture.
         fill:Brush;
@@ -66,57 +114,18 @@ namespace LayoutLzg{
         // parentSlotHeight:number;
 
 
-        parentSlot:Slot;
-        parent:ContainerControl;
-        // root div of this control.
-        rootElem:HTMLElement;
 
         constructor(name:string){
-            this.name = name;
-            // Init vairables.
-            this.horizonAlignment = HorizonAlignment.Strech;
-            this.verticalAlignment = VerticalAlignment.Strech;
-            this.margin = new Thickness(0,0,0,0);
-            this.width = new Distance(DistanceType.fixed,50);
-            this.height = new Distance(DistanceType.fixed,50);
+            super(name);
             this.strokeThickness = new Thickness(0,0,0,0);
         }
 
-        // Estimate the width of this control,
-        // the size of this control is determined by many factors,
-        // for example : auto/fix value of width/height, parent container, horizonal/vertical alignments, margins。
-        // For different types of parent containers, the method of size estimation are totally different.
-        estimateWidth():number {
-            return 0;
-        }
-
-        // Estimate the width of this control,
-        // the size of this control is determined by many factors,
-        // for example : auto/fix value of width/height, parent container, horizonal/vertical alignments, margins。
-        // For different types of parent containers, the method of size estimation are totally different.
-        estimateHeight():number{
-            return 0;
-        }
-
-        // Get the root element of this control.
-        getRootElement():HTMLElement {
-            return null;
-        }
-
-        // Assemble html elements of this control.
-        assembleDom():void {
-        }
-
-        // Adjust styles html elements of this control.
-        doLayout():void{
-
-        }
 
     }
 
     // The purpose of the container is to put sub controls together,
     // and the system provides multiple layout containers due to actual requirements.
-    export class ContainerControl extends Control{
+    export abstract class ContainerControl extends Control{
         protected children:List<Control>;
         protected children2:Array<Control>;
         protected slots : List<Slot>;
@@ -155,7 +164,6 @@ namespace LayoutLzg{
         }
 
     }
-
 
     export class ContentPresenter {
 

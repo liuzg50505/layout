@@ -1,5 +1,8 @@
 namespace LayoutLzg{
-    export abstract class ControlBase extends Control {
+    export abstract class ContainerBase extends ContainerControl {
+
+        rootElem:HTMLElement;
+
         constructor(name:string) {
             super(name);
         }
@@ -50,8 +53,12 @@ namespace LayoutLzg{
                     return this.estimateHeight_auto();
                 }
                 return 0;
-            }        
+            }
         }
+
+        abstract estimateWidth_auto():number ;
+
+        abstract estimateHeight_auto():number ;
 
         getRootElement(): HTMLElement {
             if(this.rootElem==null) {
@@ -60,8 +67,5 @@ namespace LayoutLzg{
             return this.rootElem;
         }
 
-        abstract estimateWidth_auto(): number;
-
-        abstract estimateHeight_auto(): number;
     }
 }

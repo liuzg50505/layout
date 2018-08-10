@@ -17,6 +17,14 @@ namespace LayoutLzg{
         doLayout(): void {
             super.doLayout();
         }
+
+        estimateHeight_auto(): number {
+            return 0;
+        }
+
+        estimateWidth_auto(): number {
+            return 0;
+        }
     }
 
 

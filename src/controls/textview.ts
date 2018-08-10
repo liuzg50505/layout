@@ -1,5 +1,5 @@
 namespace LayoutLzg{
-    export class TextView extends Control {
+    export class TextView extends ControlBase {
 
         text:string;
         wordWrap:boolean;
@@ -21,22 +21,6 @@ namespace LayoutLzg{
             return this.rootElem;
         }
 
-        estimateWidth(): number {
-            if(this.width.type==DistanceType.fixed) {
-                return this.width.value;
-            }
-            let t = $(this.getRootElement()).find('span').width();
-            return t;
-        }
-
-        estimateHeight(): number {
-            if(this.height.type==DistanceType.fixed) {
-                return this.height.value;
-            }
-
-            return $(this.getRootElement()).find('span').height();
-        }
-
         assembleDom(): void {
             this.spanElem = $("<span></span>")[0];
             $(this.getRootElement()).empty();
@@ -52,6 +36,14 @@ namespace LayoutLzg{
         }
 
         doLayout(): void {
+        }
+
+        estimateHeight_auto(): number {
+            return $(this.getRootElement()).find('span').height();
+        }
+
+        estimateWidth_auto(): number {
+            return $(this.getRootElement()).find('span').width();
         }
     }
 }
