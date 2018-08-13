@@ -93,7 +93,7 @@ namespace LayoutLzg{
     }
 
     // Control class is the base class of all the visual components.
-    export abstract class Control extends FrameworkElement{
+    export abstract class Control extends FrameworkElement implements Disposable{
 
         // Background of this control, it can be a solid color, or a gradient color , or a picture.
         fill:Brush;
@@ -114,33 +114,29 @@ namespace LayoutLzg{
         // parentSlotHeight:number;
 
 
-
         constructor(name:string){
             super(name);
             this.strokeThickness = new Thickness(0,0,0,0);
         }
 
-
+        abstract dispose(): void;
     }
 
     // The purpose of the container is to put sub controls together,
     // and the system provides multiple layout containers due to actual requirements.
     export abstract class ContainerControl extends Control{
         protected children:List<Control>;
-        protected children2:Array<Control>;
         protected slots : List<Slot>;
 
 
         constructor(name:string) {
             super(name);
             this.children = new List<Control>();
-            this.children2 = new Array<Control>();
             this.slots = new List<Slot>();
         }
 
         addChild(control:Control) {
             this.children.add(control);
-            this.children2.push(control);
             control.parent = this;
         }
 
@@ -163,6 +159,12 @@ namespace LayoutLzg{
         initCalculableSlots():void {
         }
 
+
+        dispose(): void {
+            for (let child of this.children) {
+                child.dispose();
+            }
+        }
     }
 
     export class ContentPresenter {

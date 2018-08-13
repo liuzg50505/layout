@@ -17,6 +17,12 @@
 
     "src/eventbus/eventbus.ts",
 
+    "src/lifecycle/lifecyclebase.ts",
+
+    "src/bindings/binding.ts",
+    "src/bindings/functionbinding.ts",
+    "src/bindings/propertybinding.ts",
+
     "src/collections/list.ts",
     "src/collections/map.ts",
 
@@ -35,7 +41,9 @@
     "src/containers/verticallinearlayout.ts",
 
 
-    "src/observer/observableobjectinjector.ts"
+    "src/observer/observableobjectinjector.ts",
+    "src/observer/valuechangedlisterner.ts",
+    "src/observer/htmlpropchangedlisterner.ts"
 
 
 
