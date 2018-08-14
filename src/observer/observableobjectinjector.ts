@@ -43,6 +43,12 @@ namespace LayoutLzg.ObserverModel {
                 },
                 addPropertyChangedCallback : function (callback:(args:PropertyChangedEventArgs)=>void) {
                     this.propChangedCallbackList.push(callback);
+                },
+                removePropertyChangedCallback: function (callback:(args:PropertyChangedEventArgs)=>void) {
+                    let idx = this.propChangedCallbackList.indexOf(callback);
+                    if(idx>-1) {
+                        this.propChangedCallbackList.splice(idx,1);
+                    }
                 }
             };
         }
