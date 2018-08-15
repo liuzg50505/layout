@@ -2,6 +2,10 @@ namespace LayoutLzg {
 
     export abstract class ValueConverter {
 
+        abstract convert(value:any):any;
+
+        abstract convertBack(value:any):any;
+
     }
 
     export enum BindingMode {
@@ -23,12 +27,22 @@ namespace LayoutLzg {
         abstract updateFromSource():void;
         abstract updateFromTarget():void;
 
-        startBinding():void{
-
+        setConverter(converter: ValueConverter): Binding {
+            this.converter = converter;
+            return this;
         }
 
-        stopBinding():void{
+        setMode(mode: BindingMode): Binding {
+            this.mode = mode;
+            return this;
+        }
 
+        startBinding():Binding{
+            return this;
+        }
+
+        stopBinding():Binding{
+            return this;
         }
 
         dispose(): void {

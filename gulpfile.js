@@ -47,6 +47,7 @@ gulp.task('copyHtml', function () {
 
 gulp.task('default', ['build'] ,function () {
     gulp.watch('./src/**/*.ts',['build','copyHtml']);
+    gulp.watch('./tsconfig.json',['build','copyHtml']);
 });
 
 

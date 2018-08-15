@@ -2,15 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6895967e-ff6e-45b9-baff-517886fa1890" name="Default" comment="lifecycle">
+      <change afterPath="$PROJECT_DIR$/src/converters/dateformatconverter.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/converters/firstcharuppercaseconverter.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/converters/lowercaseconverter.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/converters/pipelineconverter.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/converters/tostringconverter.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/converters/uppercaseconverter.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/observer/domvalueproperty.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/dateutils.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/testpropbinding_converter.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/output.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/output.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gulpfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/gulpfile.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bindings/binding.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/bindings/binding.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bindings/functionbinding.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/bindings/functionbinding.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bindings/propertybinding.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/bindings/propertybinding.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bootstrap/property.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/bootstrap/property.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/facades/binding.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/facades/binding.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/observer/dictproperty.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/observer/dictproperty.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/observer/observableobjectinjector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/observer/observableobjectinjector.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/testpropbinding.html" beforeDir="false" afterPath="$PROJECT_DIR$/test/testpropbinding.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/testpropertylistener.html" beforeDir="false" afterPath="$PROJECT_DIR$/test/testpropertylistener.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,88 +34,79 @@
     <session id="-1397950332">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
+          <entry key="project.closed" value="7" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.11" value="3" />
-          <entry key="project.open.time.12" value="2" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.open.time.12" value="3" />
+          <entry key="project.opened" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="TypeScriptServerServiceImpl" value="8" />
+          <entry key="TypeScriptServerServiceImpl" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="8" />
-          <entry key="js" value="7" />
-          <entry key="json" value="8" />
+          <entry key="html" value="13" />
+          <entry key="js" value="8" />
+          <entry key="json" value="13" />
           <entry key="md" value="2" />
-          <entry key="ts" value="58" />
+          <entry key="ts" value="88" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="8" />
+          <entry key="HTML" value="13" />
           <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="7" />
+          <entry key="JavaScript" value="8" />
           <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="TypeScript" value="58" />
-          <entry key="tsconfig" value="7" />
+          <entry key="TypeScript" value="88" />
+          <entry key="tsconfig" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="8" />
-          <entry key="html" value="817" />
-          <entry key="js" value="88" />
-          <entry key="json" value="196" />
+          <entry key="html" value="1131" />
+          <entry key="js" value="102" />
+          <entry key="json" value="294" />
           <entry key="md" value="46" />
-          <entry key="ts" value="7076" />
+          <entry key="ts" value="8690" />
           <entry key="txt" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="817" />
-          <entry key="JavaScript" value="88" />
+          <entry key="HTML" value="1131" />
+          <entry key="JavaScript" value="102" />
           <entry key="Markdown" value="46" />
           <entry key="PLAIN_TEXT" value="18" />
-          <entry key="TypeScript" value="7076" />
-          <entry key="tsconfig" value="196" />
+          <entry key="TypeScript" value="8690" />
+          <entry key="tsconfig" value="294" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/testpropbinding.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="46" column="108" selection-start-line="46" selection-start-column="108" selection-end-line="46" selection-end-column="108" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/bindings/propertybinding.ts">
+        <entry file="file://$PROJECT_DIR$/test/testpropbinding_converter.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
-              <caret line="41" selection-start-line="41" selection-end-line="41" />
+            <state relative-caret-position="230">
+              <caret line="56" column="84" selection-start-line="56" selection-start-column="84" selection-end-line="56" selection-end-column="84" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/observer/observableobjectinjector.ts">
+        <entry file="file://$PROJECT_DIR$/src/converters/pipelineconverter.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="89" selection-start-line="89" selection-end-line="89" />
+            <state relative-caret-position="204">
+              <caret line="22" column="13" lean-forward="true" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -136,6 +139,8 @@
       <find>notifyPropertyChanged</find>
       <find>HtmlProp</find>
       <find>DomSizePropertyChangedListener</find>
+      <find>text</find>
+      <find>this</find>
     </findStrings>
     <replaceStrings>
       <replace>parentSlot.isSlotHeightCalculatable</replace>
@@ -151,18 +156,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/readme_cn.md" />
-        <option value="$PROJECT_DIR$/src/brushes/imagecolorbrush.ts" />
-        <option value="$PROJECT_DIR$/task.txt" />
-        <option value="$PROJECT_DIR$/src/collections/map.ts" />
-        <option value="$PROJECT_DIR$/dist/test_horizonallinearlayout.html" />
-        <option value="$PROJECT_DIR$/test/test.html" />
-        <option value="$PROJECT_DIR$/src/collections/list.ts" />
-        <option value="$PROJECT_DIR$/dist/test_verticallinearlayout.html" />
-        <option value="$PROJECT_DIR$/src/containers/verticallinearlayout.ts" />
-        <option value="$PROJECT_DIR$/src/eventbus/EventBus.ts" />
-        <option value="$PROJECT_DIR$/src/eventbus/eventbus.ts" />
-        <option value="$PROJECT_DIR$/src/containers/border.ts" />
         <option value="$PROJECT_DIR$/dist/test_templatecontrol.html" />
         <option value="$PROJECT_DIR$/dist/test_templatecontrol_vlinear.html" />
         <option value="$PROJECT_DIR$/src/controls/image.ts" />
@@ -185,23 +178,35 @@
         <option value="$PROJECT_DIR$/src/observer/htmlpropchangedlisterner.ts" />
         <option value="$PROJECT_DIR$/src/observer/valuechangedlisterner.ts" />
         <option value="$PROJECT_DIR$/src/bootstrap/propertyboostrap.ts" />
-        <option value="$PROJECT_DIR$/src/observer/dictproperty.ts" />
         <option value="$PROJECT_DIR$/src/observer/domproperty.ts" />
         <option value="$PROJECT_DIR$/src/observer/propertybase.ts" />
         <option value="$PROJECT_DIR$/src/utils/facecade.ts" />
         <option value="$PROJECT_DIR$/src/utils/facade.ts" />
-        <option value="$PROJECT_DIR$/tsconfig.json" />
-        <option value="$PROJECT_DIR$/src/bootstrap/property.ts" />
-        <option value="$PROJECT_DIR$/gulpfile.js" />
         <option value="$PROJECT_DIR$/src/observer/domtextproperty.ts" />
         <option value="$PROJECT_DIR$/readme/readme_binding_cn.md" />
         <option value="$PROJECT_DIR$/test/testpropertylistener.html" />
         <option value="$PROJECT_DIR$/src/bindings/functionbinding.ts" />
+        <option value="$PROJECT_DIR$/src/observer/dictproperty.ts" />
+        <option value="$PROJECT_DIR$/src/observer/observableobjectinjector.ts" />
+        <option value="$PROJECT_DIR$/src/bindings/propertybinding.ts" />
         <option value="$PROJECT_DIR$/src/bindings/binding.ts" />
         <option value="$PROJECT_DIR$/src/facades/binding.ts" />
-        <option value="$PROJECT_DIR$/src/observer/observableobjectinjector.ts" />
         <option value="$PROJECT_DIR$/test/testpropbinding.html" />
-        <option value="$PROJECT_DIR$/src/bindings/propertybinding.ts" />
+        <option value="$PROJECT_DIR$/src/utils/date.ts" />
+        <option value="$PROJECT_DIR$/src/observer/domvalueproperty.ts" />
+        <option value="$PROJECT_DIR$/src/bootstrap/property.ts" />
+        <option value="$PROJECT_DIR$/src/utils/dateutils.ts" />
+        <option value="$PROJECT_DIR$/src/converters/dateformatconverter.ts" />
+        <option value="$PROJECT_DIR$/src/converters/firstcharuppercaseconverter.ts" />
+        <option value="$PROJECT_DIR$/src/converters/lowercaseconverter.ts" />
+        <option value="$PROJECT_DIR$/src/bindings/commonconverters.ts" />
+        <option value="$PROJECT_DIR$/src/converters/uppercaseconverter.ts" />
+        <option value="$PROJECT_DIR$/gulpfile.js" />
+        <option value="$PROJECT_DIR$/src/converters/tostringconverter.ts" />
+        <option value="$PROJECT_DIR$/src/converters/PipelineConverter.ts" />
+        <option value="$PROJECT_DIR$/tsconfig.json" />
+        <option value="$PROJECT_DIR$/src/converters/pipelineconverter.ts" />
+        <option value="$PROJECT_DIR$/test/testpropbinding_converter.html" />
       </list>
     </option>
   </component>
@@ -222,7 +227,7 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="x" value="135" />
-    <option name="y" value="104" />
+    <option name="y" value="103" />
     <option name="width" value="1635" />
     <option name="height" value="839" />
   </component>
@@ -235,12 +240,19 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="layoutsystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="layoutsystem" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="layoutsystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="layoutsystem" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="layoutsystem" type="b2602c69:ProjectViewProjectNode" />
@@ -268,7 +280,7 @@
               <item name="layoutsystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="layoutsystem" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="facades" type="462c0819:PsiDirectoryNode" />
+              <item name="converters" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="layoutsystem" type="b2602c69:ProjectViewProjectNode" />
@@ -279,23 +291,28 @@
             <path>
               <item name="layoutsystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="layoutsystem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="layoutsystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="layoutsystem" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="GO_FMT" value="false" />
+    <property name="SearchEverywhereHistoryKey" value="tscon&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/tsconfig.json&#10;tsc&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/tsconfig.json&#10;tsconfig&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/tsconfig.json" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/android-sdk-macosx" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1534309918628" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1534326658009" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="settings.editor.selected.configurable" value="settings.typescriptcompiler" />
@@ -304,11 +321,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/test" />
+      <recent name="$PROJECT_DIR$/src/converters" />
       <recent name="$PROJECT_DIR$/src/observer" />
+      <recent name="$PROJECT_DIR$/test" />
       <recent name="$PROJECT_DIR$/dist" />
       <recent name="$PROJECT_DIR$/js" />
-      <recent name="$PROJECT_DIR$/src/brushes" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -381,7 +398,8 @@
       <workItem from="1534206821474" duration="8696000" />
       <workItem from="1534229579387" duration="9163000" />
       <workItem from="1534287952316" duration="5733000" />
-      <workItem from="1534300590012" duration="3553000" />
+      <workItem from="1534300590012" duration="8701000" />
+      <workItem from="1534322675423" duration="4512000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1533205543454</created>
@@ -460,16 +478,24 @@
       <option name="project" value="LOCAL" />
       <updated>1534301252379</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="lifecycle">
+      <created>1534309922792</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1534309922792</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94893000" />
+    <option name="totallyTimeSpent" value="104553000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="135" y="104" width="1635" height="839" extended-state="0" />
+    <frame x="135" y="103" width="1635" height="839" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2843691" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28750783" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -556,79 +582,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="lifecycle" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="1246" column="19" lean-forward="true" selection-start-line="1246" selection-start-column="4" selection-end-line="1246" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/collections/list.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="56" column="1" selection-start-line="56" selection-start-column="1" selection-end-line="56" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/collections/map.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/eventbus/eventbus.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/border.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="592">
-          <caret line="193" selection-start-line="163" selection-end-line="193" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/test_templatecontrol_vlinear.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="55" column="20" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/test_verticallinearlayout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" selection-start-line="12" selection-end-line="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controls/image.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controls/rect.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/containerbase.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="900">
@@ -774,43 +727,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/observer/dictproperty.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="72" column="92" selection-start-line="72" selection-start-column="92" selection-end-line="72" selection-end-column="92" />
-          <folding>
-            <element signature="n#getObjectConfig#0;n#LayoutLzg#0" expanded="true" />
-            <element signature="n#DictPropertyGetter#0;n#LayoutLzg#0" />
-            <element signature="n#DictPropertySetter#0;n#LayoutLzg#0" />
-            <element signature="n#DictPropertyChangedListener#0;n#LayoutLzg#0" />
-            <element signature="n#DictPropertyGetterProvider#0;n#LayoutLzg#0" />
-            <element signature="n#DictPropertySetterProvider#0;n#LayoutLzg#0" />
-            <element signature="n#DictPropertyChangedListenerProvider#0;n#LayoutLzg#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tsconfig.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="52" column="25" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gulpfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" selection-start-line="27" selection-end-line="31" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/observer/domtextproperty.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/observer/domsizeproperty.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -864,14 +780,86 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/bindings/functionbinding.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/observer/dictproperty.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+          <folding>
+            <element signature="n#getObjectConfig#0;n#LayoutLzg#0" expanded="true" />
+            <element signature="n#DictPropertyGetter#0;n#LayoutLzg#0" />
+            <element signature="n#DictPropertySetter#0;n#LayoutLzg#0" />
+            <element signature="n#DictPropertyGetterProvider#0;n#LayoutLzg#0" />
+            <element signature="n#DictPropertySetterProvider#0;n#LayoutLzg#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/observer/observableobjectinjector.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+          <folding>
+            <element signature="e#2128#2158#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="76" column="26" selection-start-line="76" selection-start-column="26" selection-end-line="76" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bindings/propertybinding.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/facades/binding.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/testpropbinding.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="44" column="138" selection-start-line="44" selection-start-column="138" selection-end-line="44" selection-end-column="138" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bindings/binding.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="29" column="52" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/observer/domtextproperty.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-664">
+          <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/observer/propertybase.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="41" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
+        <state relative-caret-position="60">
+          <caret line="28" column="28" lean-forward="true" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
           <folding>
             <element signature="n#PropertyGetter#0;n#LayoutLzg#0" />
             <element signature="n#PropertySetter#0;n#LayoutLzg#0" />
-            <element signature="n#PropertyChangedListener#0;n#LayoutLzg#0" />
             <element signature="n#PropertyChangedListenerProvider#0;n#LayoutLzg#0" />
             <element signature="n#UniversalPropertyChangedListenerProvider#0;n#LayoutLzg#0" />
             <element signature="n#PropertyGetterProvider#0;n#LayoutLzg#0" />
@@ -883,52 +871,101 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/bindings/functionbinding.ts">
+    <entry file="file://$PROJECT_DIR$/src/bootstrap/property.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="22" column="49" selection-start-line="22" selection-start-column="49" selection-end-line="22" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/dateutils.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="44" lean-forward="true" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bindings/commonconverters.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/bindings/binding.ts">
+    <entry file="file://$PROJECT_DIR$/src/observer/domvalueproperty.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+        <state relative-caret-position="60">
+          <caret line="25" column="62" selection-start-line="25" selection-start-column="62" selection-end-line="25" selection-end-column="62" />
+          <folding>
+            <element signature="n#DomValuePropertySetter#0;n#LayoutLzg#0" />
+            <element signature="n#!!block;n#setValue#0;n#DomValuePropertySetter#0;n#LayoutLzg#0" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/bootstrap/property.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="69" selection-start-line="10" selection-start-column="69" selection-end-line="10" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/facades/binding.ts">
+    <entry file="file://$PROJECT_DIR$/src/converters/dateformatconverter.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
-          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+          <caret line="26" column="1" lean-forward="true" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+          <folding>
+            <element signature="n#DateFormatConverter#0;n#LayoutLzg#0" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/testpropbinding.html">
+    <entry file="file://$PROJECT_DIR$/src/converters/firstcharuppercaseconverter.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="46" column="108" selection-start-line="46" selection-start-column="108" selection-end-line="46" selection-end-column="108" />
+        <state relative-caret-position="180">
+          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/observer/observableobjectinjector.ts">
+    <entry file="file://$PROJECT_DIR$/src/converters/uppercaseconverter.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="89" selection-start-line="89" selection-end-line="89" />
+        <state relative-caret-position="165">
+          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/bindings/propertybinding.ts">
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
+        <state relative-caret-position="241">
+          <caret line="49" column="31" selection-start-line="49" selection-start-column="31" selection-end-line="49" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/converters/lowercaseconverter.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="1" lean-forward="true" selection-end-line="11" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tsconfig.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="54" column="42" selection-start-line="54" selection-start-column="42" selection-end-line="54" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/converters/tostringconverter.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="1" lean-forward="true" selection-end-line="11" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/converters/pipelineconverter.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="22" column="13" lean-forward="true" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/testpropbinding_converter.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="56" column="84" selection-start-line="56" selection-start-column="84" selection-end-line="56" selection-end-column="84" />
         </state>
       </provider>
     </entry>

@@ -9,7 +9,6 @@ namespace LayoutLzg {
         p.target = target;
         p.targetPropertyName = targetPropName;
         p.mode = mode;
-        p.startBinding();
         return p;
     }
 

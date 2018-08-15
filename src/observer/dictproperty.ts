@@ -38,7 +38,9 @@ namespace LayoutLzg {
         startListen(): void {
             let self = this;
             this.callbackfunc = function (args: PropertyChangedEventArgs) {
-                self.callback.apply(this,[self.obj]);
+                if(args.propertyName==self.propertyName) {
+                    self.callback.apply(this,[self.obj]);
+                }
             };
             ObserverModel.injectProperties(this.obj);
             ObserverModel.getObjectConfig(this.obj).addPropertyChangedCallback(this.callbackfunc);

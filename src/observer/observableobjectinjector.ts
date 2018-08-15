@@ -18,39 +18,84 @@ namespace LayoutLzg.ObserverModel {
         }
     }
 
-    export function getObjectConfig(obj:any) {
+    export class ObjectConfig {
+        parent:any;
+        propertyName:string;
+        props:any={};
+        propChangedCallbackList:Array<(args:PropertyChangedEventArgs)=>void>;
+
+        constructor() {
+            this.parent = null;
+            this.propertyName = "";
+            this.propChangedCallbackList = [];
+        }
+
+        notifyPropertyChanged(args:PropertyChangedEventArgs):void {
+            for(let i=0;i<this.propChangedCallbackList.length;i++){
+                let callback = this.propChangedCallbackList[i];
+                callback(args);
+            }
+            let cfg = getObjectConfig(args.obj);
+            if(cfg.parent){
+                let parentCfg = getObjectConfig(cfg.parent);
+                parentCfg.notifyPropertyChanged(new PropertyChangedEventArgs(
+                    cfg.parent,
+                    cfg.propertyName+"."+args.propertyName,
+                    args.oldValue,
+                    args.newValue
+                ));
+            }
+        }
+
+        addPropertyChangedCallback(callback:(args:PropertyChangedEventArgs)=>void):void {
+            this.propChangedCallbackList.push(callback);
+        }
+
+        removePropertyChangedCallback(callback:(args:PropertyChangedEventArgs)=>void):void {
+            let idx = this.propChangedCallbackList.indexOf(callback);
+            if(idx>-1) {
+                this.propChangedCallbackList.splice(idx,1);
+            }
+        }
+
+
+    }
+
+    export function getObjectConfig(obj:any): ObjectConfig {
         if(!(configPropertyName in obj)) {
-            obj[configPropertyName] = {
-                parent:null,
-                propertyName:null,
-                props:{},
-                propChangedCallbackList : [],
-                notifyPropertyChanged : function(args:PropertyChangedEventArgs) {
-                    for(let i=0;i<this.propChangedCallbackList.length;i++){
-                        let callback = this.propChangedCallbackList[i];
-                        callback(args);
-                    }
-                    let cfg = getObjectConfig(args.obj);
-                    if(cfg.parent){
-                        let parentCfg = getObjectConfig(cfg.parent);
-                        parentCfg.notifyPropertyChanged(new PropertyChangedEventArgs(
-                            cfg.parent,
-                            cfg.propertyName+"."+args.propertyName,
-                            args.oldValue,
-                            args.newValue
-                        ));
-                    }
-                },
-                addPropertyChangedCallback : function (callback:(args:PropertyChangedEventArgs)=>void) {
-                    this.propChangedCallbackList.push(callback);
-                },
-                removePropertyChangedCallback: function (callback:(args:PropertyChangedEventArgs)=>void) {
-                    let idx = this.propChangedCallbackList.indexOf(callback);
-                    if(idx>-1) {
-                        this.propChangedCallbackList.splice(idx,1);
-                    }
-                }
-            };
+            let cfg = new ObjectConfig();
+            obj[configPropertyName] = cfg;
+            // obj[configPropertyName] = {
+            //     parent:null,
+            //     propertyName:null,
+            //     props:{},
+            //     propChangedCallbackList : [],
+            //     notifyPropertyChanged : function(args:PropertyChangedEventArgs) {
+            //         for(let i=0;i<this.propChangedCallbackList.length;i++){
+            //             let callback = this.propChangedCallbackList[i];
+            //             callback(args);
+            //         }
+            //         let cfg = getObjectConfig(args.obj);
+            //         if(cfg.parent){
+            //             let parentCfg = getObjectConfig(cfg.parent);
+            //             parentCfg.notifyPropertyChanged(new PropertyChangedEventArgs(
+            //                 cfg.parent,
+            //                 cfg.propertyName+"."+args.propertyName,
+            //                 args.oldValue,
+            //                 args.newValue
+            //             ));
+            //         }
+            //     },
+            //     addPropertyChangedCallback : function (callback:(args:PropertyChangedEventArgs)=>void) {
+            //         this.propChangedCallbackList.push(callback);
+            //     },
+            //     removePropertyChangedCallback: function (callback:(args:PropertyChangedEventArgs)=>void) {
+            //         let idx = this.propChangedCallbackList.indexOf(callback);
+            //         if(idx>-1) {
+            //             this.propChangedCallbackList.splice(idx,1);
+            //         }
+            //     }
+            // };
         }
         return obj[configPropertyName];
     }

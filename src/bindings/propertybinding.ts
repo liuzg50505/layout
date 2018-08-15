@@ -28,7 +28,6 @@ namespace LayoutLzg {
             this.sourcePropListener = this.propertyProvider.getPropertyChangedListener(this.source, this.sourcePropertyName);
             this.targetPropListener = this.propertyProvider.getPropertyChangedListener(this.target, this.targetPropertyName);
 
-
             this.updateFromSource();
 
             this.sourcePropListener.startListen();
@@ -58,6 +57,9 @@ namespace LayoutLzg {
             let v =  this.sourcePropGetter.getValue();
             let old_v = this.targetPropGetter.getValue();
             if (v==old_v) return;
+            if(this.converter){
+                v = this.converter.convert(v);
+            }
             this.targetPropSetter.setValue(v);
 
         }
@@ -66,6 +68,9 @@ namespace LayoutLzg {
             let v =  this.targetPropGetter.getValue();
             let old_v = this.sourcePropGetter.getValue();
             if (v==old_v) return;
+            if(this.converter){
+                v = this.converter.convertBack(v);
+            }
             this.sourcePropSetter.setValue(v);
         }
     }

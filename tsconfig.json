@@ -9,13 +9,12 @@
     "strictNullChecks": false
   },
   "files":[
+    "src/utils/dateutils.ts",
     "src/eventbus/eventbus.ts",
     "src/lifecycle/lifecyclebase.ts",
 
     "src/layoutbase.ts",
     "src/layoutcore.ts",
-
-
 
     "src/collections/list.ts",
     "src/collections/map.ts",
@@ -29,7 +28,6 @@
     "src/controls/rect.ts",
     "src/controls/image.ts",
 
-
     "src/containers/containerbase.ts",
     "src/containers/border.ts",
     "src/containers/horizonallinearlayout.ts",
@@ -42,11 +40,19 @@
     "src/observer/propertybase.ts",
     "src/observer/domsizeproperty.ts",
     "src/observer/domtextproperty.ts",
+    "src/observer/domvalueproperty.ts",
     "src/observer/dictproperty.ts",
 
     "src/bindings/binding.ts",
     "src/bindings/functionbinding.ts",
     "src/bindings/propertybinding.ts",
+
+    "src/converters/dateformatconverter.ts",
+    "src/converters/firstcharuppercaseconverter.ts",
+    "src/converters/lowercaseconverter.ts",
+    "src/converters/uppercaseconverter.ts",
+    "src/converters/tostringconverter.ts",
+    "src/converters/pipelineconverter.ts",
 
     "src/facades/binding.ts",
 
