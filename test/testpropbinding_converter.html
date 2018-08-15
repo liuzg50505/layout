@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="application/javascript" src="../js/jquery.min.js" ></script>
+    <script type="application/javascript" src="../js/jqresize.js" ></script>
+    <script type="application/javascript" src="../dist/output.js" ></script>
+    <style>
+        #diva {
+            width: 100%;
+            height: 50px;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <div id="diva">
+
+    </div>
+    <div>
+        <span>window width:</span>
+        <span id="display"></span>
+    </div>
+    <div>
+        <span>Input text here:</span>
+        <input id="textinput" value="texthere">
+    </div>
+    <div>
+        <span>Text value:</span>
+        <span id="display2"></span>
+    </div>
+    <div>
+        <div>select a date</div>
+        <input id="datepicker" type="date">
+    </div>
+    <div>
+        <div>binding date with dateformatconverter:</div>
+        <span id="datepickerstr"></span>
+    </div>
+    <div>
+        <div>binding date with pipelineformatconverter:</div>
+        <span id="datepickerstr2"></span>
+    </div>
+
+    <script type="application/ecmascript">
+
+
+        a = {width:22};
+        b = {height:33};
+        c = {q:{p:{age:33}}};
+
+        structs = {width:0,text:""};
+
+        propProvider = LayoutLzg.getDefaultUniversalPropertyProvider();
+        upperCaseConverter = new LayoutLzg.UppercaseConverter();
+        dateConverter = new LayoutLzg.DateFormatConverter().setFormat("a:yyyy,b:MM,c:dd");
+        pipelineConverter = new LayoutLzg
+            .PipelineConverter()
+            .addConverter(dateConverter)
+            .addConverter(upperCaseConverter);
+        LayoutLzg.createPropertyBinding(propProvider,$("#display")[0],"text",$("#diva")[0],"width").startBinding();
+        LayoutLzg.createPropertyBinding(propProvider,$("#display2")[0],"text",$("#textinput")[0],"text").setConverter(upperCaseConverter).startBinding();
+        LayoutLzg.createPropertyBinding(propProvider,$("#datepickerstr")[0],"text",$("#datepicker")[0],"value").setConverter(upperCaseConverter).setConverter(dateConverter).startBinding();
+        LayoutLzg.createPropertyBinding(propProvider,$("#datepickerstr2")[0],"text",$("#datepicker")[0],"value").setConverter(upperCaseConverter).setConverter(pipelineConverter).startBinding();
+        LayoutLzg.createPropertyBinding(propProvider,structs,"width",$("#diva")[0],"width").startBinding();
+        LayoutLzg.createPropertyBinding(propProvider,structs,"text",$("#textinput")[0],"text",LayoutLzg.BindingMode.Twoway).startBinding();
+
+        // LayoutLzg.createPropertyBinding(propProvider, b, 'height', a, 'width',LayoutLzg.BindingMode.Twoway);
+
+
+    </script>
+</body>
+</html>

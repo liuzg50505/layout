@@ -63,5 +63,9 @@ namespace LayoutLzg{
         abstract estimateWidth_auto(): number;
 
         abstract estimateHeight_auto(): number;
+
+
+        dispose(): void { 
+        }
     }
 }

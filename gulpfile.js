@@ -1,13 +1,35 @@
 var gulp = require('gulp');
+var through = require("through-gulp");
 var sourcemaps = require('gulp-sourcemaps');
 var ts = require('gulp-typescript');
-
+var tsProject = ts.createProject('tsconfig.json');
 var paths = {
     pages: ['src/*.html']
 };
 
 gulp.task('build', function () {
-    return gulp.src('src/**/*.ts')
+
+    // return gulp.src('src/**/*.ts')
+    //     .pipe(through(function (file, encoding, callback)
+    //     {
+    //         console.log("[ts2js] " + file.path);
+    //         callback();
+    //     }))
+    //
+    //     .pipe(sourcemaps.init())
+    //     .pipe(ts({
+    //         noImplicitAny: true,
+    //         outFile: 'output.js'
+    //     }))
+    //     .pipe(sourcemaps.write())
+    //     .pipe(gulp.dest('dist'));
+
+    return tsProject.src()
+        // .pipe(through(function (file, encoding, callback)
+        // {
+        //     console.log("[ts2js] " + file.path);
+        //     callback();
+        // }))
         .pipe(sourcemaps.init())
         .pipe(ts({
             noImplicitAny: true,
@@ -25,6 +47,7 @@ gulp.task('copyHtml', function () {
 
 gulp.task('default', ['build'] ,function () {
     gulp.watch('./src/**/*.ts',['build','copyHtml']);
+    gulp.watch('./tsconfig.json',['build','copyHtml']);
 });
 
 
