@@ -100,7 +100,7 @@ namespace LayoutLzg {
         }
 
         getPropertySetter(obj: any, propertyName: string): PropertySetter {
-            return new DomWidthPropertySetter(obj, propertyName);
+            return new DomHeightPropertySetter(obj, propertyName);
         }
 
     }

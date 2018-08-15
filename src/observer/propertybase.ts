@@ -108,6 +108,22 @@ namespace LayoutLzg{
         abstract getPropertySetter(obj:any, propertyName:string): PropertySetter;
     }
 
+    export abstract class PropertyProvider {
+
+        abstract canProvideGetter(obj: any, propertyName: string): boolean
+
+        abstract getPropertyGetter(obj: any, propertyName: string): PropertyGetter ;
+
+        abstract canProvideSetter(obj: any, propertyName: string): boolean ;
+
+        abstract getPropertySetter(obj: any, propertyName: string): PropertySetter ;
+
+        abstract canProvidePropertyChangedListener(obj: any, propertyName: string): boolean ;
+
+        abstract getPropertyChangedListener(obj: any, propertyName: string): PropertyChangedListener ;
+
+    }
+
     export class UniversalPropertyGetterProvider extends PropertyGetterProvider{
 
         private providers:List<PropertyGetterProvider>;
@@ -185,7 +201,7 @@ namespace LayoutLzg{
 
     }
 
-    export class UniversalPropertyProvider {
+    export class UniversalPropertyProvider extends PropertyProvider{
         private propertyGetterProvider:PropertyGetterProvider;
         private propertySetterProvider:PropertySetterProvider;
         private propertyChangedListenerProvider:PropertyChangedListenerProvider;
@@ -193,6 +209,7 @@ namespace LayoutLzg{
         constructor(propertyGetterProvider: PropertyGetterProvider,
                     propertySetterProvider: PropertySetterProvider,
                     propertyChangedListenerProvider: PropertyChangedListenerProvider) {
+            super();
             this.propertyGetterProvider = propertyGetterProvider;
             this.propertySetterProvider = propertySetterProvider;
             this.propertyChangedListenerProvider = propertyChangedListenerProvider;
@@ -218,7 +235,7 @@ namespace LayoutLzg{
             return this.propertyChangedListenerProvider.canProvideChangedListener(obj, propertyName);
         }
 
-        providePropertyChangedListener(obj:any, propertyName:string) : PropertyChangedListener {
+        getPropertyChangedListener(obj:any, propertyName:string) : PropertyChangedListener {
             return this.propertyChangedListenerProvider.getPropertyChangedListener(obj, propertyName);
         }
 

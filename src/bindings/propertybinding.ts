@@ -4,25 +4,31 @@ namespace LayoutLzg {
 
         source: any;
         sourcePropertyName: string;
-        target: any;
-        targetPropertyName: string;
         private sourcePropListener: PropertyChangedListener;
+        private sourcePropGetter: PropertyGetter;
+        private targetPropSetter: PropertySetter;
 
-        onSourceChanged(): void {
-
+        constructor(propertyProvider: PropertyProvider) {
+            super(propertyProvider);
         }
 
         startBinding(): void {
+            this.stopBinding();
             let self = this;
-            this.sourcePropListener = this.propertyChangedListenerProvider.getPropertyChangedListener(this.source,this.sourcePropertyName);
+
+            this.sourcePropGetter = this.propertyProvider.getPropertyGetter(this.source, this.sourcePropertyName);
+            this.targetPropSetter = this.propertyProvider.getPropertySetter(this.target, this.targetPropertyName);
+            this.sourcePropListener = this.propertyProvider.getPropertyChangedListener(this.source, this.sourcePropertyName);
+            this.sourcePropListener.startListen();
             this.sourcePropListener.setPropertyChangedCallback(function () {
-                let v = self.source[self.sourcePropertyName];
-                self.target[self.targetPropertyName] = v;
+                let v =  self.sourcePropGetter.getValue();
+                self.targetPropSetter.setValue(v);
             });
+
         }
 
         stopBinding(): void {
-            if(this.sourcePropListener) this.sourcePropListener.stopListen();
+            if(this.sourcePropListener) this.sourcePropListener.dispose();
         }
 
         dispose(): void {

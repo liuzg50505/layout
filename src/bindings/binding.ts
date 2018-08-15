@@ -14,9 +14,11 @@ namespace LayoutLzg {
         targetPropertyName:string;
         converter:ValueConverter;
         mode:BindingMode;
-        propertyChangedListenerProvider: PropertyChangedListenerProvider;
+        protected propertyProvider: PropertyProvider;
 
-        abstract onSourceChanged():void;
+        constructor(propertyProvider:PropertyProvider) {
+            this.propertyProvider = propertyProvider;
+        }
 
         startBinding():void{
 

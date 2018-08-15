@@ -6,12 +6,30 @@
     <script type="application/javascript" src="../js/jquery.min.js" ></script>
     <script type="application/javascript" src="../js/jqresize.js" ></script>
     <script type="application/javascript" src="../dist/output.js" ></script>
+    <style>
+        #diva {
+            width: 100%;
+            height: 50px;
+            background-color: aquamarine;
+        }
+    </style>
 </head>
 <body>
     <div id="diva">
 
     </div>
-    <span id="display"></span>
+    <div>
+        <span>window width:</span>
+        <span id="display"></span>
+    </div>
+    <div>
+        <span>Input text here:</span>
+        <input id="textinput">
+    </div>
+    <div>
+        <span>Text value:</span>
+        <span id="display2"></span>
+    </div>
     <script type="application/ecmascript">
 
 
@@ -19,15 +37,13 @@
         b = {height:33};
         c = {q:{p:{age:33}}};
 
-        provider = new LayoutLzg.UniversalPropertyChangedListenerProvider();
-        provider.addProviders([
-            new LayoutLzg.DomSizePropertyChangedListenerProvider()
-        ]);
-        listener = provider.getPropertyChangedListener($("#diva")[0],"width");
-        listener.setPropertyChangedCallback(function (w) {
-            $("#display").text(w);
-        });
-        listener.startListen();
+        structs = {width:0,text:""};
+        propProvider = LayoutLzg.getDefaultUniversalPropertyProvider();
+        LayoutLzg.createPropertyBinding(propProvider,$("#display")[0],"text",$("#diva")[0],"width");
+        LayoutLzg.createPropertyBinding(propProvider,$("#display2")[0],"text",$("#textinput")[0],"text");
+        LayoutLzg.createPropertyBinding(propProvider,structs,"width",$("#diva")[0],"width");
+        LayoutLzg.createPropertyBinding(propProvider,structs,"text",$("#textinput")[0],"text");
+
 
 
     </script>

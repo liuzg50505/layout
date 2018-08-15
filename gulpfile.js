@@ -25,11 +25,11 @@ gulp.task('build', function () {
     //     .pipe(gulp.dest('dist'));
 
     return tsProject.src()
-        .pipe(through(function (file, encoding, callback)
-        {
-            console.log("[ts2js] " + file.path);
-            callback();
-        }))
+        // .pipe(through(function (file, encoding, callback)
+        // {
+        //     console.log("[ts2js] " + file.path);
+        //     callback();
+        // }))
         .pipe(sourcemaps.init())
         .pipe(ts({
             noImplicitAny: true,

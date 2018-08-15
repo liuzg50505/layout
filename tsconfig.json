@@ -40,12 +40,15 @@
 
     "src/observer/observableobjectinjector.ts",
     "src/observer/propertybase.ts",
-    "src/observer/domproperty.ts",
+    "src/observer/domsizeproperty.ts",
+    "src/observer/domtextproperty.ts",
     "src/observer/dictproperty.ts",
 
     "src/bindings/binding.ts",
     "src/bindings/functionbinding.ts",
     "src/bindings/propertybinding.ts",
+
+    "src/facades/binding.ts",
 
     "src/bootstrap/property.ts"
 
