@@ -20,6 +20,9 @@ namespace LayoutLzg {
             this.propertyProvider = propertyProvider;
         }
 
+        abstract updateFromSource():void;
+        abstract updateFromTarget():void;
+
         startBinding():void{
 
         }

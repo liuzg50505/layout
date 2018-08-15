@@ -87,7 +87,6 @@ namespace LayoutLzg.ObserverModel {
             (function (propertyName:string) {
                 Object.defineProperty(obj,propertyName,{
                     'get':function () {
-                        injectProperties(this);
                         return getObjectConfig(this).props[propertyName];
                     },
                     'set':function (value) {
