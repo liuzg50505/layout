@@ -128,6 +128,13 @@ namespace LayoutLzg.ObserverModel {
                     propValue.addEventListener("itemadded",function(e) {
                         cfg.notifyPropertyChanged(new PropertyChangedEventArgs(obj, propertyName+".*",null,null));
                     });
+                    propValue.addEventListener("itemset",function(e) {
+                        cfg.notifyPropertyChanged(new PropertyChangedEventArgs(obj, propertyName+".*",null,null));
+                    });
+                    propValue.addEventListener("itemremoved",function(e) {
+                        cfg.notifyPropertyChanged(new PropertyChangedEventArgs(obj, propertyName+".*",null,null));
+                    });
+
                     for (let childvalue of propValue) {
                         if (toString.call(childvalue)!="[object Object]") continue;
                         injectProperties(childvalue);
@@ -168,20 +175,10 @@ namespace LayoutLzg.ObserverModel {
                 });
             })(propertyName);
         }
-        // if (obj==null) return;
-        // if (Object.prototype.toString.call(obj)=='[object Object]') {
-        //     injectObjectProperties(obj);
-        // }else if(Object.prototype.toString.call(obj)=='[object Array]'){
-        //
-        // }
-    }
-
-    export function injectObjectProperties(obj: any) {
-
     }
 
     function ObservableArray(items) {
-        var _self = this,
+        let _self = this,
             _array = [],
             _handlers = {
                 itemadded: [],
@@ -189,7 +186,7 @@ namespace LayoutLzg.ObserverModel {
                 itemset: []
             };
 
-        function defineIndexProperty(index) {
+        function defineIndexProperty(index) : any{
             if (!(index in _self)) {
                 Object.defineProperty(_self, index, {
                     configurable: true,
@@ -209,7 +206,7 @@ namespace LayoutLzg.ObserverModel {
             }
         }
 
-        function raiseEvent(event) {
+        function raiseEvent(event) : any{
             _handlers[event.type].forEach(function(h) {
                 h.call(_self, event);
             });
@@ -235,8 +232,8 @@ namespace LayoutLzg.ObserverModel {
                 eventName = ("" + eventName).toLowerCase();
                 if (!(eventName in _handlers)) throw new Error("Invalid event name.");
                 if (typeof handler !== "function") throw new Error("Invalid handler.");
-                var h = _handlers[eventName];
-                var ln = h.length;
+                let h = _handlers[eventName];
+                let ln = h.length;
                 while (--ln >= 0) {
                     if (h[ln] === handler) {
                         h.splice(ln, 1);
@@ -250,8 +247,9 @@ namespace LayoutLzg.ObserverModel {
             enumerable: false,
             writable: false,
             value: function() {
-                var index;
-                for (var i = 0, ln = arguments.length; i < ln; i++) {
+                let index;
+                let i = 0, ln = arguments.length;
+                for (; i < ln; i++) {
                     index = _array.length;
                     _array.push(arguments[i]);
                     defineIndexProperty(index);
@@ -271,7 +269,7 @@ namespace LayoutLzg.ObserverModel {
             writable: false,
             value: function() {
                 if (_array.length > -1) {
-                    var index = _array.length - 1,
+                    let index = _array.length - 1,
                         item = _array.pop();
                     delete _self[index];
                     raiseEvent({
@@ -289,7 +287,10 @@ namespace LayoutLzg.ObserverModel {
             enumerable: false,
             writable: false,
             value: function() {
-                for (var i = 0, ln = arguments.length; i < ln; i++) {
+                let ln;
+                let i = 0;
+                let ln = arguments.length;
+                for (; i < ln; i++) {
                     _array.splice(i, 0, arguments[i]);
                     defineIndexProperty(_array.length - 1);
                     raiseEvent({
@@ -315,7 +316,7 @@ namespace LayoutLzg.ObserverModel {
             writable: false,
             value: function() {
                 if (_array.length > -1) {
-                    var item = _array.shift();
+                    let item = _array.shift();
                     delete _self[_array.length];
                     raiseEvent({
                         type: "itemremoved",
@@ -332,7 +333,7 @@ namespace LayoutLzg.ObserverModel {
             enumerable: false,
             writable: false,
             value: function(index, howMany /*, element1, element2, ... */ ) {
-                var removed = [],
+                let removed = [],
                     item,
                     pos;
 
@@ -351,7 +352,8 @@ namespace LayoutLzg.ObserverModel {
                     });
                 }
 
-                for (var i = 2, ln = arguments.length; i < ln; i++) {
+                let i = 2, ln = arguments.length;
+                for (; i < ln; i++) {
                     _array.splice(index, 0, arguments[i]);
                     defineIndexProperty(_array.length - 1);
                     raiseEvent({
@@ -373,8 +375,8 @@ namespace LayoutLzg.ObserverModel {
                 return _array.length;
             },
             set: function(value) {
-                var n = Number(value);
-                var length = _array.length;
+                let n = Number(value);
+                let length = _array.length;
                 if (n % 1 === 0 && n >= 0) {
                     if (n < length) {
                         _self.splice(n);
@@ -404,85 +406,5 @@ namespace LayoutLzg.ObserverModel {
             _self.push.apply(_self, items);
         }
     }
-
-
-    export function injectArrayProperties(obj: any) {
-        if(obj==null) return;
-        let cfg = getObjectConfig(obj);
-        Object.defineProperty(obj, "push", {
-            configurable: false,
-            enumerable: false,
-            writable: false,
-            value: function() {
-                for (let i=0;i<arguments.length;i++){
-                    let argv = arguments[i];
-                    cfg.arrvalues.push(argv);
-                    obj.push(argv);
-                }
-                cfg.notifyPropertyChanged(new PropertyChangedEventArgs(obj,"*",null,null));
-                return cfg.arrvalues.length;
-            }
-        });
-
-        Object.defineProperty(obj, "pop", {
-            configurable: false,
-            enumerable: false,
-            writable: false,
-            value: function() {
-                if (cfg.arrvalues.length > -1) {
-                    var index = cfg.arrvalues.length - 1,
-                        item = cfg.arrvalues.pop();
-                    delete obj[index];
-                    return item;
-                }
-            }
-        });
-
-        Object.defineProperty(obj, "unshift", {
-            configurable: false,
-            enumerable: false,
-            writable: false,
-            value: function() {
-                for (var i = 0, ln = arguments.length; i < ln; i++) {
-                    cfg.arrvalues.splice(i, 0, arguments[i]);
-                    //defineIndexProperty(_array.length - 1);
-                    // raiseEvent({
-                    //     type: "itemadded",
-                    //     index: i,
-                    //     item: arguments[i]
-                    // });
-                }
-                for (; i < cfg.arrvalues.length; i++) {
-                    // raiseEvent({
-                    //     type: "itemset",
-                    //     index: i,
-                    //     item: _array[i]
-                    // });
-                }
-                return cfg.arrvalues.length;
-            }
-        });
-
-        Object.defineProperty(obj, "shift", {
-            configurable: false,
-            enumerable: false,
-            writable: false,
-            value: function() {
-                if (cfg.arrvalues.length > -1) {
-                    var item = cfg.arrvalues.shift();
-                    delete obj[cfg.arrvalues.length];
-                    // raiseEvent({
-                    //     type: "itemremoved",
-                    //     index: 0,
-                    //     item: item
-                    // });
-                    return item;
-                }
-            }
-        });
-
-
-    }
-
 
 }
