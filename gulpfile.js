@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var through = require("through-gulp");
+//var through = require("through-gulp");
 var sourcemaps = require('gulp-sourcemaps');
 var ts = require('gulp-typescript');
 var tsProject = ts.createProject('tsconfig.json');
