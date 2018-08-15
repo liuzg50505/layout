@@ -23,11 +23,13 @@ namespace LayoutLzg.ObserverModel {
         propertyName:string;
         props:any={};
         propChangedCallbackList:Array<(args:PropertyChangedEventArgs)=>void>;
+        arrvalues:Array<any> = [];
 
         constructor() {
             this.parent = null;
             this.propertyName = "";
             this.propChangedCallbackList = [];
+            this.arrvalues = [];
         }
 
         notifyPropertyChanged(args:PropertyChangedEventArgs):void {
@@ -102,6 +104,15 @@ namespace LayoutLzg.ObserverModel {
 
     export function injectProperties(obj:any) {
         if (obj==null) return;
+        if (Object.prototype.toString.call(obj)=='[object Object]') {
+            injectObjectProperties(obj);
+        }else if(Object.prototype.toString.call(obj)=='[object Array]'){
+
+        }
+    }
+
+    export function injectObjectProperties(obj: any) {
+        if (obj==null) return;
         let cfg = getObjectConfig(obj);
         for (let propertyName in obj) {
             if(propertyName==configPropertyName) continue;
@@ -150,6 +161,82 @@ namespace LayoutLzg.ObserverModel {
                 });
             })(propertyName);
         }
+    }
+
+    export function injectArrayProperties(obj: any) {
+        if(obj==null) return;
+        let cfg = getObjectConfig(obj);
+        Object.defineProperty(obj, "push", {
+            configurable: false,
+            enumerable: false,
+            writable: false,
+            value: function() {
+                for (let i=0;i<arguments.length;i++){
+                    let argv = arguments[i];
+                    cfg.arrvalues.push(argv);
+                }
+                return cfg.arrvalues.length;
+            }
+        });
+
+        Object.defineProperty(obj, "pop", {
+            configurable: false,
+            enumerable: false,
+            writable: false,
+            value: function() {
+                if (cfg.arrvalues.length > -1) {
+                    var index = cfg.arrvalues.length - 1,
+                        item = cfg.arrvalues.pop();
+                    delete obj[index];
+                    return item;
+                }
+            }
+        });
+
+        Object.defineProperty(obj, "unshift", {
+            configurable: false,
+            enumerable: false,
+            writable: false,
+            value: function() {
+                for (var i = 0, ln = arguments.length; i < ln; i++) {
+                    cfg.arrvalues.splice(i, 0, arguments[i]);
+                    //defineIndexProperty(_array.length - 1);
+                    // raiseEvent({
+                    //     type: "itemadded",
+                    //     index: i,
+                    //     item: arguments[i]
+                    // });
+                }
+                for (; i < cfg.arrvalues.length; i++) {
+                    // raiseEvent({
+                    //     type: "itemset",
+                    //     index: i,
+                    //     item: _array[i]
+                    // });
+                }
+                return cfg.arrvalues.length;
+            }
+        });
+
+        Object.defineProperty(obj, "shift", {
+            configurable: false,
+            enumerable: false,
+            writable: false,
+            value: function() {
+                if (cfg.arrvalues.length > -1) {
+                    var item = cfg.arrvalues.shift();
+                    delete obj[cfg.arrvalues.length];
+                    // raiseEvent({
+                    //     type: "itemremoved",
+                    //     index: 0,
+                    //     item: item
+                    // });
+                    return item;
+                }
+            }
+        });
+
+
     }
 
 

@@ -2,27 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6895967e-ff6e-45b9-baff-517886fa1890" name="Default" comment="lifecycle">
-      <change afterPath="$PROJECT_DIR$/src/converters/dateformatconverter.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/converters/firstcharuppercaseconverter.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/converters/lowercaseconverter.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/converters/pipelineconverter.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/converters/tostringconverter.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/converters/uppercaseconverter.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/observer/domvalueproperty.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/dateutils.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/testpropbinding_converter.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/output.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/output.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gulpfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/gulpfile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bindings/binding.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/bindings/binding.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bindings/functionbinding.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/bindings/functionbinding.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bindings/propertybinding.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/bindings/propertybinding.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bootstrap/property.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/bootstrap/property.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/facades/binding.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/facades/binding.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/observer/dictproperty.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/observer/dictproperty.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/observer/observableobjectinjector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/observer/observableobjectinjector.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/testpropbinding.html" beforeDir="false" afterPath="$PROJECT_DIR$/test/testpropbinding.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,22 +31,22 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="13" />
+          <entry key="html" value="14" />
           <entry key="js" value="8" />
           <entry key="json" value="13" />
           <entry key="md" value="2" />
-          <entry key="ts" value="88" />
+          <entry key="ts" value="89" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="13" />
+          <entry key="HTML" value="14" />
           <entry key="JSON" value="1" />
           <entry key="JavaScript" value="8" />
           <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="TypeScript" value="88" />
+          <entry key="TypeScript" value="89" />
           <entry key="tsconfig" value="12" />
         </counts>
       </usages-collector>
@@ -75,7 +57,7 @@
           <entry key="js" value="102" />
           <entry key="json" value="294" />
           <entry key="md" value="46" />
-          <entry key="ts" value="8690" />
+          <entry key="ts" value="8990" />
           <entry key="txt" value="10" />
         </counts>
       </usages-collector>
@@ -85,7 +67,7 @@
           <entry key="JavaScript" value="102" />
           <entry key="Markdown" value="46" />
           <entry key="PLAIN_TEXT" value="18" />
-          <entry key="TypeScript" value="8690" />
+          <entry key="TypeScript" value="8990" />
           <entry key="tsconfig" value="294" />
         </counts>
       </usages-collector>
@@ -93,20 +75,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/testpropbinding_converter.html">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/converters/pipelineconverter.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="56" column="84" selection-start-line="56" selection-start-column="84" selection-end-line="56" selection-end-column="84" />
+            <state relative-caret-position="174">
+              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/observer/observableobjectinjector.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="186" column="34" selection-start-line="186" selection-start-column="34" selection-end-line="186" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/converters/pipelineconverter.ts">
+        <entry file="file://$PROJECT_DIR$/test/test.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="22" column="13" lean-forward="true" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+            <state relative-caret-position="150">
+              <caret line="71" column="28" selection-start-line="71" selection-start-column="28" selection-end-line="71" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -187,7 +178,6 @@
         <option value="$PROJECT_DIR$/test/testpropertylistener.html" />
         <option value="$PROJECT_DIR$/src/bindings/functionbinding.ts" />
         <option value="$PROJECT_DIR$/src/observer/dictproperty.ts" />
-        <option value="$PROJECT_DIR$/src/observer/observableobjectinjector.ts" />
         <option value="$PROJECT_DIR$/src/bindings/propertybinding.ts" />
         <option value="$PROJECT_DIR$/src/bindings/binding.ts" />
         <option value="$PROJECT_DIR$/src/facades/binding.ts" />
@@ -207,6 +197,7 @@
         <option value="$PROJECT_DIR$/tsconfig.json" />
         <option value="$PROJECT_DIR$/src/converters/pipelineconverter.ts" />
         <option value="$PROJECT_DIR$/test/testpropbinding_converter.html" />
+        <option value="$PROJECT_DIR$/src/observer/observableobjectinjector.ts" />
       </list>
     </option>
   </component>
@@ -312,7 +303,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/android-sdk-macosx" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1534326658009" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1534332377536" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="settings.editor.selected.configurable" value="settings.typescriptcompiler" />
@@ -399,7 +390,7 @@
       <workItem from="1534229579387" duration="9163000" />
       <workItem from="1534287952316" duration="5733000" />
       <workItem from="1534300590012" duration="8701000" />
-      <workItem from="1534322675423" duration="4512000" />
+      <workItem from="1534322675423" duration="6492000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1533205543454</created>
@@ -489,7 +480,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104553000" />
+    <option name="totallyTimeSpent" value="106533000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="135" y="103" width="1635" height="839" extended-state="0" />
@@ -801,23 +792,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/observer/observableobjectinjector.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
-          <folding>
-            <element signature="e#2128#2158#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="76" column="26" selection-start-line="76" selection-start-column="26" selection-end-line="76" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/bindings/propertybinding.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4">
@@ -955,17 +929,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/converters/pipelineconverter.ts">
+    <entry file="file://$PROJECT_DIR$/test/testpropbinding_converter.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="22" column="13" lean-forward="true" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        <state>
+          <caret lean-forward="true" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/testpropbinding_converter.html">
+    <entry file="file://$PROJECT_DIR$/src/converters/pipelineconverter.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="56" column="84" selection-start-line="56" selection-start-column="84" selection-end-line="56" selection-end-column="84" />
+        <state relative-caret-position="174">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="71" column="28" selection-start-line="71" selection-start-column="28" selection-end-line="71" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/observer/observableobjectinjector.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="186" column="34" selection-start-line="186" selection-start-column="34" selection-end-line="186" selection-end-column="34" />
         </state>
       </provider>
     </entry>
