@@ -2,19 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6895967e-ff6e-45b9-baff-517886fa1890" name="Default" comment="lifecycle">
-      <change afterPath="$PROJECT_DIR$/src/facades/binding.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/observer/domtextproperty.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/testpropbinding.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/readme/readme_binding_cn.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/output.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/output.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gulpfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/gulpfile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bindings/binding.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/bindings/binding.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bindings/propertybinding.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/bindings/propertybinding.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bootstrap/property.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/bootstrap/property.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/observer/domproperty.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/observer/domsizeproperty.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/observer/propertybase.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/observer/propertybase.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/testpropertylistener.html" beforeDir="false" afterPath="$PROJECT_DIR$/test/testpropertylistener.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,8 +19,8 @@
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.11" value="3" />
-          <entry key="project.open.time.12" value="1" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.open.time.12" value="2" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
@@ -44,6 +33,7 @@
           <entry key="html" value="5" />
           <entry key="js" value="7" />
           <entry key="json" value="8" />
+          <entry key="md" value="2" />
           <entry key="ts" value="49" />
           <entry key="txt" value="1" />
         </counts>
@@ -53,6 +43,7 @@
           <entry key="HTML" value="5" />
           <entry key="JSON" value="1" />
           <entry key="JavaScript" value="7" />
+          <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="TypeScript" value="49" />
           <entry key="tsconfig" value="7" />
@@ -64,6 +55,7 @@
           <entry key="html" value="750" />
           <entry key="js" value="88" />
           <entry key="json" value="196" />
+          <entry key="md" value="46" />
           <entry key="ts" value="6694" />
           <entry key="txt" value="10" />
         </counts>
@@ -72,6 +64,7 @@
         <counts>
           <entry key="HTML" value="750" />
           <entry key="JavaScript" value="88" />
+          <entry key="Markdown" value="46" />
           <entry key="PLAIN_TEXT" value="18" />
           <entry key="TypeScript" value="6694" />
           <entry key="tsconfig" value="196" />
@@ -80,89 +73,7 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/testpropertylistener.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="37" column="29" lean-forward="true" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/bindings/propertybinding.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tsconfig.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="52" column="25" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gulpfile.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="27" selection-start-line="27" selection-end-line="31" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/observer/domtextproperty.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
-              <folding>
-                <element signature="n#DomWidthPropertyGetterProvider#0;n#LayoutLzg#0" />
-                <element signature="n#DomWidthPropertySetterProvider#0;n#LayoutLzg#0" />
-                <element signature="n#DomSizePropertyChangedListener#0;n#LayoutLzg#0" />
-                <element signature="n#DomSizePropertyChangedListenerProvider#0;n#LayoutLzg#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/observer/domsizeproperty.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="43" column="38" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="38" />
-              <folding>
-                <element signature="n#DomWidthPropertyGetter#0;n#LayoutLzg#0" />
-                <element signature="n#DomWidthPropertySetter#0;n#LayoutLzg#0" />
-                <element signature="n#DomWidthPropertyGetterProvider#0;n#LayoutLzg#0" />
-                <element signature="n#DomWidthPropertySetterProvider#0;n#LayoutLzg#0" />
-                <element signature="n#DomHeightPropertyGetter#0;n#LayoutLzg#0" />
-                <element signature="n#DomHeightPropertySetter#0;n#LayoutLzg#0" />
-                <element signature="n#DomHeightPropertyGetterProvider#0;n#LayoutLzg#0" />
-                <element signature="n#DomHeightPropertySetterProvider#0;n#LayoutLzg#0" />
-                <element signature="n#DomSizePropertyChangedListener#0;n#LayoutLzg#0" />
-                <element signature="n#DomSizePropertyChangedListenerProvider#0;n#LayoutLzg#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/facades/binding.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -205,7 +116,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/layoutbase.ts" />
         <option value="$PROJECT_DIR$/src/brushes/solidcolorbrush.ts" />
         <option value="$PROJECT_DIR$/src/brushes/gradientcolorbrush.ts" />
         <option value="$PROJECT_DIR$/readme_cn.md" />
@@ -256,6 +166,7 @@
         <option value="$PROJECT_DIR$/src/bindings/propertybinding.ts" />
         <option value="$PROJECT_DIR$/src/observer/domtextproperty.ts" />
         <option value="$PROJECT_DIR$/test/testpropertylistener.html" />
+        <option value="$PROJECT_DIR$/readme/readme_binding_cn.md" />
       </list>
     </option>
   </component>
@@ -288,9 +199,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -311,41 +220,14 @@
             <path>
               <item name="layoutsystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="layoutsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="layoutsystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="layoutsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="bindings" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="layoutsystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="layoutsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="layoutsystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="layoutsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="facades" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="layoutsystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="layoutsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="observer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="layoutsystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="layoutsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="readme" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -354,7 +236,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/android-sdk-macosx" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1534296859948" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1534300613483" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="settings.editor.selected.configurable" value="settings.typescriptcompiler" />
@@ -440,6 +322,7 @@
       <workItem from="1534206821474" duration="8696000" />
       <workItem from="1534229579387" duration="9163000" />
       <workItem from="1534287952316" duration="5733000" />
+      <workItem from="1534300590012" duration="654000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1533205543454</created>
@@ -504,17 +387,23 @@
       <option name="project" value="LOCAL" />
       <updated>1534291762578</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="lifecycle">
+      <created>1534300605638</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1534300605638</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91340000" />
+    <option name="totallyTimeSpent" value="91994000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="135" y="104" width="1635" height="839" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2812304" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2843691" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -530,7 +419,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32931727" />
       <window_info anchor="bottom" id="TypeScript" order="8" weight="0.32797858" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49968612" visible="true" weight="0.32797858" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49968612" visible="true" weight="0.32797858" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5003139" side_tool="true" weight="0.32797858" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -601,9 +490,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="lifecycle" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/observable-slim/observable-slim.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/brushes/imagecolorbrush.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -618,16 +504,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
           <caret line="1246" column="19" lean-forward="true" selection-start-line="1246" selection-start-column="4" selection-end-line="1246" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/readme_cn.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="165">
-            <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -857,15 +733,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="72" column="92" selection-start-line="72" selection-start-column="92" selection-end-line="72" selection-end-column="92" />
-          <folding>
-            <element signature="n#getObjectConfig#0;n#LayoutLzg#0" expanded="true" />
-            <element signature="n#DictPropertyGetter#0;n#LayoutLzg#0" />
-            <element signature="n#DictPropertySetter#0;n#LayoutLzg#0" />
-            <element signature="n#DictPropertyChangedListener#0;n#LayoutLzg#0" />
-            <element signature="n#DictPropertyGetterProvider#0;n#LayoutLzg#0" />
-            <element signature="n#DictPropertySetterProvider#0;n#LayoutLzg#0" />
-            <element signature="n#DictPropertyChangedListenerProvider#0;n#LayoutLzg#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -880,15 +747,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="16" lean-forward="true" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
-          <folding>
-            <element signature="n#PropertySetter#0;n#LayoutLzg#0" />
-            <element signature="n#PropertyChangedListenerProvider#0;n#LayoutLzg#0" />
-            <element signature="n#UniversalPropertyChangedListenerProvider#0;n#LayoutLzg#0" />
-            <element signature="n#PropertyGetterProvider#0;n#LayoutLzg#0" />
-            <element signature="n#PropertySetterProvider#0;n#LayoutLzg#0" />
-            <element signature="n#UniversalPropertyGetterProvider#0;n#LayoutLzg#0" />
-            <element signature="n#UniversalPropertySetterProvider#0;n#LayoutLzg#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -896,6 +754,48 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bootstrap/property.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="69" selection-start-line="10" selection-start-column="69" selection-end-line="10" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/testpropertylistener.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bindings/propertybinding.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tsconfig.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="52" column="25" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" selection-start-line="27" selection-end-line="31" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/observer/domtextproperty.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -918,58 +818,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gulpfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="27" selection-start-line="27" selection-end-line="31" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/facades/binding.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
-          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tsconfig.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="52" column="25" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
+    <entry file="file://$PROJECT_DIR$/readme/readme_binding_cn.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="90">
+            <caret line="6" selection-start-line="6" selection-end-line="6" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/bootstrap/property.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="69" selection-start-line="10" selection-start-column="69" selection-end-line="10" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bindings/propertybinding.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/observer/domtextproperty.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
-          <folding>
-            <element signature="n#DomWidthPropertyGetterProvider#0;n#LayoutLzg#0" />
-            <element signature="n#DomWidthPropertySetterProvider#0;n#LayoutLzg#0" />
-            <element signature="n#DomSizePropertyChangedListener#0;n#LayoutLzg#0" />
-            <element signature="n#DomSizePropertyChangedListenerProvider#0;n#LayoutLzg#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/testpropertylistener.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="37" column="29" lean-forward="true" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
+    <entry file="file://$PROJECT_DIR$/readme_cn.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="315">
+            <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
