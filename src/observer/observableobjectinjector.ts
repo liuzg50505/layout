@@ -177,7 +177,7 @@ namespace LayoutLzg.ObserverModel {
         }
     }
 
-    function ObservableArray(items) {
+    function ObservableArray(items):any {
         let _self = this,
             _array = [],
             _handlers = {
@@ -333,9 +333,9 @@ namespace LayoutLzg.ObserverModel {
             enumerable: false,
             writable: false,
             value: function(index, howMany /*, element1, element2, ... */ ) {
-                let removed = [],
-                    item,
-                    pos;
+                let removed:Array<any> = [],
+                    item:any,
+                    pos:any;
 
                 index = index == null ? 0 : index < 0 ? _array.length + index : index;
 

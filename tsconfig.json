@@ -6,6 +6,7 @@
     "module": "commonjs",
     "watch": true,
     "outDir": ".",
+    "experimentalDecorators": true,
     "strictNullChecks": false
   },
   "files":[
@@ -42,6 +43,7 @@
     "src/observer/domtextproperty.ts",
     "src/observer/domvalueproperty.ts",
     "src/observer/dictproperty.ts",
+    "src/observer/controlproperty.ts",
 
     "src/bindings/binding.ts",
     "src/bindings/functionbinding.ts",
@@ -55,6 +57,7 @@
     "src/converters/pipelineconverter.ts",
 
     "src/facades/binding.ts",
+    "src/test.ts",
 
     "src/bootstrap/property.ts"
 

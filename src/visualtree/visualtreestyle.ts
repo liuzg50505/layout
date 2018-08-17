@@ -1,0 +1,5 @@
+namespace LayoutLzg {
+    class VisualTreeStyle {
+
+    }
+}

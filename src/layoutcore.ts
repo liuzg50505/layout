@@ -1,5 +1,9 @@
 namespace LayoutLzg{
 
+    export interface MetaDataApi{
+
+    }
+
     export class Slot {
         children:List<Control> = new List<Control>();
         isSlotWidthCalculatable : boolean;
@@ -30,35 +34,87 @@ namespace LayoutLzg{
         }
     }
 
+    class PropertyChangedCallbackItem {
+        callback:Function;
+        propertyName:string;
+
+        constructor(propertyName: string, callback: Function) {
+            this.callback = callback;
+            this.propertyName = propertyName;
+        }
+    }
+
     export abstract class FrameworkElement {
         // Name of this control.
         name:string;
         // Width of this Control, it can be a fix value or auto.
-        width:Distance;
+        private _width:Distance;
         // Height of this Control, it can be a fix value or auto.
-        height:Distance;
+        private _height:Distance;
         // Horizonal alignment of this control in it's parent container
-        horizonAlignment : HorizonAlignment;
+        private _horizonAlignment : HorizonAlignment;
         // Vertical alignment of this control in it's parent container
-        verticalAlignment : VerticalAlignment;
+        private _verticalAlignment : VerticalAlignment;
         // Margin of this control to it's parent, the value in thickness must be a fix value.
-        margin:Thickness;
+        private _margin:Thickness;
+
+        private propChangedCallbacks:List<PropertyChangedCallbackItem>;
 
         parentSlot:Slot;
         parent:ContainerControl;
         // root div of this control.
         rootElem:HTMLElement;
 
-
         constructor(name: string) {
             this.name = name;
             // Init vairables.
-            this.horizonAlignment = HorizonAlignment.Strech;
-            this.verticalAlignment = VerticalAlignment.Strech;
-            this.margin = new Thickness(0,0,0,0);
-            this.width = new Distance(DistanceType.fixed,50);
-            this.height = new Distance(DistanceType.fixed,50);
+            this._horizonAlignment = HorizonAlignment.Strech;
+            this._verticalAlignment = VerticalAlignment.Strech;
+            this._margin = new Thickness(0,0,0,0);
+            this._width = new Distance(DistanceType.fixed,50);
+            this._height = new Distance(DistanceType.fixed,50);
 
+            this.propChangedCallbacks = new List<PropertyChangedCallbackItem>();
+        }
+
+        get width(): LayoutLzg.Distance {
+            return this._width;
+        }
+
+        set width(value: LayoutLzg.Distance) {
+            this._width = value;
+        }
+
+        get height(): LayoutLzg.Distance {
+            return this._height;
+        }
+
+        set height(value: LayoutLzg.Distance) {
+            this._height = value;
+        }
+
+        get horizonAlignment(): LayoutLzg.HorizonAlignment {
+            return this._horizonAlignment;
+        }
+
+        set horizonAlignment(value: LayoutLzg.HorizonAlignment) {
+            this._horizonAlignment = value;
+        }
+
+        get verticalAlignment(): LayoutLzg.VerticalAlignment {
+            return this._verticalAlignment;
+        }
+
+        set verticalAlignment(value: LayoutLzg.VerticalAlignment) {
+            this._verticalAlignment = value;
+        }
+
+        get margin(): LayoutLzg.Thickness {
+            return this._margin;
+        }
+
+        set margin(value: LayoutLzg.Thickness) {
+            this._margin = value;
         }
 
         // Get the root element of this control.
@@ -86,37 +142,89 @@ namespace LayoutLzg{
 
         // Adjust styles html elements of this control.
         doLayout():void{
+        }
+
+        getStateProperties():Array<string> {
+            return [];
+        }
+
+        getNotifyProperties():Array<string> {
+            return [];
+        }
+
+        addPropertyChangedListener(propertName:string, callback:Function):void {
+            this.propChangedCallbacks.add(
+                new PropertyChangedCallbackItem(propertName, callback)
+            );
+        }
+
+        removePropertyChangedListener(propertyName:string, callback:Function):void {
+            let elem:PropertyChangedCallbackItem = null;
+            for (let propcallbackitem:PropertyChangedCallbackItem of this.propChangedCallbacks) {
+                if(propcallbackitem.propertyName==propertyName&&
+                    propcallbackitem.callback==callback) {
+                    elem = propcallbackitem;
+                }
+            }
+            if(elem!=null) {
+                this.propChangedCallbacks.remove(elem);
+            }
+        }
+
+        addStateChangedListener(propertyName:string):void {
 
         }
 
+        removeStateChangedListener(propertyName:string, callback:Function):void {
 
+        }
+
+        protected notifyPropertyChanged(propertyName:string) {
+            for (let propcallbackitem:PropertyChangedCallbackItem of this.propChangedCallbacks) {
+                if(propcallbackitem.propertyName==propertyName) {
+                    if(propcallbackitem.callback) propcallbackitem.callback(propertyName);
+                }
+            }
+        }
     }
 
     // Control class is the base class of all the visual components.
     export abstract class Control extends FrameworkElement implements Disposable{
 
         // Background of this control, it can be a solid color, or a gradient color , or a picture.
-        fill:Brush;
+        private _fill:Brush;
         // Border of this control, it can be a solid color, or a gradient color , or a picture.
-        stroke:Brush;
+        private _stroke:Brush;
         // Thickness of this control's border, the value in thickness must be a fix value.
-        strokeThickness:Thickness;
-
-        // // Internal vairable. Indicate the container's width of this control is calculatable.
-        // isParentSlotWidthCalculatable : boolean;
-        // // Internal vairable. Indicate the container's height of this control is calculatable.
-        // isParentSlotHeightCalculatable : boolean;
-        // // Internal vairable. Parent slot width.
-        // // Slot means the space where the control is placed,
-        // // it may be the whole of it's container or a part of it's container.
-        // parentSlotWidth:number;
-        // // Internal vairable. Parent slot height.
-        // parentSlotHeight:number;
-
+        private _strokeThickness:Thickness;
 
         constructor(name:string){
             super(name);
-            this.strokeThickness = new Thickness(0,0,0,0);
+            this._strokeThickness = new Thickness(0,0,0,0);
+        }
+
+        get fill(): LayoutLzg.Brush {
+            return this._fill;
+        }
+
+        set fill(value: LayoutLzg.Brush) {
+            this._fill = value;
+        }
+
+        get stroke(): LayoutLzg.Brush {
+            return this._stroke;
+        }
+
+        set stroke(value: LayoutLzg.Brush) {
+            this._stroke = value;
+        }
+
+        get strokeThickness(): LayoutLzg.Thickness {
+            return this._strokeThickness;
+        }
+
+        set strokeThickness(value: LayoutLzg.Thickness) {
+            this._strokeThickness = value;
         }
 
         abstract dispose(): void;
