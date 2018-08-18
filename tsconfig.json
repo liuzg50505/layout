@@ -34,9 +34,6 @@
     "src/containers/horizonallinearlayout.ts",
     "src/containers/verticallinearlayout.ts",
 
-    "src/visualtree/visualtree.ts",
-    "src/visualtree/templatecontrol.ts",
-
     "src/observer/observableobjectinjector.ts",
     "src/observer/propertybase.ts",
     "src/observer/domsizeproperty.ts",
@@ -55,6 +52,21 @@
     "src/converters/uppercaseconverter.ts",
     "src/converters/tostringconverter.ts",
     "src/converters/pipelineconverter.ts",
+
+    "src/visualtree/visualtree.ts",
+    "src/visualtree/templatecontrol.ts",
+    "src/visualtree/visualtreestyle.ts",
+
+    "src/action/actionbase.ts",
+    "src/action/setpropertyaction.ts",
+
+    "src/trigger/triggerbase.ts",
+    "src/trigger/propertychangedtrigger.ts",
+    "src/trigger/statechangedtrigger.ts",
+
+    "src/style/stylebase.ts",
+    "src/style/visualtreestyle.ts",
+
 
     "src/facades/binding.ts",
     "src/test.ts",

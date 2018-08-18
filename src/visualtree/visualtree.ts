@@ -2,6 +2,8 @@ namespace LayoutLzg{
 
     export class VisualTree {
         rootContainer: ContainerControl;
+        parentControl:Control;
+        stateManager:any;
 
         getRootElement(): HTMLElement {
             if (this.rootContainer){

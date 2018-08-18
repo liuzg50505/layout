@@ -75,7 +75,7 @@ namespace LayoutLzg {
         }
 
         stopListen(): void {
-            this.control.removePropertyChangedListener(this.propertyName,this.callbackfun);
+            this.control.removePropertyChangedListener(this.callbackfun);
         }
 
     }
