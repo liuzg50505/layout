@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="application/javascript" src="../js/jquery.min.js"></script>
+    <script type="application/javascript" src="../js/jqresize.js" ></script>
+    <script type="application/javascript" src="output.js"></script>
+    <style>
+        html,body {
+            width: 100%;
+            height:100%;
+        }
+    </style>
+</head>
+<body>
+
+
+<script>
+
+    defaultSlot = new LayoutLzg.Slot();
+    defaultSlot.isSlotWidthCalculatable = true;
+    defaultSlot.isSlotHeightCalculatable = true;
+    defaultSlot.calulatedSlotWidth = $("body").width();
+    defaultSlot.calulatedSlotHeight = $("body").height();
+
+    rootBorder = new LayoutLzg.Border("");
+    rootBorder.width = new LayoutLzg.Distance(LayoutLzg.DistanceType.auto,0);
+    rootBorder.height = new LayoutLzg.Distance(LayoutLzg.DistanceType.auto,0);
+    rootBorder.horizonAlignment = LayoutLzg.HorizonAlignment.Strech;
+    rootBorder.verticalAlignment = LayoutLzg.VerticalAlignment.Strech;
+    rootBorder.parentSlot = defaultSlot;
+
+
+    button = new LayoutLzg.Button("sdf");
+    button.width = new LayoutLzg.Distance(LayoutLzg.DistanceType.fixed,100);
+    button.height = new LayoutLzg.Distance(LayoutLzg.DistanceType.fixed,30);
+    button.horizonAlignment = LayoutLzg.HorizonAlignment.Left;
+    button.verticalAlignment = LayoutLzg.VerticalAlignment.Top;
+
+    rootBorder.addChild(button);
+    rootBorder.assembleDom();
+    rootdiv = rootBorder.getRootElement();
+    $("body").append(rootdiv);
+    rootBorder.doLayout();
+
+</script>
+</body>
+</html>

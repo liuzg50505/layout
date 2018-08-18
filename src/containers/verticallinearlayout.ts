@@ -54,7 +54,7 @@ namespace LayoutLzg{
         getRootElement(): HTMLElement {
             if(this.rootElem==null) {
                 this.rootElem = $("<div></div>")[0];
-                $(this.rootElem).attr('layout-type','HorizonalLinearLayout');
+                $(this.rootElem).attr('layout-type','VerticalLinearLayout');
                 $(this.rootElem).attr('layout-name',this.name);
             }
             return this.rootElem;

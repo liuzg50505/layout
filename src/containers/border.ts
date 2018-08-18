@@ -30,8 +30,8 @@ namespace LayoutLzg{
             if(this.width.type == DistanceType.fixed){
                 for(let i=0;i<this.children.length;i++){
                     let child = this.children[i];
-                    this.parentSlot.isSlotWidthCalculatable = true;
-                    this.parentSlot.calulatedSlotWidth = this.width.value;
+                    child.parentSlot.isSlotWidthCalculatable = true;
+                    child.parentSlot.calulatedSlotWidth = this.width.value;
                     if(child instanceof ContainerControl) {
                         let container:ContainerControl = <ContainerControl>child;
                         container.initCalculableSlots();
@@ -119,13 +119,14 @@ namespace LayoutLzg{
             for(let i=0;i<this.children.length;i++){
                 let child = this.children[i];
                 let wrapperDiv = this.wrapperDoms[i];
-                child.doLayout();
 
                 $(wrapperDiv).css('position','absolute');
                 $(wrapperDiv).css('left',child.margin.left+'px');
                 $(wrapperDiv).css('right',child.margin.right+'px');
                 $(wrapperDiv).css('top',child.margin.top+'px');
                 $(wrapperDiv).css('bottom',child.margin.bottom+'px');
+
+                child.doLayout();
 
                 $(child.getRootElement()).css('position','absolute');
                 if(child.horizonAlignment==HorizonAlignment.Left) {

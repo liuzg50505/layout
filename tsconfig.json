@@ -68,6 +68,8 @@
     "src/style/statemanager.ts",
     "src/style/visualtreestyle.ts",
 
+    "src/templatecontrols/button.ts",
+
 
     "src/facades/binding.ts",
     "src/test.ts",

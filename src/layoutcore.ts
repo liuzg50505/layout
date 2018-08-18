@@ -15,7 +15,7 @@ namespace LayoutLzg{
         addChild(child : Control):void {
             this.children.add(child);
             child.parentSlot = this;
-            child.parent = null;
+            // child.parent = null;
         }
 
         removeChild(child : Control):void {

@@ -7,7 +7,7 @@ namespace LayoutLzg{
 
         static findControlsByName(root:Control, name:string):List<Control> {
             let result = new List<Control>();
-            let rootContainer = null;
+            let rootContainer:any = null;
             if(root.name==name) {
                 result.add(root);
             }
@@ -25,7 +25,7 @@ namespace LayoutLzg{
         }
 
         static findControlByName(root:Control, name:string): Control {
-            let rootContainer = null;
+            let rootContainer:any = null;
             if(root.name==name) {
                 return root;
             }

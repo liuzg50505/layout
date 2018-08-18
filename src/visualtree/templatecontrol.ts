@@ -24,11 +24,13 @@ namespace LayoutLzg {
         }
 
         assembleDom(): void {
-            this.rootBorder.width = new Distance(DistanceType.auto,0);
-            this.rootBorder.height = new Distance(DistanceType.auto,0);
-            this.rootBorder.horizonAlignment = HorizonAlignment.Strech;
-            this.rootBorder.verticalAlignment = VerticalAlignment.Strech;
+            this.rootBorder.width = this.width;
+            this.rootBorder.height = this.height;
+            this.rootBorder.horizonAlignment = this.horizonAlignment;
+            this.rootBorder.verticalAlignment = this.verticalAlignment;
             this.rootBorder.addChild(this._visualTree.rootContainer);
+            this._visualTree.rootContainer.width = new Distance(DistanceType.auto,0);
+            this._visualTree.rootContainer.height = new Distance(DistanceType.auto,0);
             this._visualTree.rootContainer.horizonAlignment = HorizonAlignment.Strech;
             this._visualTree.rootContainer.verticalAlignment = VerticalAlignment.Strech;
 
