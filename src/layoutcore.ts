@@ -160,7 +160,7 @@ namespace LayoutLzg{
 
         removePropertyChangedListener(callback:Function):void {
             let elem:PropertyChangedCallbackItem = null;
-            for (let propcallbackitem:PropertyChangedCallbackItem of this.propChangedCallbacks) {
+            for (let propcallbackitem of this.propChangedCallbacks) {
                 if(propcallbackitem.callback==callback) {
                     elem = propcallbackitem;
                 }
@@ -170,7 +170,7 @@ namespace LayoutLzg{
             }
         }
 
-        addStateChangedListener(propertyName:string):void {
+        addStateChangedListener(propertyName:string, callback:Function):void {
 
         }
 
@@ -179,7 +179,7 @@ namespace LayoutLzg{
         }
 
         protected notifyPropertyChanged(propertyName:string) {
-            for (let propcallbackitem:PropertyChangedCallbackItem of this.propChangedCallbacks) {
+            for (let propcallbackitem of this.propChangedCallbacks) {
                 if(propcallbackitem.propertyName==propertyName) {
                     if(propcallbackitem.callback) propcallbackitem.callback(propertyName);
                 }

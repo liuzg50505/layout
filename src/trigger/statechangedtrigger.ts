@@ -3,7 +3,6 @@ namespace LayoutLzg {
         propertyName:string;
         private callback: Function;
         init(): void {
-            super.init();
             let self = this;
             this.callback = function () {
                 self.onTriggered();
@@ -12,7 +11,6 @@ namespace LayoutLzg {
         }
 
         dispose(): void {
-            super.dispose();
             this.control.removeStateChangedListener(this.callback);
         }
     }

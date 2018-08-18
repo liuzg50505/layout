@@ -33,6 +33,7 @@ gulp.task('build', function () {
         .pipe(ts({
             noImplicitAny: true,
             outFile: 'output.js',
+            target:"es5",
             experimentalDecorators: true,
         }))
         .pipe(sourcemaps.write())
