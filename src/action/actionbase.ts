@@ -1,5 +1,5 @@
 namespace LayoutLzg {
     export abstract class Action {
-        execute():void;
+        abstract execute():void;
     }
 }

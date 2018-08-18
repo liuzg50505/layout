@@ -40,6 +40,22 @@ namespace LayoutLzg {
             this.rootBorder.initCalculableSlots();
             this.rootBorder.assembleDom();
 
+            let self = this;
+            $(this.getRootElement()).mouseenter(function () {
+                self.raiseEvent("mouseenter");
+            });
+            $(this.getRootElement()).mouseenter(function () {
+                self.raiseEvent("mouseleave");
+            });
+            $(this.getRootElement()).mousedown(function () {
+                self.raiseEvent("mousedown");
+            });
+            $(this.getRootElement()).mouseup(function () {
+                self.raiseEvent("mouseup");
+            });
+            $(this.getRootElement()).mousemove(function () {
+                self.raiseEvent("mousemove");
+            });
         }
 
         doLayout(): void {

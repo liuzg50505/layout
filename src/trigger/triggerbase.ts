@@ -10,6 +10,7 @@ namespace LayoutLzg {
         abstract dispose():void;
     }
 
+
     export abstract class ControlTrigger extends Trigger {
         control:Control;
     }

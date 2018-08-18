@@ -44,6 +44,16 @@ namespace LayoutLzg{
         }
     }
 
+    class EventCallbackItem {
+        callback:Function;
+        eventName:string;
+
+        constructor(eventName: string, callback: Function) {
+            this.callback = callback;
+            this.eventName = eventName;
+        }
+    }
+
     export abstract class FrameworkElement {
         // Name of this control.
         name:string;
@@ -59,6 +69,7 @@ namespace LayoutLzg{
         private _margin:Thickness;
 
         private propChangedCallbacks:List<PropertyChangedCallbackItem>;
+        private eventCallbacks:List<EventCallbackItem>;
 
         parentSlot:Slot;
         parent:ContainerControl;
@@ -75,6 +86,7 @@ namespace LayoutLzg{
             this._height = new Distance(DistanceType.fixed,50);
 
             this.propChangedCallbacks = new List<PropertyChangedCallbackItem>();
+            this.eventCallbacks = new List<EventCallbackItem>();
         }
 
         get width(): LayoutLzg.Distance {
@@ -185,6 +197,28 @@ namespace LayoutLzg{
                 }
             }
         }
+
+        addEventListener(eventName:string, callback:Function):void {
+            this.eventCallbacks.add(
+                new EventCallbackItem(eventName, callback)
+            );
+        }
+
+        removeEventListener(callback:Function):void {
+            let events = this.eventCallbacks.filter(t=>t.callback==callback);
+            if(events.length>0) {
+                this.eventCallbacks.remove(events[0]);
+            }
+
+        }
+
+        protected raiseEvent(eventName:string){
+            for (let eventcallbackitem of this.eventCallbacks) {
+                if(eventcallbackitem.eventName==eventName) {
+                    if(eventcallbackitem.callback) eventcallbackitem.callback(eventName);
+                }
+            }
+        }
     }
 
     // Control class is the base class of all the visual components.
@@ -207,6 +241,7 @@ namespace LayoutLzg{
         }
 
         set fill(value: LayoutLzg.Brush) {
+            if(this._fill != value) this.notifyPropertyChanged("fill");
             this._fill = value;
         }
 
@@ -215,6 +250,7 @@ namespace LayoutLzg{
         }
 
         set stroke(value: LayoutLzg.Brush) {
+            if(this._stroke != value) this.notifyPropertyChanged("stroke");
             this._stroke = value;
         }
 
@@ -223,6 +259,7 @@ namespace LayoutLzg{
         }
 
         set strokeThickness(value: LayoutLzg.Thickness) {
+            if(this._strokeThickness != value) this.notifyPropertyChanged("strokeThickness");
             this._strokeThickness = value;
         }
 
