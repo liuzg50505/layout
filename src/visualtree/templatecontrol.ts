@@ -53,6 +53,34 @@ namespace LayoutLzg {
         }
     }
 
+    export class ContentPresenter extends Control{
+
+        content:Control;
+
+        getRootElement(): HTMLElement {
+            return this.content.getRootElement();
+        }
+
+        estimateWidth(): number {
+            return this.content.estimateWidth();
+        }
+
+        estimateHeight(): number {
+            return this.content.estimateHeight();
+        }
+
+        doLayout(): void {
+            this.content.doLayout();
+        }
+
+        dispose(): void {
+        }
+
+    }
+
+    export class ItemsPresenter {
+
+    }
 
 
 }

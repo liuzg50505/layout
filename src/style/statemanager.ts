@@ -5,12 +5,16 @@ namespace LayoutLzg {
         style:Style;
     }
 
-    export class StateManager {
+    export class StateGroup {
         states:List<State>;
         rootControl:Control;
 
         constructor() {
             this.states = new List<State>();
+        }
+
+        stateNames() {
+            return this.states.map(t=>t.name);
         }
 
         addState(state:State) {

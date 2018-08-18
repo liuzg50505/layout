@@ -15,15 +15,21 @@ namespace LayoutLzg {
 
     export class Style {
         styleitems:List<StyleItem>;
+        triggers:List<Trigger>;
 
         constructor() {
             this.styleitems = new List<StyleItem>();
+            this.triggers = new List<Trigger>();
         }
 
         apply(rootControl:Control): void {
             if(!rootControl) return;
             for (let styleitem of this.styleitems) {
                 styleitem.apply(rootControl);
+            }
+
+            for (let trigger of this.triggers)  {
+                trigger.init();
             }
         }
     }

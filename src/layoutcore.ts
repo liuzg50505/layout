@@ -274,13 +274,6 @@ namespace LayoutLzg{
         }
     }
 
-    export class ContentPresenter {
-
-    }
-
-    export class ItemsPresenter {
-
-    }
 }
 
 

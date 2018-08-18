@@ -2,7 +2,7 @@ namespace LayoutLzg{
 
     export class VisualTree {
         rootContainer: ContainerControl;
-        parentControl:Control;
+        parentControl:TemplateControl;
         stateManager:any;
 
         static findControlsByName(root:Control, name:string):List<Control> {
