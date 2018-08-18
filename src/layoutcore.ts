@@ -232,7 +232,7 @@ namespace LayoutLzg{
     // The purpose of the container is to put sub controls together,
     // and the system provides multiple layout containers due to actual requirements.
     export abstract class ContainerControl extends Control{
-        protected children:List<Control>;
+        children:List<Control>;
         protected slots : List<Slot>;
 
 

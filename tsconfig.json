@@ -65,6 +65,7 @@
     "src/trigger/statechangedtrigger.ts",
 
     "src/style/stylebase.ts",
+    "src/style/statemanager.ts",
     "src/style/visualtreestyle.ts",
 
 
