@@ -7,7 +7,7 @@ namespace LayoutLzg {
         }
 
         getValue(): any {
-            let control = <FrameworkElement>this.obj;
+            let control:any = <FrameworkElement>this.obj;
             if(this.propertyName in control) {
                 return control[this.propertyName];
             }
@@ -23,7 +23,7 @@ namespace LayoutLzg {
         }
 
         setValue(value: any): void {
-            let control = <FrameworkElement>this.obj;
+            let control:any = <FrameworkElement>this.obj;
             if(this.propertyName in control) {
                 control[this.propertyName] = value;
             }

@@ -2,12 +2,14 @@ namespace LayoutLzg{
     export class TextView extends ControlBase {
 
         text:string;
+        selectable:boolean;
         wordWrap:boolean;
         spanElem:HTMLElement;
 
         constructor(name: string,text:string) {
             super(name);
             this.text = text;
+            this.selectable = true;
             this.width = new Distance(DistanceType.auto,0);
             this.height = new Distance(DistanceType.auto,0);
         }
@@ -36,6 +38,12 @@ namespace LayoutLzg{
         }
 
         doLayout(): void {
+            super.doLayout();
+            if(!this.selectable) {
+                $(this.spanElem).css("user-select","none");
+            }else {
+                $(this.spanElem).css("user-select","");
+            }
         }
 
         estimateHeight_auto(): number {

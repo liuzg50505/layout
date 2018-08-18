@@ -67,6 +67,8 @@ namespace LayoutLzg{
         private _verticalAlignment : VerticalAlignment;
         // Margin of this control to it's parent, the value in thickness must be a fix value.
         private _margin:Thickness;
+        private _pressed:boolean;
+        private _mouseenter:boolean;
 
         private propChangedCallbacks:List<PropertyChangedCallbackItem>;
         private eventCallbacks:List<EventCallbackItem>;
@@ -129,8 +131,21 @@ namespace LayoutLzg{
             this._margin = value;
         }
 
-        // Get the root element of this control.
-        abstract getRootElement():HTMLElement;
+        get pressed(): boolean {
+            return this._pressed;
+        }
+
+        set pressed(value: boolean) {
+            this._pressed = value;
+        }
+
+        get mouseenter(): boolean {
+            return this._mouseenter;
+        }
+
+        set mouseenter(value: boolean) {
+            this._mouseenter = value;
+        }
 
         // Estimate the width of this control,
         // the size of this control is determined by many factors,
@@ -147,6 +162,9 @@ namespace LayoutLzg{
         estimateHeight():number{
             return 0;
         }
+
+        // Get the root element of this control.
+        abstract getRootElement():HTMLElement;
 
         // Assemble html elements of this control.
         assembleDom():void {

@@ -17,7 +17,7 @@ namespace LayoutLzg {
             super(propertyProvider);
         }
 
-        startBinding(): void {
+        startBinding(): Binding {
             this.stopBinding();
             let self = this;
 
@@ -42,11 +42,12 @@ namespace LayoutLzg {
                 })
             }
 
-
+            return this;
         }
 
-        stopBinding(): void {
+        stopBinding(): Binding {
             if(this.sourcePropListener) this.sourcePropListener.dispose();
+            return this;
         }
 
         dispose(): void {

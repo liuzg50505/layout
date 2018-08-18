@@ -5,12 +5,12 @@ namespace LayoutLzg {
             super(propertyProvider);
         }
 
-        startBinding(): void {
-            super.startBinding();
+        startBinding(): Binding {
+            return this;
         }
 
-        stopBinding(): void {
-            super.stopBinding();
+        stopBinding(): Binding {
+            return this;
         }
 
         updateFromSource(): void {

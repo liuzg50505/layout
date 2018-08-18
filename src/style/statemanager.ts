@@ -6,6 +6,7 @@ namespace LayoutLzg {
     }
 
     export class StateGroup {
+        groupName:string;
         states:List<State>;
         rootControl:Control;
 

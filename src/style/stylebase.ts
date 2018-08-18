@@ -22,6 +22,14 @@ namespace LayoutLzg {
             this.triggers = new List<Trigger>();
         }
 
+        addStyleItem(controlName:string, propertyName:string, value:any):void {
+            let item = new StyleItem();
+            item.name = controlName;
+            item.propertyName = propertyName;
+            item.value = value;
+            this.styleitems.add(item);
+        }
+
         apply(rootControl:Control): void {
             if(!rootControl) return;
             for (let styleitem of this.styleitems) {
