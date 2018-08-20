@@ -76,9 +76,9 @@ namespace LayoutLzg{
         }
 
         doLayout(): void {
-            super.doLayout();
-            $(this.getRootElement()).css('width',this.estimateWidth()+'px');
-            $(this.getRootElement()).css('height',this.estimateHeight()+'px');
+            $(this.getRootElement()).css('position','absolute');
+            $(this.getRootElement()).css('width',this.calculatedWidth+'px');
+            $(this.getRootElement()).css('height',this.calculatedHeight+'px');
             // stroke and fill
             if(this.fill) this.fill.applyToBackground(this.rootElem);
             if(this.stroke) this.stroke.applyToBorder(this.rootElem,this.strokeThickness);
@@ -93,15 +93,47 @@ namespace LayoutLzg{
             if(this.shadow) {
                 $(this.rootElem).css("box-shadow",this.shadow.toBoxShawdowString());
             }
-
         }
 
-        estimateHeight_auto(): number {
-            return 0;
+
+        calculateWidthFromTop(): void {
+            if (this.width.type == DistanceType.fixed) {
+                this.calculatedWidth = this.width.value;
+                return;
+            }
+            if(this.parentSlot&&this.parentSlot.isSlotWidthCalculatable&&this.horizonAlignment==HorizonAlignment.Strech) {
+                this.calculatedWidth = this.parentSlot.calulatedSlotWidth;
+                return;
+            }
+            this.calculatedWidth = 0;
         }
 
-        estimateWidth_auto(): number {
-             return 0;
+        calculateHeightFromTop(): void {
+            if (this.height.type == DistanceType.fixed) {
+                this.calculatedHeight = this.height.value;
+                return;
+            }
+            if(this.parentSlot&&this.parentSlot.isSlotHeightCalculatable&&this.verticalAlignment==VerticalAlignment.Strech) {
+                this.calculatedHeight = this.parentSlot.calulatedSlotHeight;
+                return;
+            }
+            super.calculateHeightFromTop();
+        }
+
+        calculateWidthFromBottom(): void {
+            if (this.width.type == DistanceType.fixed) {
+                this.calculatedWidth = this.width.value;
+                return;
+            }
+            this.calculatedWidth = 0;
+        }
+
+        calculateHeightFromBottom(): void {
+            if (this.height.type == DistanceType.fixed) {
+                this.calculatedHeight = this.height.value;
+                return;
+            }
+            this.calculatedHeight = 0;
         }
     }
 

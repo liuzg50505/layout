@@ -107,7 +107,6 @@ namespace LayoutLzg {
             this.rootBorder.parentSlot = this.parentSlot;
             this.rootBorder.parent = this.parent;
 
-            this.rootBorder.initCalculableSlots();
             this.rootBorder.assembleDom();
 
             let self = this;
@@ -144,6 +143,8 @@ namespace LayoutLzg {
             this._visualTree.rootContainer.height = new Distance(DistanceType.auto,0);
             this._visualTree.rootContainer.horizonAlignment = HorizonAlignment.Strech;
             this._visualTree.rootContainer.verticalAlignment = VerticalAlignment.Strech;
+            this.rootBorder.calculateWidthFromTop();
+            this.rootBorder.calculateHeightFromTop();
 
             // this.rootBorder.parentSlot = this.parentSlot;
             // this.rootBorder.parent = this.parent;
@@ -152,13 +153,24 @@ namespace LayoutLzg {
             this.rootBorder.doLayout();
         }
 
-        estimateHeight_auto(): number {
-            return this.rootBorder.estimateHeight();
+        calculateHeightFromTop(): void {
+            this.rootBorder.calculateHeightFromTop();
+            this.calculatedWidth = this.rootBorder.calculatedWidth;
         }
 
-        estimateWidth_auto(): number {
-            return this.rootBorder.estimateWidth();
+        calculateWidthFromTop(): void {
+            this.rootBorder.calculateWidthFromTop();
+            this.calculatedHeight = this.rootBorder.calculatedHeight;
         }
+
+        calculateWidthFromBottom(): void {
+            this.rootBorder.calculateWidthFromBottom();
+        }
+
+        calculateHeightFromBottom(): void {
+            this.rootBorder.calculateHeightFromBottom();
+        }
+
     }
 
     export class ContentPresenter extends Border{

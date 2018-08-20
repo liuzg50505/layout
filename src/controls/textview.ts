@@ -72,12 +72,44 @@ namespace LayoutLzg{
             }
         }
 
-        estimateHeight_auto(): number {
-            return $(this.getRootElement()).find('span').height();
+        calculateWidthFromTop(): void {
+            if (this.width.type == DistanceType.fixed) {
+                this.calculatedWidth = this.width.value;
+                return;
+            }
+            if(this.parentSlot&&this.parentSlot.isSlotWidthCalculatable&&this.horizonAlignment==HorizonAlignment.Strech) {
+                this.calculatedWidth = this.parentSlot.calulatedSlotWidth;
+                return;
+            }
+            this.calculatedWidth = this.spanElem.offsetWidth;
+        }
+        calculateHeightFromTop(): void {
+            if (this.height.type == DistanceType.fixed) {
+                this.calculatedHeight = this.height.value;
+                return;
+            }
+            if(this.parentSlot&&this.parentSlot.isSlotHeightCalculatable&&this.verticalAlignment==VerticalAlignment.Strech) {
+                this.calculatedHeight = this.parentSlot.calulatedSlotHeight;
+                return;
+            }
+            this.calculatedHeight = this.spanElem.offsetHeight;
         }
 
-        estimateWidth_auto(): number {
-            return $(this.getRootElement()).find('span').width();
+
+        calculateWidthFromBottom(): void {
+            if (this.width.type == DistanceType.fixed) {
+                this.calculatedWidth = this.width.value;
+                return;
+            }
+            this.calculatedWidth = this.spanElem.offsetWidth;
+        }
+
+        calculateHeightFromBottom(): void {
+            if (this.height.type == DistanceType.fixed) {
+                this.calculatedHeight = this.height.value;
+                return;
+            }
+            this.calculatedHeight = this.spanElem.offsetHeight;
         }
     }
 }

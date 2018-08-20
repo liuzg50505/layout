@@ -36,12 +36,5 @@ namespace LayoutLzg{
             
         }
 
-        estimateHeight_auto(): number {
-            return 0;
-        }
-
-        estimateWidth_auto(): number {
-            return 0;
-        }
     }
 }

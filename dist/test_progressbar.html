@@ -55,10 +55,11 @@
 
     // rootBorder.addChild(button);
     rootBorder.addChild(bar);
-    rootBorder.initCalculableSlots();
     rootBorder.assembleDom();
     rootdiv = rootBorder.getRootElement();
     $("body").append(rootdiv);
+    rootBorder.calculateWidthFromTop();
+    rootBorder.calculateHeightFromTop();
     rootBorder.doLayout();
 
 </script>

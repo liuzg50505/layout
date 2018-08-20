@@ -9,8 +9,6 @@ namespace LayoutLzg {
         constructor(name: string) {
             super(name);
             this.radius = 5;
-            this.initVisualTree();
-            this.initStates();
         }
 
         private initVisualTree():void {
@@ -23,7 +21,23 @@ namespace LayoutLzg {
             this.contentPresentor.horizonAlignment = HorizonAlignment.Center;
             this.contentPresentor.verticalAlignment = VerticalAlignment.Center;
 
-            let vlinear = new VerticalLinearLayout("");
+            let contentcontrol:Control = null;
+            if(typeof this._content === "string" || typeof this._content === "number"){
+                let txt = new TextView("",this._content.toString());
+                txt.margin = new Thickness(10,10,5,5);
+                txt.selectable = false;
+                contentcontrol = txt;
+                contentcontrol.horizonAlignment = HorizonAlignment.Strech;
+                contentcontrol.verticalAlignment = VerticalAlignment.Strech;
+                contentcontrol.width = new Distance(DistanceType.auto,0);
+                contentcontrol.height = new Distance(DistanceType.auto,0);
+            }else{
+                contentcontrol = <Control>this._content;
+            }
+            this.contentPresentor.content = contentcontrol;
+
+
+            let vlinear = new Vlinearlayout("");
             vlinear.horizonAlignment = HorizonAlignment.Strech;
             vlinear.verticalAlignment = VerticalAlignment.Strech;
             vlinear.width = new Distance(DistanceType.auto,0);
@@ -104,22 +118,14 @@ namespace LayoutLzg {
             if(this._content==value) return;
             this.notifyPropertyChanged("content");
             this._content = value;
-            let contentcontrol:Control = null;
-            if(typeof value === "string" || typeof value === "number"){
-                let txt = new TextView("",value.toString());
-                txt.margin = new Thickness(10,10,5,5);
-                txt.selectable = false;
-                contentcontrol = txt;
-                contentcontrol.horizonAlignment = HorizonAlignment.Strech;
-                contentcontrol.verticalAlignment = VerticalAlignment.Strech;
-                contentcontrol.width = new Distance(DistanceType.auto,0);
-                contentcontrol.height = new Distance(DistanceType.auto,0);
-            }else{
-                contentcontrol = <Control>value;
-            }
-            this.contentPresentor.content = contentcontrol;
         }
 
+
+        assembleDom(): void {
+            this.initVisualTree();
+            this.initStates();
+            super.assembleDom();
+        }
     }
 
 }

@@ -8,14 +8,13 @@ namespace LayoutLzg{
         children:List<Control> = new List<Control>();
         isSlotWidthCalculatable : boolean;
         isSlotHeightCalculatable : boolean;
-        calulatedSlotWidth : number;
-        calulatedSlotHeight : number;
+        calulatedSlotWidth : number = 0;
+        calulatedSlotHeight : number = 0;
         container : ContainerControl;
 
         addChild(child : Control):void {
             this.children.add(child);
             child.parentSlot = this;
-            // child.parent = null;
         }
 
         removeChild(child : Control):void {
@@ -31,6 +30,80 @@ namespace LayoutLzg{
                 this.container.removeChild(child);
             }
             this.children.clear();
+        }
+
+        calculateWidthFromTop():void {
+            for (let child of this.children) {
+                child.calculateWidthFromTop();
+            }
+        }
+
+        calculateWidthFromBottom():void {
+            for (let child of this.children) {
+                child.calculateWidthFromBottom();
+            }
+            if(!this.isSlotWidthCalculatable) {
+                let widthlist = this.children.map(t=>t.calculatedWidth+t.margin.left+t.margin.right);
+                widthlist.sort((a,b)=>b-a);
+                let maxwidth = 0;
+                if(widthlist.length>0) maxwidth = widthlist[0];
+                this.calulatedSlotWidth = maxwidth;
+            }
+
+        }
+
+        calculateHeightFromTop():void {
+            for (let child of this.children) {
+                child.calculateHeightFromTop();
+            }
+        }
+
+        calculateHeightFromBottom():void {
+            for (let child of this.children) {
+                child.calculateHeightFromBottom();
+            }
+            if(!this.isSlotHeightCalculatable) {
+                let heightlist = this.children.map(t=>t.calculatedHeight+t.margin.top+t.margin.bottom);
+                heightlist.sort((a,b)=>b-a);
+                let maxheight = 0;
+                if(heightlist.length>0) maxheight = heightlist[0];
+                this.calulatedSlotHeight = maxheight;
+            }
+        }
+
+
+        layoutChildren():void {
+            for (let child of this.children) {
+                if(child.horizonAlignment==HorizonAlignment.Left) {
+                    css(child.getRootElement(),"left","0px");
+                }else if(child.horizonAlignment==HorizonAlignment.Right) {
+                    css(child.getRootElement(),"right","0px");
+                }else if(child.horizonAlignment==HorizonAlignment.Center) {
+                    let w = this.calulatedSlotWidth;
+                    let ww = child.calculatedWidth;
+                    let x = (w-ww)/2;
+                    css(child.getRootElement(),'left',x+'px');
+                }else if(child.horizonAlignment==HorizonAlignment.Strech) {
+                    css(child.getRootElement(),"left","0px");
+                    css(child.getRootElement(),"right","0px");
+                }
+
+                if(child.verticalAlignment==VerticalAlignment.Top) {
+                    css(child.getRootElement(),"top","0px");
+                }else if(child.verticalAlignment==VerticalAlignment.Bottom) {
+                    css(child.getRootElement(),"bottom","0px");
+                }else if(child.verticalAlignment==VerticalAlignment.Center) {
+                    let h = this.calulatedSlotHeight;
+                    let hh = child.calculatedHeight;
+                    let x = (h-hh)/2;
+                    css(child.getRootElement(),'top',x+'px');
+                }else if(child.verticalAlignment==VerticalAlignment.Strech) {
+                    css(child.getRootElement(),"top","0px");
+                    css(child.getRootElement(),"bottom","0px");
+                }
+
+                child.doLayout();
+            }
         }
     }
 
@@ -150,20 +223,9 @@ namespace LayoutLzg{
             this._mouseenter = value;
         }
 
-        // Estimate the width of this control,
-        // the size of this control is determined by many factors,
-        // for example : auto/fix value of width/height, parent container, horizonal/vertical alignments, margins。
-        // For different types of parent containers, the method of size estimation are totally different.
-        estimateWidth():number {
-            return 0;
-        }
-
-        // Estimate the width of this control,
-        // the size of this control is determined by many factors,
-        // for example : auto/fix value of width/height, parent container, horizonal/vertical alignments, margins。
-        // For different types of parent containers, the method of size estimation are totally different.
-        estimateHeight():number{
-            return 0;
+        forceRefresh():void {
+            this.assembleDom();
+            this.doLayout();
         }
 
         // Get the root element of this control.
@@ -262,6 +324,8 @@ namespace LayoutLzg{
         constructor(name:string){
             super(name);
             this._strokeThickness = new Thickness(0,0,0,0);
+            this.calculatedWidth = 0;
+            this.calculatedHeight = 0;
         }
 
         get fill(): LayoutLzg.Brush {
@@ -299,7 +363,18 @@ namespace LayoutLzg{
             this._shadow=value;
         }
 
+        abstract calculateWidthFromTop():void;
+
+        abstract calculateHeightFromTop():void;
+
+        abstract calculateWidthFromBottom():void;
+
+        abstract calculateHeightFromBottom():void;
+
         abstract dispose(): void;
+
+        calculatedWidth: number;
+        calculatedHeight: number;
     }
 
     // The purpose of the container is to put sub controls together,
@@ -336,9 +411,12 @@ namespace LayoutLzg{
             this.children.clear();
         }
 
-        initCalculableSlots():void {
-        }
 
+        doLayout(): void {
+            for (let slot of this.slots) {
+                slot.layoutChildren();
+            }
+        }
 
         dispose(): void {
             for (let child of this.children) {

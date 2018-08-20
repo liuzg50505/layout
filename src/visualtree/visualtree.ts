@@ -49,12 +49,6 @@ namespace LayoutLzg{
             }
         }
 
-        initCalculableSlots():void {
-            if (this.rootContainer) {
-                this.rootContainer.initCalculableSlots();
-            }
-        }
-
         assembleDom(): void {
             if (this.rootContainer) {
                 this.rootContainer.assembleDom();

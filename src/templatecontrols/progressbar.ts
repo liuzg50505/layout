@@ -82,7 +82,7 @@ namespace LayoutLzg {
         }
 
         doLayout(): void {
-            let w = this.estimateWidth();
+            let w = this.calculatedWidth;
             let rectend = w/(this.maxValue-this.minValue)*(this.value-this.minValue);
             this.rectProc.width = new Distance(DistanceType.fixed,rectend);
             this.rectUp.width = new Distance(DistanceType.fixed,rectend);

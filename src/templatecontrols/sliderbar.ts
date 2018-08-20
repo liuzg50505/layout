@@ -48,7 +48,7 @@ namespace LayoutLzg {
             rectStick.fill = this.fill;
             rectStick.stroke = this.stroke;
             rectStick.strokeThickness = new Thickness(1,1,1,1);
-            rectStick.shadow = new ShadowSettings(0,0,10,0,"#cfcfcf");
+            rectStick.shadow = new ShadowSettings(0,0,5,0,"#cfcfcf");
 
             let rectHandle = new Rect("sliderHandle");
             rectHandle.horizonAlignment = HorizonAlignment.Left;
@@ -59,7 +59,7 @@ namespace LayoutLzg {
             rectHandle.fill = this.handleFill;
             rectHandle.stroke = this.handleStroke;
             rectHandle.strokeThickness = new Thickness(1,1,1,1);
-            rectHandle.shadow = new ShadowSettings(0,0,10,0,"#cfcfcf");
+            rectHandle.shadow = new ShadowSettings(0,0,20,0,"#cfcfcf");
 
             rootBorder.addChild(rectStick);
             rootBorder.addChild(rectHandle);
@@ -95,7 +95,7 @@ namespace LayoutLzg {
         }
 
         onHandleDrag(dx: number, dy: number): any {
-            let w = this.estimateWidth();
+            let w = this.calculatedWidth;
             let v = this.mousedownValue + dx/w*(this.maxValue-this.minValue);
             if(v>this.maxValue) v = this.maxValue;
             if(v<this.minValue) v = this.minValue;
@@ -109,7 +109,7 @@ namespace LayoutLzg {
         }
 
         doLayout(): void {
-            let w = this.estimateWidth();
+            let w = this.calculatedWidth;
             let rectend = w/(this.maxValue-this.minValue)*(this._value-this.minValue);
             this.rectHandle.margin.left = rectend;
             super.doLayout();

@@ -12,6 +12,7 @@
   "files":[
     "src/utils/dateutils.ts",
     "src/utils/eventutils.ts",
+    "src/utils/htmlutils.ts",
 
     "src/eventbus/eventbus.ts",
     "src/lifecycle/lifecyclebase.ts",
