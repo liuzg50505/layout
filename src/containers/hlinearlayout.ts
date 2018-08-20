@@ -1,176 +1,60 @@
 namespace LayoutLzg {
-    export class Hlinearlayout extends Border{
-        slotMap : Map<Slot,SlotItem>;
-        vchildren: List<Control>;
+    export class Hlinearlayout extends ContainerControl{
+        protected slotMap : Map<Slot,Distance>;
+        protected slotWrappersMap : Map<Slot,HTMLElement>;
+        protected childWrappersMap: Map<Control,HTMLElement>;
 
         constructor(name: string) {
             super(name);
-            this.vchildren = new List<Control>();
-            this.slotMap = new Map<Slot, SlotItem>();
-        }
-
-        addChild(control: LayoutLzg.Control): void {
-            this.vchildren.add(control);
-            control.parent = this;
+            this.slotMap = new Map<Slot, Distance>();
+            this.childWrappersMap = new Map<Control, HTMLElement>();
+            this.slotWrappersMap = new Map<Slot,HTMLElement>();
         }
 
         addCell(distance:Distance) {
             let slot = new Slot();
+            slot.container = this;
             this.slots.add(slot);
-
-            if (!this.slotMap.containsKey(slot))
-                this.slotMap.put(slot,new SlotItem(new Border("LinearCell"),null));
-            let item = this.slotMap.get(slot);
-            item.slotDefination = distance;
-            slot.container = item.slotBorder;
-            super.addChild(item.slotBorder);
-            // this.children.add(item.slotBorder);
-            // item.slotBorder.parent = this;
-            // item.slotBorder.parentSlot = this.mainSlot;
-            // item.slotBorder.actualContainer = this;
+            this.slotMap.put(slot,distance);
         }
 
         setCell(control:Control, cellIndex:number) {
-            const idx = this.vchildren.indexOf(control);
+            const idx = this.children.indexOf(control);
             if(idx>-1){
                 let slot = this.slots[cellIndex];
                 slot.addChild(control);
-                let item = this.slotMap.get(slot);
-                item.slotBorder.addChild(control);
-                control.parent = this;
             }
         }
 
+        assembleDom(): void {
+            $(this.getRootElement()).empty();
 
-        initCalculableSlots(): void {
-            let weightSum = 0;
-
-            for (let i=0;i<this.slots.length;i++) {
-                let slot = this.slots[i];
-                let item = this.slotMap.get(slot);
-                let cellDefination = item.slotDefination;
-                if(cellDefination.type==DistanceType.weight) weightSum += cellDefination.value;
+            for (let slot of this.slots){
+                let slotWrapperDiv = $("<div></div>")[0];
+                $(slotWrapperDiv).css('pointer-events','none');
+                for (let child of slot.children) {
+                    child.assembleDom();
+                    let childWrapperDiv = $("<div></div>")[0];
+                    $(childWrapperDiv).css('pointer-events','none');
+                    $(childWrapperDiv).append(child.getRootElement());
+                    $(slotWrapperDiv).append(childWrapperDiv);
+                    this.childWrappersMap.put(child,childWrapperDiv);
+                }
+                this.slotWrappersMap.put(slot,slotWrapperDiv);
+                $(this.getRootElement()).append(slotWrapperDiv);
             }
-
-            if(this.width.type == DistanceType.fixed){
-                for (let i=0;i<this.slots.length;i++) {
-                    let slot = this.slots[i];
-                    let item = this.slotMap.get(slot);
-                    let cellDefination = item.slotDefination;
-
-                    if(cellDefination.type==DistanceType.fixed){
-                        for(let j=0;j<slot.children.length;j++) {
-                            let child = slot.children[j];
-                            child.parentSlot.isSlotWidthCalculatable = true;
-                            child.parentSlot.calulatedSlotWidth = cellDefination.value;
-                            if(child instanceof ContainerControl) {
-                                let container:ContainerControl = <ContainerControl>child;
-                                container.initCalculableSlots();
-                            }
-                        }
-                    }else if(cellDefination.type==DistanceType.weight){
-                        for(let j=0;j<slot.children.length;j++) {
-                            let child = slot.children[j];
-                            child.parentSlot.isSlotWidthCalculatable = true;
-                            child.parentSlot.calulatedSlotWidth = this.width.value*cellDefination.value/weightSum;
-                            if(child instanceof ContainerControl) {
-                                let container:ContainerControl = <ContainerControl>child;
-                                container.initCalculableSlots();
-                            }
-                        }
-                    }
-                }
-            }else {
-                if(this.parentSlot.isSlotWidthCalculatable && this.horizonAlignment==HorizonAlignment.Strech) {
-                    for (let i=0;i<this.slots.length;i++) {
-                        let slot = this.slots[i];
-                        let item = this.slotMap.get(slot);
-                        let cellDefination = item.slotDefination;
-
-                        if(cellDefination.type==DistanceType.fixed){
-                            for(let j=0;j<slot.children.length;j++) {
-                                let child = slot.children[j];
-                                child.parentSlot.isSlotWidthCalculatable = true;
-                                child.parentSlot.calulatedSlotWidth = this.parentSlot.calulatedSlotWidth - this.margin.left - this.margin.right;
-                                if(child instanceof ContainerControl) {
-                                    let container:ContainerControl = <ContainerControl>child;
-                                    container.initCalculableSlots();
-                                }
-                            }
-                        }else if(cellDefination.type==DistanceType.weight){
-                            for(let j=0;j<slot.children.length;j++) {
-                                let child = slot.children[j];
-                                child.parentSlot.isSlotWidthCalculatable = false;
-                                if(child instanceof ContainerControl) {
-                                    let container:ContainerControl = <ContainerControl>child;
-                                    container.initCalculableSlots();
-                                }
-                            }
-                        }
-                    }
-                }else {
-                    for (let i=0;i<this.slots.length;i++) {
-                        let slot = this.slots[i];
-                        let item = this.slotMap.get(slot);
-                        let cellDefination = item.slotDefination;
-
-                        for(let j=0;j<slot.children.length;j++) {
-                            let child = slot.children[j];
-                            child.parentSlot.isSlotWidthCalculatable = false;
-                            if(child instanceof ContainerControl) {
-                                let container:ContainerControl = <ContainerControl>child;
-                                container.initCalculableSlots();
-                            }
-                        }
-                    }
-                }
-            }
-
-            if(this.height.type == DistanceType.fixed){
-                for(let i=0;i<this.children.length;i++){
-                    let child = this.children[i];
-                    child.parentSlot.isSlotHeightCalculatable = true;
-                    child.parentSlot.calulatedSlotHeight = this.height.value;
-                    if(child instanceof ContainerControl) {
-                        let container:ContainerControl = <ContainerControl>child;
-                        container.initCalculableSlots();
-                    }
-                }
-            }else {
-                if(this.parentSlot.isSlotHeightCalculatable && this.verticalAlignment==VerticalAlignment.Strech) {
-                    for(let i=0;i<this.children.length;i++){
-                        let child = this.children[i];
-                        child.parentSlot.isSlotHeightCalculatable = true;
-                        child.parentSlot.calulatedSlotHeight = this.parentSlot.calulatedSlotHeight - this.margin.top - this.margin.bottom;
-                        if(child instanceof ContainerControl) {
-                            let container:ContainerControl = <ContainerControl>child;
-                            container.initCalculableSlots();
-                        }
-                    }
-                }else {
-                    for(let i=0;i<this.children.length;i++){
-                        let child = this.children[i];
-                        child.parentSlot.isSlotHeightCalculatable = false;
-                        if(child instanceof ContainerControl) {
-                            let container:ContainerControl = <ContainerControl>child;
-                            container.initCalculableSlots();
-                        }
-                    }
-                }
-            }
-
-            super.initCalculableSlots();
-
         }
-
 
         doLayout(): void {
+            $(this.getRootElement()).css('position','absolute');
+            $(this.getRootElement()).css('width',this.calculatedWidth+'px');
+            $(this.getRootElement()).css('height',this.calculatedHeight+'px');
+
             let weightSum = 0;
             let fixSum = 0;
             for (let i=0;i<this.slots.length;i++){
                 let slot = this.slots[i];
-                let item = this.slotMap.get(slot);
-                let cellDefination = item.slotDefination;
+                let cellDefination = this.slotMap.get(slot);
 
                 if(cellDefination.type==DistanceType.weight) weightSum += cellDefination.value;
                 if(cellDefination.type==DistanceType.fixed) fixSum += cellDefination.value;
@@ -179,29 +63,163 @@ namespace LayoutLzg {
             let pos = 0;
             for (let i=0;i<this.slots.length;i++){
                 let slot = this.slots[i];
-                let item = this.slotMap.get(slot);
-                let cellDefination = item.slotDefination;
-                let border = item.slotBorder;
+                let slotWrapperDiv = this.slotWrappersMap.get(slot);
+                let cellDefination = this.slotMap.get(slot);
 
-                let cellw = 0;
+                let cellh = 0;
                 if(cellDefination.type==DistanceType.fixed) {
-                    cellw=cellDefination.value;
+                    cellh=cellDefination.value;
                 }else if(cellDefination.type==DistanceType.weight){
-                    cellw = (this.estimateHeight() - fixSum)* cellDefination.value / weightSum;
+                    cellh = (this.calculatedHeight - fixSum)* cellDefination.value / weightSum;
                 }
-                border.margin = new Thickness(pos,0,0,0);
-                border.width = new Distance(DistanceType.auto,0);
-                border.height = new Distance(DistanceType.fixed,cellw);
-                border.horizonAlignment = HorizonAlignment.Strech;
-                border.verticalAlignment = VerticalAlignment.Top;
 
-                pos+=cellw;
-                border.initCalculableSlots();
-                border.assembleDom();
+                $(slotWrapperDiv).css('position','absolute');
+                $(slotWrapperDiv).css('left','0px');
+                $(slotWrapperDiv).css('right','0px');
+                $(slotWrapperDiv).css('top',pos+'px');
+                $(slotWrapperDiv).css('height',cellh+'px');
+
+                for (let child of slot.children) {
+                    let childWrapperDiv = this.childWrappersMap.get(child);
+                    $(childWrapperDiv).css('position','absolute');
+                    $(childWrapperDiv).css('left',child.margin.left+'px');
+                    $(childWrapperDiv).css('right',child.margin.right+'px');
+                    $(childWrapperDiv).css('top',child.margin.top+'px');
+                    $(childWrapperDiv).css('bottom',child.margin.bottom+'px');
+                }
+                slot.layoutChildren();
+                pos+=cellh;
+            }
+        }
+
+
+        calculateHeightFromTop(): void {
+            if(this.height.type==DistanceType.fixed){
+                this.calculatedHeight = this.height.value;
+                for (let slot of this.slots) {
+                    slot.isSlotHeightCalculatable = true;
+                    slot.calculatedSlotHeight = this.height.value;
+                }
+                this.slots.forEach(t=>t.calculateHeightFromTop());
+                return;
+            }
+            if(this.parentSlot&&this.parentSlot.isSlotHeightCalculatable&&this.verticalAlignment==VerticalAlignment.Strech) {
+                this.calculatedHeight = this.parentSlot.calculatedSlotHeight;
+                for (let slot of this.slots) {
+                    slot.isSlotHeightCalculatable = true;
+                    slot.calculatedSlotHeight = this.parentSlot.calculatedSlotHeight;
+                }
+                this.slots.forEach(t=>t.calculateHeightFromTop());
+                return;
+            }
+            // 终止向下计算，从下向上计算
+            this.slots.forEach(t=>t.isSlotHeightCalculatable=false);
+            this.calculateHeightFromBottom();
+            for (let slot of this.slots) {
+                slot.isSlotHeightCalculatable = true;
+                slot.calculatedSlotHeight = this.calculatedHeight;
+            }
+            this.slots.forEach(t=>t.calculateHeightFromTop());
+        }
+
+        calculateWidthFromTop(): void {
+
+            let weightSum = 0;
+            let fixSum = 0;
+            for (let i=0;i<this.slots.length;i++){
+                let slot = this.slots[i];
+                let cellDefination = this.slotMap.get(slot);
+
+                if(cellDefination.type==DistanceType.weight) weightSum += cellDefination.value;
+                if(cellDefination.type==DistanceType.fixed) fixSum += cellDefination.value;
             }
 
-            super.doLayout();
+            if(this.width.type==DistanceType.fixed){
+                for (let slot of this.slots) {
+                    let cellDefination = this.slotMap.get(slot);
+                    let cellh = 0;
+                    if(cellDefination.type==DistanceType.fixed) {
+                        cellh=cellDefination.value;
+                    }else if(cellDefination.type==DistanceType.weight){
+                        cellh = (this.width.value - fixSum)* cellDefination.value / weightSum;
+                    }
+                    slot.isSlotWidthCalculatable = true;
+                    slot.calculatedSlotWidth = cellh;
+                }
+                this.calculatedWidth = this.width.value;
+                this.slots.forEach(t=>t.calculateWidthFromTop());
+                return;
+            }
+            if(this.parentSlot&&this.parentSlot.isSlotWidthCalculatable&&this.horizonAlignment==HorizonAlignment.Strech) {
+                this.calculatedWidth = this.parentSlot.calculatedSlotWidth;
+                for (let slot of this.slots) {
+                    let cellDefination = this.slotMap.get(slot);
+                    let cellh = 0;
+                    if(cellDefination.type==DistanceType.fixed) {
+                        cellh=cellDefination.value;
+                    }else if(cellDefination.type==DistanceType.weight){
+                        cellh = (this.parentSlot.calculatedSlotWidth - fixSum)* cellDefination.value / weightSum;
+                    }
+                    slot.isSlotWidthCalculatable = true;
+                    slot.calculatedSlotWidth = cellh;
+                }
+                this.slots.forEach(t=>t.calculateWidthFromTop());
+                return;
+            }
+            // 终止向下计算，从下向上计算
+            this.slots.forEach(t=>t.isSlotWidthCalculatable=false);
+            this.calculateWidthFromBottom();
+            for (let slot of this.slots) {
+                slot.isSlotWidthCalculatable = true;
+                slot.calculatedSlotWidth = this.calculatedWidth;
+            }
+            this.slots.forEach(t=>t.calculateWidthFromTop());
         }
+
+        calculateHeightFromBottom(): void {
+            if(this.height.type==DistanceType.fixed) {
+                this.calculateHeightFromTop();
+                return;
+            }
+            for (let slot of this.slots)  {
+                slot.calculateHeightFromBottom();
+            }
+
+            let heightlist = this.slots.map(t=>t.calculatedSlotHeight);
+            heightlist.sort((a,b)=>b-a);
+            let maxheight = 0;
+            if(heightlist.length>0) maxheight = heightlist[0];
+
+            this.calculatedHeight = maxheight;
+
+        }
+
+        calculateWidthFromBottom(): void {
+            if(this.width.type==DistanceType.fixed) {
+                this.calculateWidthFromTop();
+                return;
+            }
+            for (let slot of this.slots)  {
+                slot.calculateWidthFromBottom();
+            }
+
+            let sum = 0;
+            for (let slot of this.slots) {
+                sum+=slot.calculatedSlotWidth;
+            }
+            this.calculatedWidth = sum;
+        }
+
+
+        getRootElement(): HTMLElement {
+            if(this.rootElem==null) {
+                this.rootElem = $("<div></div>")[0];
+                $(this.rootElem).attr('layout-type','Vlinearlayout');
+                $(this.rootElem).attr('layout-name',this.name);
+            }
+            return this.rootElem;
+        }
+
 
 
     }

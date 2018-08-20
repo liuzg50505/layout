@@ -19,7 +19,7 @@ namespace LayoutLzg{
                         return this.estimateWidth_auto();
                     }
                 }else if(this.horizonAlignment==HorizonAlignment.Strech){
-                    return this.parentSlot.calulatedSlotWidth - this.margin.left - this.margin.right;
+                    return this.parentSlot.calculatedSlotWidth - this.margin.left - this.margin.right;
                 }
             }else{
                 if(this.width.type == DistanceType.fixed) {
@@ -44,7 +44,7 @@ namespace LayoutLzg{
                         return this.estimateHeight_auto();
                     }
                 }else if(this.verticalAlignment==VerticalAlignment.Strech){
-                    return this.parentSlot.calulatedSlotHeight - this.margin.top - this.margin.bottom;
+                    return this.parentSlot.calculatedSlotHeight - this.margin.top - this.margin.bottom;
                 }
             }else{
                 if(this.height.type == DistanceType.fixed) {

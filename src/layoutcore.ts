@@ -8,8 +8,8 @@ namespace LayoutLzg{
         children:List<Control> = new List<Control>();
         isSlotWidthCalculatable : boolean;
         isSlotHeightCalculatable : boolean;
-        calulatedSlotWidth : number = 0;
-        calulatedSlotHeight : number = 0;
+        calculatedSlotWidth : number = 0;
+        calculatedSlotHeight : number = 0;
         container : ContainerControl;
 
         addChild(child : Control):void {
@@ -47,7 +47,7 @@ namespace LayoutLzg{
                 widthlist.sort((a,b)=>b-a);
                 let maxwidth = 0;
                 if(widthlist.length>0) maxwidth = widthlist[0];
-                this.calulatedSlotWidth = maxwidth;
+                this.calculatedSlotWidth = maxwidth;
             }
 
         }
@@ -67,7 +67,7 @@ namespace LayoutLzg{
                 heightlist.sort((a,b)=>b-a);
                 let maxheight = 0;
                 if(heightlist.length>0) maxheight = heightlist[0];
-                this.calulatedSlotHeight = maxheight;
+                this.calculatedSlotHeight = maxheight;
             }
         }
 
@@ -79,7 +79,7 @@ namespace LayoutLzg{
                 }else if(child.horizonAlignment==HorizonAlignment.Right) {
                     css(child.getRootElement(),"right","0px");
                 }else if(child.horizonAlignment==HorizonAlignment.Center) {
-                    let w = this.calulatedSlotWidth;
+                    let w = this.calculatedSlotWidth;
                     let ww = child.calculatedWidth;
                     let x = (w-ww)/2;
                     css(child.getRootElement(),'left',x+'px');
@@ -93,7 +93,7 @@ namespace LayoutLzg{
                 }else if(child.verticalAlignment==VerticalAlignment.Bottom) {
                     css(child.getRootElement(),"bottom","0px");
                 }else if(child.verticalAlignment==VerticalAlignment.Center) {
-                    let h = this.calulatedSlotHeight;
+                    let h = this.calculatedSlotHeight;
                     let hh = child.calculatedHeight;
                     let x = (h-hh)/2;
                     css(child.getRootElement(),'top',x+'px');

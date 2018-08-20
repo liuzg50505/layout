@@ -15,6 +15,7 @@ namespace LayoutLzg{
         getRootElement(): HTMLElement {
             if(this.rootElem==null) {
                 this.rootElem = $("<div></div>")[0];
+                $(this.rootElem).css('pointer-events','all');
                 $(this.rootElem).attr('layout-type','Border');
                 $(this.rootElem).attr('layout-name',this.name);
             }
@@ -36,6 +37,7 @@ namespace LayoutLzg{
                 child.assembleDom();
 
                 let wrapperDiv = $("<div></div>")[0];
+                $(wrapperDiv).css('pointer-events','none');
                 $(wrapperDiv).attr('layout-tag','wrapper');
                 this.childWrappersMap.put(child,wrapperDiv);
                 $(this.getRootElement()).append(wrapperDiv);
@@ -68,16 +70,16 @@ namespace LayoutLzg{
                 this.calculatedWidth = this.width.value;
                 for (let slot of this.slots) {
                     slot.isSlotWidthCalculatable = true;
-                    slot.calulatedSlotWidth = this.width.value;
+                    slot.calculatedSlotWidth = this.width.value;
                 }
                 this.slots.forEach(t=>t.calculateWidthFromTop());
                 return;
             }
             if(this.parentSlot&&this.parentSlot.isSlotWidthCalculatable&&this.horizonAlignment==HorizonAlignment.Strech) {
-                this.calculatedWidth = this.mainSlot.calulatedSlotWidth;
+                this.calculatedWidth = this.mainSlot.calculatedSlotWidth;
                 for (let slot of this.slots) {
                     slot.isSlotWidthCalculatable = true;
-                    slot.calulatedSlotWidth = this.parentSlot.calulatedSlotWidth;
+                    slot.calculatedSlotWidth = this.parentSlot.calculatedSlotWidth;
                 }
                 this.slots.forEach(t=>t.calculateWidthFromTop());
                 return;
@@ -87,7 +89,7 @@ namespace LayoutLzg{
             this.calculateWidthFromBottom();
             for (let slot of this.slots) {
                 slot.isSlotWidthCalculatable = true;
-                slot.calulatedSlotWidth = this.calculatedWidth;
+                slot.calculatedSlotWidth = this.calculatedWidth;
             }
             this.slots.forEach(t=>t.calculateWidthFromTop());
         }
@@ -98,7 +100,7 @@ namespace LayoutLzg{
                 this.calculatedHeight = this.height.value;
                 for (let slot of this.slots) {
                     slot.isSlotHeightCalculatable = true;
-                    slot.calulatedSlotHeight = this.height.value;
+                    slot.calculatedSlotHeight = this.height.value;
                 }
                 this.slots.forEach(t=>t.calculateHeightFromTop());
                 return;
@@ -106,10 +108,10 @@ namespace LayoutLzg{
             if(this.parentSlot&&this.parentSlot.isSlotHeightCalculatable&&this.verticalAlignment==VerticalAlignment.Strech) {
                 for (let slot of this.slots) {
                     slot.isSlotHeightCalculatable = true;
-                    slot.calulatedSlotHeight = this.parentSlot.calulatedSlotHeight;
+                    slot.calculatedSlotHeight = this.parentSlot.calculatedSlotHeight;
                 }
                 this.slots.forEach(t=>t.calculateHeightFromTop());
-                this.calculatedHeight = this.mainSlot.calulatedSlotHeight;
+                this.calculatedHeight = this.mainSlot.calculatedSlotHeight;
                 return;
             }
             // 终止向下计算，从下向上计算
@@ -117,7 +119,7 @@ namespace LayoutLzg{
             this.calculateHeightFromBottom();
             for (let slot of this.slots) {
                 slot.isSlotHeightCalculatable = true;
-                slot.calulatedSlotHeight = this.calculatedHeight;
+                slot.calculatedSlotHeight = this.calculatedHeight;
             }
             this.slots.forEach(t=>t.calculateHeightFromTop());
         }
@@ -131,7 +133,7 @@ namespace LayoutLzg{
             for (let slot of this.slots)  {
                 slot.calculateWidthFromBottom();
             }
-            this.calculatedWidth = this.mainSlot.calulatedSlotWidth;
+            this.calculatedWidth = this.mainSlot.calculatedSlotWidth;
         }
 
         calculateHeightFromBottom(): void {
@@ -142,7 +144,7 @@ namespace LayoutLzg{
             for (let slot of this.slots)  {
                 slot.calculateHeightFromBottom();
             }
-            this.calculatedHeight = this.mainSlot.calulatedSlotHeight;
+            this.calculatedHeight = this.mainSlot.calculatedSlotHeight;
         }
     }
 }

@@ -7,7 +7,8 @@ namespace LayoutLzg{
         getRootElement(): HTMLElement {
             if(this.rootElem==null) {
                 this.rootElem = $("<div></div>")[0];
-                $(this.rootElem).css("box-sizing","border-box")
+                $(this.rootElem).css("box-sizing","border-box");
+                $(this.rootElem).css("pointer-events","all");
             }
             return this.rootElem;
         }

@@ -40,12 +40,9 @@ namespace LayoutLzg{
         }
 
         getRootElement(): HTMLElement {
-            if(this.rootElem==null) {
-                this.rootElem = $("<div></div>")[0];
-                $(this.rootElem).attr('layout-type','TextView');
-                $(this.rootElem).attr('layout-name',this.name);
-                // eventTransparentDiv(this.rootElem);
-            }
+            super.getRootElement();
+            $(this.rootElem).attr('layout-type','TextView');
+            $(this.rootElem).attr('layout-name',this.name);
             return this.rootElem;
         }
 
@@ -64,7 +61,10 @@ namespace LayoutLzg{
         }
 
         doLayout(): void {
-            super.doLayout();
+            $(this.getRootElement()).css('position','absolute');
+            $(this.getRootElement()).css('width',this.calculatedWidth+'px');
+            $(this.getRootElement()).css('height',this.calculatedHeight+'px');
+            $(this.getRootElement()).css("position","absolute");
             if(!this._selectable) {
                 $(this.spanElem).css("user-select","none");
             }else {
@@ -78,7 +78,7 @@ namespace LayoutLzg{
                 return;
             }
             if(this.parentSlot&&this.parentSlot.isSlotWidthCalculatable&&this.horizonAlignment==HorizonAlignment.Strech) {
-                this.calculatedWidth = this.parentSlot.calulatedSlotWidth;
+                this.calculatedWidth = this.parentSlot.calculatedSlotWidth;
                 return;
             }
             this.calculatedWidth = this.spanElem.offsetWidth;
@@ -89,7 +89,7 @@ namespace LayoutLzg{
                 return;
             }
             if(this.parentSlot&&this.parentSlot.isSlotHeightCalculatable&&this.verticalAlignment==VerticalAlignment.Strech) {
-                this.calculatedHeight = this.parentSlot.calulatedSlotHeight;
+                this.calculatedHeight = this.parentSlot.calculatedSlotHeight;
                 return;
             }
             this.calculatedHeight = this.spanElem.offsetHeight;

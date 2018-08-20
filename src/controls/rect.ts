@@ -102,7 +102,7 @@ namespace LayoutLzg{
                 return;
             }
             if(this.parentSlot&&this.parentSlot.isSlotWidthCalculatable&&this.horizonAlignment==HorizonAlignment.Strech) {
-                this.calculatedWidth = this.parentSlot.calulatedSlotWidth;
+                this.calculatedWidth = this.parentSlot.calculatedSlotWidth;
                 return;
             }
             this.calculatedWidth = 0;
@@ -114,7 +114,7 @@ namespace LayoutLzg{
                 return;
             }
             if(this.parentSlot&&this.parentSlot.isSlotHeightCalculatable&&this.verticalAlignment==VerticalAlignment.Strech) {
-                this.calculatedHeight = this.parentSlot.calulatedSlotHeight;
+                this.calculatedHeight = this.parentSlot.calculatedSlotHeight;
                 return;
             }
             super.calculateHeightFromTop();
