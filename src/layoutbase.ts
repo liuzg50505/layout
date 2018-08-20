@@ -24,6 +24,35 @@ namespace LayoutLzg{
         Vertical
     }
 
+    export class ShadowSettings {
+        type:string;
+        xoffset:number;
+        yoffset:number;
+        blur:number;
+        spread:number;
+        color:string;
+
+        constructor(xoffset:number,yoffset:number,blur:number,spread:number,color:string,type:string="outset") {
+            this.xoffset = xoffset;
+            this.yoffset = yoffset;
+            this.blur = blur;
+            this.spread = spread;
+            this.color = color;
+            this.type = type;
+        }
+
+        toBoxShawdowString():string {
+            let s = "";
+            if(this.type=="inset") s+="inset ";
+            s+=this.xoffset+"px ";
+            s+=this.yoffset+"px ";
+            s+=this.blur+"px ";
+            s+=this.spread+"px ";
+            s+=this.color+"";
+            return s;
+        }
+    }
+
 
     export interface Brush{
         applyToBackground(elem:HTMLElement):void;

@@ -70,11 +70,14 @@ namespace LayoutLzg{
         private _pressed:boolean;
         private _mouseenter:boolean;
 
+        protected notifyProperties:Array<string>=[];
+
         private propChangedCallbacks:List<PropertyChangedCallbackItem>;
         private eventCallbacks:List<EventCallbackItem>;
 
         parentSlot:Slot;
         parent:ContainerControl;
+        actualContainer:ContainerControl;
         // root div of this control.
         rootElem:HTMLElement;
 
@@ -179,7 +182,7 @@ namespace LayoutLzg{
         }
 
         getNotifyProperties():Array<string> {
-            return [];
+            return this.notifyProperties;
         }
 
         addPropertyChangedListener(propertName:string, callback:Function):void {
@@ -227,13 +230,18 @@ namespace LayoutLzg{
             if(events.length>0) {
                 this.eventCallbacks.remove(events[0]);
             }
-
         }
 
-        protected raiseEvent(eventName:string){
+        protected raiseEvent(eventName:string,args:Array<any>=[]){
             for (let eventcallbackitem of this.eventCallbacks) {
                 if(eventcallbackitem.eventName==eventName) {
-                    if(eventcallbackitem.callback) eventcallbackitem.callback(eventName);
+                    if(eventcallbackitem.callback) {
+                        let argarr = [eventName];
+                        for (let arg of args) {
+                            argarr.push(arg);
+                        }
+                        eventcallbackitem.callback.apply(this,argarr);
+                    }
                 }
             }
         }
@@ -243,11 +251,13 @@ namespace LayoutLzg{
     export abstract class Control extends FrameworkElement implements Disposable{
 
         // Background of this control, it can be a solid color, or a gradient color , or a picture.
-        private _fill:Brush;
+        protected _fill:Brush;
         // Border of this control, it can be a solid color, or a gradient color , or a picture.
-        private _stroke:Brush;
+        protected _stroke:Brush;
         // Thickness of this control's border, the value in thickness must be a fix value.
-        private _strokeThickness:Thickness;
+        protected _strokeThickness:Thickness;
+
+        protected _shadow:ShadowSettings;
 
         constructor(name:string){
             super(name);
@@ -279,6 +289,14 @@ namespace LayoutLzg{
         set strokeThickness(value: LayoutLzg.Thickness) {
             if(this._strokeThickness != value) this.notifyPropertyChanged("strokeThickness");
             this._strokeThickness = value;
+        }
+
+        get shadow(): LayoutLzg.ShadowSettings {
+            return this._shadow;
+        }
+
+        set shadow(value:ShadowSettings) {
+            this._shadow=value;
         }
 
         abstract dispose(): void;

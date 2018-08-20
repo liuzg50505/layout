@@ -11,6 +11,8 @@
   },
   "files":[
     "src/utils/dateutils.ts",
+    "src/utils/eventutils.ts",
+
     "src/eventbus/eventbus.ts",
     "src/lifecycle/lifecyclebase.ts",
 
@@ -34,6 +36,8 @@
     "src/containers/border.ts",
     "src/containers/horizonallinearlayout.ts",
     "src/containers/verticallinearlayout.ts",
+    "src/containers/vlinearlayout.ts",
+    "src/containers/hlinearlayout.ts",
 
     "src/observer/observableobjectinjector.ts",
     "src/observer/propertybase.ts",
@@ -53,6 +57,7 @@
     "src/converters/uppercaseconverter.ts",
     "src/converters/tostringconverter.ts",
     "src/converters/pipelineconverter.ts",
+    "src/converters/expressionconverter.ts",
 
     "src/visualtree/visualtree.ts",
     "src/visualtree/templatecontrol.ts",
@@ -61,6 +66,7 @@
     "src/action/actionbase.ts",
     "src/action/setpropertyaction.ts",
     "src/action/multiaction.ts",
+    "src/action/gotostateaction.ts",
 
     "src/trigger/propertychangedtrigger.ts",
     "src/trigger/statechangedtrigger.ts",
@@ -71,6 +77,8 @@
     "src/style/visualtreestyle.ts",
 
     "src/templatecontrols/button.ts",
+    "src/templatecontrols/progressbar.ts",
+    "src/templatecontrols/sliderbar.ts",
 
 
     "src/facades/binding.ts",

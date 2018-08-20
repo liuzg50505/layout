@@ -60,6 +60,7 @@ namespace LayoutLzg {
         }
 
         private initStates():void {
+
             this.addStateStyle("hoverGroup","mouseenter",{
                 "rectup":{
                     "strokeThickness": new Thickness(2,2,2,0)
@@ -67,7 +68,7 @@ namespace LayoutLzg {
                 "rectdown":{
                     "strokeThickness": new Thickness(2,2,0,2)
                 }
-            });
+            },"mouseenter");
             this.addStateStyle("hoverGroup","mouseleave",{
                 "rectup":{
                     "strokeThickness": new Thickness(1,1,1,0)
@@ -75,7 +76,7 @@ namespace LayoutLzg {
                 "rectdown":{
                     "strokeThickness": new Thickness(1,1,0,1)
                 }
-            });
+            },"mouseleave");
 
             this.addStateStyle("pressGroup","pressed",{
                 "rectup":{
@@ -84,7 +85,7 @@ namespace LayoutLzg {
                 "rectdown":{
                     "fill": new SolidColorBrush("#F1F1F1")
                 }
-            });
+            },"mousedown");
             this.addStateStyle("pressGroup","released",{
                 "rectup":{
                     "fill": new SolidColorBrush("#F1F1F1")
@@ -92,28 +93,7 @@ namespace LayoutLzg {
                 "rectdown":{
                     "fill": new SolidColorBrush("#E5E5E5")
                 }
-            });
-
-
-
-            this.activeState("hoverGroup","mouseleave");
-            this.activeState("pressGroup","mouseup");
-            let self = this;
-            this.addEventListener("mouseenter",function () {
-                self.activeState("hoverGroup","mouseenter");
-            });
-            this.addEventListener("mouseleave",function () {
-                self.activeState("hoverGroup","mouseleave");
-            });
-
-            this.addEventListener("mousedown", function () {
-                self.activeState("pressGroup","pressed");
-            });
-            this.addEventListener("mouseup", function () {
-                self.activeState("pressGroup","released");
-            })
-
-
+            },"mouseup");
         }
 
         get content(): any {
@@ -127,6 +107,7 @@ namespace LayoutLzg {
             let contentcontrol:Control = null;
             if(typeof value === "string" || typeof value === "number"){
                 let txt = new TextView("",value.toString());
+                txt.margin = new Thickness(10,10,5,5);
                 txt.selectable = false;
                 contentcontrol = txt;
                 contentcontrol.horizonAlignment = HorizonAlignment.Strech;

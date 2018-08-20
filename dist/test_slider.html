@@ -15,6 +15,7 @@
 </head>
 <body>
 
+<span id="value"></span>
 
 <script>
 
@@ -25,8 +26,8 @@
     defaultSlot.calulatedSlotHeight = $("body").height();
 
     rootBorder = new LayoutLzg.Border("");
-    rootBorder.width = new LayoutLzg.Distance(LayoutLzg.DistanceType.auto,0);
-    rootBorder.height = new LayoutLzg.Distance(LayoutLzg.DistanceType.auto,0);
+    rootBorder.width = new LayoutLzg.Distance(LayoutLzg.DistanceType.fixed,defaultSlot.calulatedSlotWidth);
+    rootBorder.height = new LayoutLzg.Distance(LayoutLzg.DistanceType.fixed,defaultSlot.calulatedSlotWidth);
     rootBorder.horizonAlignment = LayoutLzg.HorizonAlignment.Strech;
     rootBorder.verticalAlignment = LayoutLzg.VerticalAlignment.Strech;
     rootBorder.parentSlot = defaultSlot;
@@ -41,12 +42,33 @@
     button.verticalAlignment = LayoutLzg.VerticalAlignment.Top;
     button.content = "fsdfss11";
 
+    bar = new LayoutLzg.SliderBar("sliderbar");
+    bar.width = new LayoutLzg.Distance(LayoutLzg.DistanceType.fixed,300);
+    bar.height = new LayoutLzg.Distance(LayoutLzg.DistanceType.fixed,20);
+    bar.margin.left = 50;
+    bar.margin.top = 200;
+    bar.value = 60;
+
+    textView = new LayoutLzg.TextView("");
+    textView.width = new LayoutLzg.Distance(LayoutLzg.DistanceType.auto,0);
+    textView.height = new LayoutLzg.Distance(LayoutLzg.DistanceType.auto,0);
+    textView.margin.left = 50;
+    textView.margin.top = 50;
+
     rootBorder.addChild(button);
+    rootBorder.addChild(bar);
+    rootBorder.addChild(textView);
+
     rootBorder.initCalculableSlots();
     rootBorder.assembleDom();
     rootdiv = rootBorder.getRootElement();
     $("body").append(rootdiv);
     rootBorder.doLayout();
+
+    strconverter = new LayoutLzg.ExpressionConverter("'Value='+parseInt(Math.round(value)).toString()");
+    provider = LayoutLzg.getDefaultUniversalPropertyProvider();
+    // LayoutLzg.createPropertyBinding(provider,$("#value")[0],"text",bar,"value").setConverter(strconverter).startBinding();
+    // LayoutLzg.createPropertyBinding(provider,textView,"text",bar,"value").setConverter(strconverter).startBinding();
 
 </script>
 </body>

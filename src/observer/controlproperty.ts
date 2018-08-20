@@ -26,6 +26,9 @@ namespace LayoutLzg {
             let control:any = <FrameworkElement>this.obj;
             if(this.propertyName in control) {
                 control[this.propertyName] = value;
+                let control1:FrameworkElement = <FrameworkElement>this.obj;
+                control1.assembleDom();
+                control1.doLayout();
             }
         }
 

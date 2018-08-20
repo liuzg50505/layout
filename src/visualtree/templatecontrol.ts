@@ -4,10 +4,12 @@ namespace LayoutLzg {
         private rootBorder : Border = new Border("rootBorder");
         private _visualTree : VisualTree;
         private stateGroups : List<StateGroup>;
+        protected stateEventTriggers: List<ControlTrigger>;
 
         constructor(name: string) {
             super(name);
             this.stateGroups = new List<StateGroup>();
+            this.stateEventTriggers = new List<ControlTrigger>();
         }
 
         get visualTree(): VisualTree {
@@ -29,7 +31,7 @@ namespace LayoutLzg {
             return stageGroup;
         }
 
-        addStateStyle(groupName:string, statename:string, controlpropertyValues:any) {
+        addStateStyle(groupName:string, statename:string, controlpropertyValues:any, eventName:string=null) {
             let groups = this.stateGroups.filter(t=>t.groupName==groupName);
             let group:StateGroup = null;
             if(groups.length==0) {
@@ -56,6 +58,22 @@ namespace LayoutLzg {
                     state.style.addStyleItem(controlName,propertyName,value);
                 }
             }
+            if(eventName) this.addStateTrigger(groupName,statename,eventName);
+
+        }
+
+        addStateTrigger(groupName:string, stateName:string, eventName:string):void {
+            let trigger = new EventTrigger();
+            trigger.control = this;
+            trigger.eventName = eventName;
+            let gotostateaction = new GotoStateAction();
+            gotostateaction.templateControl = this;
+            gotostateaction.stateName = stateName;
+            gotostateaction.groupName = groupName;
+            trigger.action = gotostateaction;
+            trigger.init();
+            this.stateEventTriggers.add(trigger);
+
         }
 
         activeState(groupName:string, stateName:string):void {
@@ -80,6 +98,7 @@ namespace LayoutLzg {
             this.rootBorder.horizonAlignment = this.horizonAlignment;
             this.rootBorder.verticalAlignment = this.verticalAlignment;
             this.rootBorder.addChild(this._visualTree.rootContainer);
+            this.rootBorder.margin = this.margin;
             this._visualTree.rootContainer.width = new Distance(DistanceType.auto,0);
             this._visualTree.rootContainer.height = new Distance(DistanceType.auto,0);
             this._visualTree.rootContainer.horizonAlignment = HorizonAlignment.Strech;
@@ -92,29 +111,44 @@ namespace LayoutLzg {
             this.rootBorder.assembleDom();
 
             let self = this;
-            $(this.getRootElement()).click(function () {
-                self.raiseEvent("click");
+            $(this.getRootElement()).click(function (e) {
+                self.raiseEvent("click",[e]);
             });
-            $(this.getRootElement()).mouseenter(function () {
-                self.raiseEvent("mouseenter");
+            $(this.getRootElement()).mouseenter(function (e) {
+                self.raiseEvent("mouseenter",[e]);
             });
-            $(this.getRootElement()).mouseleave(function () {
-                self.raiseEvent("mouseleave");
+            $(this.getRootElement()).mouseleave(function (e) {
+                self.raiseEvent("mouseleave",[e]);
             });
-            $(this.getRootElement()).mousedown(function () {
-                self.raiseEvent("mousedown");
+            $(this.getRootElement()).mousedown(function (e) {
+                self.raiseEvent("mousedown",[e]);
                 self.pressed = true;
             });
-            $(this.getRootElement()).mouseup(function () {
-                self.raiseEvent("mouseup");
+            $(this.getRootElement()).mouseup(function (e) {
+                self.raiseEvent("mouseup",[e]);
                 self.pressed = false;
             });
-            $(this.getRootElement()).mousemove(function () {
-                self.raiseEvent("mousemove");
+            $(this.getRootElement()).mousemove(function (e) {
+                self.raiseEvent("mousemove",[e]);
             });
         }
 
         doLayout(): void {
+            this.rootBorder.width = this.width;
+            this.rootBorder.height = this.height;
+            this.rootBorder.horizonAlignment = this.horizonAlignment;
+            this.rootBorder.verticalAlignment = this.verticalAlignment;
+            // this.rootBorder.addChild(this._visualTree.rootContainer);
+            this.rootBorder.margin = this.margin;
+            this._visualTree.rootContainer.width = new Distance(DistanceType.auto,0);
+            this._visualTree.rootContainer.height = new Distance(DistanceType.auto,0);
+            this._visualTree.rootContainer.horizonAlignment = HorizonAlignment.Strech;
+            this._visualTree.rootContainer.verticalAlignment = VerticalAlignment.Strech;
+
+            // this.rootBorder.parentSlot = this.parentSlot;
+            // this.rootBorder.parent = this.parent;
+
+            // this.rootBorder.initCalculableSlots();
             this.rootBorder.doLayout();
         }
 
@@ -127,51 +161,23 @@ namespace LayoutLzg {
         }
     }
 
-    export class ContentPresenter extends Control{
+    export class ContentPresenter extends Border{
 
         content:Control;
 
-        getRootElement(): HTMLElement {
-            if(this.content)
-                return this.content.getRootElement();
-            if(!this.rootElem) {
-                this.rootElem = $("<div></div>")[0];
-            }else{
-                return this.rootElem;
-            }
+
+        constructor(name: string) {
+            super(name);
         }
 
-        estimateWidth(): number {
-            if(this.content)
-                return this.content.estimateWidth();
-            return 0;
-        }
-
-        estimateHeight(): number {
-            if(this.content)
-                return this.content.estimateHeight();
-            return 0;
-        }
 
         assembleDom(): void {
             if(this.content) {
-                this.content.horizonAlignment = this.horizonAlignment;
-                this.content.verticalAlignment = this.verticalAlignment;
-                this.content.width = this.width;
-                this.content.height = this.height;
-                this.content.parent = this.parent;
-                this.content.parentSlot = this.parentSlot;
-                this.content.assembleDom();
+                this.addChild(this.content);
+                super.assembleDom();
             }
         }
 
-        doLayout(): void {
-            if(this.content) this.content.doLayout();
-        }
-
-        dispose(): void {
-            if(this.content) this.content.dispose();
-        }
 
     }
 

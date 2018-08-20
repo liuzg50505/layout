@@ -2,7 +2,7 @@ namespace LayoutLzg{
     export class Border extends ContainerControl {
 
         wrapperDoms : Array<HTMLElement>;
-        private mainSlot : Slot;
+        protected mainSlot : Slot;
 
         constructor(name:string) {
             super(name);
@@ -15,6 +15,7 @@ namespace LayoutLzg{
                 this.rootElem = $("<div></div>")[0];
                 $(this.rootElem).attr('layout-type','Border');
                 $(this.rootElem).attr('layout-name',this.name);
+                // eventTransparentDiv(this.rootElem);
             }
             return this.rootElem;
         }
@@ -105,6 +106,7 @@ namespace LayoutLzg{
 
                 let wrapperDiv = $("<div></div>")[0];
                 $(wrapperDiv).attr('layout-tag','wrapper');
+                // eventTransparentDiv(wrapperDiv);
                 this.wrapperDoms.push(wrapperDiv);
                 $(this.getRootElement()).append(wrapperDiv);
                 $(wrapperDiv).append(child.getRootElement());
@@ -173,6 +175,10 @@ namespace LayoutLzg{
                         if(this.children.length>0) {
                             let widthlist = this.children.map(t=>t.estimateWidth()+t.margin.left+t.margin.right);
                             widthlist.sort((a,b)=>b-a);
+                            for (let child of this.children) {
+                                child.parentSlot.isSlotWidthCalculatable = true;
+                                child.parentSlot.calulatedSlotWidth = widthlist[0];
+                            }
                             return widthlist[0];
                         }
                         return 0;
@@ -187,6 +193,10 @@ namespace LayoutLzg{
                     if (this.children.length > 0) {
                         let widthlist = this.children.map(t => t.estimateWidth() + t.margin.left + t.margin.right);
                         widthlist.sort((a,b)=>b-a);
+                        for (let child of this.children) {
+                            child.parentSlot.isSlotWidthCalculatable = true;
+                            child.parentSlot.calulatedSlotWidth = widthlist[0];
+                        }
                         return widthlist[0];
                     }
                     return 0;
@@ -206,6 +216,10 @@ namespace LayoutLzg{
                         if(this.children.length>0) {
                             let heightlist = this.children.map(t=>t.estimateHeight()+t.margin.top+t.margin.bottom);
                             heightlist.sort().reverse();
+                            for (let child of this.children) {
+                                child.parentSlot.isSlotHeightCalculatable = true;
+                                child.parentSlot.calulatedSlotHeight = heightlist[0];
+                            }
                             return heightlist[0];
                         }
                         return 0;
@@ -220,6 +234,10 @@ namespace LayoutLzg{
                     if (this.children.length > 0) {
                         let heightlist = this.children.map(t => t.estimateHeight() + t.margin.top + t.margin.bottom);
                         heightlist.sort().reverse();
+                        for (let child of this.children) {
+                            child.parentSlot.isSlotHeightCalculatable = true;
+                            child.parentSlot.calulatedSlotHeight = heightlist[0];
+                        }
                         return heightlist[0];
                     }
                     return 0;

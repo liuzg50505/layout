@@ -16,6 +16,9 @@ namespace LayoutLzg{
                         return this.estimateWidth_auto();
                     }
                 }else if(this.horizonAlignment==HorizonAlignment.Strech){
+                    if(this.width.type == DistanceType.fixed) {
+                        return this.width.value;
+                    }
                     return this.parentSlot.calulatedSlotWidth - this.margin.left - this.margin.right;
                 }
             }else{
@@ -41,6 +44,9 @@ namespace LayoutLzg{
                         return this.estimateHeight_auto();
                     }
                 }else if(this.verticalAlignment==VerticalAlignment.Strech){
+                    if(this.height.type == DistanceType.fixed) {
+                        return this.height.value;
+                    }
                     return this.parentSlot.calulatedSlotHeight - this.margin.top - this.margin.bottom;
                 }
             }else{
@@ -56,6 +62,7 @@ namespace LayoutLzg{
         getRootElement(): HTMLElement {
             if(this.rootElem==null) {
                 this.rootElem = $("<div></div>")[0];
+                $(this.rootElem).css("box-sizing","border-box")
             }
             return this.rootElem;
         }
