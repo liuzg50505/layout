@@ -110,24 +110,24 @@ namespace LayoutLzg {
             this.rootBorder.assembleDom();
 
             let self = this;
-            $(this.getRootElement()).click(function (e) {
+            onEvent(this.getRootElement(),"click",function (e:any) {
                 self.raiseEvent("click",[e]);
             });
-            $(this.getRootElement()).mouseenter(function (e) {
+            onEvent(this.getRootElement(),"mouseenter",function (e:any) {
                 self.raiseEvent("mouseenter",[e]);
             });
-            $(this.getRootElement()).mouseleave(function (e) {
+            onEvent(this.getRootElement(),"mouseleave",function (e:any) {
                 self.raiseEvent("mouseleave",[e]);
             });
-            $(this.getRootElement()).mousedown(function (e) {
+            onEvent(this.getRootElement(),"mousedown",function (e:any) {
                 self.raiseEvent("mousedown",[e]);
                 self.pressed = true;
             });
-            $(this.getRootElement()).mouseup(function (e) {
+            onEvent(this.getRootElement(),"mouseup",function (e:any) {
                 self.raiseEvent("mouseup",[e]);
                 self.pressed = false;
             });
-            $(this.getRootElement()).mousemove(function (e) {
+            onEvent(this.getRootElement(),"mousemove",function (e:any) {
                 self.raiseEvent("mousemove",[e]);
             });
         }

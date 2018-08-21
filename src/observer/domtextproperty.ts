@@ -9,9 +9,9 @@ namespace LayoutLzg {
         getValue(): any {
             let dom = <HTMLElement>this.obj;
             if(dom.tagName=="INPUT"||dom.tagName=="input") {
-                return $(dom).val();
+                return getElemValue(dom);
             }
-            return $(dom).text();
+            return getElemText(dom);
         }
 
     }
@@ -25,10 +25,10 @@ namespace LayoutLzg {
         setValue(value: any): void {
             let dom = <HTMLElement>this.obj;
             if(dom.tagName=="INPUT"||dom.tagName=="input") {
-                $(dom).val(value);
+                setElemValue(dom,value);
                 return;
             }
-            $(dom).text(value);
+            setElemText(dom,value);
         }
 
     }
@@ -74,11 +74,11 @@ namespace LayoutLzg {
                 if(self.callback)
                     self.callback.apply(self.dom,[self.dom]);
             };
-            $(this.dom).change(this.callbackfun);
+            onEvent(this.dom, "change",this.callbackfun);
         }
 
         stopListen(): void {
-            $(this.dom).off("resize",this.callbackfun);
+            offEvent(this.dom,"change",this.callbackfun);
         }
 
     }

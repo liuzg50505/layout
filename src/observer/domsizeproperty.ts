@@ -121,11 +121,11 @@ namespace LayoutLzg {
                 if(self.callback)
                     self.callback.apply(self.dom,[self.dom]);
             };
-            $(this.dom).resize(this.callbackfun);
+            onEvent(this.dom,"resize",this.callbackfun);
         }
 
         stopListen(): void {
-            $(this.dom).off("resize",this.callbackfun);
+            offEvent(this.dom,"resize",this.callbackfun);
         }
 
     }

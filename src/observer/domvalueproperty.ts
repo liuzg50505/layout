@@ -15,10 +15,10 @@ namespace LayoutLzg {
                 }else if(input.type=="checkbox"){
                     return input.checked;
                 }else{
-                    return $(dom).val();
+                    return getElemValue(dom);
                 }
             }
-            return $(dom).text();
+            return getElemText(dom);
         }
 
     }
@@ -38,11 +38,11 @@ namespace LayoutLzg {
                 }else if(input.type=="checkbox"){
                     input.checked = value;
                 }else{
-                    $(dom).val(value);
+                    setElemValue(dom,value);
                     return;
                 }
             }
-            $(dom).text(value);
+            setElemText(dom, value);
         }
 
     }
@@ -88,11 +88,11 @@ namespace LayoutLzg {
                 if(self.callback)
                     self.callback.apply(self.dom,[self.dom]);
             };
-            $(this.dom).change(this.callbackfun);
+            onEvent(this.dom, "change", this.callbackfun);
         }
 
         stopListen(): void {
-            $(this.dom).off("resize",this.callbackfun);
+            offEvent(this.dom,"resize",this.callbackfun);
         }
 
     }

@@ -7,7 +7,7 @@ namespace LayoutLzg {
         }
 
         getValue(): any {
-            let control:any = <FrameworkElement>this.obj;
+            let control:any = <VisualElement>this.obj;
             if(this.propertyName in control) {
                 return control[this.propertyName];
             }
@@ -23,7 +23,7 @@ namespace LayoutLzg {
         }
 
         setValue(value: any): void {
-            let control:any = <FrameworkElement>this.obj;
+            let control:any = <VisualElement>this.obj;
             if(this.propertyName in control) {
                 control[this.propertyName] = value;
                 let control1:Control = <Control>this.obj;
@@ -39,7 +39,7 @@ namespace LayoutLzg {
     export class ControlPropertyGetterProvider extends PropertyGetterProvider{
 
         canProvideGetter(obj: any, propertyName: string): boolean {
-            return obj instanceof FrameworkElement;
+            return obj instanceof VisualElement;
 
         }
 
@@ -52,7 +52,7 @@ namespace LayoutLzg {
     export class ControlPropertySetterProvider extends PropertySetterProvider{
 
         canProvideSetter(obj: any, propertyName: string): boolean {
-            return obj instanceof FrameworkElement;
+            return obj instanceof VisualElement;
         }
 
         getPropertySetter(obj: any, propertyName: string): PropertySetter {
@@ -62,12 +62,12 @@ namespace LayoutLzg {
     }
 
     export class ControlPropertyChangedListener extends PropertyChangedListener{
-        private control: FrameworkElement;
+        private control: VisualElement;
         private callbackfun:any;
 
         constructor(obj: any, propertyName: string) {
             super(obj, propertyName);
-            this.control = <FrameworkElement>obj;
+            this.control = <VisualElement>obj;
         }
 
         startListen(): void {
@@ -92,8 +92,8 @@ namespace LayoutLzg {
         }
 
         canProvideChangedListener(obj: any, propertyName: string): boolean {
-            if (obj instanceof FrameworkElement) {
-                let control = <FrameworkElement>obj;
+            if (obj instanceof VisualElement) {
+                let control = <VisualElement>obj;
                 return control.getNotifyProperties().indexOf(propertyName)>-1;
             }
             return false;

@@ -70,25 +70,24 @@ namespace LayoutLzg {
             let dx = 0;
             let dy = 0;
             let self = this;
-            $(rectHandle.getRootElement()).mousedown(function (e) {
+
+            onEvent(rectHandle.getRootElement(),"mousedown",function (e:any) {
                 mousedownScreenX = e.screenX;
                 mousedownScreenY = e.screenY;
                 ismousedown = true;
                 self.mousedownValue = self._value;
             });
-            $(document.body).mousemove(function (e) {
+            onEvent(document.body,"mousemove",function (e:any) {
                 if(!ismousedown) return;
                 dx = e.screenX - mousedownScreenX;
                 dy = e.screenY - mousedownScreenY;
                 self.onHandleDrag(dx,dy);
             });
-            $(document.body).mouseup(function (e) {
+            onEvent(document.body,"mouseup",function (e:any) {
                 mousedownScreenX = e.screenX;
                 mousedownScreenY = e.screenY;
                 ismousedown = false;
             });
-
-
 
             this.visualTree.rootContainer = rootBorder;
             this.rectHandle = rectHandle;

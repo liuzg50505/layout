@@ -41,34 +41,34 @@ namespace LayoutLzg{
 
         getRootElement(): HTMLElement {
             super.getRootElement();
-            $(this.rootElem).attr('layout-type','TextView');
-            $(this.rootElem).attr('layout-name',this.name);
+            setattr(this.rootElem,'layout-type','TextView');
+            setattr(this.rootElem,'layout-name',this.name);
             return this.rootElem;
         }
 
         assembleDom(): void {
-            this.spanElem = $("<span></span>")[0];
-            $(this.getRootElement()).empty();
-            if(this.width.type==DistanceType.fixed) $(this.getRootElement()).css('width',this.width.value+'px');
-            if(this.height.type==DistanceType.fixed) $(this.getRootElement()).css('height',this.height.value+'px');
-            $(this.getRootElement()).append(this.spanElem);
-            $(this.spanElem).text(this._text);
+            this.spanElem = createElement("SPAN");
+            emptyChildren(this.getRootElement());
+            if(this.width.type==DistanceType.fixed) css(this.getRootElement(),'width',this.width.value+'px');
+            if(this.height.type==DistanceType.fixed) css(this.getRootElement(),'height',this.height.value+'px');
+            appendChild(this.getRootElement(),this.spanElem);
+            setElemText(this.spanElem,this._text);
             if(this._wordWrap)
-                $(this.spanElem).css('word-break','break-all');
+                css(this.spanElem,'word-break','break-all');
             else
-                $(this.spanElem).css('word-break','normal');
+                css(this.spanElem,'word-break','normal');
 
         }
 
         doLayout(): void {
-            $(this.getRootElement()).css('position','absolute');
-            $(this.getRootElement()).css('width',this.calculatedWidth+'px');
-            $(this.getRootElement()).css('height',this.calculatedHeight+'px');
-            $(this.getRootElement()).css("position","absolute");
+            css(this.getRootElement(),'position','absolute');
+            css(this.getRootElement(),'width',this.calculatedWidth+'px');
+            css(this.getRootElement(),'height',this.calculatedHeight+'px');
+            css(this.getRootElement(),"position","absolute");
             if(!this._selectable) {
-                $(this.spanElem).css("user-select","none");
+                css(this.spanElem,"user-select","none");
             }else {
-                $(this.spanElem).css("user-select","");
+                css(this.spanElem,"user-select","");
             }
         }
 

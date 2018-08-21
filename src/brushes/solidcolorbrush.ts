@@ -7,33 +7,45 @@ namespace LayoutLzg{
         }
 
         applyToBackground(elem: HTMLElement): void {
-            $(elem).css("background-color", this.color);
+            css(elem,"background-color", this.color);
         }
 
         applyToBorder(elem: HTMLElement, thickness: LayoutLzg.Thickness): void {
-            $(elem).css("border-color", this.color);
+            css(elem,"border-color", this.color);
 
-            $(elem).css("border-left-width", thickness.left+"px");
-            $(elem).css("border-right-width", thickness.right+"px");
-            $(elem).css("border-top-width", thickness.top+"px");
-            $(elem).css("border-bottom-width", thickness.bottom+"px");
+            css(elem,"border-left-width", thickness.left+"px");
+            css(elem,"border-right-width", thickness.right+"px");
+            css(elem,"border-top-width", thickness.top+"px");
+            css(elem,"border-bottom-width", thickness.bottom+"px");
 
-            $(elem).css("border-left-style", "solid");
-            $(elem).css("border-right-style", "solid");
-            $(elem).css("border-top-style", "solid");
-            $(elem).css("border-bottom-style", "solid");
+            css(elem,"border-left-style", "solid");
+            css(elem,"border-right-style", "solid");
+            css(elem,"border-top-style", "solid");
+            css(elem,"border-bottom-style", "solid");
         }
 
         applyToBorderLeft(elem: HTMLElement, thickness: number): void {
+            css(elem,"border-color", this.color);
+            css(elem,"border-left-width", thickness+"px");
+            css(elem,"border-left-style", "solid");
         }
 
         applyToBorderRight(elem: HTMLElement, thickness: number): void {
+            css(elem,"border-color", this.color);
+            css(elem,"border-right-width", thickness+"px");
+            css(elem,"border-right-style", "solid");
         }
 
         applyToBorderTop(elem: HTMLElement, thickness: number): void {
+            css(elem,"border-color", this.color);
+            css(elem,"border-top-width", thickness+"px");
+            css(elem,"border-top-style", "solid");
         }
 
         applyToBorderBottom(elem: HTMLElement, thickness: number): void {
+            css(elem,"border-color", this.color);
+            css(elem,"border-bottom-width", thickness+"px");
+            css(elem,"border-bottom-style", "solid");
         }
     }
 

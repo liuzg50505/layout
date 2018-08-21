@@ -62,7 +62,7 @@ namespace LayoutLzg{
 
         getRootElement(): HTMLElement {
             if(this.rootElem==null) {
-                this.rootElem = $("<div></div>")[0];
+                this.rootElem = createElement("DIV");
             }
             return this.rootElem;
         }

@@ -27,28 +27,29 @@ namespace LayoutLzg {
         }
 
         assembleDom(): void {
-            $(this.getRootElement()).empty();
+            emptyChildren(this.getRootElement());
 
             for (let slot of this.slots){
-                let slotWrapperDiv = $("<div></div>")[0];
-                $(slotWrapperDiv).css('pointer-events','none');
+                let slotWrapperDiv = createElement("DIV");
+
+                css(slotWrapperDiv,'pointer-events','none');
                 for (let child of slot.children) {
                     child.assembleDom();
-                    let childWrapperDiv = $("<div></div>")[0];
-                    $(childWrapperDiv).css('pointer-events','none');
-                    $(childWrapperDiv).append(child.getRootElement());
-                    $(slotWrapperDiv).append(childWrapperDiv);
+                    let childWrapperDiv = createElement("DIV");
+                    css(childWrapperDiv,'pointer-events','none');
+                    appendChild(childWrapperDiv,child.getRootElement());
+                    appendChild(slotWrapperDiv,childWrapperDiv);
                     this.childWrappersMap.put(child,childWrapperDiv);
                 }
                 this.slotWrappersMap.put(slot,slotWrapperDiv);
-                $(this.getRootElement()).append(slotWrapperDiv);
+                appendChild(this.getRootElement(),slotWrapperDiv);
             }
         }
 
         doLayout(): void {
-            $(this.getRootElement()).css('position','absolute');
-            $(this.getRootElement()).css('width',this.calculatedWidth+'px');
-            $(this.getRootElement()).css('height',this.calculatedHeight+'px');
+            css(this.getRootElement(),'position','absolute');
+            css(this.getRootElement(),'width',this.calculatedWidth+'px');
+            css(this.getRootElement(),'height',this.calculatedHeight+'px');
 
             let weightSum = 0;
             let fixSum = 0;
@@ -73,19 +74,19 @@ namespace LayoutLzg {
                     cellh = (this.calculatedHeight - fixSum)* cellDefination.value / weightSum;
                 }
 
-                $(slotWrapperDiv).css('position','absolute');
-                $(slotWrapperDiv).css('left','0px');
-                $(slotWrapperDiv).css('right','0px');
-                $(slotWrapperDiv).css('top',pos+'px');
-                $(slotWrapperDiv).css('height',cellh+'px');
+                css(slotWrapperDiv,'position','absolute');
+                css(slotWrapperDiv,'left','0px');
+                css(slotWrapperDiv,'right','0px');
+                css(slotWrapperDiv,'top',pos+'px');
+                css(slotWrapperDiv,'height',cellh+'px');
 
                 for (let child of slot.children) {
                     let childWrapperDiv = this.childWrappersMap.get(child);
-                    $(childWrapperDiv).css('position','absolute');
-                    $(childWrapperDiv).css('left',child.margin.left+'px');
-                    $(childWrapperDiv).css('right',child.margin.right+'px');
-                    $(childWrapperDiv).css('top',child.margin.top+'px');
-                    $(childWrapperDiv).css('bottom',child.margin.bottom+'px');
+                    css(childWrapperDiv,'position','absolute');
+                    css(childWrapperDiv,'left',child.margin.left+'px');
+                    css(childWrapperDiv,'right',child.margin.right+'px');
+                    css(childWrapperDiv,'top',child.margin.top+'px');
+                    css(childWrapperDiv,'bottom',child.margin.bottom+'px');
                 }
                 slot.layoutChildren();
                 pos+=cellh;
@@ -213,9 +214,10 @@ namespace LayoutLzg {
 
         getRootElement(): HTMLElement {
             if(this.rootElem==null) {
-                this.rootElem = $("<div></div>")[0];
-                $(this.rootElem).attr('layout-type','Vlinearlayout');
-                $(this.rootElem).attr('layout-name',this.name);
+                this.rootElem = createElement("DIV");
+                css(this.rootElem,'pointer-events','all');
+                setattr(this.rootElem,'layout-type','Vlinearlayout');
+                setattr(this.rootElem,'layout-name',this.name);
             }
             return this.rootElem;
         }

@@ -127,7 +127,7 @@ namespace LayoutLzg{
         }
     }
 
-    export abstract class FrameworkElement {
+    export abstract class VisualElement {
         // Name of this control.
         name:string;
         // Width of this Control, it can be a fix value or auto.
@@ -310,7 +310,7 @@ namespace LayoutLzg{
     }
 
     // Control class is the base class of all the visual components.
-    export abstract class Control extends FrameworkElement implements Disposable{
+    export abstract class Control extends VisualElement implements Disposable{
 
         // Background of this control, it can be a solid color, or a gradient color , or a picture.
         protected _fill:Brush;
@@ -320,6 +320,9 @@ namespace LayoutLzg{
         protected _strokeThickness:Thickness;
 
         protected _shadow:ShadowSettings;
+
+        calculatedWidth: number;
+        calculatedHeight: number;
 
         constructor(name:string){
             super(name);
@@ -373,8 +376,6 @@ namespace LayoutLzg{
 
         abstract dispose(): void;
 
-        calculatedWidth: number;
-        calculatedHeight: number;
     }
 
     // The purpose of the container is to put sub controls together,

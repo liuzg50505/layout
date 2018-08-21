@@ -14,10 +14,10 @@ namespace LayoutLzg{
 
         getRootElement(): HTMLElement {
             if(this.rootElem==null) {
-                this.rootElem = $("<div></div>")[0];
-                $(this.rootElem).css('pointer-events','all');
-                $(this.rootElem).attr('layout-type','Border');
-                $(this.rootElem).attr('layout-name',this.name);
+                this.rootElem = createElement("DIV");
+                css(this.rootElem,'pointer-events','all');
+                setattr(this.rootElem,'layout-type','Border');
+                setattr(this.rootElem,'layout-name',this.name);
             }
             return this.rootElem;
         }
@@ -30,35 +30,35 @@ namespace LayoutLzg{
 
 
         assembleDom(): void {
-            $(this.getRootElement()).empty();
+            emptyChildren(this.getRootElement());
 
             for(let i=0;i<this.children.length;i++){
                 let child = this.children[i];
                 child.assembleDom();
 
-                let wrapperDiv = $("<div></div>")[0];
-                $(wrapperDiv).css('pointer-events','none');
-                $(wrapperDiv).attr('layout-tag','wrapper');
+                let wrapperDiv = createElement("DIV");
+                css(wrapperDiv,'pointer-events','none');
+                setattr(wrapperDiv,'layout-tag','wrapper');
                 this.childWrappersMap.put(child,wrapperDiv);
-                $(this.getRootElement()).append(wrapperDiv);
-                $(wrapperDiv).append(child.getRootElement());
+                appendChild(this.getRootElement(),wrapperDiv);
+                appendChild(wrapperDiv,child.getRootElement());
             }
         }
 
         doLayout(): void {
-            $(this.getRootElement()).css('position','absolute');
-            $(this.getRootElement()).css('width',this.calculatedWidth+'px');
-            $(this.getRootElement()).css('height',this.calculatedHeight+'px');
+            css(this.getRootElement(),'position','absolute');
+            css(this.getRootElement(),'width',this.calculatedWidth+'px');
+            css(this.getRootElement(),'height',this.calculatedHeight+'px');
 
             for (let slot of this.slots) {
                 for (let child of slot.children) {
                     let wrapperDiv = this.childWrappersMap.get(child);
 
-                    $(wrapperDiv).css('position','absolute');
-                    $(wrapperDiv).css('left',child.margin.left+'px');
-                    $(wrapperDiv).css('right',child.margin.right+'px');
-                    $(wrapperDiv).css('top',child.margin.top+'px');
-                    $(wrapperDiv).css('bottom',child.margin.bottom+'px');
+                    css(wrapperDiv,'position','absolute');
+                    css(wrapperDiv,'left',child.margin.left+'px');
+                    css(wrapperDiv,'right',child.margin.right+'px');
+                    css(wrapperDiv,'top',child.margin.top+'px');
+                    css(wrapperDiv,'bottom',child.margin.bottom+'px');
                 }
                 slot.layoutChildren();
             }

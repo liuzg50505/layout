@@ -66,8 +66,8 @@ namespace LayoutLzg{
 
         getRootElement(): HTMLElement {
             let elem = super.getRootElement();
-            $(elem).attr('layout-type','Rect');
-            $(elem).attr('layout-name',this.name);
+            setattr(elem, 'layout-type','Rect');
+            setattr(elem, 'layout-name',this.name);
             return elem;
         }
 
@@ -76,22 +76,22 @@ namespace LayoutLzg{
         }
 
         doLayout(): void {
-            $(this.getRootElement()).css('position','absolute');
-            $(this.getRootElement()).css('width',this.calculatedWidth+'px');
-            $(this.getRootElement()).css('height',this.calculatedHeight+'px');
+            css(this.getRootElement(),'position','absolute');
+            css(this.getRootElement(),'width',this.calculatedWidth+'px');
+            css(this.getRootElement(),'height',this.calculatedHeight+'px');
             // stroke and fill
             if(this.fill) this.fill.applyToBackground(this.rootElem);
             if(this.stroke) this.stroke.applyToBorder(this.rootElem,this.strokeThickness);
             // radius
-            $(this.rootElem).css("border-bottom-left-radius",this.radius_bottom_left+"px");
-            $(this.rootElem).css("border-bottom-right-radius",this.radius_bottom_right+"px");
-            $(this.rootElem).css("border-top-left-radius",this.radius_top_left+"px");
-            $(this.rootElem).css("border-top-right-radius",this.radius_top_right+"px");
+            css(this.getRootElement(),"border-bottom-left-radius",this.radius_bottom_left+"px");
+            css(this.getRootElement(),"border-bottom-right-radius",this.radius_bottom_right+"px");
+            css(this.getRootElement(),"border-top-left-radius",this.radius_top_left+"px");
+            css(this.getRootElement(),"border-top-right-radius",this.radius_top_right+"px");
             // opacity
-            $(this.rootElem).css("opacity",this.opacity);
+            css(this.getRootElement(),"opacity",this.opacity);
             // shadow
             if(this.shadow) {
-                $(this.rootElem).css("box-shadow",this.shadow.toBoxShawdowString());
+                css(this.getRootElement(),"box-shadow",this.shadow.toBoxShawdowString());
             }
         }
 
