@@ -10,6 +10,7 @@
     "strictNullChecks": false
   },
   "files":[
+    "src/declarations.d.ts",
     "src/utils/dateutils.ts",
     "src/utils/eventutils.ts",
     "src/utils/htmlutils.ts",

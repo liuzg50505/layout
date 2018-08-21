@@ -1,7 +1,3 @@
-declare class ObservableArray{
-    constructor(a:any);
-}
-
 namespace LayoutLzg.ObserverModel {
 
     const configPropertyName:string = "__observable__";

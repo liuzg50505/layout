@@ -3,6 +3,7 @@ var concat = require('gulp-concat');
 var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
 var ts = require('gulp-typescript');
+var rename = require('gulp-rename');
 var merge = require('event-stream').merge;
 var del = require('del');
 var paths = {
@@ -30,7 +31,12 @@ gulp.task('build', function () {
     var js = gulp.src([jslibfiles,tmptscompile])
         .pipe(concat("output.js"))
         .pipe(gulp.dest('dist'))
-        .pipe(del(tmptscompile));
+        .pipe(uglify())
+        .pipe(rename('output.min.js'))
+        .pipe(gulp.dest('dist'))
+        .on("end",function () {
+            del(tmptscompile)
+        });
 
     return js;
 });
