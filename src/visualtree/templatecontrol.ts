@@ -63,7 +63,7 @@ namespace LayoutLzg {
         }
 
         addStateTrigger(groupName:string, stateName:string, eventName:string):void {
-            let trigger = new EventTrigger();
+            let trigger = new DomEventTrigger();
             trigger.control = this;
             trigger.eventName = eventName;
             let gotostateaction = new GotoStateAction();

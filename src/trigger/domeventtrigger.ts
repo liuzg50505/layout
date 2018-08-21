@@ -1,6 +1,6 @@
 namespace LayoutLzg {
 
-    export class EventTrigger extends ControlTrigger{
+    export class DomEventTrigger extends ControlTrigger{
         eventName:string;
         private callback: Function;
 

@@ -72,7 +72,8 @@
 
     "src/trigger/propertychangedtrigger.ts",
     "src/trigger/statechangedtrigger.ts",
-    "src/trigger/eventtrigger.ts",
+    "src/trigger/domeventtrigger.ts",
+    "src/trigger/widgeteventtrigger.ts",
 
     "src/style/stylebase.ts",
     "src/style/statemanager.ts",
@@ -88,5 +89,6 @@
     "src/bootstrap/property.ts"
 
 
-  ]
+  ],
+  "exclude": ["node_modules"]
 }
