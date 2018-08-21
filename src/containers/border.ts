@@ -1,14 +1,14 @@
 namespace LayoutLzg{
-    export class Border extends ContainerControl {
+    export class Border extends ContainerWidget {
 
         protected mainSlot : Slot;
-        protected childWrappersMap: Map<Control,HTMLElement>;
+        protected childWrappersMap: Map<Widget,HTMLElement>;
 
         constructor(name:string) {
             super(name);
             this.mainSlot = new Slot();
             this.mainSlot.container = this;
-            this.childWrappersMap = new Map<Control, HTMLElement>();
+            this.childWrappersMap = new Map<Widget, HTMLElement>();
             this.slots.push(this.mainSlot);
         }
 
@@ -23,7 +23,7 @@ namespace LayoutLzg{
         }
 
 
-        addChild(control: LayoutLzg.Control): void {
+        addChild(control: LayoutLzg.Widget): void {
             super.addChild(control);
             this.mainSlot.addChild(control);
         }

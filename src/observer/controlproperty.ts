@@ -26,7 +26,7 @@ namespace LayoutLzg {
             let control:any = <VisualElement>this.obj;
             if(this.propertyName in control) {
                 control[this.propertyName] = value;
-                let control1:Control = <Control>this.obj;
+                let control1:Widget = <Widget>this.obj;
                 control1.assembleDom();
                 control1.calculateWidthFromTop();
                 control1.calculateHeightFromTop();

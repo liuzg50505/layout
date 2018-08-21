@@ -1,5 +1,5 @@
 namespace LayoutLzg{
-    export abstract class ControlBase extends Control {
+    export abstract class WidgetBase extends Widget {
         constructor(name:string) {
             super(name);
         }

@@ -10,7 +10,7 @@ var paths = {
     pages: ['src/*.html']
 };
 
-gulp.task('build', function () {
+gulp.task('build', function (cb) {
 
     var tmptscompile = "dist/tmpoutts.js";
     var jslibfiles = "libs/**/*.js";
@@ -34,8 +34,8 @@ gulp.task('build', function () {
         .pipe(uglify())
         .pipe(rename('output.min.js'))
         .pipe(gulp.dest('dist'))
-        .on("end",function () {
-            del(tmptscompile)
+        .on("end",function (cb) {
+            del([tmptscompile]);
         });
 
     return js;

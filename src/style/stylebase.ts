@@ -5,7 +5,7 @@ namespace LayoutLzg {
         propertyName:string;
         value:any;
 
-        apply(rootControl:Control) {
+        apply(rootControl:Widget) {
             let control = VisualTree.findControlByName(rootControl, this.name);
             if(control==null) return;
             let setter = new ControlPropertySetter(control, this.propertyName);
@@ -30,7 +30,7 @@ namespace LayoutLzg {
             this.styleitems.add(item);
         }
 
-        apply(rootControl:Control): void {
+        apply(rootControl:Widget): void {
             if(!rootControl) return;
             for (let styleitem of this.styleitems) {
                 styleitem.apply(rootControl);

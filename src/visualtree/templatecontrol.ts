@@ -1,6 +1,6 @@
 namespace LayoutLzg {
 
-    export class TemplateControl extends ControlBase {
+    export class TemplateControl extends WidgetBase {
         private rootBorder : Border = new Border("rootBorder");
         private _visualTree : VisualTree;
         private stateGroups : List<StateGroup>;
@@ -175,7 +175,7 @@ namespace LayoutLzg {
 
     export class ContentPresenter extends Border{
 
-        content:Control;
+        content:Widget;
 
 
         constructor(name: string) {

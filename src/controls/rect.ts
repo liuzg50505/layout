@@ -1,5 +1,5 @@
 namespace LayoutLzg{
-    export class Rect extends ControlBase {
+    export class Rect extends WidgetBase {
 
         private _radius_bottom_left:number;
         private _radius_bottom_right:number;

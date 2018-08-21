@@ -1,5 +1,5 @@
 namespace LayoutLzg{
-    export class TextView extends ControlBase {
+    export class TextView extends WidgetBase {
 
         private _text:string;
         private _selectable:boolean;

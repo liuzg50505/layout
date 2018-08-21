@@ -5,19 +5,19 @@ namespace LayoutLzg{
     }
 
     export class Slot {
-        children:List<Control> = new List<Control>();
+        children:List<Widget> = new List<Widget>();
         isSlotWidthCalculatable : boolean;
         isSlotHeightCalculatable : boolean;
         calculatedSlotWidth : number = 0;
         calculatedSlotHeight : number = 0;
-        container : ContainerControl;
+        container : ContainerWidget;
 
-        addChild(child : Control):void {
+        addChild(child : Widget):void {
             this.children.add(child);
             child.parentSlot = this;
         }
 
-        removeChild(child : Control):void {
+        removeChild(child : Widget):void {
             this.children.remove(child);
             child.parentSlot = null;
         }
@@ -130,9 +130,9 @@ namespace LayoutLzg{
     export abstract class VisualElement {
         // Name of this control.
         name:string;
-        // Width of this Control, it can be a fix value or auto.
+        // Width of this Widget, it can be a fix value or auto.
         private _width:Distance;
-        // Height of this Control, it can be a fix value or auto.
+        // Height of this Widget, it can be a fix value or auto.
         private _height:Distance;
         // Horizonal alignment of this control in it's parent container
         private _horizonAlignment : HorizonAlignment;
@@ -149,8 +149,8 @@ namespace LayoutLzg{
         private eventCallbacks:List<EventCallbackItem>;
 
         parentSlot:Slot;
-        parent:ContainerControl;
-        actualContainer:ContainerControl;
+        parent:ContainerWidget;
+        actualContainer:ContainerWidget;
         // root div of this control.
         rootElem:HTMLElement;
 
@@ -309,8 +309,8 @@ namespace LayoutLzg{
         }
     }
 
-    // Control class is the base class of all the visual components.
-    export abstract class Control extends VisualElement implements Disposable{
+    // Widget class is the base class of all the visual components.
+    export abstract class Widget extends VisualElement implements Disposable{
 
         // Background of this control, it can be a solid color, or a gradient color , or a picture.
         protected _fill:Brush;
@@ -380,23 +380,23 @@ namespace LayoutLzg{
 
     // The purpose of the container is to put sub controls together,
     // and the system provides multiple layout containers due to actual requirements.
-    export abstract class ContainerControl extends Control{
-        children:List<Control>;
+    export abstract class ContainerWidget extends Widget{
+        children:List<Widget>;
         protected slots : List<Slot>;
 
 
         constructor(name:string) {
             super(name);
-            this.children = new List<Control>();
+            this.children = new List<Widget>();
             this.slots = new List<Slot>();
         }
 
-        addChild(control:Control) {
+        addChild(control:Widget) {
             this.children.add(control);
             control.parent = this;
         }
 
-        removeChild(control:Control) {
+        removeChild(control:Widget) {
             this.children.remove(control);
             control.parent = null;
         }

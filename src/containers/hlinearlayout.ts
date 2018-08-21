@@ -1,13 +1,13 @@
 namespace LayoutLzg {
-    export class Hlinearlayout extends ContainerControl{
+    export class Hlinearlayout extends ContainerWidget{
         protected slotMap : Map<Slot,Distance>;
         protected slotWrappersMap : Map<Slot,HTMLElement>;
-        protected childWrappersMap: Map<Control,HTMLElement>;
+        protected childWrappersMap: Map<Widget,HTMLElement>;
 
         constructor(name: string) {
             super(name);
             this.slotMap = new Map<Slot, Distance>();
-            this.childWrappersMap = new Map<Control, HTMLElement>();
+            this.childWrappersMap = new Map<Widget, HTMLElement>();
             this.slotWrappersMap = new Map<Slot,HTMLElement>();
         }
 
@@ -18,7 +18,7 @@ namespace LayoutLzg {
             this.slotMap.put(slot,distance);
         }
 
-        setCell(control:Control, cellIndex:number) {
+        setCell(control:Widget, cellIndex:number) {
             const idx = this.children.indexOf(control);
             if(idx>-1){
                 let slot = this.slots[cellIndex];

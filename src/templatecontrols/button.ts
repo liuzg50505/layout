@@ -21,7 +21,7 @@ namespace LayoutLzg {
             this.contentPresentor.horizonAlignment = HorizonAlignment.Center;
             this.contentPresentor.verticalAlignment = VerticalAlignment.Center;
 
-            let contentcontrol:Control = null;
+            let contentcontrol:Widget = null;
             if(typeof this._content === "string" || typeof this._content === "number"){
                 let txt = new TextView("",this._content.toString());
                 txt.margin = new Thickness(10,10,5,5);
@@ -32,7 +32,7 @@ namespace LayoutLzg {
                 contentcontrol.width = new Distance(DistanceType.auto,0);
                 contentcontrol.height = new Distance(DistanceType.auto,0);
             }else{
-                contentcontrol = <Control>this._content;
+                contentcontrol = <Widget>this._content;
             }
             this.contentPresentor.content = contentcontrol;
 

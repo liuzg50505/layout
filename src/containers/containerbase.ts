@@ -1,5 +1,5 @@
 namespace LayoutLzg{
-    export abstract class ContainerBase extends ContainerControl {
+    export abstract class ContainerBase extends ContainerWidget {
 
         rootElem:HTMLElement;
 

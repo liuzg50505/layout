@@ -1,7 +1,7 @@
 namespace LayoutLzg {
     export class SetPropertyAction extends Action{
 
-        control:Control;
+        control:Widget;
         propertyName:string;
         value:any;
 

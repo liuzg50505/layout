@@ -8,7 +8,7 @@ namespace LayoutLzg {
     export class StateGroup {
         groupName:string;
         states:List<State>;
-        rootControl:Control;
+        rootControl:Widget;
 
         constructor() {
             this.states = new List<State>();
