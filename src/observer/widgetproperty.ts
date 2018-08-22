@@ -1,6 +1,6 @@
 namespace LayoutLzg {
 
-    export class ControlPropertyGetter extends PropertyGetter{
+    export class WidgetPropertyGetter extends PropertyGetter{
 
         constructor(obj: any, propertyName: string) {
             super(obj, propertyName);
@@ -16,7 +16,7 @@ namespace LayoutLzg {
 
     }
 
-    export class ControlPropertySetter extends PropertySetter{
+    export class WidgetPropertySetter extends PropertySetter{
 
         constructor(obj: any, propertyName: string) {
             super(obj, propertyName);
@@ -36,7 +36,7 @@ namespace LayoutLzg {
 
     }
 
-    export class ControlPropertyGetterProvider extends PropertyGetterProvider{
+    export class WidgetPropertyGetterProvider extends PropertyGetterProvider{
 
         canProvideGetter(obj: any, propertyName: string): boolean {
             return obj instanceof VisualElement;
@@ -44,24 +44,24 @@ namespace LayoutLzg {
         }
 
         getPropertyGetter(obj: any, propertyName: string): PropertyGetter {
-            return new ControlPropertyGetter(obj, propertyName);
+            return new WidgetPropertyGetter(obj, propertyName);
         }
 
     }
 
-    export class ControlPropertySetterProvider extends PropertySetterProvider{
+    export class WidgetPropertySetterProvider extends PropertySetterProvider{
 
         canProvideSetter(obj: any, propertyName: string): boolean {
             return obj instanceof VisualElement;
         }
 
         getPropertySetter(obj: any, propertyName: string): PropertySetter {
-            return new ControlPropertySetter(obj, propertyName);
+            return new WidgetPropertySetter(obj, propertyName);
         }
 
     }
 
-    export class ControlPropertyChangedListener extends PropertyChangedListener{
+    export class WidgetPropertyChangedListener extends PropertyChangedListener{
         private control: VisualElement;
         private callbackfun:any;
 
@@ -85,10 +85,10 @@ namespace LayoutLzg {
 
     }
 
-    export class ControlPropertyChangedListenerProvider extends PropertyChangedListenerProvider{
+    export class WidgetPropertyChangedListenerProvider extends PropertyChangedListenerProvider{
 
         getPropertyChangedListener(obj: any, propertyName: string): PropertyChangedListener {
-            return new ControlPropertyChangedListener(obj,propertyName);
+            return new WidgetPropertyChangedListener(obj,propertyName);
         }
 
         canProvideChangedListener(obj: any, propertyName: string): boolean {

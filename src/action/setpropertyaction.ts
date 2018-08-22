@@ -6,7 +6,7 @@ namespace LayoutLzg {
         value:any;
 
         execute(): void {
-            let setter = new ControlPropertySetter(this.control, this.propertyName);
+            let setter = new WidgetPropertySetter(this.control, this.propertyName);
             setter.setValue(this.value);
         }
     }

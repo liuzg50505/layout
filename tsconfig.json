@@ -53,7 +53,7 @@
     "src/observer/domtextproperty.ts",
     "src/observer/domvalueproperty.ts",
     "src/observer/dictproperty.ts",
-    "src/observer/controlproperty.ts",
+    "src/observer/widgetproperty.ts",
 
     "src/bindings/binding.ts",
     "src/bindings/functionbinding.ts",

@@ -30,12 +30,12 @@ namespace LayoutLzg {
                 if(b1){
                     let xmlvalue = xmlGetAttribute(this.xml, propName);
                     let v = stringSerializer.deserialize(xmlvalue);
-                    let setter = new ControlPropertySetter(instance, propName);
+                    let setter = new WidgetPropertySetter(instance, propName);
                     setter.setValue(v);
                 }else if(b2){
                     let childxml = xmlGetChildByTag(this.xml, propName);
                     let v = xmlSerializer.deserialize(childxml);
-                    let setter = new ControlPropertySetter(instance, propName);
+                    let setter = new WidgetPropertySetter(instance, propName);
                     setter.setValue(v);
                 }
             }

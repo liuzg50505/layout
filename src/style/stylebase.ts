@@ -8,7 +8,7 @@ namespace LayoutLzg {
         apply(rootControl:Widget) {
             let control = VisualTree.findControlByName(rootControl, this.name);
             if(control==null) return;
-            let setter = new ControlPropertySetter(control, this.propertyName);
+            let setter = new WidgetPropertySetter(control, this.propertyName);
             setter.setValue(this.value);
         }
     }
