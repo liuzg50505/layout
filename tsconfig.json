@@ -68,7 +68,7 @@
     "src/converters/expressionconverter.ts",
 
     "src/visualtree/visualtree.ts",
-    "src/visualtree/templatecontrol.ts",
+    "src/visualtree/templatewidget.ts",
     "src/visualtree/visualtreestyle.ts",
 
     "src/action/actionbase.ts",

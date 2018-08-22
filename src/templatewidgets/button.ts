@@ -1,7 +1,7 @@
 namespace LayoutLzg {
 
     @registclass
-    export class Button extends TemplateControl{
+    export class Button extends TemplateWidget{
 
         @registproperty("number")
         radius: number;
@@ -23,20 +23,20 @@ namespace LayoutLzg {
             this.contentPresentor.horizonAlignment = HorizonAlignment.Center;
             this.contentPresentor.verticalAlignment = VerticalAlignment.Center;
 
-            let contentcontrol:Widget = null;
+            let contentwidget:Widget = null;
             if(typeof this._content === "string" || typeof this._content === "number"){
                 let txt = new TextView("",this._content.toString());
                 txt.margin = new Thickness(10,10,5,5);
                 txt.selectable = false;
-                contentcontrol = txt;
-                contentcontrol.horizonAlignment = HorizonAlignment.Strech;
-                contentcontrol.verticalAlignment = VerticalAlignment.Strech;
-                contentcontrol.width = new Distance(DistanceType.auto,0);
-                contentcontrol.height = new Distance(DistanceType.auto,0);
+                contentwidget = txt;
+                contentwidget.horizonAlignment = HorizonAlignment.Strech;
+                contentwidget.verticalAlignment = VerticalAlignment.Strech;
+                contentwidget.width = new Distance(DistanceType.auto,0);
+                contentwidget.height = new Distance(DistanceType.auto,0);
             }else{
-                contentcontrol = <Widget>this._content;
+                contentwidget = <Widget>this._content;
             }
-            this.contentPresentor.content = contentcontrol;
+            this.contentPresentor.content = contentwidget;
 
 
             let vlinear = new Vlinearlayout("");

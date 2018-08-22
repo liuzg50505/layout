@@ -1,5 +1,5 @@
 namespace LayoutLzg {
-    export class StateChangedTrigger extends ControlTrigger {
+    export class StateChangedTrigger extends WidgetTrigger {
         propertyName:string;
         private callback: Function;
         init(): void {
@@ -7,11 +7,11 @@ namespace LayoutLzg {
             this.callback = function () {
                 self.onTriggered();
             };
-            this.control.addStateChangedListener(this.propertyName,this.callback);
+            this.widget.addStateChangedListener(this.propertyName,this.callback);
         }
 
         dispose(): void {
-            this.control.removeStateChangedListener(this.callback);
+            this.widget.removeStateChangedListener(this.callback);
         }
     }
 }

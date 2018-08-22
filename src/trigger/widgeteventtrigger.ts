@@ -1,5 +1,5 @@
 namespace LayoutLzg {
-    export class WidgetEventTrigger extends ControlTrigger{
+    export class WidgetEventTrigger extends WidgetTrigger{
 
         constructor() {
             super();

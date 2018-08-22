@@ -132,18 +132,18 @@ namespace LayoutLzg{
 
     @registclass
     export abstract class VisualElement {
-        // Name of this control.
+        // Name of this widget.
         @registproperty("string")
         name:string;
         // Width of this Widget, it can be a fix value or auto.
         private _width:Distance;
         // Height of this Widget, it can be a fix value or auto.
         private _height:Distance;
-        // Horizonal alignment of this control in it's parent container
+        // Horizonal alignment of this widget in it's parent container
         private _horizonAlignment : HorizonAlignment;
-        // Vertical alignment of this control in it's parent container
+        // Vertical alignment of this widget in it's parent container
         private _verticalAlignment : VerticalAlignment;
-        // Margin of this control to it's parent, the value in thickness must be a fix value.
+        // Margin of this widget to it's parent, the value in thickness must be a fix value.
         private _margin:Thickness;
         private _pressed:boolean;
         private _mouseenter:boolean;
@@ -156,7 +156,7 @@ namespace LayoutLzg{
         parentSlot:Slot;
         parent:ContainerWidget;
         actualContainer:ContainerWidget;
-        // root div of this control.
+        // root div of this widget.
         rootElem:HTMLElement;
 
         constructor(name?: string) {
@@ -233,14 +233,14 @@ namespace LayoutLzg{
             this.doLayout();
         }
 
-        // Get the root element of this control.
+        // Get the root element of this widget.
         abstract getRootElement():HTMLElement;
 
-        // Assemble html elements of this control.
+        // Assemble html elements of this widget.
         assembleDom():void {
         }
 
-        // Adjust styles html elements of this control.
+        // Adjust styles html elements of this widget.
         doLayout():void{
         }
 
@@ -317,11 +317,11 @@ namespace LayoutLzg{
     // Widget class is the base class of all the visual components.
     export abstract class Widget extends VisualElement implements Disposable{
 
-        // Background of this control, it can be a solid color, or a gradient color , or a picture.
+        // Background of this widget, it can be a solid color, or a gradient color , or a picture.
         protected _fill:Brush;
-        // Border of this control, it can be a solid color, or a gradient color , or a picture.
+        // Border of this widget, it can be a solid color, or a gradient color , or a picture.
         protected _stroke:Brush;
-        // Thickness of this control's border, the value in thickness must be a fix value.
+        // Thickness of this widget's border, the value in thickness must be a fix value.
         protected _strokeThickness:Thickness;
 
         protected _shadow:ShadowSettings;
@@ -388,7 +388,7 @@ namespace LayoutLzg{
 
     }
 
-    // The purpose of the container is to put sub controls together,
+    // The purpose of the container is to put sub widgets together,
     // and the system provides multiple layout containers due to actual requirements.
     export abstract class ContainerWidget extends Widget{
         children:List<Widget>;
@@ -401,14 +401,14 @@ namespace LayoutLzg{
             this.slots = new List<Slot>();
         }
 
-        addChild(control:Widget) {
-            this.children.add(control);
-            control.parent = this;
+        addChild(widget:Widget) {
+            this.children.add(widget);
+            widget.parent = this;
         }
 
-        removeChild(control:Widget) {
-            this.children.remove(control);
-            control.parent = null;
+        removeChild(widget:Widget) {
+            this.children.remove(widget);
+            widget.parent = null;
         }
 
         clearChild():void{

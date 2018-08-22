@@ -1,7 +1,7 @@
 namespace LayoutLzg {
 
     @registclass
-    export class ProgressBar extends TemplateControl{
+    export class ProgressBar extends TemplateWidget{
         private rectProc: Rect;
         private rectUp: Rect;
 

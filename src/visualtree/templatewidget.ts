@@ -1,15 +1,15 @@
 namespace LayoutLzg {
 
-    export class TemplateControl extends WidgetBase {
+    export class TemplateWidget extends WidgetBase {
         private rootBorder : Border = new Border("rootBorder");
         private _visualTree : VisualTree;
         private stateGroups : List<StateGroup>;
-        protected stateEventTriggers: List<ControlTrigger>;
+        protected stateEventTriggers: List<WidgetTrigger>;
 
         constructor(name?: string) {
             super(name);
             this.stateGroups = new List<StateGroup>();
-            this.stateEventTriggers = new List<ControlTrigger>();
+            this.stateEventTriggers = new List<WidgetTrigger>();
         }
 
         get visualTree(): VisualTree {
@@ -18,20 +18,20 @@ namespace LayoutLzg {
 
         set visualTree(value: VisualTree) {
             if(value!=null) {
-                value.parentControl = this;
+                value.parentWidget = this;
             }
             this._visualTree = value;
         }
 
         addStateGroup(groupName:string): StateGroup {
             let stageGroup = new StateGroup();
-            stageGroup.rootControl = this.visualTree.rootContainer;
+            stageGroup.rootWidget = this.visualTree.rootContainer;
             stageGroup.groupName = groupName;
             this.stateGroups.add(stageGroup);
             return stageGroup;
         }
 
-        addStateStyle(groupName:string, statename:string, controlpropertyValues:any, eventName:string=null) {
+        addStateStyle(groupName:string, statename:string, widgetpropertyValues:any, eventName:string=null) {
             let groups = this.stateGroups.filter(t=>t.groupName==groupName);
             let group:StateGroup = null;
             if(groups.length==0) {
@@ -51,11 +51,11 @@ namespace LayoutLzg {
                 state = states[0];
             }
 
-            for (let controlName in controlpropertyValues) {
-                let propertyValues = controlpropertyValues[controlName];
+            for (let widgetName in widgetpropertyValues) {
+                let propertyValues = widgetpropertyValues[widgetName];
                 for (let propertyName in propertyValues){
                     let value = propertyValues[propertyName];
-                    state.style.addStyleItem(controlName,propertyName,value);
+                    state.style.addStyleItem(widgetName,propertyName,value);
                 }
             }
             if(eventName) this.addStateTrigger(groupName,statename,eventName);
@@ -64,10 +64,10 @@ namespace LayoutLzg {
 
         addStateTrigger(groupName:string, stateName:string, eventName:string):void {
             let trigger = new DomEventTrigger();
-            trigger.control = this;
+            trigger.widget = this;
             trigger.eventName = eventName;
             let gotostateaction = new GotoStateAction();
-            gotostateaction.templateControl = this;
+            gotostateaction.templateWidget = this;
             gotostateaction.stateName = stateName;
             gotostateaction.groupName = groupName;
             trigger.action = gotostateaction;

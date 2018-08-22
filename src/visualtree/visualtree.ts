@@ -2,10 +2,10 @@ namespace LayoutLzg{
 
     export class VisualTree {
         rootContainer: ContainerWidget;
-        parentControl:TemplateControl;
+        parentWidget:TemplateWidget;
         stateManager:any;
 
-        static findControlsByName(root:Widget, name:string):List<Widget> {
+        static findWidgetsByName(root:Widget, name:string):List<Widget> {
             let result = new List<Widget>();
             let rootContainer:any = null;
             if(root.name==name) {
@@ -17,14 +17,14 @@ namespace LayoutLzg{
                 return result;
             }
             for (let child of rootContainer.children) {
-                let r =  VisualTree.findControlsByName(child, name);
+                let r =  VisualTree.findWidgetsByName(child, name);
                 result.addAll(r);
             }
 
             return result;
         }
 
-        static findControlByName(root:Widget, name:string): Widget {
+        static findWidgetByName(root:Widget, name:string): Widget {
             let rootContainer:any = null;
             if(root.name==name) {
                 return root;
@@ -35,7 +35,7 @@ namespace LayoutLzg{
                 return null;
             }
             for (let child of rootContainer.children) {
-                let r =  VisualTree.findControlByName(child, name);
+                let r =  VisualTree.findWidgetByName(child, name);
                 if(r) return r;
             }
             return null;

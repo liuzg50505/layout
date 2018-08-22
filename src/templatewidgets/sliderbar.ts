@@ -1,7 +1,7 @@
 namespace LayoutLzg {
 
     @registclass
-    export class SliderBar extends TemplateControl{
+    export class SliderBar extends TemplateWidget{
         private _value:number;
         private rectHandle: Rect;
         private mousedownValue:number;

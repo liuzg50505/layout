@@ -7,9 +7,9 @@ namespace LayoutLzg {
         }
 
         getValue(): any {
-            let control:any = <VisualElement>this.obj;
-            if(this.propertyName in control) {
-                return control[this.propertyName];
+            let widget:any = <VisualElement>this.obj;
+            if(this.propertyName in widget) {
+                return widget[this.propertyName];
             }
             return null;
         }
@@ -23,14 +23,14 @@ namespace LayoutLzg {
         }
 
         setValue(value: any): void {
-            let control:any = <VisualElement>this.obj;
-            if(this.propertyName in control) {
-                control[this.propertyName] = value;
-                let control1:Widget = <Widget>this.obj;
-                control1.assembleDom();
-                control1.calculateWidthFromTop();
-                control1.calculateHeightFromTop();
-                control1.doLayout();
+            let widget:any = <VisualElement>this.obj;
+            if(this.propertyName in widget) {
+                widget[this.propertyName] = value;
+                let widget1:Widget = <Widget>this.obj;
+                widget1.assembleDom();
+                widget1.calculateWidthFromTop();
+                widget1.calculateHeightFromTop();
+                widget1.doLayout();
             }
         }
 
@@ -62,25 +62,25 @@ namespace LayoutLzg {
     }
 
     export class WidgetPropertyChangedListener extends PropertyChangedListener{
-        private control: VisualElement;
+        private widget: VisualElement;
         private callbackfun:any;
 
         constructor(obj: any, propertyName: string) {
             super(obj, propertyName);
-            this.control = <VisualElement>obj;
+            this.widget = <VisualElement>obj;
         }
 
         startListen(): void {
             let self = this;
             this.callbackfun = function () {
                 if(self.callback)
-                    self.callback.apply(self.control,[self.control]);
+                    self.callback.apply(self.widget,[self.widget]);
             };
-            this.control.addPropertyChangedListener(this.propertyName,this.callbackfun);
+            this.widget.addPropertyChangedListener(this.propertyName,this.callbackfun);
         }
 
         stopListen(): void {
-            this.control.removePropertyChangedListener(this.callbackfun);
+            this.widget.removePropertyChangedListener(this.callbackfun);
         }
 
     }
@@ -93,8 +93,8 @@ namespace LayoutLzg {
 
         canProvideChangedListener(obj: any, propertyName: string): boolean {
             if (obj instanceof VisualElement) {
-                let control = <VisualElement>obj;
-                return control.getNotifyProperties().indexOf(propertyName)>-1;
+                let widget = <VisualElement>obj;
+                return widget.getNotifyProperties().indexOf(propertyName)>-1;
             }
             return false;
         }

@@ -18,11 +18,11 @@ namespace LayoutLzg {
             this.slotMap.put(slot,distance);
         }
 
-        setCell(control:Widget, cellIndex:number) {
-            const idx = this.children.indexOf(control);
+        setCell(widget:Widget, cellIndex:number) {
+            const idx = this.children.indexOf(widget);
             if(idx>-1){
                 let slot = this.slots[cellIndex];
-                slot.addChild(control);
+                slot.addChild(widget);
             }
         }
 

@@ -23,9 +23,9 @@ namespace LayoutLzg{
         }
 
 
-        addChild(control: LayoutLzg.Widget): void {
-            super.addChild(control);
-            this.mainSlot.addChild(control);
+        addChild(widget: LayoutLzg.Widget): void {
+            super.addChild(widget);
+            this.mainSlot.addChild(widget);
         }
 
 

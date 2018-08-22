@@ -1,5 +1,5 @@
 namespace LayoutLzg {
-    export class PropertyChangedTrigger extends ControlTrigger {
+    export class PropertyChangedTrigger extends WidgetTrigger {
         propertyName:string;
         private callback: Function;
         init(): void {
@@ -7,11 +7,11 @@ namespace LayoutLzg {
             this.callback = function () {
                 self.onTriggered();
             };
-            this.control.addPropertyChangedListener(this.propertyName,this.callback);
+            this.widget.addPropertyChangedListener(this.propertyName,this.callback);
         }
 
         dispose(): void {
-            this.control.removePropertyChangedListener(this.callback);
+            this.widget.removePropertyChangedListener(this.callback);
         }
     }
 
