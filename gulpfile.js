@@ -28,7 +28,7 @@ gulp.task('build', function (cb) {
         .pipe(sourcemaps.write())
         .pipe(gulp.dest("."))
         .on('end',function () {
-            gulp.src([jslibfiles,tmptscompile])
+            gulp.src([tmptscompile,jslibfiles])
                 .pipe(concat("output.js"))
                 .pipe(gulp.dest('dist'))
                 .pipe(uglify())

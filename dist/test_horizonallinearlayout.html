@@ -24,7 +24,7 @@
     literal1.margin = new LayoutLzg.Thickness(10,10,10,10);
     literal2.wordWrap = true;
     literal2.verticalAlignment = LayoutLzg.VerticalAlignment.Center;
-    literal2.horizonAlignment = LayoutLzg.HorizonAlignment.Center;
+    literal2.horizonAlignment = LayoutLzg.HorizonAlignment.Strech;
     literal3.horizonAlignment = LayoutLzg.HorizonAlignment.Center;
     literal3.verticalAlignment = LayoutLzg.VerticalAlignment.Bottom;
     literal4.verticalAlignment = LayoutLzg.VerticalAlignment.Bottom;
@@ -32,7 +32,7 @@
     literal5.verticalAlignment = LayoutLzg.VerticalAlignment.Center;
     literal6.verticalAlignment = LayoutLzg.VerticalAlignment.Strech;
 
-    hlinear = new LayoutLzg.HorizonalLinearLayout('');
+    hlinear = new LayoutLzg.Hlinearlayout('');
     hlinear.parentSlot = new LayoutLzg.Slot();
 
     hlinear.parentSlot.isSlotWidthCalculatable = true;
@@ -60,10 +60,11 @@
     hlinear.setCell(literal1,0);
 
 
-    hlinear.initCalculableSlots();
     hlinear.assembleDom();
     hlinearDiv = hlinear.getRootElement();
     $("body").append(hlinearDiv);
+    hlinear.calculateWidthFromTop();
+    hlinear.calculateHeightFromTop();
     hlinear.doLayout();
 
 </script>

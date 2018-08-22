@@ -71,14 +71,14 @@ namespace LayoutLzg {
                 if(cellDefination.type==DistanceType.fixed) {
                     cellh=cellDefination.value;
                 }else if(cellDefination.type==DistanceType.weight){
-                    cellh = (this.calculatedHeight - fixSum)* cellDefination.value / weightSum;
+                    cellh = (this.calculatedWidth - fixSum)* cellDefination.value / weightSum;
                 }
 
                 css(slotWrapperDiv,'position','absolute');
-                css(slotWrapperDiv,'left','0px');
-                css(slotWrapperDiv,'right','0px');
-                css(slotWrapperDiv,'top',pos+'px');
-                css(slotWrapperDiv,'height',cellh+'px');
+                css(slotWrapperDiv,'top','0px');
+                css(slotWrapperDiv,'bottom','0px');
+                css(slotWrapperDiv,'left',pos+'px');
+                css(slotWrapperDiv,'width',cellh+'px');
 
                 for (let child of slot.children) {
                     let childWrapperDiv = this.childWrappersMap.get(child);
