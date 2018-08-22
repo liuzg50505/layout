@@ -1,8 +1,11 @@
 namespace LayoutLzg{
 
-    export interface MetaDataApi{
 
-    }
+
+    // export interface MetaDataApi{
+    //     listProperties:List<PropertyDefination>;
+    //     containProperty(propName:string):boolean;
+    // }
 
     export class Slot {
         children:List<Widget> = new List<Widget>();
@@ -127,8 +130,10 @@ namespace LayoutLzg{
         }
     }
 
+    @registclass
     export abstract class VisualElement {
         // Name of this control.
+        @registproperty("string")
         name:string;
         // Width of this Widget, it can be a fix value or auto.
         private _width:Distance;
@@ -154,7 +159,7 @@ namespace LayoutLzg{
         // root div of this control.
         rootElem:HTMLElement;
 
-        constructor(name: string) {
+        constructor(name?: string) {
             this.name = name;
             // Init vairables.
             this._horizonAlignment = HorizonAlignment.Strech;
@@ -324,13 +329,15 @@ namespace LayoutLzg{
         calculatedWidth: number;
         calculatedHeight: number;
 
-        constructor(name:string){
+        constructor(name?:string){
             super(name);
             this._strokeThickness = new Thickness(0,0,0,0);
             this.calculatedWidth = 0;
             this.calculatedHeight = 0;
         }
 
+
+        @registproperty("Brush")
         get fill(): LayoutLzg.Brush {
             return this._fill;
         }
@@ -340,6 +347,7 @@ namespace LayoutLzg{
             this._fill = value;
         }
 
+        @registproperty("Brush")
         get stroke(): LayoutLzg.Brush {
             return this._stroke;
         }
@@ -349,6 +357,7 @@ namespace LayoutLzg{
             this._stroke = value;
         }
 
+        @registproperty("Thickness")
         get strokeThickness(): LayoutLzg.Thickness {
             return this._strokeThickness;
         }
@@ -358,6 +367,7 @@ namespace LayoutLzg{
             this._strokeThickness = value;
         }
 
+        @registproperty("ShadowSettings")
         get shadow(): LayoutLzg.ShadowSettings {
             return this._shadow;
         }

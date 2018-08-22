@@ -1,15 +1,21 @@
 namespace LayoutLzg {
 
+    @registclass
     export class SliderBar extends TemplateControl{
-
-        minValue:number;
-        maxValue:number;
         private _value:number;
-        radius:number;
-        handleFill: Brush;
-        handleStroke: Brush;
         private rectHandle: Rect;
         private mousedownValue:number;
+
+        @registproperty("number")
+        minValue:number;
+        @registproperty("number")
+        maxValue:number;
+        @registproperty("number")
+        radius:number;
+        @registproperty("Brush")
+        handleFill: Brush;
+        @registproperty("Brush")
+        handleStroke: Brush;
 
         constructor(name: string) {
             super(name);
@@ -26,6 +32,7 @@ namespace LayoutLzg {
             this.notifyProperties.push("value");
         }
 
+        @registproperty("number")
         get value(): number {
             return this._value;
         }

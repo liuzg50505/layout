@@ -16,7 +16,7 @@ gulp.task('build', function (cb) {
     var jslibfiles = "libs/**/*.js";
 
     var tsProject = ts.createProject('tsconfig.json');
-    var tsresult = tsProject.src()
+    return tsProject.src()
         .pipe(sourcemaps.init())
         .pipe(ts({
             noImplicitAny: true,
@@ -26,19 +26,19 @@ gulp.task('build', function (cb) {
             sourcemap:true
         }))
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest("."));
-
-    var js = gulp.src([jslibfiles,tmptscompile])
-        .pipe(concat("output.js"))
-        .pipe(gulp.dest('dist'))
-        .pipe(uglify())
-        .pipe(rename('output.min.js'))
-        .pipe(gulp.dest('dist'))
-        .on("end",function (cb) {
-            del([tmptscompile]);
+        .pipe(gulp.dest("."))
+        .on('end',function () {
+            gulp.src([jslibfiles,tmptscompile])
+                .pipe(concat("output.js"))
+                .pipe(gulp.dest('dist'))
+                .pipe(uglify())
+                .pipe(rename('output.min.js'))
+                .pipe(gulp.dest('dist'))
+                .on("end",function (cb) {
+                    del([tmptscompile]);
+                });
         });
 
-    return js;
 });
 
 

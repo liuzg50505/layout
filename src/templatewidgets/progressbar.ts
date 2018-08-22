@@ -1,12 +1,19 @@
 namespace LayoutLzg {
 
+    @registclass
     export class ProgressBar extends TemplateControl{
-        minValue:number;
-        maxValue:number;
-        value:number;
-        radius:number=5;
         private rectProc: Rect;
         private rectUp: Rect;
+
+        @registproperty("number")
+        minValue:number;
+        @registproperty("number")
+        maxValue:number;
+        @registproperty("number")
+        value:number;
+        @registproperty("number")
+        radius:number=5;
+        @registproperty("number")
         barfill:Brush;
 
         constructor(name: string) {

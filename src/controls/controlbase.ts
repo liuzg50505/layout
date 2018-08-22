@@ -1,6 +1,6 @@
 namespace LayoutLzg{
     export abstract class WidgetBase extends Widget {
-        constructor(name:string) {
+        constructor(name?:string) {
             super(name);
         }
 
@@ -12,7 +12,6 @@ namespace LayoutLzg{
             }
             return this.rootElem;
         }
-
 
         calculateWidthFromTop(): void {
         }

@@ -6,7 +6,7 @@ namespace LayoutLzg {
         private stateGroups : List<StateGroup>;
         protected stateEventTriggers: List<ControlTrigger>;
 
-        constructor(name: string) {
+        constructor(name?: string) {
             super(name);
             this.stateGroups = new List<StateGroup>();
             this.stateEventTriggers = new List<ControlTrigger>();

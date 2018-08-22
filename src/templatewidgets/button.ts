@@ -1,12 +1,14 @@
 namespace LayoutLzg {
 
+    @registclass
     export class Button extends TemplateControl{
 
+        @registproperty("number")
         radius: number;
         private _content: any;
         private contentPresentor: ContentPresenter;
 
-        constructor(name: string) {
+        constructor(name?: string) {
             super(name);
             this.radius = 5;
         }
@@ -110,6 +112,7 @@ namespace LayoutLzg {
             },"mouseup");
         }
 
+        @registproperty("any")
         get content(): any {
             return this._content;
         }
