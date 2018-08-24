@@ -21,12 +21,12 @@
     defaultSlot = new LayoutLzg.Slot();
     defaultSlot.isSlotWidthCalculatable = true;
     defaultSlot.isSlotHeightCalculatable = true;
-    defaultSlot.calulatedSlotWidth = $("body").width();
-    defaultSlot.calulatedSlotHeight = $("body").height();
+    defaultSlot.calculatedSlotWidth = $("body").width();
+    defaultSlot.calculatedSlotHeight = $("body").height();
 
     rootBorder = new LayoutLzg.Border("");
-    rootBorder.width = new LayoutLzg.Distance(LayoutLzg.DistanceType.fixed,defaultSlot.calulatedSlotWidth);
-    rootBorder.height = new LayoutLzg.Distance(LayoutLzg.DistanceType.fixed,defaultSlot.calulatedSlotWidth);
+    rootBorder.width = new LayoutLzg.Distance(LayoutLzg.DistanceType.fixed,defaultSlot.calculatedSlotWidth);
+    rootBorder.height = new LayoutLzg.Distance(LayoutLzg.DistanceType.fixed,defaultSlot.calculatedSlotWidth);
     rootBorder.horizonAlignment = LayoutLzg.HorizonAlignment.Strech;
     rootBorder.verticalAlignment = LayoutLzg.VerticalAlignment.Strech;
     rootBorder.parentSlot = defaultSlot;
@@ -55,10 +55,11 @@
 
     // rootBorder.addChild(button);
     rootBorder.addChild(bar);
-    rootBorder.initCalculableSlots();
     rootBorder.assembleDom();
     rootdiv = rootBorder.getRootElement();
     $("body").append(rootdiv);
+    rootBorder.calculateWidthFromTop();
+    rootBorder.calculateHeightFromTop();
     rootBorder.doLayout();
 
 </script>

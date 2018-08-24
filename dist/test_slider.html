@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script type="application/javascript" src="../js/jquery.min.js"></script>
-    <script type="application/javascript" src="../js/jqresize.js" ></script>
     <script type="application/javascript" src="output.js"></script>
     <style>
         html,body {
@@ -22,12 +21,12 @@
     defaultSlot = new LayoutLzg.Slot();
     defaultSlot.isSlotWidthCalculatable = true;
     defaultSlot.isSlotHeightCalculatable = true;
-    defaultSlot.calulatedSlotWidth = $("body").width();
-    defaultSlot.calulatedSlotHeight = $("body").height();
+    defaultSlot.calculatedSlotWidth = $("body").width();
+    defaultSlot.calculatedSlotHeight = $("body").height();
 
     rootBorder = new LayoutLzg.Border("");
-    rootBorder.width = new LayoutLzg.Distance(LayoutLzg.DistanceType.fixed,defaultSlot.calulatedSlotWidth);
-    rootBorder.height = new LayoutLzg.Distance(LayoutLzg.DistanceType.fixed,defaultSlot.calulatedSlotWidth);
+    rootBorder.width = new LayoutLzg.Distance(LayoutLzg.DistanceType.fixed,defaultSlot.calculatedSlotWidth);
+    rootBorder.height = new LayoutLzg.Distance(LayoutLzg.DistanceType.fixed,defaultSlot.calculatedSlotWidth);
     rootBorder.horizonAlignment = LayoutLzg.HorizonAlignment.Strech;
     rootBorder.verticalAlignment = LayoutLzg.VerticalAlignment.Strech;
     rootBorder.parentSlot = defaultSlot;
@@ -52,23 +51,27 @@
     textView = new LayoutLzg.TextView("");
     textView.width = new LayoutLzg.Distance(LayoutLzg.DistanceType.auto,0);
     textView.height = new LayoutLzg.Distance(LayoutLzg.DistanceType.auto,0);
+    textView.horizonAlignment = LayoutLzg.HorizonAlignment.Left;
+    textView.verticalAlignment = LayoutLzg.VerticalAlignment.Top;
     textView.margin.left = 50;
     textView.margin.top = 50;
 
-    rootBorder.addChild(button);
     rootBorder.addChild(bar);
+    rootBorder.addChild(button);
     rootBorder.addChild(textView);
 
-    rootBorder.initCalculableSlots();
     rootBorder.assembleDom();
     rootdiv = rootBorder.getRootElement();
     $("body").append(rootdiv);
+
+    rootBorder.calculateWidthFromTop();
+    rootBorder.calculateHeightFromTop();
     rootBorder.doLayout();
 
     strconverter = new LayoutLzg.ExpressionConverter("'Value='+parseInt(Math.round(value)).toString()");
     provider = LayoutLzg.getDefaultUniversalPropertyProvider();
     // LayoutLzg.createPropertyBinding(provider,$("#value")[0],"text",bar,"value").setConverter(strconverter).startBinding();
-    // LayoutLzg.createPropertyBinding(provider,textView,"text",bar,"value").setConverter(strconverter).startBinding();
+    LayoutLzg.createPropertyBinding(provider,textView,"text",bar,"value").setConverter(strconverter).startBinding();
 
 </script>
 </body>

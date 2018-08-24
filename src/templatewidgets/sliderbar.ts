@@ -1,15 +1,21 @@
 namespace LayoutLzg {
 
-    export class SliderBar extends TemplateControl{
-
-        minValue:number;
-        maxValue:number;
+    @registclass
+    export class SliderBar extends TemplateWidget{
         private _value:number;
-        radius:number;
-        handleFill: Brush;
-        handleStroke: Brush;
         private rectHandle: Rect;
         private mousedownValue:number;
+
+        @registproperty("number")
+        minValue:number;
+        @registproperty("number")
+        maxValue:number;
+        @registproperty("number")
+        radius:number;
+        @registproperty("Brush")
+        handleFill: Brush;
+        @registproperty("Brush")
+        handleStroke: Brush;
 
         constructor(name: string) {
             super(name);
@@ -26,6 +32,7 @@ namespace LayoutLzg {
             this.notifyProperties.push("value");
         }
 
+        @registproperty("number")
         get value(): number {
             return this._value;
         }
@@ -48,7 +55,7 @@ namespace LayoutLzg {
             rectStick.fill = this.fill;
             rectStick.stroke = this.stroke;
             rectStick.strokeThickness = new Thickness(1,1,1,1);
-            rectStick.shadow = new ShadowSettings(0,0,10,0,"#cfcfcf");
+            rectStick.shadow = new ShadowSettings(0,0,5,0,"#cfcfcf");
 
             let rectHandle = new Rect("sliderHandle");
             rectHandle.horizonAlignment = HorizonAlignment.Left;
@@ -59,7 +66,7 @@ namespace LayoutLzg {
             rectHandle.fill = this.handleFill;
             rectHandle.stroke = this.handleStroke;
             rectHandle.strokeThickness = new Thickness(1,1,1,1);
-            rectHandle.shadow = new ShadowSettings(0,0,10,0,"#cfcfcf");
+            rectHandle.shadow = new ShadowSettings(0,0,20,0,"#cfcfcf");
 
             rootBorder.addChild(rectStick);
             rootBorder.addChild(rectHandle);
@@ -70,32 +77,31 @@ namespace LayoutLzg {
             let dx = 0;
             let dy = 0;
             let self = this;
-            $(rectHandle.getRootElement()).mousedown(function (e) {
+
+            onEvent(rectHandle.getRootElement(),"mousedown",function (e:any) {
                 mousedownScreenX = e.screenX;
                 mousedownScreenY = e.screenY;
                 ismousedown = true;
                 self.mousedownValue = self._value;
             });
-            $(document.body).mousemove(function (e) {
+            onEvent(document.body,"mousemove",function (e:any) {
                 if(!ismousedown) return;
                 dx = e.screenX - mousedownScreenX;
                 dy = e.screenY - mousedownScreenY;
                 self.onHandleDrag(dx,dy);
             });
-            $(document.body).mouseup(function (e) {
+            onEvent(document.body,"mouseup",function (e:any) {
                 mousedownScreenX = e.screenX;
                 mousedownScreenY = e.screenY;
                 ismousedown = false;
             });
-
-
 
             this.visualTree.rootContainer = rootBorder;
             this.rectHandle = rectHandle;
         }
 
         onHandleDrag(dx: number, dy: number): any {
-            let w = this.estimateWidth();
+            let w = this.calculatedWidth;
             let v = this.mousedownValue + dx/w*(this.maxValue-this.minValue);
             if(v>this.maxValue) v = this.maxValue;
             if(v<this.minValue) v = this.minValue;
@@ -109,7 +115,7 @@ namespace LayoutLzg {
         }
 
         doLayout(): void {
-            let w = this.estimateWidth();
+            let w = this.calculatedWidth;
             let rectend = w/(this.maxValue-this.minValue)*(this._value-this.minValue);
             this.rectHandle.margin.left = rectend;
             super.doLayout();

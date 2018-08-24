@@ -1,34 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6895967e-ff6e-45b9-baff-517886fa1890" name="Default" comment="lifecycle">
-      <change afterPath="$PROJECT_DIR$/dist/test_mouse.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/test_progressbar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/test_slider.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/test_vlinearlayout.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/action/gotostateaction.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/hlinearlayout.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/vlinearlayout.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/converters/expressionconverter.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/templatecontrols/progressbar.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/templatecontrols/sliderbar.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/eventutils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/output.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/output.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/test_button.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/test_button.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bootstrap/property.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/bootstrap/property.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/border.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/border.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/verticallinearlayout.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/verticallinearlayout.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controls/controlbase.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controls/controlbase.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controls/rect.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controls/rect.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controls/textview.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controls/textview.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layoutbase.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/layoutbase.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layoutcore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/layoutcore.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/observer/controlproperty.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/observer/controlproperty.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templatecontrols/button.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/templatecontrols/button.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/visualtree/templatecontrol.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/visualtree/templatecontrol.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
-    </list>
+    <list default="true" id="6895967e-ff6e-45b9-baff-517886fa1890" name="Default" comment="wdiget xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,167 +12,117 @@
     <session id="-1397950332">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
+          <entry key="project.closed" value="21" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.10" value="2" />
-          <entry key="project.open.time.11" value="4" />
-          <entry key="project.open.time.12" value="3" />
-          <entry key="project.open.time.13" value="1" />
-          <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="12" />
+          <entry key="project.open.time.10" value="3" />
+          <entry key="project.open.time.11" value="5" />
+          <entry key="project.open.time.12" value="5" />
+          <entry key="project.open.time.13" value="7" />
+          <entry key="project.open.time.14" value="1" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.open.time.8" value="2" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="29" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="TypeScriptServerServiceImpl" value="12" />
+          <entry key="TypeScriptServerServiceImpl" value="25" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="1" />
-          <entry key="html" value="29" />
-          <entry key="js" value="15" />
-          <entry key="json" value="23" />
+          <entry key="gitignore" value="1" />
+          <entry key="html" value="50" />
+          <entry key="iml" value="1" />
+          <entry key="js" value="63" />
+          <entry key="json" value="41" />
           <entry key="md" value="2" />
-          <entry key="ts" value="244" />
+          <entry key="ts" value="433" />
           <entry key="txt" value="1" />
+          <entry key="xml" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="1" />
-          <entry key="HTML" value="29" />
-          <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="15" />
+          <entry key="HTML" value="50" />
+          <entry key="IDEA_MODULE" value="1" />
+          <entry key="JSON" value="3" />
+          <entry key="JavaScript" value="63" />
           <entry key="Markdown" value="2" />
-          <entry key="PLAIN_TEXT" value="1" />
-          <entry key="TypeScript" value="244" />
-          <entry key="tsconfig" value="22" />
+          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="TypeScript" value="433" />
+          <entry key="XML" value="4" />
+          <entry key="tsconfig" value="38" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="6" />
-          <entry key="dummy" value="17" />
-          <entry key="html" value="2367" />
-          <entry key="js" value="332" />
-          <entry key="json" value="443" />
+          <entry key="dummy" value="19" />
+          <entry key="html" value="2543" />
+          <entry key="iml" value="13" />
+          <entry key="js" value="1220" />
+          <entry key="json" value="788" />
           <entry key="md" value="46" />
-          <entry key="ts" value="20784" />
-          <entry key="txt" value="10" />
+          <entry key="ts" value="38479" />
+          <entry key="txt" value="141" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="6" />
-          <entry key="HTML" value="2367" />
-          <entry key="JavaScript" value="332" />
+          <entry key="HTML" value="2543" />
+          <entry key="IDEA_MODULE" value="13" />
+          <entry key="JSON" value="10" />
+          <entry key="JavaScript" value="1220" />
           <entry key="Markdown" value="46" />
-          <entry key="PLAIN_TEXT" value="27" />
-          <entry key="TypeScript" value="20784" />
-          <entry key="tsconfig" value="443" />
+          <entry key="PLAIN_TEXT" value="160" />
+          <entry key="TypeScript" value="38479" />
+          <entry key="tsconfig" value="778" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tsconfig.json">
+        <entry file="file://$PROJECT_DIR$/src/widgetxml/metaxmlwidgetparser.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/converters/expressionconverter.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="54" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="54" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/converters/firstcharuppercaseconverter.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="12" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/observer/controlproperty.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="30" column="36" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
-              <folding>
-                <element signature="n#!!block;n#constructor#0;n#ControlPropertyGetter#0;n#LayoutLzg#0" />
-                <element signature="n#!!block;n#getPropertyGetter#0;n#ControlPropertyGetterProvider#0;n#LayoutLzg#0" />
-                <element signature="n#ControlPropertySetterProvider#0;n#LayoutLzg#0" />
-                <element signature="n#!!block;n#canProvideSetter#0;n#ControlPropertySetterProvider#0;n#LayoutLzg#0" />
-                <element signature="n#!!block;n#getPropertySetter#0;n#ControlPropertySetterProvider#0;n#LayoutLzg#0" />
-                <element signature="n#!!block;n#constructor#0;n#ControlPropertyChangedListener#0;n#LayoutLzg#0" />
-                <element signature="n#!!block;n#getPropertyChangedListener#0;n#ControlPropertyChangedListenerProvider#0;n#LayoutLzg#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/containers/border.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="109" column="50" lean-forward="true" selection-start-line="109" selection-start-column="50" selection-end-line="109" selection-end-column="50" />
-              <folding>
-                <element signature="n#!!block;n#doLayout#0;n#Border#0;n#LayoutLzg#0" />
-                <element signature="n#!!block;n#estimateWidth#0;n#Border#0;n#LayoutLzg#0" />
-                <element signature="n#!!block;n#estimateHeight#0;n#Border#0;n#LayoutLzg#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controls/textview.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="431">
-              <caret line="47" column="13" lean-forward="true" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
+            <state relative-caret-position="376">
+              <caret line="48" selection-start-line="48" selection-end-line="48" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dist/test_slider.html">
+        <entry file="file://$PROJECT_DIR$/src/test/testxmlserializer.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="58" column="29" lean-forward="true" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
+            <state relative-caret-position="120">
+              <caret line="8" column="28" lean-forward="true" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/utils/eventutils.ts">
+        <entry file="file://$PROJECT_DIR$/tsconfig.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="5" lean-forward="true" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+            <state relative-caret-position="316">
+              <caret line="126" column="33" lean-forward="true" selection-start-line="126" selection-start-column="33" selection-end-line="126" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/utils/dateutils.ts">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/converters/tostringconverter.ts">
+        <entry file="file://$PROJECT_DIR$/src/widgetxml/metaxmlwidgetserializer.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+            <state relative-caret-position="361">
+              <caret line="40" column="5" lean-forward="true" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -210,46 +133,46 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package.json" />
-        <option value="JavaScript File" />
         <option value="Jupyter Notebook" />
         <option value="CSS File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
         <option value="TypeScript File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>parentSlotHeight</find>
-      <find>isParentSlotWidthCalculatable</find>
-      <find>calulatedSlotWdith</find>
-      <find>calulatedSlotWidth</find>
-      <find>clear</find>
+      <find>calculateWidthFromBottom</find>
+      <find>calculateWidthFromTop</find>
+      <find>calculateHeightFromBottom</find>
+      <find>estimatewi</find>
+      <find>estimateWidth</find>
+      <find>widthlist</find>
+      <find>initCalculableSlots</find>
+      <find>estimatewidth</find>
       <find>height</find>
-      <find>$(border.getRootElement()).css('left','0px')</find>
-      <find>notifyPropertyChanged</find>
-      <find>HtmlProp</find>
-      <find>DomSizePropertyChangedListener</find>
-      <find>text</find>
-      <find>this</find>
-      <find>fill</find>
-      <find>rootELem</find>
-      <find>pressed</find>
-      <find>test</find>
-      <find>TextV</find>
-      <find>trigger</find>
-      <find>borderElem</find>
-      <find>margin</find>
-      <find>border</find>
-      <find>verti</find>
-      <find>addce</find>
-      <find>this.children</find>
-      <find>parent</find>
-      <find>actual</find>
-      <find>Slot</find>
+      <find>Height</find>
+      <find>pointer-events</find>
+      <find>testjs</find>
+      <find>destfolder</find>
+      <find>test.ts</find>
+      <find>eventtr</find>
+      <find>$</find>
+      <find>attr(</find>
       <find>template</find>
-      <find>utils</find>
-      <find>eventTransparentDiv</find>
+      <find>domutil</find>
+      <find>childtag</find>
+      <find>reflection</find>
+      <find>reflector</find>
+      <find>Def</find>
+      <find>controlpro</find>
+      <find>widgetpro</find>
+      <find>control</find>
+      <find>children</find>
+      <find>outer</find>
+      <find>contai</find>
+      <find>append</find>
     </findStrings>
     <replaceStrings>
       <replace>parentSlot.isSlotHeightCalculatable</replace>
@@ -258,6 +181,7 @@
       <replace>calulatedSlotWidth</replace>
       <replace>calulatedSlotWdith</replace>
       <replace>this.vchildren</replace>
+      <replace>widget</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -267,57 +191,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/visualtree/Style.ts" />
-        <option value="$PROJECT_DIR$/src/visualtree/trigger.ts" />
-        <option value="$PROJECT_DIR$/src/lifecycle/lifecyclebase.ts" />
-        <option value="$PROJECT_DIR$/src/visualtree/actionbase.ts.ipynb" />
-        <option value="$PROJECT_DIR$/src/visualtree/actionbase.ts" />
-        <option value="$PROJECT_DIR$/src/visualtree/triggerbase.ts" />
-        <option value="$PROJECT_DIR$/src/visualtree/style.ts" />
-        <option value="$PROJECT_DIR$/src/trigger/propertychangedtrigger.ts" />
-        <option value="$PROJECT_DIR$/src/trigger/statechangedtrigger.ts" />
-        <option value="$PROJECT_DIR$/gulpfile.js" />
-        <option value="$PROJECT_DIR$/src/style/statemanager.css" />
-        <option value="$PROJECT_DIR$/src/templatecontrols/Button.ts" />
-        <option value="$PROJECT_DIR$/src/visualtree/visualtree.ts" />
-        <option value="$PROJECT_DIR$/src/brushes/solidcolorbrush.ts" />
-        <option value="$PROJECT_DIR$/src/trigger/triggerbase.ts" />
-        <option value="$PROJECT_DIR$/src/trigger/eventtriiger.ts" />
-        <option value="$PROJECT_DIR$/src/trigger/eventtriger.ts" />
-        <option value="$PROJECT_DIR$/src/action/actionbase.ts" />
-        <option value="$PROJECT_DIR$/src/action/multiaction.ts" />
-        <option value="$PROJECT_DIR$/src/trigger/eventtrigger.ts" />
-        <option value="$PROJECT_DIR$/src/style/stylebase.ts" />
-        <option value="$PROJECT_DIR$/src/style/statemanager.ts" />
-        <option value="$PROJECT_DIR$/src/action/setpropertyaction.ts" />
-        <option value="$PROJECT_DIR$/src/bindings/functionbinding.ts" />
-        <option value="$PROJECT_DIR$/src/bindings/propertybinding.ts" />
-        <option value="$PROJECT_DIR$/src/action/gotostateaction.ts" />
-        <option value="$PROJECT_DIR$/dist/test_button.html" />
-        <option value="$PROJECT_DIR$/src/templatecontrols/button.ts" />
-        <option value="$PROJECT_DIR$/src/controls/controlbase.ts" />
-        <option value="$PROJECT_DIR$/src/containers/verticallinearlayout.ts" />
-        <option value="$PROJECT_DIR$/dist/test_templatecontrol_vlinearlayout.html" />
-        <option value="$PROJECT_DIR$/dist/test_vlinearlayout.html" />
-        <option value="$PROJECT_DIR$/src/layoutbase.ts" />
-        <option value="$PROJECT_DIR$/src/controls/rect.ts" />
-        <option value="$PROJECT_DIR$/src/templatecontrols/progressbar.ts" />
-        <option value="$PROJECT_DIR$/dist/test_progressbar.html" />
-        <option value="$PROJECT_DIR$/src/containers/vlinearlayout.ts" />
-        <option value="$PROJECT_DIR$/src/containers/hlinearlayout.ts" />
-        <option value="$PROJECT_DIR$/dist/testmouse.html" />
-        <option value="$PROJECT_DIR$/dist/test_mouse.html" />
+        <option value="$PROJECT_DIR$/src/serialization/imagecolorbrushxmlserializer.ts" />
+        <option value="$PROJECT_DIR$/src/serialization/solidcolorbrushstringserializer.ts" />
+        <option value="$PROJECT_DIR$/src/serialization/stringserializerprovider.ts" />
+        <option value="$PROJECT_DIR$/src/serialization/xmlserializerprovider.ts" />
+        <option value="$PROJECT_DIR$/src/serialization/prioritystringserializerprovider.ts" />
+        <option value="$PROJECT_DIR$/src/serialization/priorityxmlserializerprovider.ts" />
+        <option value="$PROJECT_DIR$/src/reflection.ts" />
         <option value="$PROJECT_DIR$/src/visualtree/templatecontrol.ts" />
-        <option value="$PROJECT_DIR$/src/bootstrap/property.ts" />
-        <option value="$PROJECT_DIR$/src/layoutcore.ts" />
-        <option value="$PROJECT_DIR$/src/templatecontrols/sliderbar.ts" />
-        <option value="$PROJECT_DIR$/src/converters/expressionconverter.ts" />
-        <option value="$PROJECT_DIR$/src/observer/controlproperty.ts" />
-        <option value="$PROJECT_DIR$/tsconfig.json" />
-        <option value="$PROJECT_DIR$/src/utils/eventutils.ts" />
-        <option value="$PROJECT_DIR$/src/controls/textview.ts" />
+        <option value="$PROJECT_DIR$/src/controls/controlbase.ts" />
+        <option value="$PROJECT_DIR$/src/collections/list.ts" />
+        <option value="$PROJECT_DIR$/src/reflection/reflection.ts" />
+        <option value="$PROJECT_DIR$/src/templatewidgets/progressbar.ts" />
+        <option value="$PROJECT_DIR$/src/templatewidgets/sliderbar.ts" />
+        <option value="$PROJECT_DIR$/src/reflection/decorators.ts" />
+        <option value="$PROJECT_DIR$/src/trigger/triggerbase.ts" />
+        <option value="$PROJECT_DIR$/src/style/statemanager.ts" />
+        <option value="$PROJECT_DIR$/src/style/stylebase.ts" />
+        <option value="$PROJECT_DIR$/src/action/gotostateaction.ts" />
+        <option value="$PROJECT_DIR$/src/action/setpropertyaction.ts" />
         <option value="$PROJECT_DIR$/src/containers/border.ts" />
-        <option value="$PROJECT_DIR$/dist/test_slider.html" />
+        <option value="$PROJECT_DIR$/src/containers/vlinearlayout.ts" />
+        <option value="$PROJECT_DIR$/src/visualtree/visualtree.ts" />
+        <option value="$PROJECT_DIR$/src/visualtree/templatewidget.ts" />
+        <option value="$PROJECT_DIR$/src/templatewidgets/button.ts" />
+        <option value="$PROJECT_DIR$/src/observer/widgetproperty.ts" />
+        <option value="$PROJECT_DIR$/dist/test_verticallinearlayout.html" />
+        <option value="$PROJECT_DIR$/src/containers/hlinearlayout.ts" />
+        <option value="$PROJECT_DIR$/dist/test_horizonallinearlayout.html" />
+        <option value="$PROJECT_DIR$/gulpfile.js" />
+        <option value="$PROJECT_DIR$/src/serialization/distanceserializer.ts" />
+        <option value="$PROJECT_DIR$/src/serialization/distancestringserializer.ts" />
+        <option value="$PROJECT_DIR$/src/serialization/horizonalalignmentstringserializer.ts" />
+        <option value="$PROJECT_DIR$/src/serialization/verticalalignmentstringserializer.ts" />
+        <option value="$PROJECT_DIR$/src/serialization/basictypestringserializer.ts" />
+        <option value="$PROJECT_DIR$/src/layoutcore.ts" />
+        <option value="$PROJECT_DIR$/src/utils/xmlutils.ts" />
+        <option value="$PROJECT_DIR$/src/bootstrap/serializer.ts" />
+        <option value="$PROJECT_DIR$/src/widgetxml/widgetserializer.ts" />
+        <option value="$PROJECT_DIR$/src/widgetxml/widgetparser.ts" />
+        <option value="$PROJECT_DIR$/src/widgetxml/xmlwidgetparser.ts" />
+        <option value="$PROJECT_DIR$/src/widgetxml/xmlwidgetparserprovider.ts" />
+        <option value="$PROJECT_DIR$/src/widgetxml/tagxmlwidgetparserprovider.ts" />
+        <option value="$PROJECT_DIR$/src/widgetxml/widgetparserprovider.ts" />
+        <option value="$PROJECT_DIR$/src/widgetxml/priorityxmlwidgetparserprovider.ts" />
+        <option value="$PROJECT_DIR$/src/widgetxml/xmlwidgetserializer.ts" />
+        <option value="$PROJECT_DIR$/src/widgetxml/metawidgetparser.ts" />
+        <option value="$PROJECT_DIR$/src/widgetxml/metawidgetserializer.ts" />
+        <option value="$PROJECT_DIR$/src/widgetxml/metaxmlwidgetserializer.ts" />
+        <option value="$PROJECT_DIR$/src/widgetxml/metaxmlwidgetparser.ts" />
+        <option value="$PROJECT_DIR$/tsconfig.json" />
+        <option value="$PROJECT_DIR$/src/test/testxmlserializer.ts" />
       </list>
     </option>
   </component>
@@ -327,9 +251,6 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/node_modules" />
-  </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
       <path value="$PROJECT_DIR$/package.json" />
@@ -337,8 +258,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="187" />
-    <option name="y" value="49" />
+    <option name="x" value="139" />
+    <option name="y" value="56" />
     <option name="width" value="1717" />
     <option name="height" value="977" />
   </component>
@@ -367,52 +288,23 @@
               <item name="layoutsystem" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="layoutsystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="layoutsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="layoutsystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="layoutsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="templatecontrols" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="layoutsystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="layoutsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="layoutsystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="layoutsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="visualtree" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="layoutsystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="layoutsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="GO_FMT" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="button&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/templatecontrols/button.ts&#10;textv&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/controls/textview.ts&#10;border&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/containers/border.ts&#10;tscon&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/tsconfig.json&#10;tsco&#9;null&#9;null&#10;controlpro&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/observer/controlproperty.ts&#10;progr&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/templatecontrols/progressbar.ts&#10;rect&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/controls/rect.ts&#10;pro&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/templatecontrols/progressbar.ts&#10;tsconf&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/tsconfig.json&#10;contentp&#9;null&#9;null&#10;content&#9;null&#9;null&#10;tsc&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/tsconfig.json&#10;but&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/templatecontrols/button.ts&#10;control&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/controls/controlbase.ts&#10;templa&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/visualtree/templatecontrol.ts&#10;templ&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/visualtree/templatecontrol.ts&#10;butto&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/templatecontrols/button.ts&#10;Solic&#9;null&#9;null&#10;Vertical&#9;null&#9;null&#10;tsconfig&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/tsconfig.json" />
+    <property name="SearchEverywhereHistoryKey" value="tsc&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/tsconfig.json&#10;layoutcor&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/layoutcore.ts&#10;ba&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/serialization/basictypestringserializer.ts&#10;hori&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/serialization/horizonalalignmentstringserializer.ts&#10;tsco&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/tsconfig.json&#10;gul&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/gulpfile.js&#10;xmluti&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/utils/xmlutils.ts&#10;hlin&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/containers/hlinearlayout.ts&#10;border&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/containers/border.ts&#10;text&#9;null&#9;null&#10;hlinear&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/containers/hlinearlayout.ts&#10;controlp&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/observer/controlproperty.ts&#10;tscon&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/tsconfig.json&#10;controlset&#9;null&#9;null&#10;dec&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/reflection/decorators.ts&#10;lay&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/layoutcore.ts&#10;button&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/templatewidgets/button.ts&#10;layout&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/layoutcore.ts&#10;refle&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/reflection/reflection.ts&#10;List&#9;null&#9;null&#10;xml&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/utils/xmlutils.ts&#10;tsconfig&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/tsconfig.json&#10;tsconf&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/tsconfig.json&#10;EventCallbackItem&#9;null&#9;null&#10;gulp&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/gulpfile.js&#10;ob&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/observer/observableobjectinjector.ts&#10;html&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/utils/htmlutils.ts&#10;tsconfi&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/tsconfig.json&#10;sliderbar&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/templatecontrols/sliderbar.ts&#10;progre&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/templatecontrols/progressbar.ts&#10;rec&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/controls/rect.ts&#10;bor&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/containers/border.ts&#10;button.ts&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/templatecontrols/button.ts&#10;templa&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/visualtree/templatecontrol.ts&#10;textv&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/controls/textview.ts&#10;controlpro&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/observer/controlproperty.ts&#10;progr&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/templatecontrols/progressbar.ts&#10;rect&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/controls/rect.ts&#10;pro&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/templatecontrols/progressbar.ts&#10;contentp&#9;null&#9;null&#10;content&#9;null&#9;null&#10;but&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/templatecontrols/button.ts&#10;control&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/controls/controlbase.ts&#10;templ&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/visualtree/templatecontrol.ts&#10;butto&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/templatecontrols/button.ts&#10;Solic&#9;null&#9;null&#10;Vertical&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/android-sdk-macosx" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1534728028791" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1534888929857" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -421,22 +313,23 @@
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="settings.typescriptcompiler" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="typescript-compiler-editor-notification" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/libs" />
       <recent name="E:\PycharmProjects\layoutsystem\src\style" />
       <recent name="E:\PycharmProjects\layoutsystem\src\action" />
       <recent name="E:\PycharmProjects\layoutsystem\src\trigger" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/widgetxml" />
+      <recent name="$PROJECT_DIR$/src/serialization" />
+      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/dist" />
       <recent name="$PROJECT_DIR$/src/containers" />
-      <recent name="E:\PycharmProjects\layoutsystem\src\action" />
-      <recent name="E:\PycharmProjects\layoutsystem\test" />
-      <recent name="$PROJECT_DIR$/src/converters" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -451,7 +344,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.test_progressbar.html">
+  <component name="RunManager" selected="JavaScript Debug.test_horizonallinearlayout.html">
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
       <module name="" />
       <option name="TESTING_TYPE" value="0" />
@@ -477,22 +370,6 @@
         <option name="SUPPORT_LIB_ENABLED" value="true" />
         <option name="INSTRUMENTATION_ENABLED" value="true" />
       </Profilers>
-      <method />
-    </configuration>
-    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
-      <method />
-    </configuration>
-    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <working-directory />
-      <pass-parent-env>true</pass-parent-env>
-      <envs />
-      <ui />
-      <extra-mocha-options />
-      <test-kind>DIRECTORY</test-kind>
-      <test-directory />
-      <recursive>false</recursive>
       <method />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -604,12 +481,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="test_button.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/layoutsystem/dist/test_button.html">
-      <method v="2" />
-    </configuration>
-    <configuration name="test_progressbar.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/layoutsystem/dist/test_progressbar.html">
-      <method v="2" />
-    </configuration>
     <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
       <option name="filePath" />
       <option name="vmParameters" />
@@ -662,6 +533,30 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <module name="layoutsystem" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;.&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_button.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/layoutsystem/dist/test_button.html">
+      <method v="2" />
+    </configuration>
+    <configuration name="test_horizonallinearlayout.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/layoutsystem/dist/test_horizonallinearlayout.html">
+      <method v="2" />
+    </configuration>
+    <configuration name="test_progressbar.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/layoutsystem/dist/test_progressbar.html">
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-interpreter>project</node-interpreter>
       <node-options />
@@ -686,31 +581,16 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
-    <configuration default="true" type="tests" factoryName="Unittests">
-      <module name="layoutsystem" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;.&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
     <list>
-      <item itemvalue="Python tests.Unittests in test" />
       <item itemvalue="JavaScript Debug.test_button.html" />
       <item itemvalue="JavaScript Debug.test_progressbar.html" />
+      <item itemvalue="JavaScript Debug.test_horizonallinearlayout.html" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.test_horizonallinearlayout.html" />
         <item itemvalue="JavaScript Debug.test_progressbar.html" />
         <item itemvalue="JavaScript Debug.test_button.html" />
-        <item itemvalue="Python tests.Unittests in test" />
       </list>
     </recent_temporary>
   </component>
@@ -744,7 +624,24 @@
       <workItem from="1534434033669" duration="24171000" />
       <workItem from="1534560868775" duration="130000" />
       <workItem from="1534561026006" duration="15020000" />
-      <workItem from="1534606162471" duration="41970000" />
+      <workItem from="1534606162471" duration="71713000" />
+      <workItem from="1534817160498" duration="2266000" />
+      <workItem from="1534820873289" duration="3432000" />
+      <workItem from="1534826584130" duration="134000" />
+      <workItem from="1534827283010" duration="8814000" />
+      <workItem from="1534852442100" duration="112000" />
+      <workItem from="1534852747055" duration="1474000" />
+      <workItem from="1534888063717" duration="57000" />
+      <workItem from="1534888292469" duration="290000" />
+      <workItem from="1534888916515" duration="43000" />
+      <workItem from="1534889041487" duration="146000" />
+      <workItem from="1534889314831" duration="6000" />
+      <workItem from="1534889616897" duration="1961000" />
+      <workItem from="1534893795607" duration="14988000" />
+      <workItem from="1534943333049" duration="10751000" />
+      <workItem from="1534958285481" duration="12000" />
+      <workItem from="1534985232779" duration="599000" />
+      <workItem from="1535008066816" duration="15539000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1533205543454</created>
@@ -879,17 +776,79 @@
       <option name="project" value="LOCAL" />
       <updated>1534634202525</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="lifecycle">
+      <created>1534758026607</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1534758026607</updated>
+    </task>
+    <task id="LOCAL-00021" summary="lifecycle">
+      <created>1534826086320</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1534826086321</updated>
+    </task>
+    <task id="LOCAL-00022" summary="gulp config">
+      <created>1534835398638</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1534835398639</updated>
+    </task>
+    <task id="LOCAL-00023" summary="rename classes">
+      <created>1534851185854</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1534851185854</updated>
+    </task>
+    <task id="LOCAL-00024" summary="rename classes">
+      <created>1534888363058</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1534888363058</updated>
+    </task>
+    <task id="LOCAL-00025" summary="gulp 编译脚本修正，修复不能删除临时文件的问题&#10;加入反射和序列化和xml&#10;可以使用xml对控件进行序列化">
+      <created>1534953851558</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1534953851559</updated>
+    </task>
+    <task id="LOCAL-00026" summary="改名将 control 修改为widget">
+      <created>1534954262223</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1534954262223</updated>
+    </task>
+    <task id="LOCAL-00027" summary="改名将 control 修改为widget">
+      <created>1534954795609</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1534954795609</updated>
+    </task>
+    <task id="LOCAL-00028" summary="wdiget xml">
+      <created>1535093023666</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1535093023666</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="197934000" />
+    <option name="totallyTimeSpent" value="288301000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="187" y="49" width="1717" height="977" extended-state="0" />
-    <editor active="true" />
+    <frame x="139" y="56" width="1717" height="977" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25731343" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2936321" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -904,12 +863,13 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="TypeScript" order="7" weight="0.3289689" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.2723164" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="TypeScript" order="7" sideWeight="0.4994104" weight="0.32881355" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4994104" visible="true" weight="0.41694915" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5005896" side_tool="true" weight="0.41694915" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.3289689" />
       <window_info anchor="bottom" id="Messages" order="11" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -947,43 +907,14 @@
     <MESSAGE value="readme" />
     <MESSAGE value="slot" />
     <MESSAGE value="lifecycle" />
-    <option name="LAST_COMMIT_MESSAGE" value="lifecycle" />
+    <MESSAGE value="gulp config" />
+    <MESSAGE value="rename classes" />
+    <MESSAGE value="gulp 编译脚本修正，修复不能删除临时文件的问题&#10;加入反射和序列化和xml&#10;可以使用xml对控件进行序列化" />
+    <MESSAGE value="改名将 control 修改为widget" />
+    <MESSAGE value="wdiget xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="wdiget xml" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/visualtree/templatecontrol.ts</url>
-          <line>109</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="53" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/templatecontrols/progressbar.ts</url>
-          <line>85</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="54" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/templatecontrols/progressbar.ts</url>
-          <line>84</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="55" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/containers/verticallinearlayout.ts</url>
-          <line>541</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="57" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/containers/verticallinearlayout.ts</url>
-          <line>330</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="58" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="JavascriptDebugType">
         <watch expression="this.name" language="TypeScript" />
@@ -1047,376 +978,359 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test/testpropbinding.html">
+    <entry file="file://$PROJECT_DIR$/src/collections/list.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="36" lean-forward="true" selection-start-line="6" selection-end-line="7" />
+        <state relative-caret-position="255">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/visualtree/visualtree.ts">
+    <entry file="file://$PROJECT_DIR$/src/templatewidgets/progressbar.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="14" column="55" lean-forward="true" selection-start-line="14" selection-start-column="55" selection-end-line="14" selection-end-column="55" />
+        <state relative-caret-position="75">
+          <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/output.js">
+    <entry file="file://$PROJECT_DIR$/src/reflection/reflection.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="125" column="22" selection-start-line="125" selection-start-column="22" selection-end-line="125" selection-end-column="22" />
+        <state relative-caret-position="226">
+          <caret line="71" selection-start-line="71" selection-end-line="71" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/brushes/solidcolorbrush.ts">
+    <entry file="file://$PROJECT_DIR$/src/serialization/xmlserializer.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="23" column="38" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
+        <state relative-caret-position="45">
+          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/test_horizonallinearlayout.html">
+    <entry file="file://$PROJECT_DIR$/src/reflection/decorators.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="614">
-          <caret line="67" selection-start-line="62" selection-end-line="67" />
+        <state relative-caret-position="195">
+          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/trigger/statechangedtrigger.ts">
+    <entry file="file://$PROJECT_DIR$/src/templatewidgets/sliderbar.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="19" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/trigger/propertychangedtrigger.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="62" selection-start-line="1" selection-start-column="48" selection-end-line="1" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controls/image.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/style/statemanager.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/style/stylebase.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-129">
-          <caret line="5" column="18" lean-forward="true" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/action/actionbase.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="32" lean-forward="true" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bindings/binding.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-164">
-          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bindings/functionbinding.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bindings/propertybinding.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="53" column="31" lean-forward="true" selection-start-line="53" selection-start-column="31" selection-end-line="53" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/observer/observableobjectinjector.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="295" column="32" lean-forward="true" selection-start-line="295" selection-start-column="32" selection-end-line="295" selection-end-column="32" />
+        <state relative-caret-position="45">
+          <caret line="3" column="43" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/trigger/triggerbase.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="28" lean-forward="true" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+        <state relative-caret-position="210">
+          <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/action/multiaction.ts">
+    <entry file="file://$PROJECT_DIR$/src/trigger/domeventtrigger.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="225">
+          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/action/setpropertyaction.ts">
+    <entry file="file://$PROJECT_DIR$/src/style/statemanager.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="150">
+          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/style/stylebase.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="24" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/action/gotostateaction.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+        <state relative-caret-position="45">
+          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/trigger/eventtrigger.ts">
+    <entry file="file://$PROJECT_DIR$/src/action/setpropertyaction.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/jquery.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="3" column="232" selection-start-line="3" selection-start-column="232" selection-end-line="3" selection-end-column="232" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controls/controlbase.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="26" column="30" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templatecontrols/button.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="30" selection-start-line="26" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/containerbase.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="64" selection-start-line="1" selection-start-column="48" selection-end-line="1" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/verticallinearlayout.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/test_verticallinearlayout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" selection-start-line="12" selection-end-line="77" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/test_vlinearlayout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="42" column="31" lean-forward="true" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/test_templatecontrol_vlinear.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/horizonallinearlayout.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="178" selection-start-line="63" selection-end-line="178" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/layoutbase.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="40" column="29" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controls/rect.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="92" column="23" selection-start-line="92" selection-start-column="23" selection-end-line="92" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/test_progressbar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        <state relative-caret-position="45">
+          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/vlinearlayout.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
+        <state relative-caret-position="285">
+          <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/observer/widgetproperty.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="95" column="26" selection-start-line="95" selection-start-column="26" selection-end-line="95" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/output.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="4407" column="1" lean-forward="true" selection-start-line="4407" selection-start-column="1" selection-end-line="4407" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/test_progressbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/layoutbase.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="960">
+          <caret line="64" selection-start-line="64" selection-end-line="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/visualtree/visualtree.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/visualtree/templatewidget.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="795">
+          <caret line="53" column="27" selection-start-line="53" selection-start-column="27" selection-end-line="53" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/test_horizonallinearlayout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="34" column="46" lean-forward="true" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templatewidgets/button.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="n#!!block;n#constructor#0;n#Button#0;n#LayoutLzg#0" />
+            <element signature="n#!!block;n#initStates#0;n#Button#0;n#LayoutLzg#0" />
+            <element signature="n#!!block;n#content#0;n#Button#0;n#LayoutLzg#0" />
+            <element signature="n#!!block;n#content#1;n#Button#0;n#LayoutLzg#0" />
+            <element signature="n#!!block;n#assembleDom#0;n#Button#0;n#LayoutLzg#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/test_verticallinearlayout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1034">
+          <caret line="78" column="23" selection-start-line="78" selection-start-column="23" selection-end-line="78" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/test_slider.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="109" selection-start-line="28" selection-start-column="109" selection-end-line="28" selection-end-column="109" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controls/textview.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-838">
+          <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/hlinearlayout.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+        <state relative-caret-position="-644">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/border.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="73" column="7" selection-start-line="73" selection-start-column="7" selection-end-line="73" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/typescript/lib/lib.dom.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="13241" column="10" selection-start-line="13241" selection-start-column="4" selection-end-line="13241" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dist/test_button.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="31" column="25" selection-end-line="52" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/test_mouse.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="6" lean-forward="true" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templatecontrols/progressbar.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="90" selection-start-line="83" selection-end-line="90" />
-          <folding>
-            <element signature="n#!!block;n#initVisualTree#0;n#ProgressBar#0;n#LayoutLzg#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/visualtree/templatecontrol.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="132" selection-start-line="132" selection-end-line="132" />
-          <folding>
-            <element signature="n#!!block;n#getRootElement#0;n#TemplateControl#0;n#LayoutLzg#0" />
-          </folding>
+        <state relative-caret-position="435">
+          <caret line="29" column="53" selection-start-line="29" selection-start-column="53" selection-end-line="29" selection-end-column="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/bootstrap/property.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/serialization/distancestringserializer.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="23" selection-start-line="23" selection-end-line="23" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/serialization/stringserializerprovider.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/serialization/prioritystringserializerprovider.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/serialization/verticalalignmentstringserializer.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="45" lean-forward="true" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/serialization/basictypestringserializer.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/serialization/horizonalignmentstringserializer.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/xmlutils.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="601">
+          <caret line="106" selection-start-line="106" selection-end-line="106" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgetxml/tagxmlwidgetparserprovider.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="41" lean-forward="true" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgetxml/priorityxmlwidgetparserprovider.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="55" selection-start-line="21" selection-start-column="55" selection-end-line="21" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgetxml/xmlwidgetparserprovider.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="78" lean-forward="true" selection-start-line="2" selection-start-column="78" selection-end-line="2" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgetxml/xmlwidgetserializer.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgetxml/widgetserializer.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="46" selection-start-line="3" selection-start-column="46" selection-end-line="3" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgetxml/widgetparser.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="41" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgetxml/widgetparserprovider.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="33" lean-forward="true" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgetxml/xmlwidgetparser.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/layoutcore.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="184" column="40" selection-start-line="184" selection-start-column="19" selection-end-line="184" selection-end-column="40" />
+        <state relative-caret-position="278">
+          <caret line="136" column="8" selection-start-line="136" selection-start-column="8" selection-end-line="136" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/templatecontrols/sliderbar.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="101" column="27" selection-start-line="101" selection-start-column="27" selection-end-line="101" selection-end-column="27" />
-          <folding>
-            <element signature="n#!!block;n#initVisualTree#0;n#SliderBar#0;n#LayoutLzg#0" />
-            <element signature="e#2153#2185#0" />
-            <element signature="e#2377#2484#0" />
-            <element signature="e#2609#2716#0" />
-            <element signature="n#!!block;n#assembleDom#0;n#SliderBar#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#doLayout#0;n#SliderBar#0;n#LayoutLzg#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/converters/firstcharuppercaseconverter.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="12" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/observer/controlproperty.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="30" column="36" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
-          <folding>
-            <element signature="n#!!block;n#constructor#0;n#ControlPropertyGetter#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#getPropertyGetter#0;n#ControlPropertyGetterProvider#0;n#LayoutLzg#0" />
-            <element signature="n#ControlPropertySetterProvider#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#canProvideSetter#0;n#ControlPropertySetterProvider#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#getPropertySetter#0;n#ControlPropertySetterProvider#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#constructor#0;n#ControlPropertyChangedListener#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#getPropertyChangedListener#0;n#ControlPropertyChangedListenerProvider#0;n#LayoutLzg#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/converters/expressionconverter.ts">
+    <entry file="file://$PROJECT_DIR$/src/bootstrap/serializer.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="12" column="54" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="54" />
+          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/converters/tostringconverter.ts">
+    <entry file="file://$PROJECT_DIR$/src/widgetxml/metaxmlwidgetserializer.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+        <state relative-caret-position="361">
+          <caret line="40" column="5" lean-forward="true" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgetxml/metaxmlwidgetparser.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tsconfig.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+        <state relative-caret-position="316">
+          <caret line="126" column="33" lean-forward="true" selection-start-line="126" selection-start-column="33" selection-end-line="126" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/dateutils.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/eventutils.ts">
+    <entry file="file://$PROJECT_DIR$/src/test/testxmlserializer.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="5" lean-forward="true" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controls/textview.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="47" column="13" lean-forward="true" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/border.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="109" column="50" lean-forward="true" selection-start-line="109" selection-start-column="50" selection-end-line="109" selection-end-column="50" />
-          <folding>
-            <element signature="n#!!block;n#doLayout#0;n#Border#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#estimateWidth#0;n#Border#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#estimateHeight#0;n#Border#0;n#LayoutLzg#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/test_slider.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="58" column="29" lean-forward="true" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
+        <state relative-caret-position="120">
+          <caret line="8" column="28" lean-forward="true" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
         </state>
       </provider>
     </entry>

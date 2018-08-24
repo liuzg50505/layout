@@ -1,5 +1,5 @@
 namespace LayoutLzg{
-    export class TextView extends ControlBase {
+    export class TextView extends WidgetBase {
 
         private _text:string;
         private _selectable:boolean;
@@ -40,44 +40,76 @@ namespace LayoutLzg{
         }
 
         getRootElement(): HTMLElement {
-            if(this.rootElem==null) {
-                this.rootElem = $("<div></div>")[0];
-                $(this.rootElem).attr('layout-type','TextView');
-                $(this.rootElem).attr('layout-name',this.name);
-                // eventTransparentDiv(this.rootElem);
-            }
+            super.getRootElement();
+            setattr(this.rootElem,'layout-type','TextView');
+            setattr(this.rootElem,'layout-name',this.name);
             return this.rootElem;
         }
 
         assembleDom(): void {
-            this.spanElem = $("<span></span>")[0];
-            $(this.getRootElement()).empty();
-            if(this.width.type==DistanceType.fixed) $(this.getRootElement()).css('width',this.width.value+'px');
-            if(this.height.type==DistanceType.fixed) $(this.getRootElement()).css('height',this.height.value+'px');
-            $(this.getRootElement()).append(this.spanElem);
-            $(this.spanElem).text(this._text);
+            this.spanElem = createElement("SPAN");
+            emptyChildren(this.getRootElement());
+            if(this.width.type==DistanceType.fixed) css(this.getRootElement(),'width',this.width.value+'px');
+            if(this.height.type==DistanceType.fixed) css(this.getRootElement(),'height',this.height.value+'px');
+            appendChild(this.getRootElement(),this.spanElem);
+            setElemText(this.spanElem,this._text);
             if(this._wordWrap)
-                $(this.spanElem).css('word-break','break-all');
+                css(this.spanElem,'word-break','break-all');
             else
-                $(this.spanElem).css('word-break','normal');
+                css(this.spanElem,'word-break','normal');
 
         }
 
         doLayout(): void {
-            super.doLayout();
+            css(this.getRootElement(),'position','absolute');
+            css(this.getRootElement(),'width',this.calculatedWidth+'px');
+            css(this.getRootElement(),'height',this.calculatedHeight+'px');
+            css(this.getRootElement(),"position","absolute");
             if(!this._selectable) {
-                $(this.spanElem).css("user-select","none");
+                css(this.spanElem,"user-select","none");
             }else {
-                $(this.spanElem).css("user-select","");
+                css(this.spanElem,"user-select","");
             }
         }
 
-        estimateHeight_auto(): number {
-            return $(this.getRootElement()).find('span').height();
+        calculateWidthFromTop(): void {
+            if (this.width.type == DistanceType.fixed) {
+                this.calculatedWidth = this.width.value;
+                return;
+            }
+            if(this.parentSlot&&this.parentSlot.isSlotWidthCalculatable&&this.horizonAlignment==HorizonAlignment.Strech) {
+                this.calculatedWidth = this.parentSlot.calculatedSlotWidth;
+                return;
+            }
+            this.calculatedWidth = this.spanElem.offsetWidth;
+        }
+        calculateHeightFromTop(): void {
+            if (this.height.type == DistanceType.fixed) {
+                this.calculatedHeight = this.height.value;
+                return;
+            }
+            if(this.parentSlot&&this.parentSlot.isSlotHeightCalculatable&&this.verticalAlignment==VerticalAlignment.Strech) {
+                this.calculatedHeight = this.parentSlot.calculatedSlotHeight;
+                return;
+            }
+            this.calculatedHeight = this.spanElem.offsetHeight;
         }
 
-        estimateWidth_auto(): number {
-            return $(this.getRootElement()).find('span').width();
+
+        calculateWidthFromBottom(): void {
+            if (this.width.type == DistanceType.fixed) {
+                this.calculatedWidth = this.width.value;
+                return;
+            }
+            this.calculatedWidth = this.spanElem.offsetWidth;
+        }
+
+        calculateHeightFromBottom(): void {
+            if (this.height.type == DistanceType.fixed) {
+                this.calculatedHeight = this.height.value;
+                return;
+            }
+            this.calculatedHeight = this.spanElem.offsetHeight;
         }
     }
 }

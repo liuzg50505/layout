@@ -1,24 +1,26 @@
 namespace LayoutLzg{
 
-    export interface MetaDataApi{
 
-    }
+
+    // export interface MetaDataApi{
+    //     listProperties:List<PropertyDefination>;
+    //     containProperty(propName:string):boolean;
+    // }
 
     export class Slot {
-        children:List<Control> = new List<Control>();
+        children:List<Widget> = new List<Widget>();
         isSlotWidthCalculatable : boolean;
         isSlotHeightCalculatable : boolean;
-        calulatedSlotWidth : number;
-        calulatedSlotHeight : number;
-        container : ContainerControl;
+        calculatedSlotWidth : number = 0;
+        calculatedSlotHeight : number = 0;
+        container : ContainerWidget;
 
-        addChild(child : Control):void {
+        addChild(child : Widget):void {
             this.children.add(child);
             child.parentSlot = this;
-            // child.parent = null;
         }
 
-        removeChild(child : Control):void {
+        removeChild(child : Widget):void {
             this.children.remove(child);
             child.parentSlot = null;
         }
@@ -31,6 +33,80 @@ namespace LayoutLzg{
                 this.container.removeChild(child);
             }
             this.children.clear();
+        }
+
+        calculateWidthFromTop():void {
+            for (let child of this.children) {
+                child.calculateWidthFromTop();
+            }
+        }
+
+        calculateWidthFromBottom():void {
+            for (let child of this.children) {
+                child.calculateWidthFromBottom();
+            }
+            if(!this.isSlotWidthCalculatable) {
+                let widthlist = this.children.map(t=>t.calculatedWidth+t.margin.left+t.margin.right);
+                widthlist.sort((a,b)=>b-a);
+                let maxwidth = 0;
+                if(widthlist.length>0) maxwidth = widthlist[0];
+                this.calculatedSlotWidth = maxwidth;
+            }
+
+        }
+
+        calculateHeightFromTop():void {
+            for (let child of this.children) {
+                child.calculateHeightFromTop();
+            }
+        }
+
+        calculateHeightFromBottom():void {
+            for (let child of this.children) {
+                child.calculateHeightFromBottom();
+            }
+            if(!this.isSlotHeightCalculatable) {
+                let heightlist = this.children.map(t=>t.calculatedHeight+t.margin.top+t.margin.bottom);
+                heightlist.sort((a,b)=>b-a);
+                let maxheight = 0;
+                if(heightlist.length>0) maxheight = heightlist[0];
+                this.calculatedSlotHeight = maxheight;
+            }
+        }
+
+
+        layoutChildren():void {
+            for (let child of this.children) {
+                if(child.horizonAlignment==HorizonAlignment.Left) {
+                    css(child.getRootElement(),"left","0px");
+                }else if(child.horizonAlignment==HorizonAlignment.Right) {
+                    css(child.getRootElement(),"right","0px");
+                }else if(child.horizonAlignment==HorizonAlignment.Center) {
+                    let w = this.calculatedSlotWidth;
+                    let ww = child.calculatedWidth;
+                    let x = (w-ww)/2;
+                    css(child.getRootElement(),'left',x+'px');
+                }else if(child.horizonAlignment==HorizonAlignment.Strech) {
+                    css(child.getRootElement(),"left","0px");
+                    css(child.getRootElement(),"right","0px");
+                }
+
+                if(child.verticalAlignment==VerticalAlignment.Top) {
+                    css(child.getRootElement(),"top","0px");
+                }else if(child.verticalAlignment==VerticalAlignment.Bottom) {
+                    css(child.getRootElement(),"bottom","0px");
+                }else if(child.verticalAlignment==VerticalAlignment.Center) {
+                    let h = this.calculatedSlotHeight;
+                    let hh = child.calculatedHeight;
+                    let x = (h-hh)/2;
+                    css(child.getRootElement(),'top',x+'px');
+                }else if(child.verticalAlignment==VerticalAlignment.Strech) {
+                    css(child.getRootElement(),"top","0px");
+                    css(child.getRootElement(),"bottom","0px");
+                }
+
+                child.doLayout();
+            }
         }
     }
 
@@ -54,18 +130,20 @@ namespace LayoutLzg{
         }
     }
 
-    export abstract class FrameworkElement {
-        // Name of this control.
+    @registclass
+    export abstract class VisualElement {
+        // Name of this widget.
+        @registproperty("string")
         name:string;
-        // Width of this Control, it can be a fix value or auto.
+        // Width of this Widget, it can be a fix value or auto.
         private _width:Distance;
-        // Height of this Control, it can be a fix value or auto.
+        // Height of this Widget, it can be a fix value or auto.
         private _height:Distance;
-        // Horizonal alignment of this control in it's parent container
+        // Horizonal alignment of this widget in it's parent container
         private _horizonAlignment : HorizonAlignment;
-        // Vertical alignment of this control in it's parent container
+        // Vertical alignment of this widget in it's parent container
         private _verticalAlignment : VerticalAlignment;
-        // Margin of this control to it's parent, the value in thickness must be a fix value.
+        // Margin of this widget to it's parent, the value in thickness must be a fix value.
         private _margin:Thickness;
         private _pressed:boolean;
         private _mouseenter:boolean;
@@ -76,12 +154,12 @@ namespace LayoutLzg{
         private eventCallbacks:List<EventCallbackItem>;
 
         parentSlot:Slot;
-        parent:ContainerControl;
-        actualContainer:ContainerControl;
-        // root div of this control.
+        parent:ContainerWidget;
+        actualContainer:ContainerWidget;
+        // root div of this widget.
         rootElem:HTMLElement;
 
-        constructor(name: string) {
+        constructor(name?: string) {
             this.name = name;
             // Init vairables.
             this._horizonAlignment = HorizonAlignment.Strech;
@@ -94,6 +172,7 @@ namespace LayoutLzg{
             this.eventCallbacks = new List<EventCallbackItem>();
         }
 
+        @registproperty("Distance")
         get width(): LayoutLzg.Distance {
             return this._width;
         }
@@ -102,6 +181,7 @@ namespace LayoutLzg{
             this._width = value;
         }
 
+        @registproperty("Distance")
         get height(): LayoutLzg.Distance {
             return this._height;
         }
@@ -110,6 +190,7 @@ namespace LayoutLzg{
             this._height = value;
         }
 
+        @registproperty("HorizonAlignment")
         get horizonAlignment(): LayoutLzg.HorizonAlignment {
             return this._horizonAlignment;
         }
@@ -118,6 +199,7 @@ namespace LayoutLzg{
             this._horizonAlignment = value;
         }
 
+        @registproperty("VerticalAlignment")
         get verticalAlignment(): LayoutLzg.VerticalAlignment {
             return this._verticalAlignment;
         }
@@ -150,30 +232,19 @@ namespace LayoutLzg{
             this._mouseenter = value;
         }
 
-        // Estimate the width of this control,
-        // the size of this control is determined by many factors,
-        // for example : auto/fix value of width/height, parent container, horizonal/vertical alignments, margins。
-        // For different types of parent containers, the method of size estimation are totally different.
-        estimateWidth():number {
-            return 0;
+        forceRefresh():void {
+            this.assembleDom();
+            this.doLayout();
         }
 
-        // Estimate the width of this control,
-        // the size of this control is determined by many factors,
-        // for example : auto/fix value of width/height, parent container, horizonal/vertical alignments, margins。
-        // For different types of parent containers, the method of size estimation are totally different.
-        estimateHeight():number{
-            return 0;
-        }
-
-        // Get the root element of this control.
+        // Get the root element of this widget.
         abstract getRootElement():HTMLElement;
 
-        // Assemble html elements of this control.
+        // Assemble html elements of this widget.
         assembleDom():void {
         }
 
-        // Adjust styles html elements of this control.
+        // Adjust styles html elements of this widget.
         doLayout():void{
         }
 
@@ -247,23 +318,30 @@ namespace LayoutLzg{
         }
     }
 
-    // Control class is the base class of all the visual components.
-    export abstract class Control extends FrameworkElement implements Disposable{
+    // Widget class is the base class of all the visual components.
+    export abstract class Widget extends VisualElement implements Disposable{
 
-        // Background of this control, it can be a solid color, or a gradient color , or a picture.
+        // Background of this widget, it can be a solid color, or a gradient color , or a picture.
         protected _fill:Brush;
-        // Border of this control, it can be a solid color, or a gradient color , or a picture.
+        // Border of this widget, it can be a solid color, or a gradient color , or a picture.
         protected _stroke:Brush;
-        // Thickness of this control's border, the value in thickness must be a fix value.
+        // Thickness of this widget's border, the value in thickness must be a fix value.
         protected _strokeThickness:Thickness;
 
         protected _shadow:ShadowSettings;
 
-        constructor(name:string){
+        calculatedWidth: number;
+        calculatedHeight: number;
+
+        constructor(name?:string){
             super(name);
             this._strokeThickness = new Thickness(0,0,0,0);
+            this.calculatedWidth = 0;
+            this.calculatedHeight = 0;
         }
 
+
+        @registproperty("Brush")
         get fill(): LayoutLzg.Brush {
             return this._fill;
         }
@@ -273,6 +351,7 @@ namespace LayoutLzg{
             this._fill = value;
         }
 
+        @registproperty("Brush")
         get stroke(): LayoutLzg.Brush {
             return this._stroke;
         }
@@ -282,6 +361,7 @@ namespace LayoutLzg{
             this._stroke = value;
         }
 
+        @registproperty("Thickness")
         get strokeThickness(): LayoutLzg.Thickness {
             return this._strokeThickness;
         }
@@ -291,6 +371,7 @@ namespace LayoutLzg{
             this._strokeThickness = value;
         }
 
+        @registproperty("ShadowSettings")
         get shadow(): LayoutLzg.ShadowSettings {
             return this._shadow;
         }
@@ -299,30 +380,39 @@ namespace LayoutLzg{
             this._shadow=value;
         }
 
+        abstract calculateWidthFromTop():void;
+
+        abstract calculateHeightFromTop():void;
+
+        abstract calculateWidthFromBottom():void;
+
+        abstract calculateHeightFromBottom():void;
+
         abstract dispose(): void;
+
     }
 
-    // The purpose of the container is to put sub controls together,
+    // The purpose of the container is to put sub widgets together,
     // and the system provides multiple layout containers due to actual requirements.
-    export abstract class ContainerControl extends Control{
-        children:List<Control>;
+    export abstract class ContainerWidget extends Widget{
+        children:List<Widget>;
         protected slots : List<Slot>;
 
 
         constructor(name:string) {
             super(name);
-            this.children = new List<Control>();
+            this.children = new List<Widget>();
             this.slots = new List<Slot>();
         }
 
-        addChild(control:Control) {
-            this.children.add(control);
-            control.parent = this;
+        addChild(widget:Widget) {
+            this.children.add(widget);
+            widget.parent = this;
         }
 
-        removeChild(control:Control) {
-            this.children.remove(control);
-            control.parent = null;
+        removeChild(widget:Widget) {
+            this.children.remove(widget);
+            widget.parent = null;
         }
 
         clearChild():void{
@@ -336,9 +426,12 @@ namespace LayoutLzg{
             this.children.clear();
         }
 
-        initCalculableSlots():void {
-        }
 
+        doLayout(): void {
+            for (let slot of this.slots) {
+                slot.layoutChildren();
+            }
+        }
 
         dispose(): void {
             for (let child of this.children) {

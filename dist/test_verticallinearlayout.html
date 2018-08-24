@@ -40,13 +40,13 @@
     img.src = 'https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=3669933167,1810371193&fm=173&app=25&f=JPEG?w=218&h=146&s=629071802820AC92212556C30300F09C';
 
 
-    hlinear = new LayoutLzg.VerticalLinearLayout('');
+    hlinear = new LayoutLzg.Vlinearlayout('');
     hlinear.parentSlot = new LayoutLzg.Slot();
 
     hlinear.parentSlot.isSlotWidthCalculatable = true;
     hlinear.parentSlot.isSlotHeightCalculatable = true;
-    hlinear.parentSlot.calulatedSlotWidth = 400;
-    hlinear.parentSlot.calulatedSlotHeight = 800;
+    hlinear.parentSlot.calculatedSlotWidth = 400;
+    hlinear.parentSlot.calculatedSlotHeight = 800;
 
     hlinear.width = new LayoutLzg.Distance(LayoutLzg.DistanceType.fixed,400);
     hlinear.height = new LayoutLzg.Distance(LayoutLzg.DistanceType.fixed,800);
@@ -71,10 +71,11 @@
     hlinear.addChild(img);
     hlinear.setCell(img,2);
 
-    hlinear.initCalculableSlots();
     hlinear.assembleDom();
     hlinearDiv = hlinear.getRootElement();
     $("body").append(hlinearDiv);
+    hlinear.calculateWidthFromTop();
+    hlinear.calculateHeightFromTop();
     hlinear.doLayout();
 
 </script>

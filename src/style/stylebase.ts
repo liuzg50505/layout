@@ -5,10 +5,10 @@ namespace LayoutLzg {
         propertyName:string;
         value:any;
 
-        apply(rootControl:Control) {
-            let control = VisualTree.findControlByName(rootControl, this.name);
-            if(control==null) return;
-            let setter = new ControlPropertySetter(control, this.propertyName);
+        apply(rootWidget:Widget) {
+            let widget = VisualTree.findWidgetByName(rootWidget, this.name);
+            if(widget==null) return;
+            let setter = new WidgetPropertySetter(widget, this.propertyName);
             setter.setValue(this.value);
         }
     }
@@ -22,18 +22,18 @@ namespace LayoutLzg {
             this.triggers = new List<Trigger>();
         }
 
-        addStyleItem(controlName:string, propertyName:string, value:any):void {
+        addStyleItem(widgetName:string, propertyName:string, value:any):void {
             let item = new StyleItem();
-            item.name = controlName;
+            item.name = widgetName;
             item.propertyName = propertyName;
             item.value = value;
             this.styleitems.add(item);
         }
 
-        apply(rootControl:Control): void {
-            if(!rootControl) return;
+        apply(rootWidget:Widget): void {
+            if(!rootWidget) return;
             for (let styleitem of this.styleitems) {
-                styleitem.apply(rootControl);
+                styleitem.apply(rootWidget);
             }
 
             for (let trigger of this.triggers)  {

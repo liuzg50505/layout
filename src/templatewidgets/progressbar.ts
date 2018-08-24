@@ -1,12 +1,19 @@
 namespace LayoutLzg {
 
-    export class ProgressBar extends TemplateControl{
-        minValue:number;
-        maxValue:number;
-        value:number;
-        radius:number=5;
+    @registclass
+    export class ProgressBar extends TemplateWidget{
         private rectProc: Rect;
         private rectUp: Rect;
+
+        @registproperty("number")
+        minValue:number;
+        @registproperty("number")
+        maxValue:number;
+        @registproperty("number")
+        value:number;
+        @registproperty("number")
+        radius:number=5;
+        @registproperty("number")
         barfill:Brush;
 
         constructor(name: string) {
@@ -82,7 +89,7 @@ namespace LayoutLzg {
         }
 
         doLayout(): void {
-            let w = this.estimateWidth();
+            let w = this.calculatedWidth;
             let rectend = w/(this.maxValue-this.minValue)*(this.value-this.minValue);
             this.rectProc.width = new Distance(DistanceType.fixed,rectend);
             this.rectUp.width = new Distance(DistanceType.fixed,rectend);

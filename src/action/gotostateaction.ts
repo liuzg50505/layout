@@ -1,7 +1,7 @@
 namespace LayoutLzg {
     export class GotoStateAction extends Action{
 
-        templateControl:TemplateControl;
+        templateWidget:TemplateWidget;
         groupName:string;
         stateName:string;
 
@@ -10,7 +10,7 @@ namespace LayoutLzg {
         }
 
         execute(): void {
-            if(this.templateControl) this.templateControl.activeState(this.groupName, this.stateName);
+            if(this.templateWidget) this.templateWidget.activeState(this.groupName, this.stateName);
         }
 
     }

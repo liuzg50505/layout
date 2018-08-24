@@ -11,7 +11,7 @@ namespace LayoutLzg {
     }
 
 
-    export abstract class ControlTrigger extends Trigger {
-        control:Control;
+    export abstract class WidgetTrigger extends Trigger {
+        widget:Widget;
     }
 }

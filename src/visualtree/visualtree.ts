@@ -1,41 +1,41 @@
 namespace LayoutLzg{
 
     export class VisualTree {
-        rootContainer: ContainerControl;
-        parentControl:TemplateControl;
+        rootContainer: ContainerWidget;
+        parentWidget:TemplateWidget;
         stateManager:any;
 
-        static findControlsByName(root:Control, name:string):List<Control> {
-            let result = new List<Control>();
+        static findWidgetsByName(root:Widget, name:string):List<Widget> {
+            let result = new List<Widget>();
             let rootContainer:any = null;
             if(root.name==name) {
                 result.add(root);
             }
-            if(root instanceof ContainerControl) {
-                rootContainer = <ContainerControl>root;
+            if(root instanceof ContainerWidget) {
+                rootContainer = <ContainerWidget>root;
             }else{
                 return result;
             }
             for (let child of rootContainer.children) {
-                let r =  VisualTree.findControlsByName(child, name);
+                let r =  VisualTree.findWidgetsByName(child, name);
                 result.addAll(r);
             }
 
             return result;
         }
 
-        static findControlByName(root:Control, name:string): Control {
+        static findWidgetByName(root:Widget, name:string): Widget {
             let rootContainer:any = null;
             if(root.name==name) {
                 return root;
             }
-            if(root instanceof ContainerControl) {
-                rootContainer = <ContainerControl>root;
+            if(root instanceof ContainerWidget) {
+                rootContainer = <ContainerWidget>root;
             }else{
                 return null;
             }
             for (let child of rootContainer.children) {
-                let r =  VisualTree.findControlByName(child, name);
+                let r =  VisualTree.findWidgetByName(child, name);
                 if(r) return r;
             }
             return null;
@@ -46,12 +46,6 @@ namespace LayoutLzg{
                 this.rootContainer.getRootElement();
             }else{
                 return null;
-            }
-        }
-
-        initCalculableSlots():void {
-            if (this.rootContainer) {
-                this.rootContainer.initCalculableSlots();
             }
         }
 

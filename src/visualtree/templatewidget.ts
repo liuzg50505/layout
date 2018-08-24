@@ -1,15 +1,15 @@
 namespace LayoutLzg {
 
-    export class TemplateControl extends ControlBase {
+    export class TemplateWidget extends WidgetBase {
         private rootBorder : Border = new Border("rootBorder");
         private _visualTree : VisualTree;
         private stateGroups : List<StateGroup>;
-        protected stateEventTriggers: List<ControlTrigger>;
+        protected stateEventTriggers: List<WidgetTrigger>;
 
-        constructor(name: string) {
+        constructor(name?: string) {
             super(name);
             this.stateGroups = new List<StateGroup>();
-            this.stateEventTriggers = new List<ControlTrigger>();
+            this.stateEventTriggers = new List<WidgetTrigger>();
         }
 
         get visualTree(): VisualTree {
@@ -18,20 +18,20 @@ namespace LayoutLzg {
 
         set visualTree(value: VisualTree) {
             if(value!=null) {
-                value.parentControl = this;
+                value.parentWidget = this;
             }
             this._visualTree = value;
         }
 
         addStateGroup(groupName:string): StateGroup {
             let stageGroup = new StateGroup();
-            stageGroup.rootControl = this.visualTree.rootContainer;
+            stageGroup.rootWidget = this.visualTree.rootContainer;
             stageGroup.groupName = groupName;
             this.stateGroups.add(stageGroup);
             return stageGroup;
         }
 
-        addStateStyle(groupName:string, statename:string, controlpropertyValues:any, eventName:string=null) {
+        addStateStyle(groupName:string, statename:string, widgetpropertyValues:any, eventName:string=null) {
             let groups = this.stateGroups.filter(t=>t.groupName==groupName);
             let group:StateGroup = null;
             if(groups.length==0) {
@@ -51,11 +51,11 @@ namespace LayoutLzg {
                 state = states[0];
             }
 
-            for (let controlName in controlpropertyValues) {
-                let propertyValues = controlpropertyValues[controlName];
+            for (let widgetName in widgetpropertyValues) {
+                let propertyValues = widgetpropertyValues[widgetName];
                 for (let propertyName in propertyValues){
                     let value = propertyValues[propertyName];
-                    state.style.addStyleItem(controlName,propertyName,value);
+                    state.style.addStyleItem(widgetName,propertyName,value);
                 }
             }
             if(eventName) this.addStateTrigger(groupName,statename,eventName);
@@ -63,11 +63,11 @@ namespace LayoutLzg {
         }
 
         addStateTrigger(groupName:string, stateName:string, eventName:string):void {
-            let trigger = new EventTrigger();
-            trigger.control = this;
+            let trigger = new DomEventTrigger();
+            trigger.widget = this;
             trigger.eventName = eventName;
             let gotostateaction = new GotoStateAction();
-            gotostateaction.templateControl = this;
+            gotostateaction.templateWidget = this;
             gotostateaction.stateName = stateName;
             gotostateaction.groupName = groupName;
             trigger.action = gotostateaction;
@@ -107,28 +107,27 @@ namespace LayoutLzg {
             this.rootBorder.parentSlot = this.parentSlot;
             this.rootBorder.parent = this.parent;
 
-            this.rootBorder.initCalculableSlots();
             this.rootBorder.assembleDom();
 
             let self = this;
-            $(this.getRootElement()).click(function (e) {
+            onEvent(this.getRootElement(),"click",function (e:any) {
                 self.raiseEvent("click",[e]);
             });
-            $(this.getRootElement()).mouseenter(function (e) {
+            onEvent(this.getRootElement(),"mouseenter",function (e:any) {
                 self.raiseEvent("mouseenter",[e]);
             });
-            $(this.getRootElement()).mouseleave(function (e) {
+            onEvent(this.getRootElement(),"mouseleave",function (e:any) {
                 self.raiseEvent("mouseleave",[e]);
             });
-            $(this.getRootElement()).mousedown(function (e) {
+            onEvent(this.getRootElement(),"mousedown",function (e:any) {
                 self.raiseEvent("mousedown",[e]);
                 self.pressed = true;
             });
-            $(this.getRootElement()).mouseup(function (e) {
+            onEvent(this.getRootElement(),"mouseup",function (e:any) {
                 self.raiseEvent("mouseup",[e]);
                 self.pressed = false;
             });
-            $(this.getRootElement()).mousemove(function (e) {
+            onEvent(this.getRootElement(),"mousemove",function (e:any) {
                 self.raiseEvent("mousemove",[e]);
             });
         }
@@ -144,6 +143,8 @@ namespace LayoutLzg {
             this._visualTree.rootContainer.height = new Distance(DistanceType.auto,0);
             this._visualTree.rootContainer.horizonAlignment = HorizonAlignment.Strech;
             this._visualTree.rootContainer.verticalAlignment = VerticalAlignment.Strech;
+            this.rootBorder.calculateWidthFromTop();
+            this.rootBorder.calculateHeightFromTop();
 
             // this.rootBorder.parentSlot = this.parentSlot;
             // this.rootBorder.parent = this.parent;
@@ -152,18 +153,29 @@ namespace LayoutLzg {
             this.rootBorder.doLayout();
         }
 
-        estimateHeight_auto(): number {
-            return this.rootBorder.estimateHeight();
+        calculateHeightFromTop(): void {
+            this.rootBorder.calculateHeightFromTop();
+            this.calculatedWidth = this.rootBorder.calculatedWidth;
         }
 
-        estimateWidth_auto(): number {
-            return this.rootBorder.estimateWidth();
+        calculateWidthFromTop(): void {
+            this.rootBorder.calculateWidthFromTop();
+            this.calculatedHeight = this.rootBorder.calculatedHeight;
         }
+
+        calculateWidthFromBottom(): void {
+            this.rootBorder.calculateWidthFromBottom();
+        }
+
+        calculateHeightFromBottom(): void {
+            this.rootBorder.calculateHeightFromBottom();
+        }
+
     }
 
     export class ContentPresenter extends Border{
 
-        content:Control;
+        content:Widget;
 
 
         constructor(name: string) {

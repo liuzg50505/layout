@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script type="application/javascript" src="../js/jquery.min.js"></script>
-    <script type="application/javascript" src="../js/jqresize.js" ></script>
     <script type="application/javascript" src="output.js"></script>
     <style>
         html,body {
@@ -21,20 +20,20 @@
     defaultSlot = new LayoutLzg.Slot();
     defaultSlot.isSlotWidthCalculatable = true;
     defaultSlot.isSlotHeightCalculatable = true;
-    defaultSlot.calulatedSlotWidth = $("body").width();
-    defaultSlot.calulatedSlotHeight = $("body").height();
+    defaultSlot.calculatedSlotWidth = $("body").width();
+    defaultSlot.calculatedSlotHeight = $("body").height();
 
-    rootBorder = new LayoutLzg.Border("");
-    rootBorder.width = new LayoutLzg.Distance(LayoutLzg.DistanceType.auto,0);
-    rootBorder.height = new LayoutLzg.Distance(LayoutLzg.DistanceType.auto,0);
+    rootBorder = new LayoutLzg.Border("rrrrrrr");
+    rootBorder.width = new LayoutLzg.Distance(LayoutLzg.DistanceType.fixed,defaultSlot.calculatedSlotWidth);
+    rootBorder.height = new LayoutLzg.Distance(LayoutLzg.DistanceType.fixed,defaultSlot.calculatedSlotWidth);
     rootBorder.horizonAlignment = LayoutLzg.HorizonAlignment.Strech;
     rootBorder.verticalAlignment = LayoutLzg.VerticalAlignment.Strech;
-    rootBorder.parentSlot = defaultSlot;
+    defaultSlot.addChild(rootBorder);
 
 
     button = new LayoutLzg.Button("sdf");
     button.width = new LayoutLzg.Distance(LayoutLzg.DistanceType.auto,100);
-    button.height = new LayoutLzg.Distance(LayoutLzg.DistanceType.fixed,30);
+    button.height = new LayoutLzg.Distance(LayoutLzg.DistanceType.auto,30);
     button.margin.left = 20;
     button.margin.top = 40;
     button.horizonAlignment = LayoutLzg.HorizonAlignment.Left;
@@ -42,10 +41,11 @@
     button.content = "fsdfss11";
 
     rootBorder.addChild(button);
-    rootBorder.initCalculableSlots();
     rootBorder.assembleDom();
     rootdiv = rootBorder.getRootElement();
     $("body").append(rootdiv);
+    rootBorder.calculateWidthFromTop();
+    rootBorder.calculateHeightFromTop();
     rootBorder.doLayout();
 
 </script>

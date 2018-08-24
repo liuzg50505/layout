@@ -6,21 +6,21 @@ namespace LayoutLzg {
         let setterProvider = new UniversalPropertySetterProvider();
         let listenerProvider = new UniversalPropertyChangedListenerProvider();
 
-        getterProvider.addProvider(new ControlPropertyGetterProvider());
+        getterProvider.addProvider(new WidgetPropertyGetterProvider());
         getterProvider.addProvider(new DomWidthPropertyGetterProvider());
         getterProvider.addProvider(new DomHeightPropertyGetterProvider());
         getterProvider.addProvider(new DomTextPropertyGetterProvider());
         getterProvider.addProvider(new DomValuePropertyGetterProvider());
         getterProvider.addProvider(new DictPropertyGetterProvider());
 
-        setterProvider.addProvider(new ControlPropertySetterProvider());
+        setterProvider.addProvider(new WidgetPropertySetterProvider());
         setterProvider.addProvider(new DomWidthPropertySetterProvider());
         setterProvider.addProvider(new DomHeightPropertySetterProvider());
         setterProvider.addProvider(new DomTextPropertySetterProvider());
         setterProvider.addProvider(new DomValuePropertySetterProvider());
         setterProvider.addProvider(new DictPropertySetterProvider());
 
-        listenerProvider.addProvider(new ControlPropertyChangedListenerProvider());
+        listenerProvider.addProvider(new WidgetPropertyChangedListenerProvider());
         listenerProvider.addProvider(new DomSizePropertyChangedListenerProvider());
         listenerProvider.addProvider(new DomTextPropertyChangedListenerProvider());
         listenerProvider.addProvider(new DomValuePropertyChangedListenerProvider());

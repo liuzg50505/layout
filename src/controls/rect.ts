@@ -1,5 +1,5 @@
 namespace LayoutLzg{
-    export class Rect extends ControlBase {
+    export class Rect extends WidgetBase {
 
         private _radius_bottom_left:number;
         private _radius_bottom_right:number;
@@ -66,8 +66,8 @@ namespace LayoutLzg{
 
         getRootElement(): HTMLElement {
             let elem = super.getRootElement();
-            $(elem).attr('layout-type','Rect');
-            $(elem).attr('layout-name',this.name);
+            setattr(elem, 'layout-type','Rect');
+            setattr(elem, 'layout-name',this.name);
             return elem;
         }
 
@@ -76,32 +76,64 @@ namespace LayoutLzg{
         }
 
         doLayout(): void {
-            super.doLayout();
-            $(this.getRootElement()).css('width',this.estimateWidth()+'px');
-            $(this.getRootElement()).css('height',this.estimateHeight()+'px');
+            css(this.getRootElement(),'position','absolute');
+            css(this.getRootElement(),'width',this.calculatedWidth+'px');
+            css(this.getRootElement(),'height',this.calculatedHeight+'px');
             // stroke and fill
             if(this.fill) this.fill.applyToBackground(this.rootElem);
             if(this.stroke) this.stroke.applyToBorder(this.rootElem,this.strokeThickness);
             // radius
-            $(this.rootElem).css("border-bottom-left-radius",this.radius_bottom_left+"px");
-            $(this.rootElem).css("border-bottom-right-radius",this.radius_bottom_right+"px");
-            $(this.rootElem).css("border-top-left-radius",this.radius_top_left+"px");
-            $(this.rootElem).css("border-top-right-radius",this.radius_top_right+"px");
+            css(this.getRootElement(),"border-bottom-left-radius",this.radius_bottom_left+"px");
+            css(this.getRootElement(),"border-bottom-right-radius",this.radius_bottom_right+"px");
+            css(this.getRootElement(),"border-top-left-radius",this.radius_top_left+"px");
+            css(this.getRootElement(),"border-top-right-radius",this.radius_top_right+"px");
             // opacity
-            $(this.rootElem).css("opacity",this.opacity);
+            css(this.getRootElement(),"opacity",this.opacity);
             // shadow
             if(this.shadow) {
-                $(this.rootElem).css("box-shadow",this.shadow.toBoxShawdowString());
+                css(this.getRootElement(),"box-shadow",this.shadow.toBoxShawdowString());
             }
-
         }
 
-        estimateHeight_auto(): number {
-            return 0;
+
+        calculateWidthFromTop(): void {
+            if (this.width.type == DistanceType.fixed) {
+                this.calculatedWidth = this.width.value;
+                return;
+            }
+            if(this.parentSlot&&this.parentSlot.isSlotWidthCalculatable&&this.horizonAlignment==HorizonAlignment.Strech) {
+                this.calculatedWidth = this.parentSlot.calculatedSlotWidth;
+                return;
+            }
+            this.calculatedWidth = 0;
         }
 
-        estimateWidth_auto(): number {
-             return 0;
+        calculateHeightFromTop(): void {
+            if (this.height.type == DistanceType.fixed) {
+                this.calculatedHeight = this.height.value;
+                return;
+            }
+            if(this.parentSlot&&this.parentSlot.isSlotHeightCalculatable&&this.verticalAlignment==VerticalAlignment.Strech) {
+                this.calculatedHeight = this.parentSlot.calculatedSlotHeight;
+                return;
+            }
+            super.calculateHeightFromTop();
+        }
+
+        calculateWidthFromBottom(): void {
+            if (this.width.type == DistanceType.fixed) {
+                this.calculatedWidth = this.width.value;
+                return;
+            }
+            this.calculatedWidth = 0;
+        }
+
+        calculateHeightFromBottom(): void {
+            if (this.height.type == DistanceType.fixed) {
+                this.calculatedHeight = this.height.value;
+                return;
+            }
+            this.calculatedHeight = 0;
         }
     }
 

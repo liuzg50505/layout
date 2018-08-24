@@ -10,8 +10,18 @@
     "strictNullChecks": false
   },
   "files":[
+    "src/declarations.d.ts",
+
     "src/utils/dateutils.ts",
     "src/utils/eventutils.ts",
+    "src/utils/domutils.ts",
+    "src/utils/xmlutils.ts",
+
+    "src/collections/list.ts",
+    "src/collections/map.ts",
+
+    "src/reflection/reflection.ts",
+    "src/reflection/decorators.ts",
 
     "src/eventbus/eventbus.ts",
     "src/lifecycle/lifecyclebase.ts",
@@ -20,8 +30,6 @@
     "src/layoutbase.ts",
     "src/layoutcore.ts",
 
-    "src/collections/list.ts",
-    "src/collections/map.ts",
 
     "src/brushes/solidcolorbrush.ts",
     "src/brushes/imagecolorbrush.ts",
@@ -45,7 +53,7 @@
     "src/observer/domtextproperty.ts",
     "src/observer/domvalueproperty.ts",
     "src/observer/dictproperty.ts",
-    "src/observer/controlproperty.ts",
+    "src/observer/widgetproperty.ts",
 
     "src/bindings/binding.ts",
     "src/bindings/functionbinding.ts",
@@ -60,7 +68,7 @@
     "src/converters/expressionconverter.ts",
 
     "src/visualtree/visualtree.ts",
-    "src/visualtree/templatecontrol.ts",
+    "src/visualtree/templatewidget.ts",
     "src/visualtree/visualtreestyle.ts",
 
     "src/action/actionbase.ts",
@@ -70,21 +78,55 @@
 
     "src/trigger/propertychangedtrigger.ts",
     "src/trigger/statechangedtrigger.ts",
-    "src/trigger/eventtrigger.ts",
+    "src/trigger/domeventtrigger.ts",
+    "src/trigger/widgeteventtrigger.ts",
 
     "src/style/stylebase.ts",
     "src/style/statemanager.ts",
     "src/style/visualtreestyle.ts",
+    "src/templatewidgets/button.ts",
+    "src/templatewidgets/progressbar.ts",
+    "src/templatewidgets/sliderbar.ts",
 
-    "src/templatecontrols/button.ts",
-    "src/templatecontrols/progressbar.ts",
-    "src/templatecontrols/sliderbar.ts",
+    "src/serialization/stringserializer.ts",
+    "src/serialization/xmlserializer.ts",
+    "src/serialization/distancestringserializer.ts",
+    "src/serialization/solidcolorbrushxmlserializer.ts",
+    "src/serialization/gradiantcolorbrushxmlserializer.ts",
+    "src/serialization/imagecolorbrushxmlserializer.ts",
+    "src/serialization/solidcolorbrushstringserializer.ts",
+    "src/serialization/stringserializerprovider.ts",
+    "src/serialization/xmlserializerprovider.ts",
+    "src/serialization/horizonalignmentstringserializer.ts",
+    "src/serialization/verticalalignmentstringserializer.ts",
+    "src/serialization/basictypestringserializer.ts",
+    "src/serialization/prioritystringserializerprovider.ts",
+    "src/serialization/priorityxmlserializerprovider.ts",
+
+    "src/utils/widgetutils.ts",
+
+    "src/widgetxml/widgetparser.ts",
+    "src/widgetxml/widgetserializer.ts",
+    "src/widgetxml/xmlwidgetparser.ts",
+    "src/widgetxml/xmlwidgetserializer.ts",
+    "src/widgetxml/xmlwidgettreeparser.ts",
+    "src/widgetxml/widgetparserprovider.ts",
+    "src/widgetxml/xmlwidgetparserprovider.ts",
+    "src/widgetxml/tagxmlwidgetparserprovider.ts",
+    "src/widgetxml/priorityxmlwidgetparserprovider.ts",
+    "src/widgetxml/buttonxmlparser.ts",
+    "src/widgetxml/metaxmlwidgetparser.ts",
+    "src/widgetxml/metaxmlwidgetserializer.ts",
 
 
     "src/facades/binding.ts",
 
-    "src/bootstrap/property.ts"
+    "src/bootstrap/property.ts",
+    "src/bootstrap/serializer.ts",
+
+    "src/test/testxmlserializer.ts"
 
 
-  ]
+  ],
+  "exclude": ["node_modules"]
 }

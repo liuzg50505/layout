@@ -1,6 +1,6 @@
 namespace LayoutLzg {
 
-    export class EventTrigger extends ControlTrigger{
+    export class DomEventTrigger extends WidgetTrigger{
         eventName:string;
         private callback: Function;
 
@@ -13,11 +13,11 @@ namespace LayoutLzg {
             this.callback = function () {
                 self.onTriggered();
             };
-            this.control.addEventListener(this.eventName,this.callback);
+            this.widget.addEventListener(this.eventName,this.callback);
         }
 
         dispose(): void {
-            this.control.removeEventListener(this.callback);
+            this.widget.removeEventListener(this.callback);
         }
 
     }

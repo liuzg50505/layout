@@ -1,16 +1,16 @@
 namespace LayoutLzg {
 
-    export class Button extends TemplateControl{
+    @registclass
+    export class Button extends TemplateWidget{
 
+        @registproperty("number")
         radius: number;
         private _content: any;
         private contentPresentor: ContentPresenter;
 
-        constructor(name: string) {
+        constructor(name?: string) {
             super(name);
             this.radius = 5;
-            this.initVisualTree();
-            this.initStates();
         }
 
         private initVisualTree():void {
@@ -23,7 +23,23 @@ namespace LayoutLzg {
             this.contentPresentor.horizonAlignment = HorizonAlignment.Center;
             this.contentPresentor.verticalAlignment = VerticalAlignment.Center;
 
-            let vlinear = new VerticalLinearLayout("");
+            let contentwidget:Widget = null;
+            if(typeof this._content === "string" || typeof this._content === "number"){
+                let txt = new TextView("",this._content.toString());
+                txt.margin = new Thickness(10,10,5,5);
+                txt.selectable = false;
+                contentwidget = txt;
+                contentwidget.horizonAlignment = HorizonAlignment.Strech;
+                contentwidget.verticalAlignment = VerticalAlignment.Strech;
+                contentwidget.width = new Distance(DistanceType.auto,0);
+                contentwidget.height = new Distance(DistanceType.auto,0);
+            }else{
+                contentwidget = <Widget>this._content;
+            }
+            this.contentPresentor.content = contentwidget;
+
+
+            let vlinear = new Vlinearlayout("");
             vlinear.horizonAlignment = HorizonAlignment.Strech;
             vlinear.verticalAlignment = VerticalAlignment.Strech;
             vlinear.width = new Distance(DistanceType.auto,0);
@@ -96,6 +112,7 @@ namespace LayoutLzg {
             },"mouseup");
         }
 
+        @registproperty("any")
         get content(): any {
             return this._content;
         }
@@ -104,22 +121,14 @@ namespace LayoutLzg {
             if(this._content==value) return;
             this.notifyPropertyChanged("content");
             this._content = value;
-            let contentcontrol:Control = null;
-            if(typeof value === "string" || typeof value === "number"){
-                let txt = new TextView("",value.toString());
-                txt.margin = new Thickness(10,10,5,5);
-                txt.selectable = false;
-                contentcontrol = txt;
-                contentcontrol.horizonAlignment = HorizonAlignment.Strech;
-                contentcontrol.verticalAlignment = VerticalAlignment.Strech;
-                contentcontrol.width = new Distance(DistanceType.auto,0);
-                contentcontrol.height = new Distance(DistanceType.auto,0);
-            }else{
-                contentcontrol = <Control>value;
-            }
-            this.contentPresentor.content = contentcontrol;
         }
 
+
+        assembleDom(): void {
+            this.initVisualTree();
+            this.initStates();
+            super.assembleDom();
+        }
     }
 
 }

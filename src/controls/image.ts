@@ -1,5 +1,5 @@
 namespace LayoutLzg{
-    export class ImageView extends ControlBase {
+    export class ImageView extends WidgetBase {
 
         imgElem:HTMLElement;
         src:string;
@@ -8,26 +8,26 @@ namespace LayoutLzg{
             super(name);
         }
 
-        assembleDom(): void { 
-            $(this.getRootElement()).empty();
+        assembleDom(): void {
+            emptyChildren(this.getRootElement());
 
             if(this.imgElem==null) {
-                this.imgElem = $("<img/>")[0];
-                $(this.imgElem).attr('src',this.src);
+                this.imgElem = createElement("IMAGE");
+                setattr(this.imgElem,'src',this.src);
             }
-            $(this.getRootElement()).append(this.imgElem);
+            appendChild(this.getRootElement(),this.imgElem);
             if(this.width.type==DistanceType.fixed) {
-                $(this.getRootElement()).css('width',this.width.value+'px');
-                $(this.imgElem).css('width',this.width.value+'px');
+                css(this.getRootElement(),'width',this.width.value+'px');
+                css(this.imgElem,'width',this.width.value+'px');
             }else{
-                $(this.imgElem).css('width','100%');
+                css(this.imgElem,'width','100%');
             }
 
             if(this.height.type==DistanceType.fixed) {
-                $(this.getRootElement()).css('height',this.height.value+'px');
-                $(this.imgElem).css('height',this.height.value+'px');
+                css(this.getRootElement(),'height',this.height.value+'px');
+                css(this.imgElem,'height',this.height.value+'px');
             }else{
-                $(this.imgElem).css('height','100%');
+                css(this.imgElem,'height','100%');
             }
 
         }
@@ -36,12 +36,5 @@ namespace LayoutLzg{
             
         }
 
-        estimateHeight_auto(): number {
-            return 0;
-        }
-
-        estimateWidth_auto(): number {
-            return 0;
-        }
     }
 }

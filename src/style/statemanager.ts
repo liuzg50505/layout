@@ -8,7 +8,7 @@ namespace LayoutLzg {
     export class StateGroup {
         groupName:string;
         states:List<State>;
-        rootControl:Control;
+        rootWidget:Widget;
 
         constructor() {
             this.states = new List<State>();
@@ -47,8 +47,8 @@ namespace LayoutLzg {
             let state = this.findStateByName(stateName);
             if(state==null) return;
             if(state.style==null) return;
-            if(this.rootControl==null) return;
-            state.style.apply(this.rootControl);
+            if(this.rootWidget==null) return;
+            state.style.apply(this.rootWidget);
         }
 
     }
