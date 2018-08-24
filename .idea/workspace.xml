@@ -1,29 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6895967e-ff6e-45b9-baff-517886fa1890" name="Default" comment="改名将 control 修改为widget">
-      <change afterPath="$PROJECT_DIR$/src/bootstrap/serializer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/serialization/basictypestringserializer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/serialization/horizonalignmentstringserializer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/serialization/verticalalignmentstringserializer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/testxmlserializer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgetxml/metaxmlwidgetserializer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgetxml/widgetserializer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgetxml/xmlwidgetserializer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gulpfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/gulpfile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layoutcore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/layoutcore.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/serialization/distanceserializer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/serialization/distancestringserializer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/xmlutils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/xmlutils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgetxml/metawidgetparser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgetxml/metaxmlwidgetparser.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgetxml/priorityxmlwidgetparserprovider.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgetxml/priorityxmlwidgetparserprovider.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgetxml/tagxmlwidgetparserprovider.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgetxml/tagxmlwidgetparserprovider.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgetxml/widgetparser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgetxml/widgetparser.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgetxml/widgetparserprovider.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgetxml/widgetparserprovider.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgetxml/xmlwidgetparser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgetxml/xmlwidgetparser.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgetxml/xmlwidgetparserprovider.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgetxml/xmlwidgetparserprovider.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
-    </list>
+    <list default="true" id="6895967e-ff6e-45b9-baff-517886fa1890" name="Default" comment="wdiget xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +12,7 @@
     <session id="-1397950332">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="20" />
+          <entry key="project.closed" value="21" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="3" />
           <entry key="project.open.time.11" value="5" />
@@ -93,7 +71,7 @@
           <entry key="json" value="788" />
           <entry key="md" value="46" />
           <entry key="ts" value="38479" />
-          <entry key="txt" value="128" />
+          <entry key="txt" value="141" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -104,7 +82,7 @@
           <entry key="JSON" value="10" />
           <entry key="JavaScript" value="1220" />
           <entry key="Markdown" value="46" />
-          <entry key="PLAIN_TEXT" value="147" />
+          <entry key="PLAIN_TEXT" value="160" />
           <entry key="TypeScript" value="38479" />
           <entry key="tsconfig" value="778" />
         </counts>
@@ -663,7 +641,7 @@
       <workItem from="1534943333049" duration="10751000" />
       <workItem from="1534958285481" duration="12000" />
       <workItem from="1534985232779" duration="599000" />
-      <workItem from="1535008066816" duration="15177000" />
+      <workItem from="1535008066816" duration="15539000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1533205543454</created>
@@ -854,16 +832,23 @@
       <option name="project" value="LOCAL" />
       <updated>1534954795609</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="wdiget xml">
+      <created>1535093023666</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1535093023666</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="287939000" />
+    <option name="totallyTimeSpent" value="288301000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="139" y="56" width="1717" height="977" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2936321" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2936321" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -879,7 +864,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="TypeScript" order="7" sideWeight="0.4994104" weight="0.32881355" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.4994104" visible="true" weight="0.41694915" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4994104" visible="true" weight="0.41694915" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5005896" side_tool="true" weight="0.41694915" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.3289689" />
       <window_info anchor="bottom" id="Messages" order="11" />
@@ -926,7 +911,8 @@
     <MESSAGE value="rename classes" />
     <MESSAGE value="gulp 编译脚本修正，修复不能删除临时文件的问题&#10;加入反射和序列化和xml&#10;可以使用xml对控件进行序列化" />
     <MESSAGE value="改名将 control 修改为widget" />
-    <option name="LAST_COMMIT_MESSAGE" value="改名将 control 修改为widget" />
+    <MESSAGE value="wdiget xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="wdiget xml" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
