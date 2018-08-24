@@ -1,8 +1,8 @@
 namespace LayoutLzg {
 
-    export function parseXml(xml: string):any {
+    export function parseXml(xml: string):Element {
         let parser = new DOMParser();
-        return parser.parseFromString(xml,"text/xml").children[0];
+        return <Element>parser.parseFromString(xml,"text/xml").childNodes[0];
     }
 
     export class XmlWrapper{
@@ -11,7 +11,7 @@ namespace LayoutLzg {
         constructor(elem?: Element|string) {
             if(typeof elem === "string") {
                 let parser = new DOMParser();
-                this.elem = parser.parseFromString(elem,"text/xml").children[0];
+                this.elem = <Element>parser.parseFromString(elem,"text/xml").childNodes[0];
             } else {
                 this.elem = elem;
             }
@@ -28,10 +28,10 @@ namespace LayoutLzg {
         get children(): Array<XmlWrapper>{
             let result:Array<XmlWrapper> = [];
             let node = this.elem;
-            for (let i=0;i<node.children.length;i++) {
-                let child = node.children[i];
+            for (let i=0;i<node.childNodes.length;i++) {
+                let child = node.childNodes[i];
                 let wrapper = new XmlWrapper();
-                wrapper.elem = child;
+                wrapper.elem = <Element>child;
                 result.push(wrapper);
             }
             return result;
@@ -53,18 +53,18 @@ namespace LayoutLzg {
         }
 
         firstChild(): XmlWrapper {
-            if(this.elem.children.length>0) {
+            if(this.elem.childNodes.length>0) {
                 let wrapper = new XmlWrapper();
-                wrapper.elem = this.elem.children[0];
+                wrapper.elem = <Element>this.elem.childNodes[0];
                 return wrapper;
             }
             return null;
         }
 
         lastChild():XmlWrapper {
-            if(this.elem.children.length>0) {
+            if(this.elem.childNodes.length>0) {
                 let wrapper = new XmlWrapper();
-                wrapper.elem = this.elem.children[this.elem.children.length-1];
+                wrapper.elem = <Element>this.elem.childNodes[this.elem.childNodes.length-1];
                 return wrapper;
             }
             return null;
@@ -135,9 +135,9 @@ namespace LayoutLzg {
         }
 
         emptyChildren():XmlWrapper {
-            let arr = [];
-            for (let i=0;i<this.elem.children.length;i++) {
-                let child = this.elem.children[i];
+            let arr:any = [];
+            for (let i=0;i<this.elem.childNodes.length;i++) {
+                let child = <Element>this.elem.childNodes[i];
                 arr.push(child);
             }
             for (let child of arr) {

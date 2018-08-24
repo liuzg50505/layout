@@ -1,11 +1,8 @@
 namespace LayoutLzg{
 
-
-
-    // export interface MetaDataApi{
-    //     listProperties:List<PropertyDefination>;
-    //     containProperty(propName:string):boolean;
-    // }
+    export interface clonable {
+        
+    }
 
     export class Slot {
         children:List<Widget> = new List<Widget>();
