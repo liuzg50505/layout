@@ -1,7 +1,7 @@
 namespace LayoutLzg{
 
     export interface clonable {
-        
+
     }
 
     export class Slot {

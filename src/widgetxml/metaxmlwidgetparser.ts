@@ -41,6 +41,14 @@ namespace LayoutLzg {
                     setter.setValue(v);
                 }
             }
+
+            if(xmlWrapper.hasChildByTag("children")&&instance instanceof ContainerWidget){
+                let childxml = xmlWrapper.getChildByTag("children");
+                let childwidget = this.parseWidget(childxml.toString());
+                let container = <ContainerWidget>instance;
+                container.addChild(childwidget)
+            }
+
             return instance;
         }
 

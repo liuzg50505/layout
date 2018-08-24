@@ -35,6 +35,16 @@ namespace LayoutLzg {
                 }
             }
 
+            if(widget instanceof ContainerWidget) {
+                let container = <ContainerWidget>widget;
+                for (let childWidget of container.children) {
+                    let childxml = this.serializeWidget(childWidget);
+                    xmlWrapper.appendChild(
+                        new XmlWrapper("<children></children>")
+                            .appendChild(new XmlWrapper(childxml)));
+                }
+            }
+
             return xmlWrapper.toString();
         }
 

@@ -1,10 +1,5 @@
 namespace LayoutLzg {
 
-    export function parseXml(xml: string):Element {
-        let parser = new DOMParser();
-        return <Element>parser.parseFromString(xml,"text/xml").childNodes[0];
-    }
-
     export class XmlWrapper{
         elem: Element;
 
