@@ -172,6 +172,7 @@ namespace LayoutLzg{
             this.eventCallbacks = new List<EventCallbackItem>();
         }
 
+        @registproperty("Distance")
         get width(): LayoutLzg.Distance {
             return this._width;
         }
@@ -180,6 +181,7 @@ namespace LayoutLzg{
             this._width = value;
         }
 
+        @registproperty("Distance")
         get height(): LayoutLzg.Distance {
             return this._height;
         }
@@ -188,6 +190,7 @@ namespace LayoutLzg{
             this._height = value;
         }
 
+        @registproperty("HorizonAlignment")
         get horizonAlignment(): LayoutLzg.HorizonAlignment {
             return this._horizonAlignment;
         }
@@ -196,6 +199,7 @@ namespace LayoutLzg{
             this._horizonAlignment = value;
         }
 
+        @registproperty("VerticalAlignment")
         get verticalAlignment(): LayoutLzg.VerticalAlignment {
             return this._verticalAlignment;
         }

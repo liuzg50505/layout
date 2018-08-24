@@ -9,19 +9,17 @@ namespace LayoutLzg {
             this.providers = new List<XmlWidgetParserProvider>();
         }
 
-        canProvide(): boolean {
+        canProvide(xml:string): boolean {
             for (let provider of this.providers)  {
-                provider.xml = this.xml;
-                if(provider.canProvide()) return true;
+                if(provider.canProvide(xml)) return true;
             }
             return false;
         }
 
-        getWidgetParser(): LayoutLzg.WidgetParser {
+        getWidgetParser(xml:string): LayoutLzg.WidgetParser {
             for (let provider of this.providers)  {
-                provider.xml = this.xml;
-                if(provider.canProvide()) {
-                    return provider.getWidgetParser();
+                if(provider.canProvide(xml)) {
+                    return provider.getWidgetParser(xml);
                 }
             }
             return null;

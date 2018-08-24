@@ -12,8 +12,9 @@ namespace LayoutLzg {
             this.stringSerializerProvider = stringSerializerProvider;
         }
 
-        parseWidget(): Widget {
-            let tagname = xmlTag(this.xml);
+        parseWidget(xml: string): Widget {
+            let xmlWrapper = new XmlWrapper(xml);
+            let tagname = xmlWrapper.tagName;
             let instance = Reflector.instance().newInstance(tagname);
             let properties = Reflector.instance().getClassProperties(tagname);
 
@@ -24,17 +25,18 @@ namespace LayoutLzg {
                 let stringSerializer = this.stringSerializerProvider.getStringSerializerByType(type);
                 let xmlSerializer = this.xmlSerializerProvider.getXmlSerializerByType(type);
 
-                let b1 = xmlContainAttribute(this.xml,propName);
-                let b2 = xmlContainChildTag(this.xml,propName);
 
-                if(b1){
-                    let xmlvalue = xmlGetAttribute(this.xml, propName);
+                let b1 = xmlWrapper.hasAttr(propName);
+                let b2 = xmlWrapper.hasChildByTag(propName);
+
+                if(b1&&stringSerializer){
+                    let xmlvalue = <string>xmlWrapper.attr(propName);
                     let v = stringSerializer.deserialize(xmlvalue);
                     let setter = new WidgetPropertySetter(instance, propName);
                     setter.setValue(v);
-                }else if(b2){
-                    let childxml = xmlGetChildByTag(this.xml, propName);
-                    let v = xmlSerializer.deserialize(childxml);
+                }else if(b2&&xmlSerializer){
+                    let childxml = xmlWrapper.getChildByTag(propName);
+                    let v = xmlSerializer.deserialize(childxml.toString());
                     let setter = new WidgetPropertySetter(instance, propName);
                     setter.setValue(v);
                 }
@@ -43,4 +45,5 @@ namespace LayoutLzg {
         }
 
     }
+
 }

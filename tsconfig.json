@@ -90,32 +90,41 @@
 
     "src/serialization/stringserializer.ts",
     "src/serialization/xmlserializer.ts",
-    "src/serialization/distanceserializer.ts",
+    "src/serialization/distancestringserializer.ts",
     "src/serialization/solidcolorbrushxmlserializer.ts",
     "src/serialization/gradiantcolorbrushxmlserializer.ts",
     "src/serialization/imagecolorbrushxmlserializer.ts",
     "src/serialization/solidcolorbrushstringserializer.ts",
     "src/serialization/stringserializerprovider.ts",
     "src/serialization/xmlserializerprovider.ts",
+    "src/serialization/horizonalignmentstringserializer.ts",
+    "src/serialization/verticalalignmentstringserializer.ts",
+    "src/serialization/basictypestringserializer.ts",
     "src/serialization/prioritystringserializerprovider.ts",
     "src/serialization/priorityxmlserializerprovider.ts",
 
     "src/utils/widgetutils.ts",
 
     "src/widgetxml/widgetparser.ts",
+    "src/widgetxml/widgetserializer.ts",
     "src/widgetxml/xmlwidgetparser.ts",
+    "src/widgetxml/xmlwidgetserializer.ts",
     "src/widgetxml/xmlwidgettreeparser.ts",
     "src/widgetxml/widgetparserprovider.ts",
     "src/widgetxml/xmlwidgetparserprovider.ts",
     "src/widgetxml/tagxmlwidgetparserprovider.ts",
     "src/widgetxml/priorityxmlwidgetparserprovider.ts",
     "src/widgetxml/buttonxmlparser.ts",
-    "src/widgetxml/metawidgetparser.ts",
+    "src/widgetxml/metaxmlwidgetparser.ts",
+    "src/widgetxml/metaxmlwidgetserializer.ts",
 
 
     "src/facades/binding.ts",
 
-    "src/bootstrap/property.ts"
+    "src/bootstrap/property.ts",
+    "src/bootstrap/serializer.ts",
+
+    "src/test/testxmlserializer.ts"
 
 
   ],

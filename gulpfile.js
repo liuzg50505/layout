@@ -32,6 +32,9 @@ gulp.task('build', function (cb) {
                 .pipe(concat("output.js"))
                 .pipe(gulp.dest('dist'))
                 .pipe(uglify())
+                .on('error', function(err) {
+                    gutil.log('Less Error!', err.message);
+                })
                 .pipe(rename('output.min.js'))
                 .pipe(gulp.dest('dist'))
                 .on("end",function (cb) {

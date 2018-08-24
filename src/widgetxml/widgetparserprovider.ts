@@ -1,8 +1,8 @@
 namespace LayoutLzg {
 
     export abstract class WidgetParserProvider {
-        abstract canProvide():boolean;
-        abstract getWidgetParser(): WidgetParser;
+        abstract canProvide(value:string):boolean;
+        abstract getWidgetParser(value:string): WidgetParser;
     }
 
 }

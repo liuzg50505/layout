@@ -12,13 +12,15 @@ namespace LayoutLzg {
             this.tagParserMap.put(tag, parser);
         }
 
-        getWidgetParser(): WidgetParser {
-            let tag = xmlTag(this.xml);
+        getWidgetParser(xml:string): WidgetParser {
+            let xmlWrapper = new XmlWrapper(xml);
+            let tag = xmlWrapper.tagName;
             return this.tagParserMap.get(tag);
         }
 
-        canProvide(): boolean {
-            let tag = xmlTag(this.xml);
+        canProvide(xml:string): boolean {
+            let xmlWrapper = new XmlWrapper(xml);
+            let tag = xmlWrapper.tagName;
             return this.tagParserMap.containsKey(tag);
         }
     }
