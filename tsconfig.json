@@ -28,24 +28,26 @@
 
     "src/trigger/triggerbase.ts",
     "src/layoutbase.ts",
-    "src/layoutcore.ts",
+
 
 
     "src/brushes/solidcolorbrush.ts",
     "src/brushes/imagecolorbrush.ts",
     "src/brushes/gradientcolorbrush.ts",
 
-    "src/controls/controlbase.ts",
-    "src/controls/textview.ts",
-    "src/controls/rect.ts",
-    "src/controls/image.ts",
-
-    "src/containers/containerbase.ts",
-    "src/containers/border.ts",
-    "src/containers/horizonallinearlayout.ts",
-    "src/containers/verticallinearlayout.ts",
-    "src/containers/vlinearlayout.ts",
-    "src/containers/hlinearlayout.ts",
+    "src/topbottomlayout/layoutcore.ts",
+    "src/topbottomlayout/controls/controlbase.ts",
+    "src/topbottomlayout/controls/textview.ts",
+    "src/topbottomlayout/controls/rect.ts",
+    "src/topbottomlayout/controls/image.ts",
+    "src/topbottomlayout/containers/containerbase.ts",
+    "src/topbottomlayout/containers/border.ts",
+    "src/topbottomlayout/containers/horizonallinearlayout.ts",
+    "src/topbottomlayout/containers/verticallinearlayout.ts",
+    "src/topbottomlayout/containers/vlinearlayout.ts",
+    "src/topbottomlayout/containers/hlinearlayout.ts",
+    "src/topbottomlayout/containers/hstackpanel.ts",
+    "src/topbottomlayout/containers/vstackpanel.ts",
 
     "src/observer/observableobjectinjector.ts",
     "src/observer/propertybase.ts",
