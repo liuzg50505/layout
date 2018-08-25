@@ -1,23 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6895967e-ff6e-45b9-baff-517886fa1890" name="Default" comment="wdiget xml">
-      <change afterPath="$PROJECT_DIR$/libs/requirejs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/widgetxmltest.js" afterDir="false" />
+    <list default="true" id="6895967e-ff6e-45b9-baff-517886fa1890" name="Default" comment="mocha test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layoutcore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/layoutcore.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/testxmlserializer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test/widgetxmltest.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/xmlutils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/xmlutils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgetxml/metaxmlwidgetparser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgetxml/metaxmlwidgetparser.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgetxml/metaxmlwidgetserializer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgetxml/metaxmlwidgetserializer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/test.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_injectarr.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/test_injectarr.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/testpropbinding.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/testpropbinding.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/testpropbinding_converter.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/testpropbinding_converter.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/testpropertylistener.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/testpropertylistener.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/testwatch.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/testwatch.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/widgetxmltest.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/widgetxmltest.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,7 +16,7 @@
     <session id="-1397950332">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="22" />
+          <entry key="project.closed" value="23" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.10" value="3" />
           <entry key="project.open.time.11" value="5" />
@@ -56,10 +43,10 @@
           <entry key="gitignore" value="2" />
           <entry key="html" value="51" />
           <entry key="iml" value="1" />
-          <entry key="js" value="69" />
-          <entry key="json" value="42" />
+          <entry key="js" value="73" />
+          <entry key="json" value="44" />
           <entry key="md" value="2" />
-          <entry key="ts" value="444" />
+          <entry key="ts" value="452" />
           <entry key="txt" value="1" />
           <entry key="xml" value="4" />
         </counts>
@@ -69,11 +56,11 @@
           <entry key="CSS" value="1" />
           <entry key="HTML" value="51" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JSON" value="3" />
-          <entry key="JavaScript" value="69" />
+          <entry key="JSON" value="5" />
+          <entry key="JavaScript" value="73" />
           <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="3" />
-          <entry key="TypeScript" value="444" />
+          <entry key="TypeScript" value="452" />
           <entry key="XML" value="4" />
           <entry key="tsconfig" value="39" />
         </counts>
@@ -84,11 +71,11 @@
           <entry key="dummy" value="19" />
           <entry key="html" value="2543" />
           <entry key="iml" value="13" />
-          <entry key="js" value="2184" />
-          <entry key="json" value="806" />
+          <entry key="js" value="2349" />
+          <entry key="json" value="816" />
           <entry key="md" value="46" />
-          <entry key="ts" value="39246" />
-          <entry key="txt" value="141" />
+          <entry key="ts" value="40002" />
+          <entry key="txt" value="156" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -96,11 +83,11 @@
           <entry key="CSS" value="6" />
           <entry key="HTML" value="2549" />
           <entry key="IDEA_MODULE" value="13" />
-          <entry key="JSON" value="10" />
-          <entry key="JavaScript" value="2183" />
+          <entry key="JSON" value="20" />
+          <entry key="JavaScript" value="2348" />
           <entry key="Markdown" value="46" />
-          <entry key="PLAIN_TEXT" value="160" />
-          <entry key="TypeScript" value="39241" />
+          <entry key="PLAIN_TEXT" value="175" />
+          <entry key="TypeScript" value="39997" />
           <entry key="tsconfig" value="796" />
         </counts>
       </usages-collector>
@@ -108,47 +95,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/widgetxml/metaxmlwidgetparser.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="31">
-              <caret line="33" column="32" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tsconfig.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="128" selection-start-line="128" selection-end-line="128" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/widgetxml/metaxmlwidgetserializer.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="45" column="13" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/utils/xmlutils.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="42" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/layoutcore.ts">
+        <entry file="file://$PROJECT_DIR$/test/widgetxmltest.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="420">
+              <caret line="28" column="31" lean-forward="true" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -162,15 +113,13 @@
         <option value="Jupyter Notebook" />
         <option value="CSS File" />
         <option value="HTML File" />
-        <option value="TypeScript File" />
         <option value="JavaScript File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>calculateWidthFromTop</find>
-      <find>calculateHeightFromBottom</find>
       <find>estimatewi</find>
       <find>estimateWidth</find>
       <find>widthlist</find>
@@ -199,6 +148,8 @@
       <find>append</find>
       <find>children</find>
       <find>parseXml</find>
+      <find>jQuery</find>
+      <find>require</find>
     </findStrings>
     <replaceStrings>
       <replace>parentSlot.isSlotHeightCalculatable</replace>
@@ -217,9 +168,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/reflection.ts" />
-        <option value="$PROJECT_DIR$/src/visualtree/templatecontrol.ts" />
-        <option value="$PROJECT_DIR$/src/controls/controlbase.ts" />
         <option value="$PROJECT_DIR$/src/collections/list.ts" />
         <option value="$PROJECT_DIR$/src/reflection/reflection.ts" />
         <option value="$PROJECT_DIR$/src/templatewidgets/progressbar.ts" />
@@ -263,11 +211,14 @@
         <option value="$PROJECT_DIR$/src/widgetxml/metaxmlwidgetparser.ts" />
         <option value="$PROJECT_DIR$/src/utils/xmlutils.ts" />
         <option value="$PROJECT_DIR$/src/test/testxmlserializer.ts" />
-        <option value="$PROJECT_DIR$/test/widgetxmltest.ts" />
         <option value="$PROJECT_DIR$/tsconfig.json" />
         <option value="$PROJECT_DIR$/dist/output.js" />
         <option value="$PROJECT_DIR$/libs/requirejs.js" />
         <option value="$PROJECT_DIR$/test/widgetxmltest.js" />
+        <option value="$PROJECT_DIR$/test/widgetxmltest.ts" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/test/mo.ts" />
+        <option value="$PROJECT_DIR$/test/xmltest.ts" />
       </list>
     </option>
   </component>
@@ -314,6 +265,11 @@
             <path>
               <item name="layoutsystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="layoutsystem" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="layoutsystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="layoutsystem" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -327,7 +283,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="GO_FMT" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="tsc&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/tsconfig.json&#10;metaxml&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/widgetxml/metaxmlwidgetparser.ts&#10;meta&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/widgetxml/metaxmlwidgetserializer.ts&#10;buttonxmlpar&#9;null&#9;null&#10;xmlu&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/utils/xmlutils.ts&#10;layoutcor&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/layoutcore.ts&#10;ba&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/serialization/basictypestringserializer.ts&#10;hori&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/serialization/horizonalalignmentstringserializer.ts&#10;tsco&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/tsconfig.json&#10;gul&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/gulpfile.js&#10;xmluti&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/utils/xmlutils.ts&#10;hlin&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/containers/hlinearlayout.ts&#10;border&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/containers/border.ts&#10;text&#9;null&#9;null&#10;hlinear&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/containers/hlinearlayout.ts&#10;controlp&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/observer/controlproperty.ts&#10;tscon&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/tsconfig.json&#10;controlset&#9;null&#9;null&#10;dec&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/reflection/decorators.ts&#10;lay&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/layoutcore.ts&#10;button&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/templatewidgets/button.ts&#10;layout&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/layoutcore.ts&#10;refle&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/reflection/reflection.ts&#10;List&#9;null&#9;null&#10;xml&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/utils/xmlutils.ts&#10;tsconfig&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/tsconfig.json&#10;tsconf&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/tsconfig.json&#10;EventCallbackItem&#9;null&#9;null&#10;gulp&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/gulpfile.js&#10;ob&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/observer/observableobjectinjector.ts&#10;html&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/utils/htmlutils.ts&#10;tsconfi&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/tsconfig.json&#10;sliderbar&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/templatecontrols/sliderbar.ts&#10;progre&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/templatecontrols/progressbar.ts&#10;rec&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/controls/rect.ts&#10;bor&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/containers/border.ts&#10;button.ts&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/templatecontrols/button.ts&#10;templa&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/visualtree/templatecontrol.ts&#10;textv&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/controls/textview.ts&#10;controlpro&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/observer/controlproperty.ts&#10;progr&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/templatecontrols/progressbar.ts&#10;rect&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/controls/rect.ts&#10;pro&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/templatecontrols/progressbar.ts&#10;contentp&#9;null&#9;null&#10;content&#9;null&#9;null&#10;but&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/templatecontrols/button.ts&#10;control&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/controls/controlbase.ts&#10;templ&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/visualtree/templatecontrol.ts&#10;butto&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/templatecontrols/button.ts&#10;Solic&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="XMLTEST&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/test/xmltest.ts&#10;MetaWidgetParser&#9;null&#9;null&#10;tsc&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/tsconfig.json&#10;metaxml&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/widgetxml/metaxmlwidgetparser.ts&#10;meta&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/widgetxml/metaxmlwidgetserializer.ts&#10;buttonxmlpar&#9;null&#9;null&#10;xmlu&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/utils/xmlutils.ts&#10;layoutcor&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/layoutcore.ts&#10;ba&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/serialization/basictypestringserializer.ts&#10;hori&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/serialization/horizonalalignmentstringserializer.ts&#10;tsco&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/tsconfig.json&#10;gul&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/gulpfile.js&#10;xmluti&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/utils/xmlutils.ts&#10;hlin&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/containers/hlinearlayout.ts&#10;border&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/containers/border.ts&#10;text&#9;null&#9;null&#10;hlinear&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/containers/hlinearlayout.ts&#10;controlp&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/observer/controlproperty.ts&#10;tscon&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/tsconfig.json&#10;controlset&#9;null&#9;null&#10;dec&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/reflection/decorators.ts&#10;lay&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/layoutcore.ts&#10;button&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/templatewidgets/button.ts&#10;layout&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/layoutcore.ts&#10;refle&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/reflection/reflection.ts&#10;List&#9;null&#9;null&#10;xml&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/utils/xmlutils.ts&#10;tsconfig&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/tsconfig.json&#10;tsconf&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/tsconfig.json&#10;EventCallbackItem&#9;null&#9;null&#10;gulp&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/gulpfile.js&#10;ob&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/observer/observableobjectinjector.ts&#10;html&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/utils/htmlutils.ts&#10;tsconfi&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/tsconfig.json&#10;sliderbar&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/templatecontrols/sliderbar.ts&#10;progre&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/templatecontrols/progressbar.ts&#10;rec&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/controls/rect.ts&#10;bor&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/containers/border.ts&#10;button.ts&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/templatecontrols/button.ts&#10;templa&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/visualtree/templatecontrol.ts&#10;textv&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/controls/textview.ts&#10;controlpro&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/observer/controlproperty.ts&#10;progr&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/templatecontrols/progressbar.ts&#10;rect&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/controls/rect.ts&#10;pro&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/templatecontrols/progressbar.ts&#10;contentp&#9;null&#9;null&#10;content&#9;null&#9;null&#10;but&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/templatecontrols/button.ts&#10;control&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/controls/controlbase.ts&#10;templ&#9;FILE&#9;file:///Volumes/macdata/MyProjects/layoutsystem/src/visualtree/templatecontrol.ts" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/android-sdk-macosx" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -337,11 +293,12 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="" />
+    <property name="nodejs.jest.jest_package" value="" />
     <property name="nodejs.mocha.mocha_node_package_dir" value="$PROJECT_DIR$/node_modules/mocha" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="typescript-compiler-editor-notification" value="false" />
   </component>
@@ -373,7 +330,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Mocha.widget的xml序列化和反序列化.">
+  <component name="RunManager" selected="Mocha.widget的xml序列化和反序列化 (1)">
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
       <module name="" />
       <option name="TESTING_TYPE" value="0" />
@@ -577,15 +534,6 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="test_button.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/layoutsystem/dist/test_button.html">
-      <method v="2" />
-    </configuration>
-    <configuration name="test_horizonallinearlayout.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/layoutsystem/dist/test_horizonallinearlayout.html">
-      <method v="2" />
-    </configuration>
-    <configuration name="test_progressbar.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/layoutsystem/dist/test_progressbar.html">
-      <method v="2" />
-    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-interpreter>project</node-interpreter>
       <node-options />
@@ -595,10 +543,10 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="widget的xml序列化和反序列化" type="mocha-javascript-test-runner" factoryName="Mocha" temporary="true" nameIsGenerated="true">
+    <configuration name="widget的xml序列化和反序列化 (1)" type="mocha-javascript-test-runner" factoryName="Mocha" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
-      <working-directory>$PROJECT_DIR$/dist</working-directory>
+      <working-directory>$PROJECT_DIR$</working-directory>
       <pass-parent-env>true</pass-parent-env>
       <ui>bdd</ui>
       <extra-mocha-options />
@@ -609,7 +557,21 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="widget的xml序列化和反序列化." type="mocha-javascript-test-runner" factoryName="Mocha" temporary="true" nameIsGenerated="true">
+    <configuration name="widget的xml序列化和反序列化" type="mocha-javascript-test-runner" factoryName="Mocha" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options>--require ts-node/register --require jsdom-global/register -p tsconfig.json</extra-mocha-options>
+      <test-kind>SUITE</test-kind>
+      <test-file>$PROJECT_DIR$/test/xmltest.ts</test-file>
+      <test-names>
+        <name value="widget的xml序列化和反序列化" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="widget的xml序列化和反序列化.Button序列化和反序列化" type="mocha-javascript-test-runner" factoryName="Mocha" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <working-directory>$PROJECT_DIR$</working-directory>
@@ -620,24 +582,20 @@
       <test-file>$PROJECT_DIR$/test/widgetxmltest.js</test-file>
       <test-names>
         <name value="widget的xml序列化和反序列化" />
-        <name value="" />
+        <name value="Button序列化和反序列化" />
       </test-names>
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JavaScript Debug.test_button.html" />
-      <item itemvalue="JavaScript Debug.test_progressbar.html" />
-      <item itemvalue="JavaScript Debug.test_horizonallinearlayout.html" />
       <item itemvalue="Mocha.widget的xml序列化和反序列化" />
-      <item itemvalue="Mocha.widget的xml序列化和反序列化." />
+      <item itemvalue="Mocha.widget的xml序列化和反序列化 (1)" />
+      <item itemvalue="Mocha.widget的xml序列化和反序列化.Button序列化和反序列化" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Mocha.widget的xml序列化和反序列化." />
+        <item itemvalue="Mocha.widget的xml序列化和反序列化 (1)" />
+        <item itemvalue="Mocha.widget的xml序列化和反序列化.Button序列化和反序列化" />
         <item itemvalue="Mocha.widget的xml序列化和反序列化" />
-        <item itemvalue="JavaScript Debug.test_horizonallinearlayout.html" />
-        <item itemvalue="JavaScript Debug.test_progressbar.html" />
-        <item itemvalue="JavaScript Debug.test_button.html" />
       </list>
     </recent_temporary>
   </component>
@@ -690,7 +648,7 @@
       <workItem from="1534985232779" duration="599000" />
       <workItem from="1535008066816" duration="15539000" />
       <workItem from="1535093537497" duration="155000" />
-      <workItem from="1535093843300" duration="9993000" />
+      <workItem from="1535093843300" duration="17938000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1533205543454</created>
@@ -888,48 +846,56 @@
       <option name="project" value="LOCAL" />
       <updated>1535093023666</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="mocha test">
+      <created>1535115875888</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1535115875888</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="widget的xml序列化和反序列化_ - 2018.08.24 at 18h 32m 28s.xml">
-      <configuration name="widget的xml序列化和反序列化." configurationId="mocha-javascript-test-runner" />
+    <history-entry file="widget的xml序列化和反序列化 - 2018.08.25 at 13h 32m 08s.xml">
+      <configuration name="widget的xml序列化和反序列化" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="widget的xml序列化和反序列化_ - 2018.08.24 at 18h 33m 09s.xml">
-      <configuration name="widget的xml序列化和反序列化." configurationId="mocha-javascript-test-runner" />
+    <history-entry file="widget的xml序列化和反序列化 - 2018.08.25 at 13h 33m 05s.xml">
+      <configuration name="widget的xml序列化和反序列化" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="widget的xml序列化和反序列化_ - 2018.08.24 at 18h 33m 48s.xml">
-      <configuration name="widget的xml序列化和反序列化." configurationId="mocha-javascript-test-runner" />
+    <history-entry file="widget的xml序列化和反序列化 - 2018.08.25 at 13h 34m 25s.xml">
+      <configuration name="widget的xml序列化和反序列化" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="widget的xml序列化和反序列化_ - 2018.08.24 at 18h 34m 35s.xml">
-      <configuration name="widget的xml序列化和反序列化." configurationId="mocha-javascript-test-runner" />
+    <history-entry file="widget的xml序列化和反序列化 - 2018.08.25 at 13h 35m 19s.xml">
+      <configuration name="widget的xml序列化和反序列化" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="widget的xml序列化和反序列化_ - 2018.08.24 at 18h 35m 04s.xml">
-      <configuration name="widget的xml序列化和反序列化." configurationId="mocha-javascript-test-runner" />
+    <history-entry file="widget的xml序列化和反序列化_(1) - 2018.08.25 at 13h 36m 15s.xml">
+      <configuration name="widget的xml序列化和反序列化 (1)" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="widget的xml序列化和反序列化_ - 2018.08.24 at 18h 36m 09s.xml">
-      <configuration name="widget的xml序列化和反序列化." configurationId="mocha-javascript-test-runner" />
+    <history-entry file="widget的xml序列化和反序列化_(1) - 2018.08.25 at 13h 37m 01s.xml">
+      <configuration name="widget的xml序列化和反序列化 (1)" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="widget的xml序列化和反序列化_ - 2018.08.24 at 18h 36m 45s.xml">
-      <configuration name="widget的xml序列化和反序列化." configurationId="mocha-javascript-test-runner" />
+    <history-entry file="widget的xml序列化和反序列化_Button序列化和反序列化 - 2018.08.25 at 13h 37m 22s.xml">
+      <configuration name="widget的xml序列化和反序列化.Button序列化和反序列化" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="widget的xml序列化和反序列化_ - 2018.08.24 at 18h 38m 32s.xml">
-      <configuration name="widget的xml序列化和反序列化." configurationId="mocha-javascript-test-runner" />
+    <history-entry file="widget的xml序列化和反序列化 - 2018.08.25 at 13h 49m 06s.xml">
+      <configuration name="widget的xml序列化和反序列化" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="widget的xml序列化和反序列化_ - 2018.08.24 at 18h 38m 35s.xml">
-      <configuration name="widget的xml序列化和反序列化." configurationId="mocha-javascript-test-runner" />
+    <history-entry file="widget的xml序列化和反序列化 - 2018.08.25 at 13h 53m 34s.xml">
+      <configuration name="widget的xml序列化和反序列化" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="widget的xml序列化和反序列化_ - 2018.08.24 at 18h 38m 52s.xml">
-      <configuration name="widget的xml序列化和反序列化." configurationId="mocha-javascript-test-runner" />
+    <history-entry file="widget的xml序列化和反序列化_(1) - 2018.08.25 at 14h 09m 37s.xml">
+      <configuration name="widget的xml序列化和反序列化 (1)" configurationId="mocha-javascript-test-runner" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="298449000" />
+    <option name="totallyTimeSpent" value="306394000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="139" y="56" width="1717" height="977" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28773585" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28773585" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -939,7 +905,7 @@
       <window_info id="Nl-Palette" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32881355" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3299435" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.48700565" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3322034" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -993,7 +959,8 @@
     <MESSAGE value="gulp 编译脚本修正，修复不能删除临时文件的问题&#10;加入反射和序列化和xml&#10;可以使用xml对控件进行序列化" />
     <MESSAGE value="改名将 control 修改为widget" />
     <MESSAGE value="wdiget xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="wdiget xml" />
+    <MESSAGE value="mocha test" />
+    <option name="LAST_COMMIT_MESSAGE" value="mocha test" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -1019,6 +986,36 @@
     </expressions>
     <expressions id="evaluateExpression">
       <expression>
+        <expression-string>global.document</expression-string>
+        <language-id>TypeScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>global.window</expression-string>
+        <language-id>TypeScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>global.DOMParser</expression-string>
+        <language-id>TypeScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>global</expression-string>
+        <language-id>TypeScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>glbal</expression-string>
+        <language-id>TypeScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>jq.ajax()</expression-string>
+        <language-id>TypeScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
         <expression-string>window.proper</expression-string>
         <language-id>JavaScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
@@ -1038,81 +1035,9 @@
         <language-id>JavaScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>doc.window.document</expression-string>
-        <language-id>JavaScript</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>doc.document</expression-string>
-        <language-id>JavaScript</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>global.DOMParser</expression-string>
-        <language-id>JavaScript</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>window.document.createElement</expression-string>
-        <language-id>JavaScript</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>window.document</expression-string>
-        <language-id>JavaScript</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>document.createElement</expression-string>
-        <language-id>JavaScript</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/trigger/triggerbase.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/trigger/domeventtrigger.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/style/statemanager.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/style/stylebase.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="24" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/action/gotostateaction.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/action/setpropertyaction.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/vlinearlayout.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -1343,13 +1268,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgetxml/metaxmlwidgetparser.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="31">
-          <caret line="33" column="32" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/widgetxml/metaxmlwidgetserializer.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="331">
@@ -1381,13 +1299,6 @@
     <entry file="file://$PROJECT_DIR$/dist/output.min.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/output.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="5019" column="1" selection-start-line="5019" selection-start-column="1" selection-end-line="5019" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/libs/requirejs.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -1398,17 +1309,72 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/widgetxmltest.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="97" lean-forward="true" selection-start-line="26" selection-start-column="97" selection-end-line="26" selection-end-column="97" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/layoutcore.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/widgetxmltest.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/jquery/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="17" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/_@types_node@10.7.1@@types/node/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="218" column="4" selection-start-line="218" selection-start-column="4" selection-end-line="218" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgetxml/metaxmlwidgetparser.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="32" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/output.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="4611" column="30" selection-start-line="4611" selection-start-column="30" selection-end-line="4611" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/mo.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/xmltest.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/widgetxmltest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="31" lean-forward="true" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
         </state>
       </provider>
     </entry>
