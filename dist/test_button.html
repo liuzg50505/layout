@@ -25,15 +25,15 @@
 
     rootBorder = new LayoutLzg.Border("rrrrrrr");
     rootBorder.width = new LayoutLzg.Distance(LayoutLzg.DistanceType.fixed,defaultSlot.calculatedSlotWidth);
-    rootBorder.height = new LayoutLzg.Distance(LayoutLzg.DistanceType.fixed,defaultSlot.calculatedSlotWidth);
+    rootBorder.height = new LayoutLzg.Distance(LayoutLzg.DistanceType.fixed,defaultSlot.calculatedSlotHeight);
     rootBorder.horizonAlignment = LayoutLzg.HorizonAlignment.Strech;
     rootBorder.verticalAlignment = LayoutLzg.VerticalAlignment.Strech;
     defaultSlot.addChild(rootBorder);
 
 
     button = new LayoutLzg.Button("sdf");
-    button.width = new LayoutLzg.Distance(LayoutLzg.DistanceType.auto,100);
-    button.height = new LayoutLzg.Distance(LayoutLzg.DistanceType.auto,30);
+    button.width = new LayoutLzg.Distance(LayoutLzg.DistanceType.fixed,200);
+    button.height = new LayoutLzg.Distance(LayoutLzg.DistanceType.auto,0);
     button.margin.left = 20;
     button.margin.top = 40;
     button.horizonAlignment = LayoutLzg.HorizonAlignment.Left;
@@ -44,8 +44,8 @@
     rootBorder.assembleDom();
     rootdiv = rootBorder.getRootElement();
     $("body").append(rootdiv);
-    rootBorder.calculateWidthFromTop();
-    rootBorder.calculateHeightFromTop();
+    LayoutLzg.calculateBoundaryWidthTree(rootBorder);
+    LayoutLzg.calculateBoundaryHeightTree(rootBorder);
     rootBorder.doLayout();
 
 </script>

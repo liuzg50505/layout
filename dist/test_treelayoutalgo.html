@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="application/javascript" src="../js/jquery.min.js"></script>
+    <script type="application/javascript" src="output.js"></script>
+    <style>
+        html,body {width: 100%;height: 100%;}
+    </style>
+</head>
+<body>
+
+
+<script>
+
+
+    with (LayoutLzg) {
+        defaultSlot = new Slot();
+        defaultSlot.isSlotWidthCalculatable = true;
+        defaultSlot.isSlotHeightCalculatable = true;
+        defaultSlot.calculatedSlotWidth = $("body").width();
+        defaultSlot.calculatedSlotHeight = $("body").height();
+
+        rootBorder = new Border("rrrrrrr");
+        rootBorder.width = new Distance(LayoutLzg.DistanceType.fixed,defaultSlot.calculatedSlotWidth);
+        rootBorder.height = new Distance(LayoutLzg.DistanceType.fixed,defaultSlot.calculatedSlotHeight);
+        rootBorder.horizonAlignment = HorizonAlignment.Strech;
+        rootBorder.verticalAlignment = VerticalAlignment.Strech;
+        defaultSlot.addChild(rootBorder);
+
+        border1 = new Border("flexborder1");
+        border1.width = new Distance(DistanceType.auto,0);
+        border1.height = new Distance(DistanceType.auto,0);
+        border1.horizonAlignment = HorizonAlignment.Center;
+        border1.verticalAlignment = VerticalAlignment.Center;
+        rootBorder.addChild(border1);
+
+        border4 = new Border("flexborder4");
+        border4.width = new Distance(DistanceType.auto,0);
+        border4.height = new Distance(DistanceType.auto,0);
+        border4.horizonAlignment = HorizonAlignment.Strech;
+        border4.verticalAlignment = VerticalAlignment.Center;
+        border4.margin = new Thickness(10,20,10,10);
+        border1.addChild(border4);
+
+        border2 = new Border("fixborder2");
+        border2.width = new Distance(DistanceType.fixed,50);
+        border2.height = new Distance(DistanceType.fixed,50);
+        border2.horizonAlignment = HorizonAlignment.Center;
+        border2.verticalAlignment = VerticalAlignment.Center;
+        border4.addChild(border2);
+
+        textview3 = new TextView("text3");
+        textview3.width = new Distance(DistanceType.auto,0);
+        textview3.height = new Distance(DistanceType.auto,0);
+        textview3.horizonAlignment = HorizonAlignment.Strech;
+        textview3.verticalAlignment = VerticalAlignment.Center;
+        textview3.text="sdfsdfsdfsdf";
+        border4.addChild(textview3);
+
+        border5 = new Border("flexborder5");
+        border5.width = new Distance(DistanceType.auto,0);
+        border5.height = new Distance(DistanceType.auto,0);
+        border5.horizonAlignment = HorizonAlignment.Strech;
+        border5.verticalAlignment = VerticalAlignment.Center;
+        border5.margin = new Thickness(10,20,10,10);
+        border1.addChild(border5);
+
+        textview6 = new TextView("text6");
+        textview6.width = new Distance(DistanceType.auto,0);
+        textview6.height = new Distance(DistanceType.auto,0);
+        textview6.horizonAlignment = HorizonAlignment.Center;
+        textview6.verticalAlignment = VerticalAlignment.Bottom;
+        textview6.text="zxczczxczxczxczxczx";
+        border5.addChild(textview6);
+
+        border7 = new Border("fixborder7");
+        border7.width = new Distance(DistanceType.fixed,200);
+        border7.height = new Distance(DistanceType.fixed,50);
+        border7.horizonAlignment = HorizonAlignment.Center;
+        border7.verticalAlignment = VerticalAlignment.Center;
+        border5.addChild(border7);
+
+
+
+        rootBorder.assembleDom();
+        rootdiv = rootBorder.getRootElement();
+        $("body").append(rootdiv);
+
+        calculateBoundaryWidthTree(rootBorder);
+        calculateBoundaryHeightTree(rootBorder);
+        rootBorder.doLayout();
+
+    }
+
+</script>
+</body>
+</html>

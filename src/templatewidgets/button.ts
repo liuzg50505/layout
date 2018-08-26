@@ -123,12 +123,14 @@ namespace LayoutLzg {
             this._content = value;
         }
 
-
         assembleDom(): void {
             this.initVisualTree();
             this.initStates();
             super.assembleDom();
         }
+
+
+
     }
 
 }

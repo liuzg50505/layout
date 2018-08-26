@@ -26,12 +26,11 @@ namespace LayoutLzg {
             let widget:any = <VisualElement>this.obj;
             if(this.propertyName in widget) {
                 widget[this.propertyName] = value;
-                let widget1:Widget = <Widget>this.obj;
-                widget1.assembleDom();
-                widget1.calculateWidthFromTop();
-                widget1.calculateHeightFromTop();
-                widget1.doLayout();
             }
+            // widget.assembleDom();
+            calculateBoundaryWidthTree(widget);
+            calculateBoundaryHeightTree(widget);
+            widget.doLayout();
         }
 
     }

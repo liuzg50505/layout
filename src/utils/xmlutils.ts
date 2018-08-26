@@ -44,7 +44,8 @@ namespace LayoutLzg {
         }
 
         toString():string {
-            return this.elem.outerHTML;
+            let a:any = this.elem;
+            return a.outerHTML;
         }
 
         firstChild(): XmlWrapper {

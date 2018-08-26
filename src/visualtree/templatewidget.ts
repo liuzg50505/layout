@@ -1,6 +1,6 @@
 namespace LayoutLzg {
 
-    export class TemplateWidget extends WidgetBase {
+    export abstract class TemplateWidget extends WidgetBase {
         private rootBorder : Border = new Border("rootBorder");
         private _visualTree : VisualTree;
         private stateGroups : List<StateGroup>;
@@ -10,7 +10,11 @@ namespace LayoutLzg {
             super(name);
             this.stateGroups = new List<StateGroup>();
             this.stateEventTriggers = new List<WidgetTrigger>();
+            let mainSlot = new Slot();
+            mainSlot.addChild(this.rootBorder);
+            this.slots.add(mainSlot);
         }
+
 
         get visualTree(): VisualTree {
             return this._visualTree;
@@ -143,8 +147,6 @@ namespace LayoutLzg {
             this._visualTree.rootContainer.height = new Distance(DistanceType.auto,0);
             this._visualTree.rootContainer.horizonAlignment = HorizonAlignment.Strech;
             this._visualTree.rootContainer.verticalAlignment = VerticalAlignment.Strech;
-            this.rootBorder.calculateWidthFromTop();
-            this.rootBorder.calculateHeightFromTop();
 
             // this.rootBorder.parentSlot = this.parentSlot;
             // this.rootBorder.parent = this.parent;
@@ -153,22 +155,26 @@ namespace LayoutLzg {
             this.rootBorder.doLayout();
         }
 
-        calculateHeightFromTop(): void {
-            this.rootBorder.calculateHeightFromTop();
-            this.calculatedWidth = this.rootBorder.calculatedWidth;
+        calculateSlotsWidth(isBoundary: boolean): void {
+            if(this.width.type==DistanceType.fixed){
+                this.calculatedWidth = this.width.value;
+                this.slots[0].calculatedSlotWidth = this.width.value;
+            }else if(this.parent&&this.horizonAlignment==HorizonAlignment.Strech&&isBoundary) {
+                this.calculatedWidth = this.parentSlot.calculatedSlotWidth - this.margin.left - this.margin.right;
+                this.slots[0].calculatedSlotWidth = this.calculatedWidth;
+            }
+            this.rootBorder.calculateSlotsWidth(isBoundary);
         }
 
-        calculateWidthFromTop(): void {
-            this.rootBorder.calculateWidthFromTop();
-            this.calculatedHeight = this.rootBorder.calculatedHeight;
-        }
-
-        calculateWidthFromBottom(): void {
-            this.rootBorder.calculateWidthFromBottom();
-        }
-
-        calculateHeightFromBottom(): void {
-            this.rootBorder.calculateHeightFromBottom();
+        calculateSlotsHeight(isBoundary: boolean): void {
+            if(this.height.type==DistanceType.fixed){
+                this.calculatedHeight = this.height.value;
+                this.slots[0].calculatedSlotHeight = this.height.value;
+            }else if(this.parent&&this.verticalAlignment==VerticalAlignment.Strech&&isBoundary) {
+                this.calculatedHeight = this.parentSlot.calculatedSlotHeight - this.margin.top - this.margin.bottom;
+                this.slots[0].calculatedSlotHeight = this.calculatedHeight;
+            }
+            this.rootBorder.calculateSlotsHeight(isBoundary);
         }
 
     }

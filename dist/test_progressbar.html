@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script type="application/javascript" src="../js/jquery.min.js"></script>
-    <script type="application/javascript" src="../js/jqresize.js" ></script>
     <script type="application/javascript" src="output.js"></script>
     <style>
         html,body {
@@ -58,8 +57,8 @@
     rootBorder.assembleDom();
     rootdiv = rootBorder.getRootElement();
     $("body").append(rootdiv);
-    rootBorder.calculateWidthFromTop();
-    rootBorder.calculateHeightFromTop();
+    LayoutLzg.calculateBoundaryWidthTree(rootBorder);
+    LayoutLzg.calculateBoundaryHeightTree(rootBorder);
     rootBorder.doLayout();
 
 </script>

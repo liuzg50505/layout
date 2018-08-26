@@ -93,6 +93,8 @@ namespace LayoutLzg {
             let rectend = w/(this.maxValue-this.minValue)*(this.value-this.minValue);
             this.rectProc.width = new Distance(DistanceType.fixed,rectend);
             this.rectUp.width = new Distance(DistanceType.fixed,rectend);
+            calculateBoundaryWidthTree(this);
+            calculateBoundaryHeightTree(this);
             super.doLayout();
         }
     }
