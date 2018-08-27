@@ -60,9 +60,9 @@ namespace LayoutLzg{
             appendChild(this.getRootElement(),this.spanElem);
             setElemText(this.spanElem,this._text);
             if(this._wordWrap)
-                css(this.spanElem,'word-break','break-all');
+                css(this.spanElem,'white-space','');
             else
-                css(this.spanElem,'word-break','normal');
+                css(this.spanElem,'white-space','nowrap');
 
         }
 
@@ -90,11 +90,19 @@ namespace LayoutLzg{
         }
 
         measureWidth(): number {
-            return this.spanElem.offsetWidth;
+            if(this.parentSlot.calculatedSlotWidth==0){
+                return measureElemSize(this.spanElem)[0];
+            }else{
+                return measureElemSize(this.spanElem,this.parentSlot.calculatedSlotWidth)[0];
+            }
         }
 
         measureHeight(): number {
-            return this.spanElem.offsetHeight;
+            if(this.parentSlot.calculatedSlotHeight==0){
+                return measureElemSize(this.spanElem)[1];
+            }else{
+                return measureElemSize(this.spanElem,this.parentSlot.calculatedSlotHeight)[1];
+            }
         }
 
     }

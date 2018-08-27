@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="application/javascript" src="../js/jquery.min.js"></script>
+    <script type="application/javascript" src="output.js"></script>
+    <style>
+        html,body {
+            width: 100%;
+            height:100%;
+        }
+    </style>
+</head>
+<body>
+
+
+<script>
+
+    defaultSlot = new LayoutLzg.Slot();
+    defaultSlot.isSlotWidthCalculatable = true;
+    defaultSlot.isSlotHeightCalculatable = true;
+    defaultSlot.calculatedSlotWidth = $("body").width();
+    defaultSlot.calculatedSlotHeight = $("body").height();
+
+    rootBorder = new LayoutLzg.Border("rrrrrrr");
+    rootBorder.width = new LayoutLzg.Distance(LayoutLzg.DistanceType.fixed,defaultSlot.calculatedSlotWidth);
+    rootBorder.height = new LayoutLzg.Distance(LayoutLzg.DistanceType.fixed,defaultSlot.calculatedSlotHeight);
+    rootBorder.horizonAlignment = LayoutLzg.HorizonAlignment.Strech;
+    rootBorder.verticalAlignment = LayoutLzg.VerticalAlignment.Strech;
+    defaultSlot.addChild(rootBorder);
+
+
+    button = new LayoutLzg.Button("sdf");
+    button.width = new LayoutLzg.Distance(LayoutLzg.DistanceType.fixed,200);
+    button.height = new LayoutLzg.Distance(LayoutLzg.DistanceType.auto,0);
+    button.margin.left = 20;
+    button.margin.top = 40;
+    button.horizonAlignment = LayoutLzg.HorizonAlignment.Left;
+    button.verticalAlignment = LayoutLzg.VerticalAlignment.Top;
+    button.content = "fsdfss11";
+
+    button2 = new LayoutLzg.Button("sdf");
+    button2.width = new LayoutLzg.Distance(LayoutLzg.DistanceType.fixed,400);
+    button2.height = new LayoutLzg.Distance(LayoutLzg.DistanceType.auto,0);
+    button2.margin.left = 20;
+    button2.margin.top = 90;
+    button2.horizonAlignment = LayoutLzg.HorizonAlignment.Left;
+    button2.verticalAlignment = LayoutLzg.VerticalAlignment.Top;
+    button2.content = "any text here";
+
+
+    action = new LayoutLzg.SetPropertyAction();
+    action.widget = button2;
+    action.propertyName = "width";
+    action.value = new LayoutLzg.Distance(LayoutLzg.DistanceType.fixed,300);
+
+    trigger = new LayoutLzg.WidgetEventTrigger();
+    trigger.widget=button;
+    trigger.eventName="click";
+    trigger.action = action;
+    trigger.init();
+
+    rootBorder.addChild(button);
+    rootBorder.addChild(button2);
+    rootBorder.assembleDom();
+    rootdiv = rootBorder.getRootElement();
+    $("body").append(rootdiv);
+    LayoutLzg.calculateBoundaryWidthTree(rootBorder);
+    LayoutLzg.calculateBoundaryHeightTree(rootBorder);
+    rootBorder.doLayout();
+
+</script>
+</body>
+</html>

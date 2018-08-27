@@ -3,7 +3,7 @@ namespace LayoutLzg {
     export abstract class TemplateWidget extends WidgetBase {
         private rootBorder : Border = new Border("rootBorder");
         private _visualTree : VisualTree;
-        private stateGroups : List<StateGroup>;
+        protected stateGroups : List<StateGroup>;
         protected stateEventTriggers: List<WidgetTrigger>;
 
         constructor(name?: string) {
@@ -13,6 +13,29 @@ namespace LayoutLzg {
             let mainSlot = new Slot();
             mainSlot.addChild(this.rootBorder);
             this.slots.add(mainSlot);
+
+            let self = this;
+            onEvent(this.getRootElement(),"click",function (e:any) {
+                self.raiseEvent("click",[e]);
+            });
+            onEvent(this.getRootElement(),"mouseenter",function (e:any) {
+                self.raiseEvent("mouseenter",[e]);
+            });
+            onEvent(this.getRootElement(),"mouseleave",function (e:any) {
+                self.raiseEvent("mouseleave",[e]);
+            });
+            onEvent(this.getRootElement(),"mousedown",function (e:any) {
+                self.raiseEvent("mousedown",[e]);
+                self.pressed = true;
+            });
+            onEvent(this.getRootElement(),"mouseup",function (e:any) {
+                self.raiseEvent("mouseup",[e]);
+                self.pressed = false;
+            });
+            onEvent(this.getRootElement(),"mousemove",function (e:any) {
+                self.raiseEvent("mousemove",[e]);
+            });
+
         }
 
 
@@ -101,6 +124,7 @@ namespace LayoutLzg {
             this.rootBorder.height = this.height;
             this.rootBorder.horizonAlignment = this.horizonAlignment;
             this.rootBorder.verticalAlignment = this.verticalAlignment;
+            this.rootBorder.clearChild();
             this.rootBorder.addChild(this._visualTree.rootContainer);
             this.rootBorder.margin = this.margin;
             this._visualTree.rootContainer.width = new Distance(DistanceType.auto,0);
@@ -113,49 +137,19 @@ namespace LayoutLzg {
 
             this.rootBorder.assembleDom();
 
-            let self = this;
-            onEvent(this.getRootElement(),"click",function (e:any) {
-                self.raiseEvent("click",[e]);
-            });
-            onEvent(this.getRootElement(),"mouseenter",function (e:any) {
-                self.raiseEvent("mouseenter",[e]);
-            });
-            onEvent(this.getRootElement(),"mouseleave",function (e:any) {
-                self.raiseEvent("mouseleave",[e]);
-            });
-            onEvent(this.getRootElement(),"mousedown",function (e:any) {
-                self.raiseEvent("mousedown",[e]);
-                self.pressed = true;
-            });
-            onEvent(this.getRootElement(),"mouseup",function (e:any) {
-                self.raiseEvent("mouseup",[e]);
-                self.pressed = false;
-            });
-            onEvent(this.getRootElement(),"mousemove",function (e:any) {
-                self.raiseEvent("mousemove",[e]);
-            });
         }
 
         doLayout(): void {
-            this.rootBorder.width = this.width;
-            this.rootBorder.height = this.height;
-            this.rootBorder.horizonAlignment = this.horizonAlignment;
-            this.rootBorder.verticalAlignment = this.verticalAlignment;
-            // this.rootBorder.addChild(this._visualTree.rootContainer);
-            this.rootBorder.margin = this.margin;
-            this._visualTree.rootContainer.width = new Distance(DistanceType.auto,0);
-            this._visualTree.rootContainer.height = new Distance(DistanceType.auto,0);
-            this._visualTree.rootContainer.horizonAlignment = HorizonAlignment.Strech;
-            this._visualTree.rootContainer.verticalAlignment = VerticalAlignment.Strech;
 
-            // this.rootBorder.parentSlot = this.parentSlot;
-            // this.rootBorder.parent = this.parent;
-
-            // this.rootBorder.initCalculableSlots();
             this.rootBorder.doLayout();
         }
 
         calculateSlotsWidth(isBoundary: boolean): void {
+            this.rootBorder.width = this.width;
+            this.rootBorder.height = this.height;
+            this.rootBorder.horizonAlignment = this.horizonAlignment;
+            this.rootBorder.verticalAlignment = this.verticalAlignment;
+
             if(this.width.type==DistanceType.fixed){
                 this.calculatedWidth = this.width.value;
                 this.slots[0].calculatedSlotWidth = this.width.value;
@@ -167,6 +161,10 @@ namespace LayoutLzg {
         }
 
         calculateSlotsHeight(isBoundary: boolean): void {
+            this.rootBorder.width = this.width;
+            this.rootBorder.height = this.height;
+            this.rootBorder.horizonAlignment = this.horizonAlignment;
+            this.rootBorder.verticalAlignment = this.verticalAlignment;
             if(this.height.type==DistanceType.fixed){
                 this.calculatedHeight = this.height.value;
                 this.slots[0].calculatedSlotHeight = this.height.value;
@@ -190,6 +188,7 @@ namespace LayoutLzg {
 
 
         assembleDom(): void {
+            this.clearChild();
             if(this.content) {
                 this.addChild(this.content);
                 super.assembleDom();

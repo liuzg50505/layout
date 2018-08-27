@@ -50,6 +50,19 @@ namespace LayoutLzg {
         $(elem).off(eventName,callback);
     }
 
+    export function measureElemSize(elem:HTMLElement, w:number=20000,h:number=20000) {
+        let celem:any = elem.cloneNode(true);
+        let bigdiv = createElement("DIV");
+        bigdiv.appendChild(celem);
+        css(bigdiv,"width",w+"px");
+        css(bigdiv,"height",h+"px");
+        let body:any = document.body;
+        body.append(bigdiv);
+        let ww = celem.offsetWidth;
+        let hh = celem.offsetHeight;
+        bigdiv.remove();
+        return [ww,hh];
+    }
 
 
 }

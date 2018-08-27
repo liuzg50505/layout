@@ -67,6 +67,7 @@ namespace LayoutLzg{
         getRootElement(): HTMLElement {
             if(!this.rootElem){
                 this.rootElem = createElement("DIV");
+                css(this.rootElem,'box-sizing','border-box');
                 css(this.rootElem,'pointer-events','all');
                 setattr(this.rootElem, 'layout-type','Rect');
                 setattr(this.rootElem, 'layout-name',this.name);

@@ -104,7 +104,17 @@ namespace LayoutLzg {
                 }
             }
         }
+    }
 
+    export function refreshWidget(widget: Widget) {
+        let p = widget;
+        while (p.parent != null) {
+            p = p.parent;
+        }
+
+        calculateBoundaryWidthTree(p);
+        calculateBoundaryHeightTree(p);
+        p.doLayout();
     }
 
 

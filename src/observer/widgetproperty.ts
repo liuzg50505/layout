@@ -27,10 +27,7 @@ namespace LayoutLzg {
             if(this.propertyName in widget) {
                 widget[this.propertyName] = value;
             }
-            // widget.assembleDom();
-            calculateBoundaryWidthTree(widget);
-            calculateBoundaryHeightTree(widget);
-            widget.doLayout();
+            refreshWidget(widget);
         }
 
     }

@@ -11,6 +11,8 @@ namespace LayoutLzg {
         constructor(name?: string) {
             super(name);
             this.radius = 5;
+            this.initVisualTree();
+            this.initStates();
         }
 
         private initVisualTree():void {
@@ -22,21 +24,6 @@ namespace LayoutLzg {
             this.contentPresentor.height = new Distance(DistanceType.auto,0);
             this.contentPresentor.horizonAlignment = HorizonAlignment.Center;
             this.contentPresentor.verticalAlignment = VerticalAlignment.Center;
-
-            let contentwidget:Widget = null;
-            if(typeof this._content === "string" || typeof this._content === "number"){
-                let txt = new TextView("",this._content.toString());
-                txt.margin = new Thickness(10,10,5,5);
-                txt.selectable = false;
-                contentwidget = txt;
-                contentwidget.horizonAlignment = HorizonAlignment.Strech;
-                contentwidget.verticalAlignment = VerticalAlignment.Strech;
-                contentwidget.width = new Distance(DistanceType.auto,0);
-                contentwidget.height = new Distance(DistanceType.auto,0);
-            }else{
-                contentwidget = <Widget>this._content;
-            }
-            this.contentPresentor.content = contentwidget;
 
 
             let vlinear = new Vlinearlayout("");
@@ -76,7 +63,7 @@ namespace LayoutLzg {
         }
 
         private initStates():void {
-
+            this.stateGroups.clear();
             this.addStateStyle("hoverGroup","mouseenter",{
                 "rectup":{
                     "strokeThickness": new Thickness(2,2,2,0)
@@ -124,13 +111,33 @@ namespace LayoutLzg {
         }
 
         assembleDom(): void {
-            this.initVisualTree();
-            this.initStates();
             super.assembleDom();
         }
 
+        private lastcontent:any;
 
-
+        doLayout(): void {
+            if(this.content!=this.lastcontent){
+                this.lastcontent = this.content;
+                let contentwidget:Widget = null;
+                if(typeof this._content === "string" || typeof this._content === "number"){
+                    let txt = new TextView("",this._content.toString());
+                    txt.margin = new Thickness(10,10,5,5);
+                    txt.selectable = false;
+                    contentwidget = txt;
+                    contentwidget.horizonAlignment = HorizonAlignment.Strech;
+                    contentwidget.verticalAlignment = VerticalAlignment.Strech;
+                    contentwidget.width = new Distance(DistanceType.auto,0);
+                    contentwidget.height = new Distance(DistanceType.auto,0);
+                }else{
+                    contentwidget = <Widget>this._content;
+                }
+                this.contentPresentor.content = contentwidget;
+                this.contentPresentor.assembleDom();
+                refreshWidget(this);
+            }
+            super.doLayout();
+        }
     }
 
 }
