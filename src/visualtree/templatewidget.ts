@@ -179,18 +179,44 @@ namespace LayoutLzg {
 
     export class ContentPresenter extends Border{
 
-        content:Widget;
+        private _content:any;
+        private contentwidget: Widget;
 
 
         constructor(name: string) {
             super(name);
         }
 
+        get content(): any {
+            return this._content;
+        }
+
+        set content(value: any) {
+            if(this._content==value) return;
+            this._content = value;
+            this.notifyPropertyChanged("content");
+
+            let contentwidget:Widget = null;
+            if(typeof this._content === "string" || typeof this._content === "number"){
+                let txt = new TextView("",this._content.toString());
+                txt.margin = new Thickness(10,10,5,5);
+                txt.selectable = false;
+                contentwidget = txt;
+                contentwidget.horizonAlignment = HorizonAlignment.Strech;
+                contentwidget.verticalAlignment = VerticalAlignment.Strech;
+                contentwidget.width = new Distance(DistanceType.auto,0);
+                contentwidget.height = new Distance(DistanceType.auto,0);
+            }else{
+                contentwidget = <Widget>this._content;
+            }
+            this.contentwidget = contentwidget;
+            this.assembleDom();
+        }
 
         assembleDom(): void {
             this.clearChild();
-            if(this.content) {
-                this.addChild(this.content);
+            if(this.contentwidget) {
+                this.addChild(this.contentwidget);
                 super.assembleDom();
             }
         }

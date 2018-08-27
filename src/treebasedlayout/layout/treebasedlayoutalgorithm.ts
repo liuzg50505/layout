@@ -106,12 +106,24 @@ namespace LayoutLzg {
         }
     }
 
+    function clearCalculated(rootWidget: Widget) {
+        for (let slot of rootWidget.slots) {
+            slot.calculatedSlotWidth = 0;
+            slot.calculatedSlotHeight = 0;
+            for (let child of slot.children) {
+                child.calculatedWidth = 0;
+                child.calculatedHeight = 0;
+                clearCalculated(child);
+            }
+        }
+    }
+
     export function refreshWidget(widget: Widget) {
         let p = widget;
         while (p.parent != null) {
             p = p.parent;
         }
-
+        clearCalculated(p);
         calculateBoundaryWidthTree(p);
         calculateBoundaryHeightTree(p);
         p.doLayout();

@@ -6,8 +6,6 @@ namespace LayoutLzg{
 
     export class Slot {
         children:List<Widget> = new List<Widget>();
-        isSlotWidthCalculatable : boolean;
-        isSlotHeightCalculatable : boolean;
         calculatedSlotWidth : number = 0;
         calculatedSlotHeight : number = 0;
         container : ContainerWidget;
@@ -313,8 +311,9 @@ namespace LayoutLzg{
         }
 
         set fill(value: LayoutLzg.Brush) {
-            if(this._fill != value) this.notifyPropertyChanged("fill");
+            if(this._fill == value) return;
             this._fill = value;
+            if(this._fill != value) this.notifyPropertyChanged("fill");
         }
 
         @registproperty("Brush")
@@ -323,8 +322,9 @@ namespace LayoutLzg{
         }
 
         set stroke(value: LayoutLzg.Brush) {
-            if(this._stroke != value) this.notifyPropertyChanged("stroke");
+            if(this._stroke == value) return;
             this._stroke = value;
+            if(this._stroke != value) this.notifyPropertyChanged("stroke");
         }
 
         @registproperty("Thickness")
@@ -333,8 +333,9 @@ namespace LayoutLzg{
         }
 
         set strokeThickness(value: LayoutLzg.Thickness) {
-            if(this._strokeThickness != value) this.notifyPropertyChanged("strokeThickness");
+            if(this._strokeThickness == value) return;
             this._strokeThickness = value;
+            if(this._strokeThickness != value) this.notifyPropertyChanged("strokeThickness");
         }
 
         @registproperty("ShadowSettings")

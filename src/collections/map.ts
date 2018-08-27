@@ -22,6 +22,13 @@ namespace LayoutLzg{
     export class Map<TKey,TValue> extends Array<MapItem<TKey,TValue>>{
 
         put(key:TKey, value:TValue) : void {
+            for (let i=0;i<this.length;i++) {
+                let item = this[i];
+                if(item.key==key){
+                    item.value = value;
+                    return;
+                }
+            }
             this.push(new MapItem(key,value));
         }
 

@@ -18,8 +18,6 @@
 <script>
 
     defaultSlot = new LayoutLzg.Slot();
-    defaultSlot.isSlotWidthCalculatable = true;
-    defaultSlot.isSlotHeightCalculatable = true;
     defaultSlot.calculatedSlotWidth = $("body").width();
     defaultSlot.calculatedSlotHeight = $("body").height();
 
@@ -44,9 +42,10 @@
     rootBorder.assembleDom();
     rootdiv = rootBorder.getRootElement();
     $("body").append(rootdiv);
-    LayoutLzg.calculateBoundaryWidthTree(rootBorder);
-    LayoutLzg.calculateBoundaryHeightTree(rootBorder);
-    rootBorder.doLayout();
+    LayoutLzg.refreshWidget(rootBorder);
+    // LayoutLzg.calculateBoundaryWidthTree(rootBorder);
+    // LayoutLzg.calculateBoundaryHeightTree(rootBorder);
+    // rootBorder.doLayout();
 
 </script>
 </body>

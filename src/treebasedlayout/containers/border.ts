@@ -31,6 +31,7 @@ namespace LayoutLzg{
 
         assembleDom(): void {
             emptyChildren(this.getRootElement());
+            this.childWrappersMap.clear();
 
             for(let i=0;i<this.children.length;i++){
                 let child = this.children[i];

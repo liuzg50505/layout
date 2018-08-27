@@ -60,6 +60,18 @@ namespace LayoutLzg {
             rootBorder.addChild(vlinear);
             rootBorder.addChild(this.contentPresentor);
             this.visualTree.rootContainer = rootBorder;
+
+
+            let binding = new PropertyBinding(new SimplePropertyProvider(
+                new WidgetPropertyGetterProvider(),
+                new WidgetPropertySetterProvider(),
+                new WidgetPropertyChangedListenerProvider()
+            ));
+            binding.source = this;
+            binding.sourcePropertyName = "content";
+            binding.target = this.contentPresentor;
+            binding.targetPropertyName = "content";
+            binding.startBinding();
         }
 
         private initStates():void {
@@ -106,38 +118,25 @@ namespace LayoutLzg {
 
         set content(value: any) {
             if(this._content==value) return;
-            this.notifyPropertyChanged("content");
             this._content = value;
+            this.notifyPropertyChanged("content");
         }
 
         assembleDom(): void {
             super.assembleDom();
         }
 
-        private lastcontent:any;
+        // private lastcontent:any;
 
-        doLayout(): void {
-            if(this.content!=this.lastcontent){
-                this.lastcontent = this.content;
-                let contentwidget:Widget = null;
-                if(typeof this._content === "string" || typeof this._content === "number"){
-                    let txt = new TextView("",this._content.toString());
-                    txt.margin = new Thickness(10,10,5,5);
-                    txt.selectable = false;
-                    contentwidget = txt;
-                    contentwidget.horizonAlignment = HorizonAlignment.Strech;
-                    contentwidget.verticalAlignment = VerticalAlignment.Strech;
-                    contentwidget.width = new Distance(DistanceType.auto,0);
-                    contentwidget.height = new Distance(DistanceType.auto,0);
-                }else{
-                    contentwidget = <Widget>this._content;
-                }
-                this.contentPresentor.content = contentwidget;
-                this.contentPresentor.assembleDom();
-                refreshWidget(this);
-            }
-            super.doLayout();
-        }
+        // doLayout(): void {
+        //     if(this.content!=this.lastcontent){
+        //         this.lastcontent = this.content;
+        //         this.contentPresentor.content = this.content;
+        //         this.contentPresentor.assembleDom();
+        //         refreshWidget(this);
+        //     }
+        //     super.doLayout();
+        // }
     }
 
 }

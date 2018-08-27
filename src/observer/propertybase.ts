@@ -124,6 +124,45 @@ namespace LayoutLzg{
 
     }
 
+    export class SimplePropertyProvider extends PropertyProvider{
+
+        propertyGetterProvider:PropertyGetterProvider;
+        propertySetterProvider:PropertySetterProvider;
+        propertyListenerProvider:PropertyChangedListenerProvider;
+
+        constructor(propertyGetterProvider: PropertyGetterProvider, propertySetterProvider: PropertySetterProvider, propertyListenerProvider: PropertyChangedListenerProvider) {
+            super();
+            this.propertyGetterProvider = propertyGetterProvider;
+            this.propertySetterProvider = propertySetterProvider;
+            this.propertyListenerProvider = propertyListenerProvider;
+        }
+
+        canProvideGetter(obj: any, propertyName: string): boolean {
+            return true;
+        }
+
+        canProvidePropertyChangedListener(obj: any, propertyName: string): boolean {
+            return true;
+        }
+
+        canProvideSetter(obj: any, propertyName: string): boolean {
+            return true;
+        }
+
+        getPropertyChangedListener(obj: any, propertyName: string): LayoutLzg.PropertyChangedListener {
+            return this.propertyListenerProvider.getPropertyChangedListener(obj,propertyName);
+        }
+
+        getPropertyGetter(obj: any, propertyName: string): LayoutLzg.PropertyGetter {
+            return this.propertyGetterProvider.getPropertyGetter(obj,propertyName);
+        }
+
+        getPropertySetter(obj: any, propertyName: string): LayoutLzg.PropertySetter {
+            return this.propertySetterProvider.getPropertySetter(obj,propertyName);
+        }
+
+    }
+
     export class UniversalPropertyGetterProvider extends PropertyGetterProvider{
 
         private providers:List<PropertyGetterProvider>;

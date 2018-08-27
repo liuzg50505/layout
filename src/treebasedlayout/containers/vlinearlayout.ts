@@ -28,6 +28,8 @@ namespace LayoutLzg {
 
         assembleDom(): void {
             emptyChildren(this.getRootElement());
+            this.slotWrappersMap.clear();
+            this.childWrappersMap.clear();
 
             for (let slot of this.slots){
                 let slotWrapperDiv = createElement("DIV");
