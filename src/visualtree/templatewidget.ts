@@ -165,13 +165,8 @@ namespace LayoutLzg {
         }
 
         assembleDom(): void {
-            // this.rootBorder.width = this.width;
-            // this.rootBorder.height = this.height;
-            // this.rootBorder.horizonAlignment = this.horizonAlignment;
-            // this.rootBorder.verticalAlignment = this.verticalAlignment;
             this.rootBorder.clearChild();
             this.rootBorder.addChild(this._visualTree.rootContainer);
-            // this.rootBorder.margin = this.margin;
             this._visualTree.rootContainer.width = new Distance(DistanceType.auto,0);
             this._visualTree.rootContainer.height = new Distance(DistanceType.auto,0);
             this._visualTree.rootContainer.horizonAlignment = HorizonAlignment.Strech;
@@ -190,34 +185,11 @@ namespace LayoutLzg {
         }
 
         calculateSlotsWidth(isBoundary: boolean): void {
-            // this.rootBorder.width = this.width;
-            // this.rootBorder.height = this.height;
-            // this.rootBorder.horizonAlignment = this.horizonAlignment;
-            // this.rootBorder.verticalAlignment = this.verticalAlignment;
-
-            // if(this.width.type==DistanceType.fixed){
-            //     this.calculatedWidth = this.width.value;
-            //     this.slots[0].calculatedSlotWidth = this.width.value;
-            // }else if(this.parent&&this.horizonAlignment==HorizonAlignment.Strech&&isBoundary) {
-            //     this.calculatedWidth = this.parentSlot.calculatedSlotWidth - this.margin.left - this.margin.right;
-            //     this.slots[0].calculatedSlotWidth = this.calculatedWidth;
-            // }
             this.rootBorder.calculateSlotsWidth(isBoundary);
             this.calculatedWidth = this.rootBorder.calculatedWidth;
         }
 
         calculateSlotsHeight(isBoundary: boolean): void {
-            // this.rootBorder.width = this.width;
-            // this.rootBorder.height = this.height;
-            // this.rootBorder.horizonAlignment = this.horizonAlignment;
-            // this.rootBorder.verticalAlignment = this.verticalAlignment;
-            // if(this.height.type==DistanceType.fixed){
-            //     this.calculatedHeight = this.height.value;
-            //     this.slots[0].calculatedSlotHeight = this.height.value;
-            // }else if(this.parent&&this.verticalAlignment==VerticalAlignment.Strech&&isBoundary) {
-            //     this.calculatedHeight = this.parentSlot.calculatedSlotHeight - this.margin.top - this.margin.bottom;
-            //     this.slots[0].calculatedSlotHeight = this.calculatedHeight;
-            // }
             this.rootBorder.calculateSlotsHeight(isBoundary);
             this.calculatedHeight = this.rootBorder.calculatedHeight;
         }
