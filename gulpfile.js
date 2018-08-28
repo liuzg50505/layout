@@ -6,9 +6,6 @@ var ts = require('gulp-typescript');
 var rename = require('gulp-rename');
 var merge = require('event-stream').merge;
 var del = require('del');
-var paths = {
-    pages: ['src/*.html']
-};
 
 gulp.task('build', function (cb) {
 
@@ -16,7 +13,8 @@ gulp.task('build', function (cb) {
     var jslibfiles = "libs/**/*.js";
 
     var tsProject = ts.createProject('tsconfig.json');
-    return tsProject.src()
+    var tsProject2 = ts.createProject('mathexpression/tsconfig.json');
+    return merge(tsProject.src(),tsProject2.src())
         .pipe(sourcemaps.init())
         .pipe(ts({
             noImplicitAny: true,
@@ -45,14 +43,9 @@ gulp.task('build', function (cb) {
 });
 
 
-gulp.task('copyHtml', function () {
-    return gulp.src(paths.pages)
-        .pipe(gulp.dest('dist'));
-});
-
 gulp.task('default', ['build'] ,function () {
-    gulp.watch('./src/**/*.ts',['build','copyHtml']);
-    gulp.watch('./tsconfig.json',['build','copyHtml']);
+    gulp.watch('./src/**/*.ts',['build']);
+    gulp.watch('./tsconfig.json',['build']);
 });
 
 

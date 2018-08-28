@@ -1,3 +1,4 @@
 [submodule "mathexpression"]
 	path = mathexpression
-	url = root@192.168.1.220:/root/gitserver/mathexpression.git
+	url = https://github.com/liuzg50505/mathexpression.git
+
