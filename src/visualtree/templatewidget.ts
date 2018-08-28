@@ -39,6 +39,51 @@ namespace LayoutLzg {
         }
 
 
+        get width(): LayoutLzg.Distance {
+            return this._width;
+        }
+
+        set width(value: LayoutLzg.Distance) {
+            this._width = value;
+            this.rootBorder.width = value;
+        }
+
+        get height(): LayoutLzg.Distance {
+            return this._height;
+        }
+
+        set height(value: LayoutLzg.Distance) {
+            this._height = value;
+            this.rootBorder.height = value;
+        }
+
+        get horizonAlignment(): LayoutLzg.HorizonAlignment {
+            return this._horizonAlignment;
+        }
+
+        set horizonAlignment(value: LayoutLzg.HorizonAlignment) {
+            this._horizonAlignment = value;
+            this.rootBorder.horizonAlignment = value;
+        }
+
+        get verticalAlignment(): LayoutLzg.VerticalAlignment {
+            return this._verticalAlignment;
+        }
+
+        set verticalAlignment(value: LayoutLzg.VerticalAlignment) {
+            this._verticalAlignment = value;
+            this.rootBorder.verticalAlignment = value;
+        }
+
+        get margin(): LayoutLzg.Thickness {
+            return this._margin;
+        }
+
+        set margin(value: LayoutLzg.Thickness) {
+            this._margin = value;
+            this.rootBorder.margin = value;
+        }
+
         get visualTree(): VisualTree {
             return this._visualTree;
         }
@@ -120,13 +165,13 @@ namespace LayoutLzg {
         }
 
         assembleDom(): void {
-            this.rootBorder.width = this.width;
-            this.rootBorder.height = this.height;
-            this.rootBorder.horizonAlignment = this.horizonAlignment;
-            this.rootBorder.verticalAlignment = this.verticalAlignment;
+            // this.rootBorder.width = this.width;
+            // this.rootBorder.height = this.height;
+            // this.rootBorder.horizonAlignment = this.horizonAlignment;
+            // this.rootBorder.verticalAlignment = this.verticalAlignment;
             this.rootBorder.clearChild();
             this.rootBorder.addChild(this._visualTree.rootContainer);
-            this.rootBorder.margin = this.margin;
+            // this.rootBorder.margin = this.margin;
             this._visualTree.rootContainer.width = new Distance(DistanceType.auto,0);
             this._visualTree.rootContainer.height = new Distance(DistanceType.auto,0);
             this._visualTree.rootContainer.horizonAlignment = HorizonAlignment.Strech;
@@ -145,34 +190,36 @@ namespace LayoutLzg {
         }
 
         calculateSlotsWidth(isBoundary: boolean): void {
-            this.rootBorder.width = this.width;
-            this.rootBorder.height = this.height;
-            this.rootBorder.horizonAlignment = this.horizonAlignment;
-            this.rootBorder.verticalAlignment = this.verticalAlignment;
+            // this.rootBorder.width = this.width;
+            // this.rootBorder.height = this.height;
+            // this.rootBorder.horizonAlignment = this.horizonAlignment;
+            // this.rootBorder.verticalAlignment = this.verticalAlignment;
 
-            if(this.width.type==DistanceType.fixed){
-                this.calculatedWidth = this.width.value;
-                this.slots[0].calculatedSlotWidth = this.width.value;
-            }else if(this.parent&&this.horizonAlignment==HorizonAlignment.Strech&&isBoundary) {
-                this.calculatedWidth = this.parentSlot.calculatedSlotWidth - this.margin.left - this.margin.right;
-                this.slots[0].calculatedSlotWidth = this.calculatedWidth;
-            }
+            // if(this.width.type==DistanceType.fixed){
+            //     this.calculatedWidth = this.width.value;
+            //     this.slots[0].calculatedSlotWidth = this.width.value;
+            // }else if(this.parent&&this.horizonAlignment==HorizonAlignment.Strech&&isBoundary) {
+            //     this.calculatedWidth = this.parentSlot.calculatedSlotWidth - this.margin.left - this.margin.right;
+            //     this.slots[0].calculatedSlotWidth = this.calculatedWidth;
+            // }
             this.rootBorder.calculateSlotsWidth(isBoundary);
+            this.calculatedWidth = this.rootBorder.calculatedWidth;
         }
 
         calculateSlotsHeight(isBoundary: boolean): void {
-            this.rootBorder.width = this.width;
-            this.rootBorder.height = this.height;
-            this.rootBorder.horizonAlignment = this.horizonAlignment;
-            this.rootBorder.verticalAlignment = this.verticalAlignment;
-            if(this.height.type==DistanceType.fixed){
-                this.calculatedHeight = this.height.value;
-                this.slots[0].calculatedSlotHeight = this.height.value;
-            }else if(this.parent&&this.verticalAlignment==VerticalAlignment.Strech&&isBoundary) {
-                this.calculatedHeight = this.parentSlot.calculatedSlotHeight - this.margin.top - this.margin.bottom;
-                this.slots[0].calculatedSlotHeight = this.calculatedHeight;
-            }
+            // this.rootBorder.width = this.width;
+            // this.rootBorder.height = this.height;
+            // this.rootBorder.horizonAlignment = this.horizonAlignment;
+            // this.rootBorder.verticalAlignment = this.verticalAlignment;
+            // if(this.height.type==DistanceType.fixed){
+            //     this.calculatedHeight = this.height.value;
+            //     this.slots[0].calculatedSlotHeight = this.height.value;
+            // }else if(this.parent&&this.verticalAlignment==VerticalAlignment.Strech&&isBoundary) {
+            //     this.calculatedHeight = this.parentSlot.calculatedSlotHeight - this.margin.top - this.margin.bottom;
+            //     this.slots[0].calculatedSlotHeight = this.calculatedHeight;
+            // }
             this.rootBorder.calculateSlotsHeight(isBoundary);
+            this.calculatedHeight = this.rootBorder.calculatedHeight;
         }
 
     }

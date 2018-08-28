@@ -92,17 +92,17 @@ namespace LayoutLzg{
         @registproperty("string")
         name:string;
         // Width of this Widget, it can be a fix value or auto.
-        private _width:Distance;
+        protected _width:Distance;
         // Height of this Widget, it can be a fix value or auto.
-        private _height:Distance;
+        protected _height:Distance;
         // Horizonal alignment of this widget in it's parent container
-        private _horizonAlignment : HorizonAlignment;
+        protected _horizonAlignment : HorizonAlignment;
         // Vertical alignment of this widget in it's parent container
-        private _verticalAlignment : VerticalAlignment;
+        protected _verticalAlignment : VerticalAlignment;
         // Margin of this widget to it's parent, the value in thickness must be a fix value.
-        private _margin:Thickness;
-        private _pressed:boolean;
-        private _mouseenter:boolean;
+        protected _margin:Thickness;
+        protected _pressed:boolean;
+        protected _mouseenter:boolean;
 
         protected notifyProperties:Array<string>=[];
 
