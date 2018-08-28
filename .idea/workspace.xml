@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6895967e-ff6e-45b9-baff-517886fa1890" name="Default" comment="修复map和assembleDom的Bug">
-      <change afterPath="$PROJECT_DIR$/src/bindings/templatebinding.ts" afterDir="false" />
+    <list default="true" id="6895967e-ff6e-45b9-baff-517886fa1890" name="Default" comment="readme">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/test_button.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/test_button.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/treebasedlayout/widgetcore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/treebasedlayout/widgetcore.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/visualtree/templatewidget.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/visualtree/templatewidget.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,7 +14,7 @@
     <session id="-1397950332">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="25" />
+          <entry key="project.closed" value="26" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.10" value="3" />
           <entry key="project.open.time.11" value="6" />
@@ -79,7 +74,7 @@
           <entry key="json" value="931" />
           <entry key="md" value="46" />
           <entry key="ts" value="47605" />
-          <entry key="txt" value="185" />
+          <entry key="txt" value="243" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -90,7 +85,7 @@
           <entry key="JSON" value="20" />
           <entry key="JavaScript" value="2373" />
           <entry key="Markdown" value="46" />
-          <entry key="PLAIN_TEXT" value="213" />
+          <entry key="PLAIN_TEXT" value="271" />
           <entry key="TypeScript" value="47600" />
           <entry key="tsconfig" value="911" />
         </counts>
@@ -172,8 +167,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/visualtree/templatewidget.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="198" column="12" selection-start-line="198" selection-start-column="12" selection-end-line="198" selection-end-column="12" />
+            <state relative-caret-position="106">
+              <caret line="232" column="9" lean-forward="true" selection-start-line="232" selection-start-column="9" selection-end-line="232" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -253,7 +248,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>$</find>
       <find>attr(</find>
       <find>template</find>
       <find>domutil</find>
@@ -283,6 +277,7 @@
       <find>wrap</find>
       <find>notifyprope</find>
       <find>propertybingi</find>
+      <find>this.rootBorder.width</find>
     </findStrings>
     <replaceStrings>
       <replace>parentSlot.isSlotHeightCalculatable</replace>
@@ -813,7 +808,7 @@
       <workItem from="1535093843300" duration="17938000" />
       <workItem from="1535197799783" duration="39822000" />
       <workItem from="1535330425194" duration="7536000" />
-      <workItem from="1535353431699" duration="12383000" />
+      <workItem from="1535353431699" duration="12794000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1533205543454</created>
@@ -1032,7 +1027,28 @@
       <option name="project" value="LOCAL" />
       <updated>1535378000599</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="修复 templatewidget 的calculatedWidth(Height)不准确的BUG">
+      <created>1535415594825</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1535415594825</updated>
+    </task>
+    <task id="LOCAL-00033" summary="修复 templatewidget 的calculatedWidth(Height)不准确的BUG">
+      <created>1535415651207</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1535415651207</updated>
+    </task>
+    <task id="LOCAL-00034" summary="readme">
+      <created>1535415897463</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1535415897463</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1068,7 +1084,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="366135000" />
+    <option name="totallyTimeSpent" value="366546000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="121" y="68" width="1717" height="977" extended-state="0" />
@@ -1130,7 +1146,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="1" />
-    <MESSAGE value="readme" />
     <MESSAGE value="slot" />
     <MESSAGE value="lifecycle" />
     <MESSAGE value="gulp config" />
@@ -1141,7 +1156,9 @@
     <MESSAGE value="mocha test" />
     <MESSAGE value="layout" />
     <MESSAGE value="修复map和assembleDom的Bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="修复map和assembleDom的Bug" />
+    <MESSAGE value="修复 templatewidget 的calculatedWidth(Height)不准确的BUG" />
+    <MESSAGE value="readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="readme" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -1593,8 +1610,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/visualtree/templatewidget.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="198" column="12" selection-start-line="198" selection-start-column="12" selection-end-line="198" selection-end-column="12" />
+        <state relative-caret-position="106">
+          <caret line="232" column="9" lean-forward="true" selection-start-line="232" selection-start-column="9" selection-end-line="232" selection-end-column="9" />
         </state>
       </provider>
     </entry>
