@@ -70,7 +70,7 @@
     "src/observer/widgetproperty.ts",
 
     "src/bindings/binding.ts",
-    "src/bindings/functionbinding.ts",
+    "src/bindings/expressionbinding.ts",
     "src/bindings/propertybinding.ts",
     "src/bindings/templatebinding.ts",
 
@@ -144,5 +144,6 @@
 
 
   ],
+  "include": ["mathexpression"],
   "exclude": ["node_modules"]
 }

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6895967e-ff6e-45b9-baff-517886fa1890" name="Default" comment="submodule">
-      <change beforePath="$PROJECT_DIR$/.gitmodules" beforeDir="false" afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
+    <list default="true" id="6895967e-ff6e-45b9-baff-517886fa1890" name="Default" comment="git submodule">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gulpfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/gulpfile.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mathexpression" beforeDir="false" afterPath="$PROJECT_DIR$/mathexpression" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mathexpression/src/datanodes/propertyexpnode.ts" beforeDir="false" afterPath="$PROJECT_DIR$/mathexpression/src/datanodes/propertyexpnode.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bindings/functionbinding.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/bindings/expressionbinding.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,7 +18,7 @@
     <session id="-1397950332">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="26" />
+          <entry key="project.closed" value="27" />
           <entry key="project.open.time.1" value="3" />
           <entry key="project.open.time.10" value="3" />
           <entry key="project.open.time.11" value="6" />
@@ -26,16 +27,17 @@
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="2" />
           <entry key="project.open.time.7" value="2" />
           <entry key="project.open.time.8" value="2" />
           <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="35" />
+          <entry key="project.opened" value="36" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="TypeScriptServerServiceImpl" value="31" />
+          <entry key="TypeScriptServerServiceImpl" value="32" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -46,10 +48,10 @@
           <entry key="gitmodules" value="1" />
           <entry key="html" value="78" />
           <entry key="iml" value="1" />
-          <entry key="js" value="81" />
-          <entry key="json" value="49" />
+          <entry key="js" value="84" />
+          <entry key="json" value="50" />
           <entry key="md" value="2" />
-          <entry key="ts" value="547" />
+          <entry key="ts" value="554" />
           <entry key="txt" value="1" />
           <entry key="xml" value="4" />
         </counts>
@@ -60,12 +62,12 @@
           <entry key="HTML" value="78" />
           <entry key="IDEA_MODULE" value="1" />
           <entry key="JSON" value="5" />
-          <entry key="JavaScript" value="81" />
+          <entry key="JavaScript" value="84" />
           <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="5" />
-          <entry key="TypeScript" value="547" />
+          <entry key="TypeScript" value="554" />
           <entry key="XML" value="4" />
-          <entry key="tsconfig" value="44" />
+          <entry key="tsconfig" value="45" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -75,11 +77,11 @@
           <entry key="gitmodules" value="23" />
           <entry key="html" value="3461" />
           <entry key="iml" value="13" />
-          <entry key="js" value="2414" />
-          <entry key="json" value="931" />
+          <entry key="js" value="2430" />
+          <entry key="json" value="938" />
           <entry key="md" value="46" />
-          <entry key="ts" value="47605" />
-          <entry key="txt" value="252" />
+          <entry key="ts" value="48447" />
+          <entry key="txt" value="265" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -88,22 +90,34 @@
           <entry key="HTML" value="3467" />
           <entry key="IDEA_MODULE" value="13" />
           <entry key="JSON" value="20" />
-          <entry key="JavaScript" value="2413" />
+          <entry key="JavaScript" value="2429" />
           <entry key="Markdown" value="46" />
-          <entry key="PLAIN_TEXT" value="303" />
-          <entry key="TypeScript" value="47600" />
-          <entry key="tsconfig" value="911" />
+          <entry key="PLAIN_TEXT" value="316" />
+          <entry key="TypeScript" value="48442" />
+          <entry key="tsconfig" value="918" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitmodules">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/bindings/propertybinding.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+            <state relative-caret-position="135">
+              <caret line="9" selection-start-line="9" selection-end-line="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/bindings/expressionbinding.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="46">
+              <caret line="70" selection-start-line="70" selection-end-line="70" />
+              <folding>
+                <element signature="n#ExpressionParser#0;n#LayoutLzg#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -172,8 +186,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/widgetxml/xmlwidgetparserprovider.ts" />
-        <option value="$PROJECT_DIR$/src/widgetxml/tagxmlwidgetparserprovider.ts" />
         <option value="$PROJECT_DIR$/src/widgetxml/widgetparserprovider.ts" />
         <option value="$PROJECT_DIR$/src/widgetxml/priorityxmlwidgetparserprovider.ts" />
         <option value="$PROJECT_DIR$/src/widgetxml/xmlwidgetserializer.ts" />
@@ -216,13 +228,15 @@
         <option value="$PROJECT_DIR$/src/treebasedlayout/containers/vlinearlayout.ts" />
         <option value="$PROJECT_DIR$/src/treebasedlayout/containers/hlinearlayout.ts" />
         <option value="$PROJECT_DIR$/src/collections/map.ts" />
-        <option value="$PROJECT_DIR$/tsconfig.json" />
         <option value="$PROJECT_DIR$/src/bindings/templatebinding.ts" />
         <option value="$PROJECT_DIR$/dist/test_button.html" />
         <option value="$PROJECT_DIR$/src/treebasedlayout/widgetcore.ts" />
         <option value="$PROJECT_DIR$/src/visualtree/templatewidget.ts" />
-        <option value="$PROJECT_DIR$/gulpfile.js" />
         <option value="$PROJECT_DIR$/.gitmodules" />
+        <option value="$PROJECT_DIR$/tsconfig.json" />
+        <option value="$PROJECT_DIR$/gulpfile.js" />
+        <option value="$PROJECT_DIR$/mathexpression/src/datanodes/propertyexpnode.ts" />
+        <option value="$PROJECT_DIR$/src/bindings/expressionbinding.ts" />
       </list>
     </option>
   </component>
@@ -275,6 +289,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -295,13 +310,25 @@
             <path>
               <item name="layoutsystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="layoutsystem" type="462c0819:PsiDirectoryNode" />
+              <item name="mathexpression" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="layoutsystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="layoutsystem" type="462c0819:PsiDirectoryNode" />
+              <item name="mathexpression" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="datanodes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="layoutsystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="layoutsystem" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="PackagesPane" />
     </panes>
@@ -689,7 +716,8 @@
       <workItem from="1535197799783" duration="39822000" />
       <workItem from="1535330425194" duration="7536000" />
       <workItem from="1535353431699" duration="12794000" />
-      <workItem from="1535474836534" duration="3000000" />
+      <workItem from="1535474836534" duration="3317000" />
+      <workItem from="1535508319123" duration="3447000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1533205543454</created>
@@ -936,7 +964,14 @@
       <option name="project" value="LOCAL" />
       <updated>1535474931883</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="git submodule">
+      <created>1535478329669</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1535478329669</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -972,12 +1007,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="369546000" />
+    <option name="totallyTimeSpent" value="373310000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="121" y="68" width="1717" height="977" extended-state="0" />
     <editor active="true" />
     <layout>
+      <window_info id="Gulp" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28773585" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Designer" order="2" />
@@ -994,7 +1030,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="TypeScript" order="7" sideWeight="0.4994104" weight="0.32881355" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4994104" weight="0.41694915" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4994104" visible="true" weight="0.41694915" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5005896" side_tool="true" weight="0.41694915" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32881355" />
       <window_info anchor="bottom" id="Messages" order="11" />
@@ -1047,7 +1083,8 @@
     <MESSAGE value="修复 templatewidget 的calculatedWidth(Height)不准确的BUG" />
     <MESSAGE value="readme" />
     <MESSAGE value="submodule" />
-    <option name="LAST_COMMIT_MESSAGE" value="submodule" />
+    <MESSAGE value="git submodule" />
+    <option name="LAST_COMMIT_MESSAGE" value="git submodule" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -1125,30 +1162,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/typescript/lib/lib.es5.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="1237" column="40" selection-start-line="1237" selection-start-column="35" selection-end-line="1237" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/test_vlinearlayout.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/xmlutils.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="47" column="31" lean-forward="true" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templatewidgets/progressbar.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="536">
-          <caret line="88" column="9" lean-forward="true" selection-start-line="88" selection-start-column="9" selection-end-line="88" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/trigger/domeventtrigger.ts">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1272,13 +1285,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/observer/propertybase.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="683">
-          <caret line="160" column="83" selection-start-line="160" selection-start-column="83" selection-end-line="160" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/facades/binding.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -1346,9 +1352,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
-          <folding>
-            <marker date="1535414793666" expanded="true" signature="1609:1710" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1356,10 +1359,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
-          <folding>
-            <element signature="n#!!block;n#initVisualTree#0;n#Button#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#initStates#0;n#Button#0;n#LayoutLzg#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1370,29 +1369,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/output.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-89727" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gulpfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="16" column="49" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/visualtree/templatewidget.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="301">
           <caret line="245" column="33" selection-start-line="245" selection-start-column="33" selection-end-line="245" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tsconfig.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="74" column="36" selection-start-line="74" selection-start-column="36" selection-end-line="74" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -1410,13 +1390,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/bindings/templatebinding.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/domutils.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="104">
@@ -1428,61 +1401,80 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="155">
           <caret line="94" column="18" selection-start-line="94" selection-start-column="18" selection-end-line="94" selection-end-column="18" />
-          <folding>
-            <element signature="n#!!block;n#clonable#0;n#LayoutLzg#0" />
-            <element signature="n#PropertyChangedCallbackItem#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#constructor#0;n#PropertyChangedCallbackItem#0;n#LayoutLzg#0" />
-            <element signature="n#EventCallbackItem#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#constructor#0;n#EventCallbackItem#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#constructor#0;n#VisualElement#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#width#0;n#VisualElement#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#height#0;n#VisualElement#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#horizonAlignment#0;n#VisualElement#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#horizonAlignment#1;n#VisualElement#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#verticalAlignment#0;n#VisualElement#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#verticalAlignment#1;n#VisualElement#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#margin#0;n#VisualElement#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#margin#1;n#VisualElement#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#pressed#0;n#VisualElement#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#pressed#1;n#VisualElement#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#mouseenter#0;n#VisualElement#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#mouseenter#1;n#VisualElement#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#forceRefresh#0;n#VisualElement#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#assembleDom#0;n#VisualElement#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#doLayout#0;n#VisualElement#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#getStateProperties#0;n#VisualElement#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#getNotifyProperties#0;n#VisualElement#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#addPropertyChangedListener#0;n#VisualElement#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#removePropertyChangedListener#0;n#VisualElement#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#addStateChangedListener#0;n#VisualElement#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#removeStateChangedListener#0;n#VisualElement#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#notifyPropertyChanged#0;n#VisualElement#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#removeEventListener#0;n#VisualElement#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#fill#0;n#Widget#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#stroke#0;n#Widget#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#strokeThickness#0;n#Widget#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#shadow#0;n#Widget#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#shadow#1;n#Widget#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#addChild#0;n#ContainerWidget#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#removeChild#0;n#ContainerWidget#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#clearChild#0;n#ContainerWidget#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#doLayout#0;n#ContainerWidget#0;n#LayoutLzg#0" />
-            <element signature="n#!!block;n#dispose#0;n#ContainerWidget#0;n#LayoutLzg#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bindings/propertybinding.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitmodules">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bindings/templatebinding.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" selection-start-line="8" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tsconfig.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="146" column="29" selection-start-line="146" selection-start-column="29" selection-end-line="146" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/output.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-71565" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="17" column="32" lean-forward="true" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mathexpression/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mathexpression/src/expressionbase.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="70" column="26" selection-start-line="70" selection-start-column="26" selection-end-line="70" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mathexpression/src/datanodes/propertyexpnode.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/observer/propertybase.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="114" column="82" selection-start-line="114" selection-start-column="68" selection-end-line="114" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bindings/propertybinding.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" selection-start-line="9" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bindings/expressionbinding.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="70" selection-start-line="70" selection-end-line="70" />
+          <folding>
+            <element signature="n#ExpressionParser#0;n#LayoutLzg#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
