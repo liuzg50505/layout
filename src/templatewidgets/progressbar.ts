@@ -18,10 +18,16 @@ namespace LayoutLzg {
 
         constructor(name: string) {
             super(name);
+
             this.minValue = 0;
             this.maxValue = 100;
             this.value = 30;
 
+            this.fill = new LayoutLzg.SolidColorBrush("#adadad");
+            this.barfill = new LayoutLzg.SolidColorBrush("#2df25b");
+            this.stroke = new LayoutLzg.SolidColorBrush("#0092ff");
+            this.strokeThickness = new LayoutLzg.Thickness(1,1,1,1);
+            this.shadow = new LayoutLzg.ShadowSettings(0,0,10,1,"#0092ff");
         }
 
         private initVisualTree():void {

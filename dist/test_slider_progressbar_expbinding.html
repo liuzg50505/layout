@@ -46,13 +46,19 @@
     bar.margin.top = 200;
     bar.value = 60;
 
-    progressbar = new LayoutLzg.TextView("");
-    progressbar.width = new LayoutLzg.Distance(LayoutLzg.DistanceType.auto,0);
-    progressbar.height = new LayoutLzg.Distance(LayoutLzg.DistanceType.auto,0);
+    progressbar = new LayoutLzg.ProgressBar("");
+    progressbar.width = new LayoutLzg.Distance(LayoutLzg.DistanceType.fixed,200);
+    progressbar.height = new LayoutLzg.Distance(LayoutLzg.DistanceType.fixed,20);
     progressbar.horizonAlignment = LayoutLzg.HorizonAlignment.Left;
     progressbar.verticalAlignment = LayoutLzg.VerticalAlignment.Top;
+    progressbar.fill = new LayoutLzg.SolidColorBrush("#adadad");
+    progressbar.barfill = new LayoutLzg.SolidColorBrush("#2df25b");
+    progressbar.stroke = new LayoutLzg.SolidColorBrush("#0092ff");
+    progressbar.strokeThickness = new LayoutLzg.Thickness(1,1,1,1);
+    progressbar.shadow = new LayoutLzg.ShadowSettings(0,0,10,1,"#0092ff");
+
     progressbar.margin.left = 50;
-    progressbar.margin.top = 50;
+    progressbar.margin.top = 100;
 
     rootBorder.addChild(bar);
     rootBorder.addChild(button);
@@ -68,8 +74,23 @@
 
     strconverter = new LayoutLzg.ExpressionConverter("'Value='+parseInt(Math.round(value)).toString()");
     provider = LayoutLzg.getDefaultUniversalPropertyProvider();
-    // LayoutLzg.createPropertyBinding(provider,$("#value")[0],"text",bar,"value").setConverter(strconverter).startBinding();
-    LayoutLzg.createPropertyBinding(provider,progressbar,"text",bar,"value").setConverter(strconverter).startBinding();
+    LayoutLzg.createPropertyBinding(provider,progressbar,"value",bar,"value").startBinding();
+
+    data = {
+        bar:{
+            value:22
+        },
+        testvalue:50
+    };
+
+    expbinding = new LayoutLzg.ExpressionBinding(provider);
+    expbinding.dataContext = new MathExpressionLzg.JsobjectContext(data);
+    expbinding.expression = "testvalue*2";
+    expbinding.expressionParser = new MathExpressionLzg.getDefaultExpressionParser();
+    expbinding.target = progressbar;
+    expbinding.targetPropertyName="value";
+    expbinding.startBinding();
+
 
 </script>
 </body>

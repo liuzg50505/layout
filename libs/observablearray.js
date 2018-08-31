@@ -1,6 +1,6 @@
 function ObservableArray(items) {
 
-    this.__observablearray_ = true;
+    this.__observablearray__ = true;
 
     var _self = this,
         _array = [],

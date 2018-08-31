@@ -91,7 +91,9 @@ namespace LayoutLzg.ObserverModel {
 
                 if(toString.call(t)=='[object Function]'){
                     continue;
-                }else if("__observablearray_" in t){
+                }else if(toString.call(t)=='[object Number]'){
+
+                }else if("__observablearray__" in t){
                     propValue.addEventListener("itemadded",function(e:any) {
                         cfg.notifyPropertyChanged(new PropertyChangedEventArgs(obj, propertyName+".*",null,null));
                     });

@@ -3,6 +3,7 @@ namespace LayoutLzg {
     import DataContext = MathExpressionLzg.DataContext;
     import ExpressionNode = MathExpressionLzg.ExpressionNode;
     import PropertyExpressionNode = MathExpressionLzg.PropertyExpressionNode;
+    import PropertyPathNodeMode = MathExpressionLzg.PropertyPathNodeMode;
 
     class ObjectProperty {
         obj:any;
@@ -28,15 +29,46 @@ namespace LayoutLzg {
         private sourcePropListenerMap : Map<ObjectProperty,PropertyChangedListener>;
 
 
+        constructor(propertyProvider: PropertyProvider) {
+            super(propertyProvider);
+            this.sourcePropGetterMap = new Map<ObjectProperty, PropertyGetter>();
+            this.sourcePropListenerMap = new Map<ObjectProperty,PropertyChangedListener>();
+        }
+
+        private findPropertyExpressionsR(rootNode:ExpressionNode, result:Array<PropertyExpressionNode>){
+            if(rootNode instanceof PropertyExpressionNode){
+                result.push(rootNode);
+            }
+            for (let childnode of rootNode.arguments) {
+                this.findPropertyExpressionsR(childnode, result);
+            }
+        }
+
         private findPropertyExpressions(rootNode:ExpressionNode):Array<PropertyExpressionNode>{
-            return null;
+            let result:Array<PropertyExpressionNode> = [];
+            this.findPropertyExpressionsR(rootNode,result);
+            return result;
         }
 
         private getPropertyExpressionObject(node:PropertyExpressionNode):any {
-            return null;
+            if(node.propertyPathNodes.length>=1) {
+                let expNode = new PropertyExpressionNode();
+                for (let i = 0; i < node.propertyPathNodes.length - 1; i++) {
+                    expNode.propertyPathNodes.push(node.propertyPathNodes[i]);
+                }
+                return expNode.evaluate(this.dataContext);
+            }else{
+                return this.dataContext;
+            }
         }
 
         private getPropertyExpressionPropertyName(node:PropertyExpressionNode):string{
+            if(node.propertyPathNodes.length>=1) {
+                let n = node.propertyPathNodes[node.propertyPathNodes.length-1];
+                if(n.mode == PropertyPathNodeMode.property) {
+                    return n.propName;
+                }
+            }
             return null;
         }
 
