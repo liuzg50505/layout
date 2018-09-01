@@ -44,6 +44,9 @@ namespace LayoutLzg {
             rectProc.verticalAlignment = VerticalAlignment.Strech;
             rectProc.radius_top_left = this.radius;
             rectProc.radius_bottom_left = this.radius;
+            rectProc.radius_top_right = this.radius;
+            rectProc.radius_bottom_right = this.radius;
+
             rectProc.fill = this.barfill;
             rectProc.stroke = this.stroke;
             rectProc.strokeThickness = new Thickness(this.strokeThickness.left,0,this.strokeThickness.top,this.strokeThickness.bottom);
@@ -74,6 +77,8 @@ namespace LayoutLzg {
             rectUp.horizonAlignment = HorizonAlignment.Strech;
             rectUp.verticalAlignment = VerticalAlignment.Strech;
             rectUp.radius_top_left = this.radius;
+            rectUp.radius_top_right = this.radius;
+
             rectUp.stroke = this.stroke;
             rectUp.opacity = 0.5;
             rectUp.fill = new SolidColorBrush("white");
@@ -97,6 +102,15 @@ namespace LayoutLzg {
         doLayout(): void {
             let w = this.calculatedWidth;
             let rectend = w/(this.maxValue-this.minValue)*(this.value-this.minValue);
+            if(rectend>w-this.radius) {
+                this.rectProc.radius_top_right = this.radius-w+rectend;
+                this.rectProc.radius_bottom_right = this.radius-w+rectend;
+                this.rectUp.radius_top_right = this.radius-w+rectend;
+            }else{
+                this.rectProc.radius_top_right = 0;
+                this.rectProc.radius_bottom_right = 0;
+                this.rectUp.radius_top_right = 0;
+            }
             this.rectProc.width = new Distance(DistanceType.fixed,rectend);
             this.rectUp.width = new Distance(DistanceType.fixed,rectend);
             calculateBoundaryWidthTree(this);
