@@ -10,9 +10,9 @@ namespace LayoutLzg {
             super(name);
             this.stateGroups = new List<StateGroup>();
             this.stateEventTriggers = new List<WidgetTrigger>();
-            let mainSlot = new Slot();
-            mainSlot.addChild(this.rootBorder);
-            this.slots.add(mainSlot);
+            // let mainSlot = new Slot();
+            // mainSlot.addChild(this.rootBorder);
+            // this.slots.add(mainSlot);
 
             let self = this;
             onEvent(this.getRootElement(),"click",function (e:any) {
@@ -38,6 +38,9 @@ namespace LayoutLzg {
 
         }
 
+        get slots():List<LayoutLzg.Slot> {
+            return this.rootBorder.slots;
+        }
 
         get width(): LayoutLzg.Distance {
             return this._width;
@@ -243,7 +246,23 @@ namespace LayoutLzg {
 
     }
 
-    export class ItemsPresenter {
+    export class ItemsPresenter extends Widget{
+
+        panel:ContainerWidget;
+
+        calculateSlotsWidth(isBoundary: boolean): void {
+        }
+
+        calculateSlotsHeight(isBoundary: boolean): void {
+        }
+
+        getRootElement(): HTMLElement {
+            return this.panel.getRootElement();
+        }
+
+        dispose(): void {
+        }
+
 
     }
 

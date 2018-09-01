@@ -9,6 +9,8 @@ namespace LayoutLzg{
         calculatedSlotWidth : number = 0;
         calculatedSlotHeight : number = 0;
         container : ContainerWidget;
+        isBoundaryWidth: boolean;
+        isBoundaryHeight: boolean;
 
         addChild(child : Widget):void {
             this.children.add(child);

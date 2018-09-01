@@ -78,11 +78,24 @@ namespace LayoutLzg{
             }
         }
 
-
-        calculateSlotsHeight(isBoundary:boolean): void {
+        calculateSlotsWidth(isBoundary:boolean): void {
+            if(this.width.type==DistanceType.fixed) {
+                this.calculatedWidth = this.width.value;
+            }else if(this.parent&&this.horizonAlignment==HorizonAlignment.Strech&&isBoundary) {
+                this.calculatedWidth = this.parentSlot.calculatedSlotWidth - this.margin.left - this.margin.right;
+            }else {
+                this.calculatedWidth = this.measureWidth();
+            }
         }
 
-        calculateSlotsWidth(isBoundary:boolean): void {
+        calculateSlotsHeight(isBoundary:boolean): void {
+            if(this.height.type==DistanceType.fixed) {
+                this.calculatedHeight = this.height.value;
+            }else if(this.parent&&this.verticalAlignment==VerticalAlignment.Strech&&isBoundary) {
+                this.calculatedHeight = this.parentSlot.calculatedSlotHeight - this.margin.top - this.margin.bottom;
+            }else {
+                this.calculatedHeight = this.measureHeight();
+            }
         }
 
         dispose(): void {

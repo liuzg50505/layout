@@ -57,6 +57,8 @@
     "src/treebasedlayout/containers/border.ts",
     "src/treebasedlayout/containers/vlinearlayout.ts",
     "src/treebasedlayout/containers/hlinearlayout.ts",
+    "src/treebasedlayout/containers/vstackpanel.ts",
+    "src/treebasedlayout/containers/hstackpanel.ts",
 
 
 

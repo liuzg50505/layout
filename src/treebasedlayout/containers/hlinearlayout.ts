@@ -100,6 +100,7 @@ namespace LayoutLzg {
             if(this.width.type==DistanceType.fixed){
                 for (let i=0;i<this.slots.length;i++){
                     let slot = this.slots[i];
+                    slot.isBoundaryWidth = true;
                     let cellDefination = this.slotMap.get(slot);
 
                     let cellw = 0;
@@ -115,6 +116,7 @@ namespace LayoutLzg {
             }else if(this.parent&&this.horizonAlignment==HorizonAlignment.Strech&&isBoundary) {
                 for (let i=0;i<this.slots.length;i++){
                     let slot = this.slots[i];
+                    slot.isBoundaryWidth = true;
                     let cellDefination = this.slotMap.get(slot);
 
                     let cellw = 0;
@@ -132,6 +134,7 @@ namespace LayoutLzg {
                 if(wlist.length>0){
                     this.calculatedWidth = wlist[0];
                     this.slots.forEach(function (item) {
+                        item.isBoundaryWidth = false;
                         item.calculatedSlotWidth = this.calculatedWidth;
                     });
                 }
@@ -140,11 +143,15 @@ namespace LayoutLzg {
 
         calculateSlotsHeight(isBoundary: boolean): void {
             if(this.height.type==DistanceType.fixed){
+                this.calculatedHeight = this.height.value;
                 this.slots.forEach(function (item) {
+                    item.isBoundaryHeight = true;
                     item.calculatedSlotHeight = this.height.value;
                 });
             }else if(this.parent&&this.verticalAlignment==VerticalAlignment.Strech&&isBoundary) {
+                this.calculatedHeight = this.parentSlot.calculatedSlotHeight - this.margin.top - this.margin.bottom;
                 this.slots.forEach(function (item) {
+                    item.isBoundaryHeight = true;
                     item.calculatedSlotHeight = this.parentSlot.calculatedSlotHeight;
                 });
             }else {
@@ -153,6 +160,7 @@ namespace LayoutLzg {
                 if(hlist.length>0){
                     this.calculatedHeight = hlist[0];
                     this.slots.forEach(function (item) {
+                        item.isBoundaryHeight = false;
                         item.calculatedSlotHeight = this.calculatedHeight;
                     });
                 }

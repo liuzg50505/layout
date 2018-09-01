@@ -68,11 +68,14 @@ namespace LayoutLzg{
         calculateSlotsWidth(isBoundary:boolean): void {
             if(this.width.type==DistanceType.fixed){
                 this.calculatedWidth = this.width.value;
+                this.mainSlot.isBoundaryWidth = true;
                 this.mainSlot.calculatedSlotWidth = this.width.value;
             }else if(this.parent&&this.horizonAlignment==HorizonAlignment.Strech&&isBoundary) {
                 this.calculatedWidth = this.parentSlot.calculatedSlotWidth - this.margin.left - this.margin.right;
+                this.mainSlot.isBoundaryWidth = true;
                 this.mainSlot.calculatedSlotWidth = this.calculatedWidth;
             }else {
+                this.mainSlot.isBoundaryWidth = false;
                 let wlist = this.children.map(t=>t.calculatedWidth+t.margin.left+t.margin.right);
                 wlist = wlist.sort((a,b)=>b-a);
                 if(wlist.length>0){
@@ -82,15 +85,17 @@ namespace LayoutLzg{
             }
         }
 
-
         calculateSlotsHeight(isBoundary:boolean): void {
             if(this.height.type==DistanceType.fixed){
                 this.calculatedHeight = this.height.value;
+                this.mainSlot.isBoundaryHeight = true;
                 this.mainSlot.calculatedSlotHeight = this.height.value;
             }else if(this.parent&&this.verticalAlignment==VerticalAlignment.Strech&&isBoundary) {
                 this.calculatedHeight = this.parentSlot.calculatedSlotHeight - this.margin.top - this.margin.bottom;
+                this.mainSlot.isBoundaryHeight = true;
                 this.mainSlot.calculatedSlotHeight = this.parentSlot.calculatedSlotHeight;
             }else {
+                this.mainSlot.isBoundaryHeight = false;
                 let hlist = this.children.map(t=>t.calculatedHeight+t.margin.top+t.margin.bottom);
                 hlist = hlist.sort((a,b)=>b-a);
                 if(hlist.length>0){
@@ -98,10 +103,7 @@ namespace LayoutLzg{
                     this.mainSlot.calculatedSlotHeight=this.calculatedHeight;
                 }
             }
-
         }
-
-
 
     }
 }

@@ -1,36 +1,57 @@
 namespace LayoutLzg {
-    export class Vlinearlayout extends ContainerWidget{
-        protected slotMap : Map<Slot,Distance>;
+    export class Vstackpanel extends ContainerWidget {
         protected slotWrappersMap : Map<Slot,HTMLElement>;
         protected childWrappersMap: Map<Widget,HTMLElement>;
 
         constructor(name: string) {
             super(name);
-            this.slotMap = new Map<Slot, Distance>();
             this.childWrappersMap = new Map<Widget, HTMLElement>();
             this.slotWrappersMap = new Map<Slot,HTMLElement>();
         }
 
-        addCell(distance:Distance) {
+        addChild(widget: LayoutLzg.Widget): void {
+            super.addChild(widget);
             let slot = new Slot();
-            slot.container = this;
+            slot.addChild(widget);
             this.slots.add(slot);
-            this.slotMap.put(slot,distance);
         }
 
-        setCell(widget:Widget, cellIndex:number) {
-            const idx = this.children.indexOf(widget);
-            if(idx>-1){
-                let slot = this.slots[cellIndex];
-                slot.addChild(widget);
+        removeChild(widget: LayoutLzg.Widget): void {
+            this.children.remove(widget);
+
+            let tarSlot:Slot = null;
+            for (let slot of this.slots) {
+                for (let child of slot.children) {
+                    if(child==widget){
+                        tarSlot = slot;
+                        break;
+                    }
+                }
+                if(tarSlot!=null) break;
             }
+
+            this.slots.remove(tarSlot);
+        }
+
+        clearChild(): void {
+            this.slots.clear();
+            this.children.clear();
+        }
+
+        getRootElement(): HTMLElement {
+            if(this.rootElem==null) {
+                this.rootElem = createElement("DIV");
+                css(this.rootElem,'pointer-events','all');
+                setattr(this.rootElem,'layout-type','Vstackpanel');
+                setattr(this.rootElem,'layout-name',this.name);
+            }
+            return this.rootElem;
         }
 
         assembleDom(): void {
             emptyChildren(this.getRootElement());
             this.slotWrappersMap.clear();
             this.childWrappersMap.clear();
-
             for (let slot of this.slots){
                 let slotWrapperDiv = createElement("DIV");
                 css(slotWrapperDiv,'pointer-events','none');
@@ -45,6 +66,7 @@ namespace LayoutLzg {
                 this.slotWrappersMap.put(slot,slotWrapperDiv);
                 appendChild(this.getRootElement(),slotWrapperDiv);
             }
+
         }
 
         doLayout(): void {
@@ -76,27 +98,17 @@ namespace LayoutLzg {
             }
         }
 
-        getRootElement(): HTMLElement {
-            if(this.rootElem==null) {
-                this.rootElem = createElement("DIV");
-                css(this.rootElem,'pointer-events','all');
-                setattr(this.rootElem,'layout-type','Vlinearlayout');
-                setattr(this.rootElem,'layout-name',this.name);
-            }
-            return this.rootElem;
-        }
-
         calculateSlotsWidth(isBoundary: boolean): void {
             if(this.width.type==DistanceType.fixed){
                 this.calculatedWidth = this.width.value;
+                this.slots.forEach(t=>t.isBoundaryWidth = true);
                 for (let item of this.slots) {
-                    item.isBoundaryWidth = true;
                     item.calculatedSlotWidth = this.width.value;
                 }
             }else if(this.parent&&this.horizonAlignment==HorizonAlignment.Strech&&isBoundary) {
                 this.calculatedWidth = this.parentSlot.calculatedSlotWidth - this.margin.left - this.margin.right;
+                this.slots.forEach(t=>t.isBoundaryWidth = true);
                 for (let item of this.slots) {
-                    item.isBoundaryWidth = true;
                     item.calculatedSlotWidth = this.calculatedWidth;
                 }
             }else {
@@ -113,61 +125,40 @@ namespace LayoutLzg {
         }
 
         calculateSlotsHeight(isBoundary: boolean): void {
-            let weightSum = 0;
-            let fixSum = 0;
-            for (let i=0;i<this.slots.length;i++){
-                let slot = this.slots[i];
-                let cellDefination = this.slotMap.get(slot);
-
-                if(cellDefination.type==DistanceType.weight) weightSum += cellDefination.value;
-                if(cellDefination.type==DistanceType.fixed) fixSum += cellDefination.value;
-            }
-
             if(this.height.type==DistanceType.fixed){
                 this.calculatedHeight = this.height.value;
+                this.slots.forEach(t=>t.isBoundaryHeight = false);
                 for (let i=0;i<this.slots.length;i++){
                     let slot = this.slots[i];
-                    slot.isBoundaryHeight = false;
-                    let cellDefination = this.slotMap.get(slot);
-
-                    let cellh = 0;
-                    if(cellDefination.type==DistanceType.fixed) {
-                        cellh=cellDefination.value;
-                    }else if(cellDefination.type==DistanceType.weight){
-                        cellh = (this.height.value - fixSum)* cellDefination.value / weightSum;
+                    for (let child of slot.children) {
+                        slot.calculatedSlotHeight = child.calculatedHeight+child.margin.top+child.margin.bottom;
                     }
-
-                    slot.calculatedSlotHeight = cellh;
                 }
 
-            }else if(this.parent&&this.horizonAlignment==HorizonAlignment.Strech&&isBoundary) {
+            }else if(this.parent&&this.verticalAlignment==VerticalAlignment.Strech&&isBoundary) {
                 this.calculatedHeight = this.parentSlot.calculatedSlotHeight - this.margin.top - this.margin.bottom;
+                this.slots.forEach(t=>t.isBoundaryHeight = false);
                 for (let i=0;i<this.slots.length;i++){
                     let slot = this.slots[i];
-                    slot.isBoundaryHeight = false;
-                    let cellDefination = this.slotMap.get(slot);
-
-                    let cellh = 0;
-                    if(cellDefination.type==DistanceType.fixed) {
-                        cellh=cellDefination.value;
-                    }else if(cellDefination.type==DistanceType.weight){
-                        cellh = (this.calculatedHeight - fixSum)* cellDefination.value / weightSum;
+                    for (let child of slot.children) {
+                        slot.calculatedSlotHeight = child.calculatedHeight+child.margin.top+child.margin.bottom;
                     }
-
-                    slot.calculatedSlotHeight = cellh;
                 }
             }else {
-                let hlist = this.children.map(t=>t.calculatedHeight+t.margin.top+t.margin.bottom);
-                hlist = hlist.sort((a,b)=>b-a);
-                if(hlist.length>0){
-                    this.calculatedHeight = hlist[0];
-                    this.slots.forEach(function (item) {
-                        item.isBoundaryHeight = false;
-                        item.calculatedSlotHeight = this.calculatedHeight;
-                    });
+                let sum = 0;
+                for (let i=0;i<this.slots.length;i++){
+                    let slot = this.slots[i];
+                    slot.isBoundaryHeight = false;
+                    for (let child of slot.children) {
+                        slot.calculatedSlotHeight = child.calculatedHeight+child.margin.top+child.margin.bottom;
+                        sum+=slot.calculatedSlotHeight;
+                    }
                 }
+                this.calculatedHeight = sum;
             }
         }
+
+
 
     }
 }
