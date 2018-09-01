@@ -127,7 +127,7 @@ namespace LayoutLzg {
                 this.calculatedHeight = this.height.value;
                 for (let i=0;i<this.slots.length;i++){
                     let slot = this.slots[i];
-                    slot.isBoundaryHeight = false;
+                    slot.isBoundaryHeight = true;
                     let cellDefination = this.slotMap.get(slot);
 
                     let cellh = 0;
@@ -144,7 +144,7 @@ namespace LayoutLzg {
                 this.calculatedHeight = this.parentSlot.calculatedSlotHeight - this.margin.top - this.margin.bottom;
                 for (let i=0;i<this.slots.length;i++){
                     let slot = this.slots[i];
-                    slot.isBoundaryHeight = false;
+                    slot.isBoundaryHeight = true;
                     let cellDefination = this.slotMap.get(slot);
 
                     let cellh = 0;
